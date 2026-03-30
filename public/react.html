@@ -721,7 +721,7 @@ function loadSpeedState(speed){
   };
 }
 
-function saveSpeedState(){
+function saveSpeedStateif(typeof syncCognitiveScore==='function')syncCognitiveScore(gameState.speed,gameState.level,gameState.score,gameState.streak,gameState.tier||1);(){
   localStorage.setItem(getSpeedKey(gameState.speed,'level'),gameState.level);
   localStorage.setItem(getSpeedKey(gameState.speed,'score'),gameState.score);
   localStorage.setItem(getSpeedKey(gameState.speed,'streak'),gameState.streak);
