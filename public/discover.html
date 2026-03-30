@@ -213,12 +213,13 @@ function showSTab(id,btn){
     sb=window.supabase.createClient(SB_URL,SB_KEY);
 
     // Load all data in parallel
-    var[playersRes,teamsRes,tourneysRes,opsRes,programsRes]=await Promise.all([
+    var[playersRes,teamsRes,tourneysRes,opsRes,programsRes,cogRes]=await Promise.all([
       sb.from('players').select('*').order('stats_ppg',{ascending:false}),
       sb.from('tournament_teams').select('*'),
       sb.from('tournaments').select('*').in('status',['active','completed']).order('start_date',{ascending:false}),
       sb.from('operators').select('id,business_name,slug,location').eq('active',true),
-      sb.from('programs').select('*').eq('active',true)
+      sb.from('programs').select('*').eq('active',true),
+      sb.from('cognitive_scores').select('*')
     ]);
 
     allPlayers=playersRes.data||[];
@@ -226,11 +227,24 @@ function showSTab(id,btn){
     var programMap={};
     (programsRes.data||[]).forEach(function(p){programMap[p.id]=p});
 
+    // Build cognitive lookup - best level per player
+    var cogMap={};
+    (cogRes.data||[]).forEach(function(s){
+      if(!cogMap[s.player_id])cogMap[s.player_id]={total:0,count:0,tests:{}};
+      var existing=cogMap[s.player_id].tests[s.test_name];
+      if(!existing||s.level>existing.level){
+        if(existing)cogMap[s.player_id].total-=existing.level;
+        else cogMap[s.player_id].count++;
+        cogMap[s.player_id].tests[s.test_name]=s;
+        cogMap[s.player_id].total+=s.level;
+      }
+    });
+
     // Build lookup maps
     (teamsRes.data||[]).forEach(function(t){teamMap[t.id]=t});
     (opsRes.data||[]).forEach(function(o){operatorMap[o.id]=o});
 
-    // Link team, operator, and program info to players
+    // Link team, operator, program, and cognitive info to players
     allPlayers.forEach(function(p){
       var team=teamMap[p.tournament_team_id];
       p._teamName=team?team.team_name:'';
@@ -243,6 +257,9 @@ function showSTab(id,btn){
       p._location=op?op.location:'';
       var prg=p.program_id?programMap[p.program_id]:null;
       p._programName=prg?prg.name:'';
+      var cog=cogMap[p.id];
+      p._cogLevel=cog?Math.round(cog.total/cog.count):0;
+      p._cogTests=cog?cog.tests:{};
     });
 
     filterPlayers();
@@ -297,6 +314,7 @@ function renderPlayers(players){
         '<div class="player-stat"><div class="num">'+(p.stats_rpg||'—')+'</div><div class="label">RPG</div></div>'+
         '<div class="player-stat"><div class="num">'+(p.stats_apg||'—')+'</div><div class="label">APG</div></div>'+
         '<div class="player-stat"><div class="num">'+(p.height||'—')+'</div><div class="label">HT</div></div>'+
+        (p._cogLevel?'<div class="player-stat"><div class="num" style="color:'+(p._cogLevel>=8?'#FFD700':p._cogLevel>=5?'#22c55e':'#e8611a')+'">L'+p._cogLevel+'</div><div class="label">🧠 COG</div></div>':'')+
       '</div>'+
       '<div class="player-meta">'+
         (p.position?'<span class="player-tag pos">'+p.position+'</span>':'')+
@@ -304,6 +322,7 @@ function renderPlayers(players){
         (p.school?'<span class="player-tag school">'+esc(p.school)+'</span>':'')+
         (p.age?'<span class="player-tag">Age '+p.age+'</span>':'')+
         (p.weight?'<span class="player-tag">'+esc(p.weight)+'</span>':'')+
+        (p._cogLevel?'<span class="player-tag" style="background:rgba(155,89,182,.1);color:#9B59B6">🧠 RITNOME™ L'+p._cogLevel+'</span>':'')+
       '</div>'+
       '<div class="player-links">'+
         (p.highlight_link?'<a href="'+esc(p.highlight_link)+'" target="_blank" class="highlight-link">🎥 <span class="en">Highlights</span><span class="es">Videos</span></a>':'')+
