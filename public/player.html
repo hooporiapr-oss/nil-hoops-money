@@ -153,8 +153,20 @@ html[lang="es"] .en{display:none!important}
       </div>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px" id="cogGrid"></div>
       <div style="text-align:center;margin-top:16px;padding-top:12px;border-top:1px solid rgba(255,255,255,.06)">
-        <div style="font-size:.6rem;color:#555"><span class="en">Powered by RITNOME™ Cognitive Assessment</span><span class="es">Impulsado por Evaluación Cognitiva RITNOME™</span></div>
+        <a href="/cognitive-hoops.html" style="display:inline-flex;align-items:center;gap:8px;padding:10px 24px;background:linear-gradient(135deg,rgba(255,215,0,0.1),rgba(155,89,182,0.08));border:1px solid rgba(255,215,0,0.25);border-radius:12px;text-decoration:none;transition:all 0.3s">
+          <span style="font-size:1.1rem">🧠</span>
+          <span style="font-family:'Bebas Neue',sans-serif;font-size:0.9rem;letter-spacing:2px;color:#FFD700"><span class="en">HOOPS MINDSET — PLAY NOW</span><span class="es">HOOPS MINDSET — JUEGA AHORA</span></span>
+          <span style="color:#FFD700">→</span>
+        </a>
       </div>
+    </div>
+
+    <!-- Hoops Mindset CTA (shows when NO cognitive scores) -->
+    <div id="cogCTA" style="display:none;background:linear-gradient(135deg,rgba(155,89,182,0.08),rgba(255,215,0,0.05));border:1px solid rgba(255,215,0,0.15);border-radius:20px;padding:24px;margin-bottom:20px;text-align:center">
+      <div style="font-size:2rem;margin-bottom:10px">🧠🏀</div>
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:3px;color:#FFD700;margin-bottom:8px">HOOPS MINDSET</div>
+      <div style="font-size:.75rem;color:var(--gray);margin-bottom:16px;line-height:1.5"><span class="en">Measure your basketball brain. 5 cognitive challenges that show scouts what stats can't.</span><span class="es">Mide tu cerebro de baloncesto. 5 desafíos cognitivos que muestran a los scouts lo que las estadísticas no pueden.</span></div>
+      <a href="/cognitive-hoops.html" style="display:inline-flex;align-items:center;gap:8px;padding:12px 28px;background:linear-gradient(135deg,#FFD700,#FFA500);border-radius:12px;text-decoration:none;color:#0a0a0f;font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:3px">▶ <span class="en">PLAY NOW — FREE</span><span class="es">JUEGA — GRATIS</span></a>
     </div>
 
     <div class="cta-join">
@@ -301,8 +313,10 @@ var sb=null;
           var ratingColor=avgLevel>=8?'var(--gold)':avgLevel>=5?'var(--green)':'var(--orange)';
           document.getElementById('cogOverall').innerHTML='<span style="color:'+ratingColor+'">L'+avgLevel+' — '+(ratingLabels[avgLevel]||'Level '+avgLevel)+'</span>';
         }
+      } else {
+        document.getElementById('cogCTA').style.display='block';
       }
-    }catch(e){console.error('Cognitive load error:',e)}
+    }catch(e){console.error('Cognitive load error:',e);document.getElementById('cogCTA').style.display='block'}
 
     // Show
     document.getElementById('loading').style.display='none';
