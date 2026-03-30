@@ -213,21 +213,24 @@ function showSTab(id,btn){
     sb=window.supabase.createClient(SB_URL,SB_KEY);
 
     // Load all data in parallel
-    var[playersRes,teamsRes,tourneysRes,opsRes]=await Promise.all([
+    var[playersRes,teamsRes,tourneysRes,opsRes,programsRes]=await Promise.all([
       sb.from('players').select('*').order('stats_ppg',{ascending:false}),
       sb.from('tournament_teams').select('*'),
       sb.from('tournaments').select('*').in('status',['active','completed']).order('start_date',{ascending:false}),
-      sb.from('operators').select('id,business_name,slug,location').eq('active',true)
+      sb.from('operators').select('id,business_name,slug,location').eq('active',true),
+      sb.from('programs').select('*').eq('active',true)
     ]);
 
     allPlayers=playersRes.data||[];
     allTourneys=tourneysRes.data||[];
+    var programMap={};
+    (programsRes.data||[]).forEach(function(p){programMap[p.id]=p});
 
     // Build lookup maps
     (teamsRes.data||[]).forEach(function(t){teamMap[t.id]=t});
     (opsRes.data||[]).forEach(function(o){operatorMap[o.id]=o});
 
-    // Link team and operator info to players
+    // Link team, operator, and program info to players
     allPlayers.forEach(function(p){
       var team=teamMap[p.tournament_team_id];
       p._teamName=team?team.team_name:'';
@@ -238,6 +241,8 @@ function showSTab(id,btn){
       p._orgName=op?op.business_name:'';
       p._orgSlug=op?op.slug:'';
       p._location=op?op.location:'';
+      var prg=p.program_id?programMap[p.program_id]:null;
+      p._programName=prg?prg.name:'';
     });
 
     filterPlayers();
@@ -284,7 +289,7 @@ function renderPlayers(players){
         '<div class="player-jersey">#'+(p.jersey_number||'—')+'</div>'+
         '<div>'+
           '<div class="player-name">'+esc(p.first_name)+' '+esc(p.last_name)+'</div>'+
-          '<div class="player-info">'+(p._teamName?esc(p._teamName):'')+(p._orgName?' · '+esc(p._orgName):'')+'</div>'+
+          '<div class="player-info">'+(p._programName?'⭐ '+esc(p._programName)+' · ':'')+(p._teamName?esc(p._teamName):'')+(p._orgName?' · '+esc(p._orgName):'')+'</div>'+
         '</div>'+
       '</div>'+
       '<div class="player-stats">'+
