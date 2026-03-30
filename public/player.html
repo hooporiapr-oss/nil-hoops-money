@@ -186,6 +186,19 @@ var sb=null;
     if(player.school)info.push(player.school);
     document.getElementById('pInfo').textContent=info.join(' · ');
 
+    // Load program if linked
+    var programName='';
+    if(player.program_id){
+      var{data:prg}=await sb.from('programs').select('name,slug,location').eq('id',player.program_id).maybeSingle();
+      if(prg){
+        programName=prg.name;
+        var prgEl=document.createElement('div');
+        prgEl.style.cssText='margin-top:8px;display:inline-block;padding:6px 14px;border-radius:20px;font-size:.75rem;font-weight:700;background:rgba(232,97,26,.1);color:var(--orange)';
+        prgEl.textContent='⭐ '+prg.name+(prg.location?' · '+prg.location:'');
+        document.getElementById('pInfo').parentNode.appendChild(prgEl);
+      }
+    }
+
     // NIL badge
     if(player.nil_available&&(player.instagram||player.tiktok||player.nil_contact_email)){
       document.getElementById('pNilBadge').style.display='block';
