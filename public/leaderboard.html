@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leaderboard — Hooporia</title>
+<meta name="description" content="Cognitive leaderboard. See who has the strongest basketball mindset. Ranked by RITNOME™ scores.">
+<link rel="icon" href="/hooporia.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<script>
+var currentLang='en';
+function setLang(l){currentLang=l;localStorage.setItem('lc-lang',l);
+document.querySelectorAll('[data-'+l+']').forEach(function(el){var v=el.getAttribute('data-'+l);if(v){if(v.indexOf('<')!==-1)el.innerHTML=v;else el.textContent=v}});
+document.querySelectorAll('.lang-btn').forEach(function(b){b.classList.toggle('active',b.dataset.l===l)})}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--black:#0a0a0f;--black2:#111118;--black3:#1a1a22;--surface:#16161e;--gold:#FFD700;--gold-dim:rgba(255,215,0,0.08);--gold-border:rgba(255,215,0,0.15);--orange:#FF6B35;--white:#fafaf9;--gray:#7a7a8a;--gray-light:#aaa;--green:#22c55e;--purple:#9B59B6;--blue:#3b82f6;--cyan:#00CED1;--teal:#00D9A5;--lime:#9ACD32;--pink:#FF1493;--red:#ef4444}
+body{font-family:'Outfit',sans-serif;background:var(--black);color:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh}
+a{text-decoration:none;color:inherit}
+button{cursor:pointer;border:none;font-family:inherit}
+select{font-family:inherit}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.04);padding:0 24px}
+.nav-inner{max-width:1000px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-brand{display:flex;align-items:center;gap:8px}
+.nav-brand img{height:28px}
+.nav-brand span{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:2px}
+.nav-right{display:flex;align-items:center;gap:12px}
+.nav-link{font-size:.75rem;font-weight:600;color:var(--gray);transition:color .2s}
+.nav-link:hover{color:var(--white)}
+.nav-link.active{color:var(--gold)}
+.lang-toggle{display:flex;gap:3px;background:var(--black3);border-radius:6px;padding:2px}
+.lang-btn{padding:4px 8px;border-radius:4px;font-size:.6rem;font-weight:700;background:transparent;color:var(--gray);transition:all .2s;border:none;cursor:pointer}
+.lang-btn.active{background:var(--gold);color:var(--black)}
+
+.container{max-width:900px;margin:0 auto;padding:80px 24px 60px}
+
+/* HEADER */
+.lb-header{text-align:center;margin-bottom:32px}
+.lb-header h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,6vw,3rem);letter-spacing:3px;margin-bottom:6px}
+.lb-header h1 .gold{color:var(--gold)}
+.lb-header p{color:var(--gray);font-size:.9rem}
+
+/* FILTERS */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.04)}
+.filter-select{padding:9px 32px 9px 12px;border-radius:8px;border:1.5px solid rgba(255,255,255,.08);background:var(--black2);color:var(--white);font-size:.8rem;font-weight:600;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%237a7a8a' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;cursor:pointer;min-width:120px;outline:none;transition:border-color .2s}
+.filter-select:focus{border-color:var(--gold)}
+.filter-select option{background:var(--black2);color:var(--white)}
+.results-info{font-size:.78rem;color:var(--gray);font-weight:600;padding:4px 0}
+
+/* TEST PILLS */
+.test-pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:20px}
+.test-pill{padding:8px 16px;border-radius:20px;font-size:.72rem;font-weight:700;letter-spacing:.5px;cursor:pointer;transition:all .2s;border:1.5px solid rgba(255,255,255,.08);background:transparent;color:var(--gray)}
+.test-pill:hover{color:var(--white);border-color:rgba(255,255,255,.15)}
+.test-pill.active{color:var(--black)}
+.test-pill[data-test="overall"].active{background:var(--gold);border-color:var(--gold)}
+.test-pill[data-test="react"].active{background:var(--purple);border-color:var(--purple)}
+.test-pill[data-test="recall"].active{background:var(--orange);border-color:var(--orange)}
+.test-pill[data-test="reflex"].active{background:var(--cyan);border-color:var(--cyan)}
+.test-pill[data-test="replay"].active{background:var(--teal);border-color:var(--teal)}
+.test-pill[data-test="ritmo"].active{background:var(--lime);border-color:var(--lime)}
+
+/* TABLE */
+.lb-table{width:100%;border-collapse:separate;border-spacing:0 6px}
+.lb-table th{font-size:.65rem;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:1px;text-align:left;padding:8px 12px}
+.lb-table th.right{text-align:right}
+.lb-row{background:var(--surface);border-radius:12px;transition:all .2s;cursor:pointer}
+.lb-row:hover{background:var(--black3);transform:translateX(4px)}
+.lb-row td{padding:12px;vertical-align:middle}
+.lb-row td:first-child{border-radius:12px 0 0 12px;width:50px;text-align:center}
+.lb-row td:last-child{border-radius:0 12px 12px 0}
+
+.lb-rank{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:var(--gray)}
+.lb-rank.gold{color:var(--gold);text-shadow:0 0 10px rgba(255,215,0,.3)}
+.lb-rank.silver{color:#C0C0C0}
+.lb-rank.bronze{color:#CD7F32}
+
+.lb-player{display:flex;align-items:center;gap:12px}
+.lb-avatar{width:40px;height:40px;border-radius:10px;background:var(--gold-dim);border:1px solid var(--gold-border);display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:900;color:var(--gold);flex-shrink:0}
+.lb-name{font-size:.9rem;font-weight:700}
+.lb-info{font-size:.7rem;color:var(--gray)}
+
+.lb-scores{display:flex;gap:6px;justify-content:flex-end;flex-wrap:wrap}
+.lb-score-chip{padding:3px 8px;border-radius:6px;font-size:.65rem;font-weight:700;background:rgba(255,255,255,.04)}
+.lb-score-chip.react{color:var(--purple)}
+.lb-score-chip.recall{color:var(--orange)}
+.lb-score-chip.reflex{color:var(--cyan)}
+.lb-score-chip.replay{color:var(--teal)}
+.lb-score-chip.ritmo{color:var(--lime)}
+
+.lb-level{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;text-align:right;min-width:50px}
+.lb-level-label{font-size:.6rem;color:var(--gray);text-align:right}
+
+/* TOP 3 PODIUM */
+.podium{display:flex;align-items:flex-end;justify-content:center;gap:12px;margin-bottom:32px;padding:20px 0}
+.podium-spot{text-align:center;cursor:pointer;transition:all .2s}
+.podium-spot:hover{transform:translateY(-4px)}
+.podium-avatar{width:56px;height:56px;border-radius:14px;margin:0 auto 8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:900}
+.podium-spot:nth-child(2) .podium-avatar{width:68px;height:68px;font-size:1.3rem;border:2px solid var(--gold);background:linear-gradient(135deg,rgba(255,215,0,.15),rgba(255,107,53,.08));color:var(--gold);box-shadow:0 0 20px rgba(255,215,0,.2)}
+.podium-spot:nth-child(1) .podium-avatar,.podium-spot:nth-child(3) .podium-avatar{border:1.5px solid rgba(255,255,255,.12);background:var(--surface);color:var(--gray-light)}
+.podium-medal{font-size:1.3rem;margin-bottom:4px}
+.podium-name{font-size:.8rem;font-weight:700;margin-bottom:2px}
+.podium-info{font-size:.65rem;color:var(--gray)}
+.podium-level{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;margin-top:4px}
+.podium-bar{width:100%;height:4px;border-radius:2px;margin-top:8px;overflow:hidden;background:rgba(255,255,255,.04)}
+.podium-bar-fill{height:100%;border-radius:2px}
+.podium-spot:nth-child(1){min-width:100px}
+.podium-spot:nth-child(2){min-width:120px}
+.podium-spot:nth-child(3){min-width:100px}
+
+/* EMPTY STATE */
+.empty{text-align:center;padding:60px 24px}
+.empty-icon{font-size:3rem;margin-bottom:12px}
+.empty-text{color:var(--gray);font-size:.9rem;margin-bottom:20px}
+.empty-btn{display:inline-block;padding:12px 28px;border-radius:10px;font-size:.85rem;font-weight:700;background:var(--gold);color:var(--black);transition:all .2s}
+.empty-btn:hover{background:#ffe44d}
+
+/* LOADING */
+.loading{text-align:center;padding:60px}
+.spinner{width:36px;height:36px;border:3px solid rgba(255,255,255,.1);border-top-color:var(--gold);border-radius:50%;animation:spin .7s linear infinite;margin:0 auto 16px}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* FOOTER */
+.footer{text-align:center;padding:32px 24px;color:#444;font-size:.7rem;border-top:1px solid rgba(255,255,255,.04);margin-top:40px}
+.footer a{color:var(--gold)}
+
+@media(max-width:600px){
+.filters{flex-direction:column}
+.filter-select{width:100%}
+.lb-scores{display:none}
+.podium-spot:nth-child(1),.podium-spot:nth-child(3){min-width:80px}
+.podium-spot:nth-child(2){min-width:100px}
+.podium-avatar{width:44px;height:44px;font-size:.9rem}
+.podium-spot:nth-child(2) .podium-avatar{width:56px;height:56px}
+.lb-table th:nth-child(3){display:none}
+.lb-row td:nth-child(3){display:none}
+.nav-link{display:none}
+}
+</style>
+</head>
+<body>
+
+<nav><div class="nav-inner">
+<a href="/" class="nav-brand"><img src="/hooporia.png" alt="Hooporia"><span>HOOPORIA</span></a>
+<div class="nav-right">
+<a href="/cognitive-hoops.html" class="nav-link" data-en="Hoops Mindset" data-es="Hoops Mindset">Hoops Mindset</a>
+<a href="/discover.html" class="nav-link" data-en="Discover" data-es="Descubrir">Discover</a>
+<a href="/leaderboard.html" class="nav-link active" data-en="Leaderboard" data-es="Clasificación">Leaderboard</a>
+<div class="lang-toggle"><button class="lang-btn active" data-l="en" onclick="setLang('en')">EN</button><button class="lang-btn" data-l="es" onclick="setLang('es')">ES</button></div>
+</div></div></nav>
+
+<div class="container">
+
+<div class="lb-header">
+<h1 data-en="🏆 HOOPS MINDSET <span class='gold'>LEADERBOARD</span>" data-es="🏆 CLASIFICACIÓN <span class='gold'>HOOPS MINDSET</span>">🏆 HOOPS MINDSET <span class="gold">LEADERBOARD</span></h1>
+<p data-en="Who has the strongest basketball mindset? Ranked by cognitive performance." data-es="¿Quién tiene la mentalidad de cancha más fuerte? Clasificado por rendimiento cognitivo.">Who has the strongest basketball mindset? Ranked by cognitive performance.</p>
+</div>
+
+<!-- TEST PILLS -->
+<div class="test-pills">
+<button class="test-pill active" data-test="overall" onclick="setTest('overall',this)" data-en="🏆 Overall" data-es="🏆 General">🏆 Overall</button>
+<button class="test-pill" data-test="react" onclick="setTest('react',this)">🟣 React</button>
+<button class="test-pill" data-test="recall" onclick="setTest('recall',this)">🟠 Recall</button>
+<button class="test-pill" data-test="reflex" onclick="setTest('reflex',this)">🔵 Reflex</button>
+<button class="test-pill" data-test="replay" onclick="setTest('replay',this)">🟢 Replay</button>
+<button class="test-pill" data-test="ritmo" onclick="setTest('ritmo',this)">🟡 Ritmo</button>
+</div>
+
+<!-- FILTERS -->
+<div class="filters">
+<select class="filter-select" id="fPosition" onchange="renderBoard()">
+<option value="" data-en="All Positions" data-es="Todas las Posiciones">All Positions</option>
+<option value="PG">PG</option><option value="SG">SG</option><option value="SF">SF</option><option value="PF">PF</option><option value="C">C</option><option value="G">G</option><option value="F">F</option>
+</select>
+<select class="filter-select" id="fGrad" onchange="renderBoard()">
+<option value="" data-en="All Grad Years" data-es="Todos los Años">All Grad Years</option>
+<option value="2025">2025</option><option value="2026">2026</option><option value="2027">2027</option><option value="2028">2028</option><option value="2029">2029</option><option value="2030">2030</option>
+</select>
+<select class="filter-select" id="fSpeed" onchange="renderBoard()">
+<option value="" data-en="All Speeds" data-es="Todas las Velocidades">All Speeds</option>
+<option value="slow" data-en="Training (60 BPM)" data-es="Entrenamiento (60 BPM)">Training (60 BPM)</option>
+<option value="med" data-en="Tempo (90 BPM)" data-es="Tempo (90 BPM)">Tempo (90 BPM)</option>
+<option value="fast" data-en="Elite (120 BPM)" data-es="Elite (120 BPM)">Elite (120 BPM)</option>
+</select>
+</div>
+
+<div class="results-info" id="resultsInfo"></div>
+
+<!-- PODIUM -->
+<div class="podium" id="podium" style="display:none"></div>
+
+<!-- TABLE -->
+<div id="boardContent">
+<div class="loading"><div class="spinner"></div><p style="color:var(--gray);font-size:.85rem" data-en="Loading leaderboard..." data-es="Cargando clasificación...">Loading leaderboard...</p></div>
+</div>
+
+</div>
+
+<div class="footer">
+<span data-en="Powered by" data-es="Impulsado por">Powered by</span> <a href="/">Hooporia™</a> · <a href="/cognitive-hoops.html" data-en="Play Challenges" data-es="Jugar Desafíos">Play Challenges</a> · <a href="/privacy.html" data-en="Privacy" data-es="Privacidad">Privacy</a>
+</div>
+
+<script>
+var SB_URL='https://rhsszirtbyvalugmbecm.supabase.co';
+var SB_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJoc3N6aXJ0Ynl2YWx1Z21iZWNtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ3Mjg3MzUsImV4cCI6MjA5MDMwNDczNX0.MK3sYXhbdVtijzAkXJXvMlF1t0xfk6bRumBnovbQkRs';
+var sb=null,allPlayers=[],allScores=[],playerMap={},currentTest='overall';
+
+var testColors={react:'#9B59B6',recall:'#FF6B35',reflex:'#00CED1',replay:'#00D9A5',ritmo:'#9ACD32'};
+var ratingLabels={1:'Rookie',2:'Developing',3:'Solid',4:'Advanced',5:'Elite',6:'Pro',7:'All-Star',8:'MVP',9:'Hall of Fame',10:'GOAT'};
+
+function setTest(test,el){
+currentTest=test;
+document.querySelectorAll('.test-pill').forEach(function(p){p.classList.remove('active')});
+el.classList.add('active');
+renderBoard();
+}
+
+(async function init(){
+try{var sl=localStorage.getItem('lc-lang');if(sl)setLang(sl);else setLang('en')}catch(e){}
+try{
+await new Promise(function(r,j){var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js';s.onload=r;s.onerror=j;document.head.appendChild(s)});
+sb=window.supabase.createClient(SB_URL,SB_KEY);
+
+var[playersRes,scoresRes]=await Promise.all([
+sb.from('players').select('id,first_name,last_name,slug,position,grad_year,school,jersey_number,height'),
+sb.from('cognitive_scores').select('*')
+]);
+
+allPlayers=playersRes.data||[];
+allScores=scoresRes.data||[];
+
+allPlayers.forEach(function(p){playerMap[p.id]=p});
+
+renderBoard();
+}catch(e){
+console.error(e);
+document.getElementById('boardContent').innerHTML='<div class="empty"><div class="empty-icon">⚠️</div><div class="empty-text">Error loading data</div></div>';
+}
+})();
+
+function buildRankings(){
+var speed=document.getElementById('fSpeed').value;
+var pos=document.getElementById('fPosition').value;
+var grad=document.getElementById('fGrad').value;
+
+// Build best score per player per test
+var playerBests={};// {playerId: {react:{level,score,speed}, recall:...}}
+allScores.forEach(function(s){
+if(speed&&s.speed!==speed)return;
+if(!playerBests[s.player_id])playerBests[s.player_id]={};
+var existing=playerBests[s.player_id][s.test_name];
+if(!existing||s.level>existing.level||(s.level===existing.level&&s.score>existing.score)){
+playerBests[s.player_id][s.test_name]=s;
+}
+});
+
+// Build ranking entries
+var entries=[];
+Object.keys(playerBests).forEach(function(pid){
+var p=playerMap[pid];
+if(!p)return;
+if(pos&&p.position!==pos)return;
+if(grad&&String(p.grad_year)!==grad)return;
+
+var tests=playerBests[pid];
+if(currentTest==='overall'){
+var total=0,count=0;
+['react','recall','reflex','replay','ritmo'].forEach(function(t){
+if(tests[t]){total+=tests[t].level;count++}
+});
+if(count===0)return;
+var avg=total/count;
+entries.push({player:p,avgLevel:avg,roundedLevel:Math.round(avg),totalScore:Object.values(tests).reduce(function(s,t){return s+t.score},0),tests:tests,testCount:count});
+}else{
+var t=tests[currentTest];
+if(!t)return;
+entries.push({player:p,avgLevel:t.level,roundedLevel:t.level,totalScore:t.score,tests:tests,testCount:1,singleTest:t});
+}
+});
+
+// Sort
+entries.sort(function(a,b){
+if(b.roundedLevel!==a.roundedLevel)return b.roundedLevel-a.roundedLevel;
+return b.totalScore-a.totalScore;
+});
+
+return entries;
+}
+
+function renderBoard(){
+var entries=buildRankings();
+var podiumEl=document.getElementById('podium');
+var contentEl=document.getElementById('boardContent');
+var infoEl=document.getElementById('resultsInfo');
+
+if(!entries.length){
+podiumEl.style.display='none';
+contentEl.innerHTML='<div class="empty"><div class="empty-icon">🏀</div><div class="empty-text" data-en="No cognitive scores yet. Be the first!" data-es="No hay puntajes cognitivos aún. ¡Sé el primero!">No cognitive scores yet. Be the first!</div><a href="/cognitive-hoops.html" class="empty-btn" data-en="🧠 Play Now" data-es="🧠 Jugar Ahora">🧠 Play Now</a></div>';
+infoEl.textContent='';
+setLang(currentLang);
+return;
+}
+
+infoEl.textContent=entries.length+' '+(currentLang==='es'?'jugadores clasificados':'players ranked');
+
+// PODIUM (top 3)
+if(entries.length>=3){
+podiumEl.style.display='flex';
+var top3=[entries[1],entries[0],entries[2]];// silver, gold, bronze
+var medals=['🥈','🥇','🥉'];
+var barColors=[testColors[currentTest]||'#C0C0C0',testColors[currentTest]||'#FFD700',testColors[currentTest]||'#CD7F32'];
+if(currentTest==='overall')barColors=['#C0C0C0','#FFD700','#CD7F32'];
+podiumEl.innerHTML=top3.map(function(e,i){
+var p=e.player;
+var levelColor=currentTest==='overall'?(e.roundedLevel>=8?'var(--gold)':e.roundedLevel>=5?'var(--green)':'var(--orange)'):(testColors[currentTest]||'var(--gold)');
+return'<div class="podium-spot" onclick="window.location.href=\'/player/'+esc(p.slug)+'\'">'+
+'<div class="podium-medal">'+medals[i]+'</div>'+
+'<div class="podium-avatar">#'+(p.jersey_number||'—')+'</div>'+
+'<div class="podium-name">'+esc(p.first_name)+' '+esc(p.last_name)+'</div>'+
+'<div class="podium-info">'+(p.position||'')+' · '+(p.grad_year?'\''+String(p.grad_year).slice(2):'')+'</div>'+
+'<div class="podium-level" style="color:'+levelColor+'">L'+e.roundedLevel+'</div>'+
+'<div class="podium-bar"><div class="podium-bar-fill" style="width:'+(e.roundedLevel*10)+'%;background:'+barColors[i]+'"></div></div>'+
+'</div>';
+}).join('');
+}else{podiumEl.style.display='none'}
+
+// TABLE
+var testLabel=currentTest==='overall'?(currentLang==='es'?'General':'Overall'):currentTest.toUpperCase();
+var html='<table class="lb-table"><thead><tr>'+
+'<th>#</th>'+
+'<th data-en="Player" data-es="Jugador">Player</th>'+
+'<th data-en="Scores" data-es="Puntajes">Scores</th>'+
+'<th class="right">'+testLabel+'</th>'+
+'</tr></thead><tbody>';
+
+entries.forEach(function(e,i){
+var p=e.player;
+var rankClass=i===0?'gold':i===1?'silver':i===2?'bronze':'';
+var levelColor=currentTest==='overall'?(e.roundedLevel>=8?'var(--gold)':e.roundedLevel>=5?'var(--green)':'var(--orange)'):(testColors[currentTest]||'var(--gold)');
+
+var scoresHtml='';
+if(currentTest==='overall'){
+['react','recall','reflex','replay','ritmo'].forEach(function(t){
+if(e.tests[t])scoresHtml+='<span class="lb-score-chip '+t+'">'+t.charAt(0).toUpperCase()+t.slice(1)+' L'+e.tests[t].level+'</span>';
+});
+}else{
+if(e.singleTest)scoresHtml='<span class="lb-score-chip" style="color:var(--gold)">'+e.singleTest.score+' pts</span>';
+}
+
+html+='<tr class="lb-row" onclick="window.location.href=\'/player/'+esc(p.slug)+'\'">'+
+'<td><div class="lb-rank '+rankClass+'">'+(i+1)+'</div></td>'+
+'<td><div class="lb-player">'+
+'<div class="lb-avatar">#'+(p.jersey_number||'—')+'</div>'+
+'<div><div class="lb-name">'+esc(p.first_name)+' '+esc(p.last_name)+'</div>'+
+'<div class="lb-info">'+(p.position||'')+' · '+(p.school?esc(p.school):'')+(p.grad_year?' · \''+String(p.grad_year).slice(2):'')+'</div></div>'+
+'</div></td>'+
+'<td><div class="lb-scores">'+scoresHtml+'</div></td>'+
+'<td><div class="lb-level" style="color:'+levelColor+'">L'+e.roundedLevel+'</div><div class="lb-level-label">'+(ratingLabels[e.roundedLevel]||'')+'</div></td>'+
+'</tr>';
+});
+
+html+='</tbody></table>';
+contentEl.innerHTML=html;
+setLang(currentLang);
+}
+
+function esc(s){if(!s)return'';var d=document.createElement('div');d.textContent=s;return d.innerHTML}
+</script>
+</body>
+</html>
