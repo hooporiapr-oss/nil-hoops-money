@@ -1,7 +1,9 @@
 {
-  "buildCommand": "",
-  "outputDirectory": "public",
-  "rewrites": [
-    { "source": "/player/:slug", "destination": "/player.html" }
+  "version": 2,
+  "builds": [
+    { "src": "public/**", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/player/(.*)", "dest": "/public/player.html" }
   ]
 }
