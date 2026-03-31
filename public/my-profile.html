@@ -32,13 +32,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.92
 
 .container{max-width:800px;margin:0 auto;padding:80px 24px 60px}
 
-/* LOADING / AUTH */
 .auth-gate{text-align:center;padding:100px 24px}
 .auth-gate .spinner{width:40px;height:40px;border:3px solid rgba(255,255,255,.1);border-top-color:var(--gold);border-radius:50%;animation:spin .7s linear infinite;margin:0 auto 16px}
 @keyframes spin{to{transform:rotate(360deg)}}
 .auth-gate p{color:var(--gray);font-size:.9rem}
 
-/* HEADER */
 .profile-header{display:flex;align-items:center;gap:20px;margin-bottom:32px;flex-wrap:wrap}
 .header-avatar{width:72px;height:72px;border-radius:18px;background:linear-gradient(135deg,var(--gold-dim),rgba(255,107,53,.08));border:2px solid var(--gold-border);display:flex;align-items:center;justify-content:center;font-size:1.8rem;font-weight:900;color:var(--gold)}
 .header-info{flex:1;min-width:200px}
@@ -50,7 +48,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.92
 .btn-share{padding:10px 20px;border-radius:8px;font-size:.78rem;font-weight:700;background:transparent;color:var(--white);border:1px solid rgba(255,255,255,.12);transition:all .2s}
 .btn-share:hover{border-color:var(--gold);color:var(--gold)}
 
-/* TABS */
 .tabs{display:flex;gap:4px;margin-bottom:28px;border-bottom:1px solid rgba(255,255,255,.04);padding-bottom:0;overflow-x:auto}
 .tab{padding:12px 20px;font-size:.8rem;font-weight:700;color:var(--gray);cursor:pointer;transition:all .2s;border-bottom:2px solid transparent;white-space:nowrap}
 .tab:hover{color:var(--white)}
@@ -58,11 +55,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.92
 .tab-panel{display:none}
 .tab-panel.active{display:block}
 
-/* CARDS */
 .card{background:var(--surface);border:1px solid rgba(255,255,255,.04);border-radius:16px;padding:24px;margin-bottom:20px}
 .card-title{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:2px;margin-bottom:16px;display:flex;align-items:center;gap:8px}
 
-/* FORM FIELDS */
 .field{margin-bottom:14px}
 .field label{display:block;font-size:.72rem;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
 .field input,.field select,.field textarea{width:100%;padding:11px 14px;font-size:.85rem;color:var(--white);background:var(--black2);border:1.5px solid rgba(255,255,255,.08);border-radius:10px;outline:none;transition:border-color .2s}
@@ -81,7 +76,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.92
 .save-status{font-size:.75rem;color:var(--green);margin-left:12px;opacity:0;transition:opacity .3s}
 .save-status.show{opacity:1}
 
-/* COGNITIVE SCORES */
 .cog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
 .cog-item{background:var(--black2);border:1px solid rgba(255,255,255,.04);border-radius:12px;padding:14px 10px;text-align:center;transition:all .2s}
 .cog-item:hover{border-color:rgba(255,215,0,.15)}
@@ -96,22 +90,18 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.92
 .cog-overall-value{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;letter-spacing:2px}
 .cog-overall-rating{font-size:.8rem;color:var(--gray);margin-top:2px}
 
-/* PROFILE VIEWS */
 .views-card{display:flex;align-items:center;justify-content:space-between;padding:16px 20px}
 .views-num{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--gold)}
 .views-label{font-size:.75rem;color:var(--gray)}
 
-/* QUICK LINKS */
 .quick-links{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
 .quick-link{display:flex;align-items:center;gap:10px;padding:14px 16px;background:var(--black2);border:1px solid rgba(255,255,255,.04);border-radius:12px;transition:all .2s;color:var(--white);font-size:.82rem;font-weight:600}
 .quick-link:hover{border-color:rgba(255,215,0,.2);transform:translateY(-2px)}
 .quick-link .ql-icon{font-size:1.2rem}
 
-/* TOAST */
 .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--green);color:var(--black);padding:12px 24px;border-radius:10px;font-size:.85rem;font-weight:700;z-index:200;transition:transform .3s;box-shadow:0 4px 20px rgba(34,197,94,.3)}
 .toast.show{transform:translateX(-50%) translateY(0)}
 
-/* TIMELINE */
 .timeline{position:relative;padding-left:24px}
 .timeline::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--gold),rgba(255,215,0,.1))}
 .tl-item{position:relative;margin-bottom:20px;padding-left:20px}
@@ -144,7 +134,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.92
 .tl-empty-icon{font-size:2.5rem;margin-bottom:12px}
 .tl-empty-text{font-size:.85rem;margin-bottom:16px}
 
-/* ADD SEASON FORM */
 .season-form{background:var(--black2);border:1.5px solid rgba(255,215,0,.15);border-radius:16px;padding:20px;margin-bottom:20px;display:none}
 .season-form.show{display:block}
 .sf-title{font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:2px;color:var(--gold);margin-bottom:16px}
@@ -159,7 +148,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.92
 .sf-save{padding:12px 24px;border-radius:8px;font-size:.82rem;font-weight:700;background:var(--gold);color:var(--black);border:none;cursor:pointer}
 .sf-cancel{padding:12px 24px;border-radius:8px;font-size:.82rem;font-weight:700;background:rgba(255,255,255,.05);color:var(--gray);border:1px solid rgba(255,255,255,.08);cursor:pointer}
 
-/* MEDIA UPLOADS */
 .upload-zone{border:2px dashed rgba(255,255,255,.1);border-radius:14px;padding:28px 20px;text-align:center;cursor:pointer;transition:all .3s;position:relative;overflow:hidden}
 .upload-zone:hover{border-color:var(--gold);background:rgba(255,215,0,.03)}
 .upload-zone.dragging{border-color:var(--gold);background:rgba(255,215,0,.06)}
@@ -230,13 +218,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.92
 
 <div class="container">
 
-<!-- Auth Gate -->
 <div id="authGate" class="auth-gate">
 <div class="spinner"></div>
 <p id="authMsg">Loading your profile...</p>
 </div>
 
-<!-- Dashboard (hidden until auth) -->
 <div id="dashboard" style="display:none">
 
 <!-- Header -->
@@ -269,17 +255,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.92
 <div><div class="views-num" id="oViews">0</div><div class="views-label" data-en="Profile Views" data-es="Vistas del Perfil">Profile Views</div></div>
 <div style="text-align:right"><div style="font-size:.75rem;color:var(--gray)" data-en="Profile" data-es="Perfil">Profile</div><div style="font-size:.85rem;font-weight:700;color:var(--green)" id="oStatus" data-en="Active" data-es="Activo">Active</div></div>
 </div>
-
 <div class="card">
 <div class="card-title" data-en="⚡ Quick Actions" data-es="⚡ Acciones Rápidas">⚡ Quick Actions</div>
 <div class="quick-links">
 <a href="/cognitive-hoops.html" class="quick-link"><span class="ql-icon">🧠</span> <span data-en="Train Mindset" data-es="Entrenar Mentalidad">Train Mindset</span></a>
 <a href="#" class="quick-link" onclick="showTab('stats',document.querySelector('.tab:nth-child(2)'));return false"><span class="ql-icon">📊</span> <span data-en="Update Stats" data-es="Actualizar Stats">Update Stats</span></a>
 <a href="#" class="quick-link" onclick="showTab('timeline',document.querySelector('.tab:nth-child(3)'));return false"><span class="ql-icon">📅</span> <span data-en="Add Season" data-es="Agregar Temporada">Add Season</span></a>
-<a href="#" class="quick-link" onclick="showTab('media',document.querySelector('.tab:nth-child(5)'));return false"><span class="ql-icon">📸</span> <span data-en="Upload Media" data-es="Subir Media">Upload Media</span></a>
+<a href="#" class="quick-link" onclick="showTab('media',document.querySelector('.tab:nth-child(6)'));return false"><span class="ql-icon">📸</span> <span data-en="Upload Media" data-es="Subir Media">Upload Media</span></a>
 </div>
 </div>
-
 <div class="card">
 <div class="card-title" data-en="📊 My Stats" data-es="📊 Mis Estadísticas">📊 My Stats</div>
 <div style="display:flex;gap:20px;flex-wrap:wrap">
@@ -313,7 +297,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.92
 <button class="btn-save" onclick="saveStats()" data-en="Save Stats" data-es="Guardar Stats">Save Stats</button>
 <span class="save-status" id="statsSaved">✓</span>
 </div>
-
 <div class="card">
 <div class="card-title" data-en="📏 Measurables" data-es="📏 Medidas">📏 Measurables</div>
 <div class="field-row">
@@ -346,12 +329,33 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.92
 </div>
 <div class="sf-row">
 <div class="sf-field"><label data-en="Type" data-es="Tipo">Type</label>
-<select id="sfType"><option value="school" data-en="School" data-es="Escuela">School</option><option value="aau">AAU</option><option value="league" data-en="League" data-es="Liga">League</option><option value="tournament" data-en="Tournament" data-es="Torneo">Tournament</option><option value="camp" data-en="Camp" data-es="Campamento">Camp</option><option value="clinic" data-en="Clinic" data-es="Clínica">Clinic</option><option value="other" data-en="Other" data-es="Otro">Other</option></select></div>
+<select id="sfType" onchange="toggleSeasonFields()"><option value="school" data-en="School" data-es="Escuela">School</option><option value="aau">AAU</option><option value="league" data-en="League" data-es="Liga">League</option><option value="tournament" data-en="Tournament" data-es="Torneo">Tournament</option><option value="camp" data-en="Camp" data-es="Campamento">Camp</option><option value="clinic" data-en="Clinic" data-es="Clínica">Clinic</option><option value="other" data-en="Other" data-es="Otro">Other</option></select></div>
 <div class="sf-field"><label data-en="Team Name" data-es="Nombre del Equipo">Team Name</label><input type="text" id="sfTeam" placeholder="San Juan Warriors"></div>
 </div>
-<div class="sf-row">
+
+<!-- SCHOOL-SPECIFIC FIELDS -->
+<div class="sf-row" id="sfSchoolFields">
+<div class="sf-field"><label data-en="School Name" data-es="Nombre de Escuela">School Name</label><input type="text" id="sfSchoolName" placeholder="San Juan Academy"></div>
+<div class="sf-field"><label data-en="Grad Year" data-es="Año Graduación">Grad Year</label><input type="number" id="sfGradYear" placeholder="2027"></div>
+</div>
+
+<!-- NON-SCHOOL FIELDS -->
+<div class="sf-row" id="sfOtherFields" style="display:none">
+<div class="sf-field"><label data-en="Age at Time" data-es="Edad en ese Momento">Age at Time</label><input type="number" id="sfAge" placeholder="16"></div>
 <div class="sf-field"><label data-en="Organization / League" data-es="Organización / Liga">Organization / League</label><input type="text" id="sfOrg" placeholder="AAU, BSN, FIBA"></div>
+</div>
+
+<!-- ALWAYS VISIBLE: org for school too -->
+<div class="sf-row" id="sfSchoolOrgRow">
+<div class="sf-field"><label data-en="Organization / League" data-es="Organización / Liga">Organization / League</label><input type="text" id="sfSchoolOrg" placeholder="PRHSAA, State League"></div>
 <div class="sf-field"><label data-en="Games Played" data-es="Juegos Jugados">Games Played</label><input type="number" id="sfGP" placeholder="0"></div>
+</div>
+
+<div id="sfNonSchoolGP" style="display:none">
+<div class="sf-row">
+<div class="sf-field"><label data-en="Games Played" data-es="Juegos Jugados">Games Played</label><input type="number" id="sfGP2" placeholder="0"></div>
+<div class="sf-field"></div>
+</div>
 </div>
 
 <div style="font-size:.72rem;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:1px;margin:16px 0 10px;padding-top:12px;border-top:1px solid rgba(255,255,255,.06)" data-en="STATS FOR THIS EVENT" data-es="ESTADÍSTICAS DE ESTE EVENTO">STATS FOR THIS EVENT</div>
@@ -368,7 +372,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.92
 <div class="sf-row-3">
 <div class="sf-field"><label>3PT%</label><input type="number" step="0.1" id="sf3PT" placeholder="0.0"></div>
 <div class="sf-field"><label>FT%</label><input type="number" step="0.1" id="sfFT" placeholder="0.0"></div>
-<div class="sf-field"><label></label><div></div></div>
+<div class="sf-field"><label data-en="Jersey #" data-es="# Camiseta">Jersey #</label><input type="text" id="sfJersey" placeholder="23"></div>
 </div>
 
 <div class="sf-field" style="margin-top:10px"><label data-en="Awards & Honors" data-es="Premios y Honores">Awards & Honors</label><input type="text" id="sfAwards" placeholder="MVP, All-Tournament, All-State"></div>
@@ -380,7 +384,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.92
 </div>
 </div>
 
-<!-- TIMELINE LIST -->
 <div id="timelineList"></div>
 </div>
 
@@ -395,13 +398,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.92
 <div class="field-row">
 <div class="field"><label data-en="Position" data-es="Posición">Position</label>
 <select id="fPos"><option value="">--</option><option value="PG">PG</option><option value="SG">SG</option><option value="SF">SF</option><option value="PF">PF</option><option value="C">C</option><option value="G">G</option><option value="F">F</option></select></div>
-<div class="field"><label data-en="Jersey #" data-es="# Camiseta">Jersey #</label><input type="text" id="fJersey" placeholder="23"></div>
-</div>
-<div class="field-row">
 <div class="field"><label data-en="Age" data-es="Edad">Age</label><input type="number" id="fAge" placeholder="16"></div>
-<div class="field"><label data-en="Grad Year" data-es="Año Graduación">Grad Year</label><input type="number" id="fGrad" placeholder="2027"></div>
 </div>
-<div class="field"><label data-en="School" data-es="Escuela">School</label><input type="text" id="fSchool" placeholder="San Juan Academy"></div>
 <div class="field"><label data-en="Profile Slug" data-es="Slug del Perfil">Profile Slug</label><input type="text" id="fSlug" placeholder="marcus-rivera" disabled><div class="hint">hooporia.com/player/<span id="slugShow">—</span></div></div>
 <button class="btn-save" onclick="saveProfile()" data-en="Save Profile" data-es="Guardar Perfil">Save Profile</button>
 <span class="save-status" id="profileSaved">✓</span>
@@ -416,7 +414,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.92
 <button class="btn-save" onclick="saveNIL()" data-en="Save" data-es="Guardar">Save</button>
 <span class="save-status" id="nilSaved">✓</span>
 </div>
-
 <div class="card">
 <div class="card-title" data-en="📣 Social Media" data-es="📣 Redes Sociales">📣 Social Media</div>
 <div class="field-row">
@@ -429,7 +426,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.92
 </div>
 <button class="btn-save" onclick="saveNIL()" data-en="Save Socials" data-es="Guardar Redes">Save Socials</button>
 </div>
-
 <div class="card">
 <div class="card-title" data-en="💼 NIL Contact" data-es="💼 Contacto NIL">💼 NIL Contact</div>
 <div class="field"><label data-en="NIL Contact Email" data-es="Email de Contacto NIL">NIL Contact Email</label><input type="email" id="fNILEmail" placeholder="athlete@email.com"><div class="hint" data-en="Scouts and brands use this to reach you" data-es="Scouts y marcas usarán este email para contactarte">Scouts and brands use this to reach you</div></div>
@@ -440,7 +436,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.92
 
 <!-- MEDIA TAB -->
 <div class="tab-panel" id="tab-media">
-
 <div class="card">
 <div class="card-title" data-en="📸 Profile Photo" data-es="📸 Foto de Perfil">📸 Profile Photo</div>
 <div class="avatar-preview">
@@ -455,7 +450,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.92
 </div>
 <div class="upload-hint" data-en="JPG, PNG, WebP · Max 5MB" data-es="JPG, PNG, WebP · Máx 5MB">JPG, PNG, WebP · Max 5MB</div>
 </div>
-
 <div class="card">
 <div class="card-title" data-en="🖼️ Cover Photo" data-es="🖼️ Foto de Portada">🖼️ Cover Photo</div>
 <div id="coverPreview"></div>
@@ -467,7 +461,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.92
 </div>
 <button class="add-link-btn" style="margin-top:8px;font-size:.68rem;color:var(--red)" onclick="deleteMedia('cover_url')" data-en="Remove Cover" data-es="Eliminar Portada">Remove Cover</button>
 </div>
-
 <div class="card">
 <div class="card-title" data-en="📷 Action Photos" data-es="📷 Fotos de Acción">📷 Action Photos</div>
 <div class="gallery-grid" id="galleryGrid"></div>
@@ -478,7 +471,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.92
 <div class="upload-hint" data-en="Select multiple · Max 5MB each · Up to 12 photos" data-es="Selecciona múltiples · Máx 5MB c/u · Hasta 12 fotos">Select multiple · Max 5MB each · Up to 12 photos</div>
 </div>
 </div>
-
 <div class="card">
 <div class="card-title" data-en="🎥 Video Highlights" data-es="🎥 Videos Destacados">🎥 Video Highlights</div>
 <div class="video-links-list" id="videoLinksList"></div>
@@ -489,7 +481,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.92
 <button class="btn-save" onclick="saveVideoLinks()" style="margin-top:12px" data-en="Save Video Links" data-es="Guardar Links de Video">Save Video Links</button>
 <span class="save-status" id="videosSaved">✓</span>
 </div>
-
 <div class="card">
 <div class="card-title" data-en="🎬 Direct Video Upload" data-es="🎬 Subir Video Directo">🎬 Direct Video Upload</div>
 <div class="video-list" id="videoList"></div>
@@ -501,7 +492,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.92
 </div>
 <div class="upload-progress" id="videoProgress"><div class="upload-bar"><div class="upload-bar-fill" id="videoBar"></div></div></div>
 </div>
-
 </div>
 
 <!-- MINDSET TAB -->
@@ -519,8 +509,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.92
 </div>
 </div>
 
-</div><!-- /dashboard -->
-</div><!-- /container -->
+</div>
+</div>
 
 <div class="toast" id="toast"></div>
 
@@ -553,6 +543,26 @@ var link='hooporia.com/player/'+slug;
 navigator.clipboard.writeText('https://'+link).then(function(){showToast(currentLang==='es'?'¡Link copiado!':'Link copied!')}).catch(function(){showToast(link)});
 }
 
+// Toggle season form fields based on type
+function toggleSeasonFields(){
+var type=document.getElementById('sfType').value;
+var schoolFields=document.getElementById('sfSchoolFields');
+var otherFields=document.getElementById('sfOtherFields');
+var schoolOrgRow=document.getElementById('sfSchoolOrgRow');
+var nonSchoolGP=document.getElementById('sfNonSchoolGP');
+if(type==='school'){
+schoolFields.style.display='';
+otherFields.style.display='none';
+schoolOrgRow.style.display='';
+nonSchoolGP.style.display='none';
+}else{
+schoolFields.style.display='none';
+otherFields.style.display='';
+schoolOrgRow.style.display='none';
+nonSchoolGP.style.display='';
+}
+}
+
 (async function init(){
 try{
 await new Promise(function(r,j){var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js';s.onload=r;s.onerror=j;document.head.appendChild(s)});
@@ -577,17 +587,14 @@ setLang(currentLang);
 
 function populateDashboard(){
 var p=player;
-// Header
 document.getElementById('hAvatar').textContent='#'+(p.jersey_number||'—');
 document.getElementById('hName').textContent=(p.first_name||'')+' '+(p.last_name||'');
-document.getElementById('hMeta').textContent=[p.position,p.school,p.grad_year?'Class of '+p.grad_year:''].filter(Boolean).join(' · ');
+document.getElementById('hMeta').textContent=[p.position,p.age?p.age+' yrs':''].filter(Boolean).join(' · ');
 document.getElementById('viewPublic').href='/player/'+p.slug;
-// Overview
 document.getElementById('oViews').textContent=p.profile_views||0;
 document.getElementById('oPPG').textContent=p.stats_ppg||'—';
 document.getElementById('oRPG').textContent=p.stats_rpg||'—';
 document.getElementById('oAPG').textContent=p.stats_apg||'—';
-// Stats
 document.getElementById('fPPG').value=p.stats_ppg||'';
 document.getElementById('fRPG').value=p.stats_rpg||'';
 document.getElementById('fAPG').value=p.stats_apg||'';
@@ -597,22 +604,16 @@ document.getElementById('fGP').value=p.games_played||'';
 document.getElementById('fFG').value=p.fg_pct||'';
 document.getElementById('f3PT').value=p.three_pct||'';
 document.getElementById('fFT').value=p.ft_pct||'';
-// Measurables
 document.getElementById('fHeight').value=p.height||'';
 document.getElementById('fWeight').value=p.weight||'';
 document.getElementById('fWingspan').value=p.wingspan||'';
 document.getElementById('fVertical').value=p.vertical||'';
-// Profile
 document.getElementById('fFirst').value=p.first_name||'';
 document.getElementById('fLast').value=p.last_name||'';
 document.getElementById('fPos').value=p.position||'';
-document.getElementById('fJersey').value=p.jersey_number||'';
 document.getElementById('fAge').value=p.age||'';
-document.getElementById('fGrad').value=p.grad_year||'';
-document.getElementById('fSchool').value=p.school||'';
 document.getElementById('fSlug').value=p.slug||'';
 document.getElementById('slugShow').textContent=p.slug||'—';
-// NIL
 document.getElementById('fHighlight').value=p.highlight_link||'';
 document.getElementById('fIG').value=p.instagram||'';
 document.getElementById('fTikTok').value=p.tiktok||'';
@@ -654,10 +655,7 @@ var data={
 first_name:document.getElementById('fFirst').value.trim(),
 last_name:document.getElementById('fLast').value.trim(),
 position:document.getElementById('fPos').value,
-jersey_number:document.getElementById('fJersey').value.trim(),
-age:parseInt(document.getElementById('fAge').value)||null,
-grad_year:parseInt(document.getElementById('fGrad').value)||null,
-school:document.getElementById('fSchool').value.trim()
+age:parseInt(document.getElementById('fAge').value)||null
 };
 var{error}=await sb.from('players').update(data).eq('id',player.id);
 if(!error){Object.assign(player,data);flashSaved('profileSaved');showToast(currentLang==='es'?'¡Perfil guardado!':'Profile saved!');document.getElementById('hName').textContent=data.first_name+' '+data.last_name}else{showToast(currentLang==='es'?'Error al guardar':'Error saving')}
@@ -713,17 +711,17 @@ document.getElementById('oCOG').textContent='L'+avg;
 }catch(e){console.error('Cognitive load error:',e)}
 }
 
-// ========== TIMELINE FUNCTIONS ==========
+// ========== TIMELINE ==========
 var seasons=[];
 
 function toggleSeasonForm(){
 var f=document.getElementById('seasonForm');
 f.classList.toggle('show');
-if(f.classList.contains('show')){clearSeasonForm();window.scrollTo({top:f.offsetTop-80,behavior:'smooth'})}
+if(f.classList.contains('show')){clearSeasonForm();toggleSeasonFields();window.scrollTo({top:f.offsetTop-80,behavior:'smooth'})}
 }
 
 function clearSeasonForm(){
-['sfName','sfYear','sfTeam','sfOrg','sfGP','sfPPG','sfRPG','sfAPG','sfSPG','sfBPG','sfFG','sf3PT','sfFT','sfAwards','sfNotes'].forEach(function(id){document.getElementById(id).value=''});
+['sfName','sfYear','sfTeam','sfSchoolName','sfGradYear','sfAge','sfOrg','sfSchoolOrg','sfGP','sfGP2','sfPPG','sfRPG','sfAPG','sfSPG','sfBPG','sfFG','sf3PT','sfFT','sfJersey','sfAwards','sfNotes'].forEach(function(id){var el=document.getElementById(id);if(el)el.value=''});
 document.getElementById('sfType').value='school';
 document.getElementById('seasonForm').removeAttribute('data-edit-id');
 }
@@ -754,7 +752,11 @@ html+='<div class="tl-header"><div class="tl-name">'+esc(s.season_name)+'</div>'
 html+='<span class="tl-type '+(s.season_type||'other')+'">'+(currentLang==='es'?(typeLabelsEs[s.season_type]||s.season_type):(typeLabelsEn[s.season_type]||s.season_type))+'</span></div>';
 var meta=[];
 if(s.team_name)meta.push(esc(s.team_name));
+if(s.school_name)meta.push('🏫 '+esc(s.school_name));
 if(s.organization)meta.push(esc(s.organization));
+if(s.season_type==='school'&&s.grad_year)meta.push((currentLang==='es'?'Clase ':'Class of ')+s.grad_year);
+if(s.season_type!=='school'&&s.player_age)meta.push((currentLang==='es'?'Edad: ':'Age: ')+s.player_age);
+if(s.jersey_number)meta.push('#'+esc(s.jersey_number));
 if(s.games_played)meta.push(s.games_played+' '+(currentLang==='es'?'juegos':'games'));
 if(meta.length)html+='<div class="tl-meta">'+meta.join(' · ')+'</div>';
 if(hasStats){
@@ -786,14 +788,19 @@ function esc(s){if(!s)return'';var d=document.createElement('div');d.textContent
 
 async function saveSeason(){
 var editId=document.getElementById('seasonForm').getAttribute('data-edit-id');
+var type=document.getElementById('sfType').value;
+var isSchool=type==='school';
 var data={
 player_id:player.id,
 season_name:document.getElementById('sfName').value.trim(),
-season_type:document.getElementById('sfType').value,
+season_type:type,
 season_year:document.getElementById('sfYear').value.trim(),
 team_name:document.getElementById('sfTeam').value.trim(),
-organization:document.getElementById('sfOrg').value.trim(),
-games_played:parseInt(document.getElementById('sfGP').value)||0,
+school_name:isSchool?document.getElementById('sfSchoolName').value.trim():'',
+grad_year:isSchool?(parseInt(document.getElementById('sfGradYear').value)||null):null,
+player_age:!isSchool?(parseInt(document.getElementById('sfAge').value)||null):null,
+organization:isSchool?document.getElementById('sfSchoolOrg').value.trim():document.getElementById('sfOrg').value.trim(),
+games_played:parseInt(document.getElementById(isSchool?'sfGP':'sfGP2').value)||0,
 stats_ppg:parseFloat(document.getElementById('sfPPG').value)||0,
 stats_rpg:parseFloat(document.getElementById('sfRPG').value)||0,
 stats_apg:parseFloat(document.getElementById('sfAPG').value)||0,
@@ -802,6 +809,7 @@ stats_bpg:parseFloat(document.getElementById('sfBPG').value)||0,
 fg_pct:parseFloat(document.getElementById('sfFG').value)||0,
 three_pct:parseFloat(document.getElementById('sf3PT').value)||0,
 ft_pct:parseFloat(document.getElementById('sfFT').value)||0,
+jersey_number:document.getElementById('sfJersey').value.trim(),
 awards:document.getElementById('sfAwards').value.trim(),
 notes:document.getElementById('sfNotes').value.trim(),
 updated_at:new Date().toISOString()
@@ -829,8 +837,13 @@ document.getElementById('sfName').value=s.season_name||'';
 document.getElementById('sfType').value=s.season_type||'school';
 document.getElementById('sfYear').value=s.season_year||'';
 document.getElementById('sfTeam').value=s.team_name||'';
+document.getElementById('sfSchoolName').value=s.school_name||'';
+document.getElementById('sfGradYear').value=s.grad_year||'';
+document.getElementById('sfAge').value=s.player_age||'';
 document.getElementById('sfOrg').value=s.organization||'';
+document.getElementById('sfSchoolOrg').value=s.organization||'';
 document.getElementById('sfGP').value=s.games_played||'';
+document.getElementById('sfGP2').value=s.games_played||'';
 document.getElementById('sfPPG').value=s.stats_ppg||'';
 document.getElementById('sfRPG').value=s.stats_rpg||'';
 document.getElementById('sfAPG').value=s.stats_apg||'';
@@ -839,9 +852,11 @@ document.getElementById('sfBPG').value=s.stats_bpg||'';
 document.getElementById('sfFG').value=s.fg_pct||'';
 document.getElementById('sf3PT').value=s.three_pct||'';
 document.getElementById('sfFT').value=s.ft_pct||'';
+document.getElementById('sfJersey').value=s.jersey_number||'';
 document.getElementById('sfAwards').value=s.awards||'';
 document.getElementById('sfNotes').value=s.notes||'';
 document.getElementById('seasonForm').setAttribute('data-edit-id',id);
+toggleSeasonFields();
 document.getElementById('seasonForm').classList.add('show');
 window.scrollTo({top:document.getElementById('seasonForm').offsetTop-80,behavior:'smooth'});
 }
@@ -855,9 +870,8 @@ showToast(currentLang==='es'?'Temporada eliminada':'Season deleted');
 await loadSeasons();
 }catch(e){showToast('Error: '+e.message)}
 }
-// ========== END TIMELINE ==========
 
-// ========== MEDIA FUNCTIONS ==========
+// ========== MEDIA ==========
 var SB_STORAGE_URL=SB_URL+'/storage/v1/object/public/';
 
 function renderAvatarPreview(){
@@ -865,48 +879,32 @@ var el=document.getElementById('avatarPreview');
 if(player.avatar_url){el.innerHTML='<img class="avatar-img" src="'+player.avatar_url+'" alt="Avatar">'}
 else{el.innerHTML='<div class="avatar-placeholder">#'+(player.jersey_number||'—')+'</div>'}
 }
-
 function updateHeaderAvatar(){
 var h=document.getElementById('hAvatar');
 if(player.avatar_url){h.innerHTML='<img src="'+player.avatar_url+'" style="width:100%;height:100%;object-fit:cover;border-radius:18px" alt="">'}
 else{h.textContent='#'+(player.jersey_number||'—')}
 }
-
 function renderCoverPreview(){
 var el=document.getElementById('coverPreview');
 if(player.cover_url){el.innerHTML='<img class="cover-preview" src="'+player.cover_url+'" alt="Cover">'}
 else{el.innerHTML='<div class="cover-placeholder" data-en="No cover photo" data-es="Sin foto de portada">No cover photo</div>';setLang(currentLang)}
 }
-
 function renderGallery(){
 var el=document.getElementById('galleryGrid');
-var urls=player.gallery_urls||[];
-el.innerHTML='';
-urls.forEach(function(url,i){
-el.innerHTML+='<div class="gallery-item"><img src="'+url+'" alt="Photo '+(i+1)+'"><button class="del-btn" onclick="deleteGalleryItem('+i+')">✕</button></div>';
-});
+var urls=player.gallery_urls||[];el.innerHTML='';
+urls.forEach(function(url,i){el.innerHTML+='<div class="gallery-item"><img src="'+url+'" alt="Photo '+(i+1)+'"><button class="del-btn" onclick="deleteGalleryItem('+i+')">✕</button></div>'});
 }
-
 function renderVideoList(){
 var el=document.getElementById('videoList');
-var urls=player.video_urls||[];
-el.innerHTML='';
-urls.forEach(function(url,i){
-var name=url.split('/').pop();
-el.innerHTML+='<div class="video-item"><video src="'+url+'" preload="metadata"></video><div class="vi-info"><div class="vi-name">'+name+'</div></div><button class="del-btn" onclick="deleteVideoItem('+i+')">✕</button></div>';
-});
+var urls=player.video_urls||[];el.innerHTML='';
+urls.forEach(function(url,i){var name=url.split('/').pop();el.innerHTML+='<div class="video-item"><video src="'+url+'" preload="metadata"></video><div class="vi-info"><div class="vi-name">'+name+'</div></div><button class="del-btn" onclick="deleteVideoItem('+i+')">✕</button></div>'});
 }
-
 function renderVideoLinks(){
 var el=document.getElementById('videoLinksList');
-var links=player.video_links||[];
-el.innerHTML='';
+var links=player.video_links||[];el.innerHTML='';
 if(!links.length){addVideoLinkField();return}
-links.forEach(function(link,i){
-el.innerHTML+='<div class="vl-item"><input class="field-input vl-input" type="url" value="'+escAttr(link)+'" placeholder="https://youtube.com/watch?v=..." style="width:100%;padding:11px 14px;font-size:.85rem;color:var(--white);background:var(--black2);border:1.5px solid rgba(255,255,255,.08);border-radius:10px;outline:none"><button class="del-btn" onclick="this.parentElement.remove()">✕</button></div>';
-});
+links.forEach(function(link){el.innerHTML+='<div class="vl-item"><input class="vl-input" type="url" value="'+escAttr(link)+'" placeholder="https://youtube.com/watch?v=..." style="width:100%;padding:11px 14px;font-size:.85rem;color:var(--white);background:var(--black2);border:1.5px solid rgba(255,255,255,.08);border-radius:10px;outline:none"><button class="del-btn" onclick="this.parentElement.remove()">✕</button></div>'});
 }
-
 function escAttr(s){return(s||'').replace(/"/g,'&quot;').replace(/'/g,'&#39;')}
 
 window.addVideoLinkField=function(){
@@ -916,8 +914,7 @@ el.innerHTML+='<div class="vl-item"><input class="vl-input" type="url" placehold
 
 async function saveVideoLinks(){
 var inputs=document.querySelectorAll('#videoLinksList .vl-input');
-var links=[];
-inputs.forEach(function(inp){var v=inp.value.trim();if(v)links.push(v)});
+var links=[];inputs.forEach(function(inp){var v=inp.value.trim();if(v)links.push(v)});
 var{error}=await sb.from('players').update({video_links:links}).eq('id',player.id);
 if(!error){player.video_links=links;flashSaved('videosSaved');showToast(currentLang==='es'?'¡Links guardados!':'Video links saved!')}
 else{showToast(currentLang==='es'?'Error al guardar':'Error saving')}
@@ -954,8 +951,7 @@ showToast((currentLang==='es'?'Subiendo ':'Uploading ')+(i+1)+'/'+files.length+'
 try{
 var{error:upErr}=await sb.storage.from('gallery').upload(path,file,{upsert:true});
 if(upErr)throw upErr;
-var url=SB_STORAGE_URL+'gallery/'+path;
-current.push(url);
+current.push(SB_STORAGE_URL+'gallery/'+path);
 }catch(e){console.error(e);showToast('Error: '+e.message)}
 }
 var{error}=await sb.from('players').update({gallery_urls:current}).eq('id',player.id);
@@ -978,8 +974,7 @@ bar.style.width='30%';
 var{error:upErr}=await sb.storage.from('videos').upload(path,file,{upsert:true});
 if(upErr)throw upErr;
 bar.style.width='80%';
-var url=SB_STORAGE_URL+'videos/'+path;
-current.push(url);
+current.push(SB_STORAGE_URL+'videos/'+path);
 var{error}=await sb.from('players').update({video_urls:current}).eq('id',player.id);
 if(error)throw error;
 bar.style.width='100%';
@@ -996,7 +991,6 @@ urls.splice(idx,1);
 var{error}=await sb.from('players').update({gallery_urls:urls}).eq('id',player.id);
 if(!error){player.gallery_urls=urls;renderGallery();showToast(currentLang==='es'?'Foto eliminada':'Photo removed')}
 }
-
 async function deleteVideoItem(idx){
 var urls=player.video_urls||[];
 if(idx<0||idx>=urls.length)return;
@@ -1004,7 +998,6 @@ urls.splice(idx,1);
 var{error}=await sb.from('players').update({video_urls:urls}).eq('id',player.id);
 if(!error){player.video_urls=urls;renderVideoList();showToast(currentLang==='es'?'Video eliminado':'Video removed')}
 }
-
 async function deleteMedia(column){
 var update={};update[column]=null;
 var{error}=await sb.from('players').update(update).eq('id',player.id);
@@ -1013,16 +1006,9 @@ if(column==='avatar_url'){renderAvatarPreview();updateHeaderAvatar()}
 if(column==='cover_url')renderCoverPreview();
 showToast(currentLang==='es'?'Eliminado':'Removed')}
 }
-
 function initMediaTab(){
-renderAvatarPreview();
-renderCoverPreview();
-renderGallery();
-renderVideoList();
-renderVideoLinks();
-updateHeaderAvatar();
+renderAvatarPreview();renderCoverPreview();renderGallery();renderVideoList();renderVideoLinks();updateHeaderAvatar();
 }
-// ========== END MEDIA ==========
 
 async function doLogout(){
 if(sb){await sb.auth.signOut()}
