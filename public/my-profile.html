@@ -305,6 +305,27 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.92
 <div class="tab-panel" id="tab-mindset"><div id="cogContent">
 <div class="cog-overall" id="cogOverallCard"><div class="cog-overall-label">HOOPS MINDSET — OVERALL RATING</div><div class="cog-overall-value" id="cogOverallValue">—</div><div class="cog-overall-rating" id="cogOverallRating">Play challenges to build your rating</div></div>
 <div class="cog-grid" id="cogGrid"></div>
+<div id="cogReportSection" style="display:none;margin-bottom:20px">
+<div style="background:var(--surface);border:1px solid rgba(255,215,0,.1);border-radius:16px;padding:24px;text-align:center">
+<div style="font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:2px;color:var(--gold);margin-bottom:8px">📋 COGNITIVE SCOUTING REPORT</div>
+<p style="font-size:.8rem;color:var(--gray);margin-bottom:16px">AI-powered analysis of your basketball mindset. Written for coaches and scouts.</p>
+<button class="btn-save" id="generateReportBtn" onclick="generateReport()" style="padding:14px 32px;font-size:.9rem">📋 Generate My Report</button>
+<div id="reportLoading" style="display:none;padding:20px;text-align:center"><div class="spinner" style="width:30px;height:30px;border:3px solid rgba(255,255,255,.1);border-top-color:var(--gold);border-radius:50%;animation:spin .7s linear infinite;margin:0 auto 10px"></div><p style="font-size:.8rem;color:var(--gray)">Analyzing your cognitive profile...</p></div>
+<div id="reportOutput" style="display:none;text-align:left;margin-top:16px;padding:20px;background:rgba(255,255,255,.02);border-radius:14px;border:1px solid rgba(255,215,0,.08)">
+<pre id="reportText" style="font-family:'Outfit',sans-serif;font-size:.82rem;color:var(--white);line-height:1.7;white-space:pre-wrap;word-wrap:break-word"></pre>
+<div style="margin-top:16px;display:flex;gap:8px;justify-content:center">
+<button class="btn-save" onclick="copyReport()" style="padding:10px 20px;font-size:.8rem">📋 Copy Report</button>
+<button class="btn-save" onclick="generateReport()" style="padding:10px 20px;font-size:.8rem;background:transparent;border:1.5px solid rgba(255,215,0,.3);color:var(--gold)">🔄 Regenerate</button>
+</div>
+</div>
+<div id="reportLocked" style="display:none;padding:16px;background:rgba(255,215,0,.04);border:1px solid rgba(255,215,0,.1);border-radius:12px;margin-top:12px">
+<p style="font-size:.8rem;color:var(--gray);margin-bottom:8px">🔒 Cognitive reports are a premium feature</p>
+<a href="https://buy.stripe.com/eVq28s8yrgwuaMEgP88Zq03" style="display:inline-block;padding:10px 24px;border-radius:10px;font-size:.8rem;font-weight:700;background:var(--gold);color:var(--black);margin-bottom:6px">⭐ $49/year</a>
+<span style="font-size:.7rem;color:var(--gray);margin:0 6px">or</span>
+<a href="https://buy.stripe.com/00wdRa7un2FEf2U0Qa8Zq02" style="font-size:.75rem;color:var(--gold)">$7/month</a>
+</div>
+</div>
+</div>
 <div style="text-align:center"><a href="/cognitive-hoops.html" class="btn-view" style="display:inline-block;padding:14px 32px;font-size:.9rem">🧠 Train Your Mindset</a></div>
 </div></div>
 </div></div>
@@ -336,7 +357,7 @@ var{data:players}=await sb.from('players').select('*').eq('auth_user_id',user.id
 if(!players||!players.length){document.getElementById('authMsg').innerHTML='No player profile found. <a href="/join.html" style="color:#FFD700;font-weight:700">Create one</a>.';document.querySelector('.spinner').style.display='none';return}
 player=players[0];document.getElementById('authGate').style.display='none';document.getElementById('dashboard').style.display='block';
 populateDashboard();checkPremium();loadCognitiveScores();loadSeasons();initMediaTab();setLang(currentLang);
-applyFreeLimits();
+applyFreeLimits();initReportSection();
 }catch(e){console.error(e);document.getElementById('authMsg').textContent='Error loading profile. Try refreshing.';document.querySelector('.spinner').style.display='none'}
 })();
 
@@ -411,6 +432,58 @@ if(tlTab)tlTab.innerHTML='<div style="text-align:center;padding:60px 20px"><div 
 // LOCK 3: Add Season quick link — swap to premium prompt
 var qlLinks=document.querySelectorAll('.quick-link');
 qlLinks.forEach(function(ql){if(ql.innerHTML.indexOf('Add Season')>-1||ql.innerHTML.indexOf('Agregar Temporada')>-1){ql.onclick=function(e){e.preventDefault();showTab('timeline',document.querySelector('.tab:nth-child(3)'));return false};ql.innerHTML='<span class="ql-icon">🔒</span> <span>Timeline (Premium)</span>';ql.style.opacity='.5'}});
+// LOCK 4: Cognitive report — show locked state
+var rs=document.getElementById('cogReportSection');
+if(rs){rs.style.display='block';document.getElementById('generateReportBtn').style.display='none';document.getElementById('reportLocked').style.display='block'}
+}
+
+// Cognitive report - show section for premium users with scores
+function initReportSection(){
+var isPrem=player&&(player.profile_tier==='premium'||player.profile_tier==='pro');
+if(!isPrem)return; // free users handled by applyFreeLimits
+var rs=document.getElementById('cogReportSection');
+if(rs)rs.style.display='block';
+}
+
+async function generateReport(){
+var isPrem=player&&(player.profile_tier==='premium'||player.profile_tier==='pro');
+if(!isPrem){showToast('Premium feature');return}
+var btn=document.getElementById('generateReportBtn');
+var loading=document.getElementById('reportLoading');
+var output=document.getElementById('reportOutput');
+btn.style.display='none';
+output.style.display='none';
+loading.style.display='block';
+try{
+// Gather cognitive scores
+var{data:cogData}=await sb.from('cognitive_scores').select('*').eq('player_id',player.id);
+var bestByTest={};
+if(cogData)cogData.forEach(function(s){if(!bestByTest[s.test_name]||s.level>bestByTest[s.test_name].level)bestByTest[s.test_name]=s});
+var scores={};
+['react','recall','reflex','replay','ritmo','beat'].forEach(function(t){if(bestByTest[t])scores[t]={level:bestByTest[t].level,speed:bestByTest[t].speed,score:bestByTest[t].score}});
+if(Object.keys(scores).length===0){loading.style.display='none';btn.style.display='';showToast('Play challenges first to generate a report');return}
+var res=await fetch('/api/cognitive-report',{
+method:'POST',
+headers:{'Content-Type':'application/json'},
+body:JSON.stringify({name:(player.first_name||'')+' '+(player.last_name||''),position:player.position||'',age:player.age||'',height:player.height||'',scores:scores})
+});
+var data=await res.json();
+if(data.error){throw new Error(data.error)}
+loading.style.display='none';
+document.getElementById('reportText').textContent=data.report;
+output.style.display='block';
+showToast('Report generated!');
+}catch(e){
+console.error('Report error:',e);
+loading.style.display='none';
+btn.style.display='';
+showToast('Error generating report: '+e.message);
+}
+}
+
+function copyReport(){
+var text=document.getElementById('reportText').textContent;
+navigator.clipboard.writeText(text).then(function(){showToast('Report copied!')}).catch(function(){showToast('Copy failed')});
 }
 
 var isPremiumUser=false;
