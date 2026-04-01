@@ -51,7 +51,7 @@ module.exports = async function handler(req, res) {
     return res.status(400).json({ error: 'No cognitive scores to analyze' });
   }
 
-  var prompt = 'You are a basketball cognitive performance analyst for Hooporia, the only NIL platform that measures basketball mindset through cognitive challenges.\n\n' +
+  var prompt = 'You are a basketball cognitive performance analyst for Hooporia, the only NIL platform that measures basketball mindset through cognitive drills.\n\n' +
     'Generate a PROFESSIONAL COGNITIVE SCOUTING REPORT for this player. Write it like a real scout would — direct, specific, actionable. This report will be shown to coaches, scouts, and brands.\n\n' +
     'PLAYER PROFILE:\n' +
     'Name: ' + playerName + '\n' +
