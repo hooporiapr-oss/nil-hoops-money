@@ -26,7 +26,6 @@ a{text-decoration:none;color:inherit}
 @keyframes glow{0%,100%{box-shadow:0 0 20px rgba(255,215,0,.15)}50%{box-shadow:0 0 40px rgba(255,215,0,.3)}}
 .reveal{opacity:0;transform:translateY(40px);transition:opacity .8s ease,transform .8s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
-
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.04);padding:0 24px}
 .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
 .nav-brand{display:flex;align-items:center;gap:10px}
@@ -40,7 +39,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.92
 .lang-btn.active{background:var(--gold);color:var(--black)}
 .nav-cta{padding:8px 22px;border-radius:8px;font-size:.78rem;font-weight:700;background:var(--gold);color:var(--black);border:none;cursor:pointer;transition:all .2s;font-family:'Outfit',sans-serif}
 .nav-cta:hover{background:#ffe44d}
-
 .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;text-align:center;padding:calc(64px + env(safe-area-inset-top,0px) + 20px) 24px 60px;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 20%,rgba(255,215,0,.06),transparent 70%),radial-gradient(ellipse 50% 40% at 15% 80%,rgba(155,89,182,.05),transparent),radial-gradient(ellipse 50% 40% at 85% 70%,rgba(0,206,209,.04),transparent);pointer-events:none}
 .hero::after{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='80' height='80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 0v80M0 40h80' stroke='%23ffffff' stroke-opacity='0.015' stroke-width='1'/%3E%3C/svg%3E");pointer-events:none}
@@ -56,13 +54,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.92
 .btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(255,215,0,.35)}
 .btn-outline{display:inline-block;padding:16px 40px;border-radius:var(--radius-sm);font-size:.95rem;font-weight:700;background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.12);transition:all .2s}
 .btn-outline:hover{border-color:var(--gold);color:var(--gold)}
-
 .stats-bar{padding:40px 0;border-top:1px solid rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.04);background:var(--black2)}
 .wrap{max-width:1100px;margin:0 auto;padding:0 24px}
 .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center;max-width:900px;margin:0 auto}
 .stat-num{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;color:var(--gold)}
 .stat-label{font-size:.7rem;color:var(--gray);font-weight:600;text-transform:uppercase;letter-spacing:.08em}
-
 .section{padding:80px 0}
 .section-pill{display:inline-block;padding:5px 14px;border-radius:20px;font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px}
 .section-pill.gold{background:var(--gold-dim);color:var(--gold);border:1px solid var(--gold-border)}
@@ -72,7 +68,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.92
 .section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,5vw,3rem);letter-spacing:2px;margin-bottom:12px;line-height:1.05}
 .section-sub{color:var(--gray-light);font-size:.95rem;max-width:560px;margin:0 auto 44px;line-height:1.7;text-align:center}
 .text-center{text-align:center}
-
 .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .feature-card{background:var(--surface);border:1px solid rgba(255,255,255,.04);border-radius:var(--radius);padding:28px 24px;transition:all .3s;position:relative;overflow:hidden}
 .feature-card:hover{border-color:rgba(255,215,0,.15);transform:translateY(-4px)}
@@ -81,7 +76,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.92
 .feature-icon{font-size:2rem;margin-bottom:14px}
 .feature-card h3{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:2px;margin-bottom:8px}
 .feature-card p{font-size:.82rem;color:var(--gray);line-height:1.6}
-
 .cog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:700px;margin:0 auto 32px}
 .cog-card{background:var(--surface);border:1px solid rgba(255,255,255,.04);border-radius:14px;padding:20px 16px;text-align:center;transition:all .3s;cursor:pointer;color:var(--white)}
 .cog-card:hover{transform:translateY(-4px);border-color:rgba(255,215,0,.2)}
@@ -94,7 +88,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.92
 .cog-card.replay .cog-name{color:var(--teal)}
 .cog-card.ritmo .cog-name{color:var(--lime)}
 .cog-card.beat .cog-name{color:var(--gold)}
-
 .profile-section{display:flex;align-items:center;gap:60px;flex-wrap:wrap}
 .profile-text{flex:1;min-width:280px}
 .profile-card-wrap{flex:1;min-width:280px}
@@ -119,14 +112,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.92
 .pp-tag.cog{background:rgba(155,89,182,.1);color:var(--purple)}
 .pp-socials{display:flex;gap:5px}
 .pp-social{padding:5px 12px;border-radius:6px;font-size:.65rem;font-weight:700;background:rgba(255,255,255,.04);color:var(--gray)}
-
 .audience-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .audience-card{background:var(--surface);border:1px solid rgba(255,255,255,.04);border-radius:var(--radius);padding:28px 20px;text-align:center;transition:all .3s}
 .audience-card:hover{border-color:rgba(255,215,0,.15);transform:translateY(-4px)}
 .audience-icon{font-size:2.2rem;margin-bottom:12px}
 .audience-card h4{font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:1px;margin-bottom:6px}
 .audience-card p{font-size:.78rem;color:var(--gray);line-height:1.5}
-
 .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:900px;margin:0 auto}
 .price-card{background:var(--surface);border:1px solid rgba(255,255,255,.04);border-radius:var(--radius);padding:32px 24px;text-align:center;transition:all .3s;position:relative}
 .price-card:hover{border-color:rgba(255,215,0,.15)}
@@ -143,19 +134,16 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.92
 .price-btn.gold:hover{background:#ffe44d}
 .price-btn.outline{background:transparent;border:1.5px solid rgba(255,255,255,.12);color:var(--white)}
 .price-btn.outline:hover{border-color:var(--gold);color:var(--gold)}
-
 .final-cta{text-align:center;padding:80px 24px 100px;position:relative}
 .final-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 80% at 50% 100%,rgba(255,215,0,.05),transparent);pointer-events:none}
 .final-cta h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,7vw,4.5rem);letter-spacing:2px;margin-bottom:12px;line-height:.95}
 .final-cta h2 .gold{color:var(--gold)}
 .final-sub{font-size:1.1rem;font-weight:600;margin-bottom:8px}
 .final-desc{color:var(--gray);font-size:.9rem;margin-bottom:32px}
-
 .partners{text-align:center;padding:40px 24px;border-top:1px solid rgba(255,255,255,.04)}
 .partners-label{font-size:.65rem;color:#444;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:16px}
 .partners-row{display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap}
 .partner{font-size:.8rem;color:var(--gray);font-weight:700;opacity:.6}
-
 footer{border-top:1px solid rgba(255,255,255,.04);padding:28px 0}
 .footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
 .footer-brand{display:flex;align-items:center;gap:8px}
@@ -165,8 +153,6 @@ footer{border-top:1px solid rgba(255,255,255,.04);padding:28px 0}
 .footer-links a{font-size:.78rem;color:var(--gray);transition:color .2s}
 .footer-links a:hover{color:var(--white)}
 .footer-copy{font-size:.65rem;color:#444}
-
-/* PROFILE PREVIEW TOGGLE */
 .preview-section{padding:80px 0 40px}
 .preview-wrap{max-width:500px;margin:0 auto}
 .preview-toggle{display:flex;justify-content:center;gap:0;margin-bottom:32px}
@@ -224,7 +210,6 @@ footer{border-top:1px solid rgba(255,255,255,.04);padding:28px 0}
 .preview-links{display:flex;justify-content:center;gap:12px;margin-top:20px}
 .preview-link{font-size:.78rem;font-weight:600;color:var(--gold);border-bottom:1px dashed rgba(255,215,0,.3);padding-bottom:2px;transition:all .2s}
 .preview-link:hover{border-bottom-color:var(--gold)}
-
 @media(max-width:768px){
 .stats-grid{grid-template-columns:repeat(2,1fr);gap:16px}
 .features-grid,.pricing-grid{grid-template-columns:1fr}
@@ -334,24 +319,22 @@ footer{border-top:1px solid rgba(255,255,255,.04);padding:28px 0}
 <p class="section-sub" data-en="Every player starts free. The free tier is fire — upgrade when you're ready to go pro." data-es="Todo jugador empieza gratis. El tier gratuito es fuego — mejora cuando estés listo.">Every player starts free. The free tier is fire — upgrade when you're ready to go pro.</p>
 <div class="pricing-grid">
 <div class="price-card reveal"><div class="price-name" data-en="PLAYER FREE" data-es="JUGADOR GRATIS">PLAYER FREE</div><div class="price-amount">$0</div><div class="price-period" data-en="Forever" data-es="Para Siempre">Forever</div><ul class="price-features"><li data-en="Player profile" data-es="Perfil de jugador">Player profile</li><li data-en="Enter your own stats" data-es="Ingresa tus estadísticas">Enter your own stats</li><li data-en="6 cognitive challenges" data-es="6 desafíos cognitivos">6 cognitive challenges</li><li data-en="Highlight video links" data-es="Links de highlights">Highlight video links</li><li data-en="Social media links" data-es="Links de redes sociales">Social media links</li><li data-en="NIL Available badge" data-es="Insignia NIL">NIL Available badge</li><li data-en="Appear in Discover" data-es="Aparece en Discover">Appear in Discover</li></ul><a href="/join.html"><button class="price-btn outline" data-en="Get Started" data-es="Comenzar">Get Started</button></a></div>
-<div class="price-card featured reveal"><div class="price-name" data-en="PLAYER PREMIUM" data-es="JUGADOR PREMIUM">PLAYER PREMIUM</div><div class="price-amount">$49</div><div class="price-period" data-en="/year or $9/month" data-es="/año o $9/mes">/year or $9/month</div><ul class="price-features"><li data-en="Everything in Free" data-es="Todo lo del plan Gratis">Everything in Free</li><li data-en="✓ Verified badge" data-es="✓ Insignia verificada">✓ Verified badge</li><li data-en="Priority in search" data-es="Prioridad en búsquedas">Priority in search</li><li data-en="Profile view analytics" data-es="Analíticas de vistas">Profile view analytics</li><li data-en="Cognitive progress tracking" data-es="Seguimiento cognitivo">Cognitive progress tracking</li><li data-en="Custom profile URL" data-es="URL personalizada">Custom profile URL</li><li data-en="PDF resume for coaches" data-es="PDF para coaches">PDF resume for coaches</li></ul><a href="https://buy.stripe.com/eVq28s8yrgwuaMEgP88Zq03"><button class="price-btn gold" data-en="⭐ Go Premium — $49/yr" data-es="⭐ Ir Premium — $49/año">⭐ Go Premium — $49/yr</button></a></div>
+<div class="price-card featured reveal"><div class="price-name" data-en="PLAYER PREMIUM" data-es="JUGADOR PREMIUM">PLAYER PREMIUM</div><div class="price-amount">$49</div><div class="price-period" data-en="/year or $7/month" data-es="/año o $7/mes">/year or $7/month</div><ul class="price-features"><li data-en="Everything in Free" data-es="Todo lo del plan Gratis">Everything in Free</li><li data-en="✓ Verified badge" data-es="✓ Insignia verificada">✓ Verified badge</li><li data-en="Priority in search" data-es="Prioridad en búsquedas">Priority in search</li><li data-en="Profile view analytics" data-es="Analíticas de vistas">Profile view analytics</li><li data-en="Cognitive progress tracking" data-es="Seguimiento cognitivo">Cognitive progress tracking</li><li data-en="Custom profile URL" data-es="URL personalizada">Custom profile URL</li><li data-en="PDF resume for coaches" data-es="PDF para coaches">PDF resume for coaches</li></ul><a href="https://buy.stripe.com/eVq28s8yrgwuaMEgP88Zq03" style="display:block;margin-bottom:8px"><button class="price-btn gold" data-en="⭐ $49/year — Best Value" data-es="⭐ $49/año — Mejor Valor">⭐ $49/year — Best Value</button></a>
+<a href="https://buy.stripe.com/00wdRa7un2FEf2U0Qa8Zq02" style="display:block"><button class="price-btn outline" data-en="$7/month" data-es="$7/mes">$7/month</button></a></div>
 <div class="price-card reveal"><div class="price-name" data-en="SCOUT / BRAND" data-es="SCOUT / MARCA">SCOUT / BRAND</div><div class="price-amount">$49</div><div class="price-period" data-en="/month" data-es="/mes">/month</div><ul class="price-features"><li data-en="Full talent database" data-es="Base de talento completa">Full talent database</li><li data-en="Cognitive data access" data-es="Acceso a datos cognitivos">Cognitive data access</li><li data-en="Advanced filters" data-es="Filtros avanzados">Advanced filters</li><li data-en="Contact info access" data-es="Acceso a contacto">Contact info access</li><li data-en="Save & compare players" data-es="Guardar y comparar">Save & compare players</li><li data-en="Export player lists" data-es="Exportar listas">Export player lists</li><li data-en="Alert on new talent" data-es="Alertas de talento">Alert on new talent</li></ul><button class="price-btn outline" data-en="Coming Soon" data-es="Próximamente">Coming Soon</button></div>
 </div>
 </div></section>
 
-<!-- PROFILE PREVIEW -->
 <section class="section preview-section">
 <div class="wrap text-center">
 <div class="section-pill gold" data-en="See The Difference" data-es="Mira La Diferencia">See The Difference</div>
 <h2 class="section-title" data-en="Free vs Premium" data-es="Gratis vs Premium">Free vs Premium</h2>
 <p class="section-sub" data-en="Toggle between tiers and see exactly what your player profile looks like." data-es="Cambia entre niveles y mira exactamente cómo se ve tu perfil de jugador.">Toggle between tiers and see exactly what your player profile looks like.</p>
-
 <div class="preview-wrap">
 <div class="preview-toggle">
 <button class="preview-tog-btn active-free" id="togFree" onclick="setPrev(false)" data-en="🏀 Free" data-es="🏀 Gratis">🏀 Free</button>
 <button class="preview-tog-btn" id="togPrem" onclick="setPrev(true)" data-en="⭐ Premium — $49/yr" data-es="⭐ Premium — $49/año">⭐ Premium — $49/yr</button>
 </div>
-
 <div class="preview-card" id="prevCard">
 <div class="pc-inner">
 <div class="pc-header">
@@ -362,7 +345,6 @@ footer{border-top:1px solid rgba(255,255,255,.04);padding:28px 0}
 <div class="pc-meta" style="font-size:.72rem">San Juan Warriors · Class of 2027</div>
 </div>
 </div>
-
 <div class="pc-tags">
 <span class="pc-tag pos">PG</span>
 <span class="pc-tag grad">Class of 2027</span>
@@ -370,15 +352,12 @@ footer{border-top:1px solid rgba(255,255,255,.04);padding:28px 0}
 <span class="pc-tag cog">🧠 L7 All-Star</span>
 <span class="pc-tag prem-only">⭐ Premium</span>
 </div>
-
 <button class="pc-contact" data-en="✉ Contact This Player" data-es="✉ Contactar Jugador">✉ Contact This Player</button>
-
 <div class="pc-stats">
 <div class="pc-st"><div class="v">18.5</div><div class="l">PPG</div></div>
 <div class="pc-st"><div class="v">4.2</div><div class="l">RPG</div></div>
 <div class="pc-st"><div class="v">7.1</div><div class="l">APG</div></div>
 </div>
-
 <div class="pc-prem-stats">
 <div class="pc-stats">
 <div class="pc-st"><div class="v">1.8</div><div class="l">SPG</div></div>
@@ -391,7 +370,6 @@ footer{border-top:1px solid rgba(255,255,255,.04);padding:28px 0}
 <div class="pc-st"><div class="v">81%</div><div class="l">FT%</div></div>
 </div>
 </div>
-
 <div class="pc-meas">
 <div class="pc-meas-row">
 <div class="pc-meas-item"><div class="v">6'1"</div><div class="l" data-en="Height" data-es="Altura">Height</div></div>
@@ -400,7 +378,6 @@ footer{border-top:1px solid rgba(255,255,255,.04);padding:28px 0}
 <div class="pc-meas-item"><div class="v">32"</div><div class="l">Vertical</div></div>
 </div>
 </div>
-
 <div class="pc-cog">
 <div class="pc-cog-item"><div class="ce">🟣</div><div class="cn" style="color:#9B59B6">REACT</div><div class="cl" style="color:#9B59B6">L8</div><div class="cd">MVP</div></div>
 <div class="pc-cog-item"><div class="ce">🟠</div><div class="cn" style="color:#FF6B35">RECALL</div><div class="cl" style="color:#FF6B35">L7</div><div class="cd">All-Star</div></div>
@@ -409,24 +386,19 @@ footer{border-top:1px solid rgba(255,255,255,.04);padding:28px 0}
 <div class="pc-cog-item"><div class="ce">🟡</div><div class="cn" style="color:#9ACD32">RITMO</div><div class="cl" style="color:#9ACD32">L7</div><div class="cd">All-Star</div></div>
 <div class="pc-cog-item"><div class="ce">🏀</div><div class="cn" style="color:#FFD700">BEAT</div><div class="cl" style="color:#FFD700">L5</div><div class="cd">Elite</div></div>
 </div>
-
 <div class="pc-bio" data-en="Floor general with elite court vision. 3x All-Tournament. Running point for San Juan Warriors since 2024. Looking for NIL partnerships in sports tech, nutrition, and training." data-es="Director de juego con visión élite. 3x All-Tournament. Base titular de San Juan Warriors desde 2024. Buscando alianzas NIL en tecnología deportiva, nutrición y entrenamiento.">Floor general with elite court vision. 3x All-Tournament. Running point for San Juan Warriors since 2024. Looking for NIL partnerships in sports tech, nutrition, and training.</div>
-
 <div class="pc-socials">
 <span class="pc-social">📸 @mrivera23</span>
 <span class="pc-social">🎵 @mrivera23</span>
 <span class="pc-social">🎥 Highlights</span>
 </div>
-
 <div class="pc-upgrade">
 <div class="pc-upgrade-text" data-en="This is a Free profile. Want the full experience?" data-es="Este es un perfil Gratis. ¿Quieres la experiencia completa?">This is a Free profile. Want the full experience?</div>
 <a href="https://buy.stripe.com/eVq28s8yrgwuaMEgP88Zq03" class="pc-upgrade-btn" data-en="⭐ Go Premium — $49/yr" data-es="⭐ Ir Premium — $49/año">⭐ Go Premium — $49/yr</a>
 </div>
-
 <div class="pc-powered">Powered by Hooporia™</div>
 </div>
 </div>
-
 <div class="preview-links">
 <a href="/preview-free.html" class="preview-link" data-en="View Full Free Preview →" data-es="Ver Preview Gratis Completo →">View Full Free Preview →</a>
 <a href="/preview-premium.html" class="preview-link" data-en="View Full Premium Preview →" data-es="Ver Preview Premium Completo →">View Full Premium Preview →</a>
@@ -452,15 +424,12 @@ footer{border-top:1px solid rgba(255,255,255,.04);padding:28px 0}
 
 <script>
 try{var sl=localStorage.getItem('lc-lang');if(sl)setLang(sl);else setLang('en')}catch(e){setLang('en')}
-// Preview toggle
 window.setPrev=function(prem){
 var card=document.getElementById('prevCard'),av=document.getElementById('pcAvatar'),tf=document.getElementById('togFree'),tp=document.getElementById('togPrem');
 if(prem){card.classList.add('prem-mode');av.className='pc-avatar prem';tf.className='preview-tog-btn';tp.className='preview-tog-btn active-prem'}
 else{card.classList.remove('prem-mode');av.className='pc-avatar free';tf.className='preview-tog-btn active-free';tp.className='preview-tog-btn'}
 setLang(currentLang);
 };
-
-// Scroll reveal
 var reveals=document.querySelectorAll('.reveal');
 var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}})},{threshold:0.1});
 reveals.forEach(function(el,i){el.style.transitionDelay=(i%3)*0.1+'s';observer.observe(el)});
