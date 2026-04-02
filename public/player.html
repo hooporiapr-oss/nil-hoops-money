@@ -253,14 +253,6 @@ h+='</div>';
 h+='</div>';
 h+='<div class="hf-confetti" id="hfConfetti"></div>';
 
-h+='<div class="card '+(pm?'pc':'')+'"><div class="card-title" data-en="📊 Stats" data-es="📊 Estadísticas">📊 Stats</div><div style="font-size:.6rem;color:#555;margin-top:-10px;margin-bottom:12px" data-en="Self-reported by player" data-es="Reportadas por el jugador">Self-reported by player</div><div class="stats-row">';
-if(p.stats_ppg)h+=stB(p.stats_ppg,'PPG');if(p.stats_rpg)h+=stB(p.stats_rpg,'RPG');if(p.stats_apg)h+=stB(p.stats_apg,'APG');
-if(pm){if(p.stats_spg)h+=stB(p.stats_spg,'SPG');if(p.stats_bpg)h+=stB(p.stats_bpg,'BPG');if(p.games_played)h+=stB(p.games_played,'GP')}
-h+='</div>';
-if(pm&&(p.fg_pct||p.three_pct||p.ft_pct)){h+='<div class="stats-row" style="margin-top:10px">';if(p.fg_pct)h+=stB(p.fg_pct+'%','FG%');if(p.three_pct)h+=stB(p.three_pct+'%','3PT%');if(p.ft_pct)h+=stB(p.ft_pct+'%','FT%');h+='</div>'}
-if(!p.stats_ppg&&!p.stats_rpg&&!p.stats_apg)h+='<div style="text-align:center;padding:16px;color:var(--gray);font-size:.8rem" data-en="No stats entered yet" data-es="Sin estadísticas aún">No stats entered yet</div>';
-h+='</div>';
-
 if(pm&&(p.wingspan||p.vertical)){h+='<div class="card pc"><div class="card-title" data-en="📏 Measurables" data-es="📏 Medidas">📏 Measurables</div><div style="font-size:.6rem;color:#555;margin-top:-10px;margin-bottom:12px" data-en="Self-reported by player" data-es="Reportadas por el jugador">Self-reported by player</div><div class="meas-row">';
 if(p.height)h+='<div class="meas"><div class="val">'+esc(p.height)+'</div><div class="lbl" data-en="Height" data-es="Altura">Height</div></div>';
 if(p.weight)h+='<div class="meas"><div class="val">'+esc(p.weight)+'</div><div class="lbl" data-en="Weight" data-es="Peso">Weight</div></div>';
@@ -271,6 +263,7 @@ h+='</div></div>'}
 if(seasons.length>0){
 h+='<div class="card '+(pm?'pc':'')+'">';
 h+='<div class="card-title" data-en="📅 Basketball Timeline" data-es="📅 Historia de Baloncesto">📅 Basketball Timeline</div>';
+h+='<div style="font-size:.6rem;color:#555;margin-top:-10px;margin-bottom:12px" data-en="Stats are self-reported by player" data-es="Las estadísticas son reportadas por el jugador">Stats are self-reported by player</div>';
 var totalSeasons=seasons.length;
 var totalGames=seasons.reduce(function(s,x){return s+(x.games_played||0)},0);
 var totalAwards=seasons.filter(function(x){return x.awards&&x.awards.trim()}).length;
