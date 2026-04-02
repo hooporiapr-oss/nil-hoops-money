@@ -16,7 +16,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 a{text-decoration:none;color:inherit}
 button{cursor:pointer;border:none;font-family:inherit}
 input,select{font-family:inherit}
-:root{--black:#0a0a0a;--black2:#131313;--black3:#1a1a1a;--orange:#e8611a;--orange-light:#f4832f;--white:#fafaf9;--gray:#8a8a8a;--green:#22c55e;--blue:#3b82f6;--purple:#a855f7}
+:root{--black:#0a0a0a;--black2:#131313;--black3:#1a1a1a;--orange:#e8611a;--orange-light:#f4832f;--white:#fafaf9;--gray:#8a8a8a;--green:#22c55e;--blue:#3b82f6;--purple:#a855f7;--gold:#FFD700}
 html[lang="en"] .es{display:none!important}
 html[lang="es"] .en{display:none!important}
 
@@ -90,8 +90,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 24px;background:rg
 .empty-state{text-align:center;padding:60px 24px;color:var(--gray)}
 .empty-state .icon{font-size:2.5rem;margin-bottom:12px}
 
-.footer{text-align:center;padding:40px 24px;color:var(--gray);font-size:.75rem;border-top:1px solid rgba(255,255,255,.06)}
-.footer a{color:var(--orange)}
+footer{border-top:1px solid rgba(255,255,255,.04);padding:28px 0}
+.footer-inner{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;max-width:1100px;margin:0 auto;padding:0 24px}
+.footer-links{display:flex;gap:20px}
+.footer-links a{font-size:.78rem;color:var(--gray);transition:color .2s}
+.footer-links a:hover{color:var(--white)}
+.footer-copy{font-size:.65rem;color:#444}
 
 @media(max-width:600px){
   .player-grid{grid-template-columns:1fr}
@@ -166,10 +170,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 24px;background:rg
   </div>
 </div>
 
-<div class="footer">
-  <span class="en">Powered by</span><span class="es">Impulsado por</span> <a href="/">Hooporia™</a> · <a href="/privacy.html"><span class="en">Privacy</span><span class="es">Privacidad</span></a> · <a href="/terms.html"><span class="en">Terms</span><span class="es">Términos</span></a>
-  <div style="font-size:.55rem;color:#333;margin-top:8px;max-width:500px;margin-left:auto;margin-right:auto" data-en="This program focuses on athlete development, branding, and future opportunities. We do not guarantee specific outcomes or opportunities." data-es="Este programa se enfoca en desarrollo del atleta, marca personal y oportunidades futuras. No garantizamos resultados específicos ni oportunidades.">This program focuses on athlete development, branding, and future opportunities. We do not guarantee specific outcomes or opportunities.</div>
-</div>
+<footer><div class="footer-inner">
+<div class="footer-links"><a href="/privacy.html"><span class="en">Privacy</span><span class="es">Privacidad</span></a><a href="/terms.html"><span class="en">Terms</span><span class="es">Términos</span></a></div>
+<div class="footer-copy">© 2026 GoStar Digital LLC. All Rights Reserved.</div>
+</div></footer>
 
 <script>
 var SB_URL='https://rhsszirtbyvalugmbecm.supabase.co';
