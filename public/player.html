@@ -162,6 +162,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.92
 .lightbox.show{display:flex}
 .lightbox img{max-width:90%;max-height:90%;border-radius:12px;object-fit:contain}
 .lightbox-close{position:absolute;top:20px;right:24px;color:var(--white);font-size:1.5rem;cursor:pointer;background:rgba(255,255,255,.1);width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:none}
+
+/* FOOTER */
+footer{border-top:1px solid rgba(255,255,255,.04);padding:28px 0}
+.footer-inner{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;max-width:680px;margin:0 auto;padding:0 24px}
+.footer-links{display:flex;gap:20px}
+.footer-links a{font-size:.78rem;color:var(--gray);transition:color .2s}
+.footer-links a:hover{color:var(--white)}
+.footer-copy{font-size:.65rem;color:#444}
+
 @media(max-width:600px){.hero-top{flex-direction:column;text-align:center}.hero-name{justify-content:center}.tags{justify-content:center}.stat{min-width:48px;padding:8px 4px}.stat .val{font-size:1.1rem}.cog-grid{grid-template-columns:repeat(2,1fr)}.meas-row{grid-template-columns:repeat(2,1fr)}.socials{justify-content:center}.nav-link{display:none}.nav-cta{display:none}.gallery-grid{grid-template-columns:repeat(2,1fr)}.video-grid{grid-template-columns:1fr}.cover-banner{height:140px}}
 .not-found{text-align:center;padding:100px 24px}
 .not-found h2{font-family:'Bebas Neue',sans-serif;font-size:2rem;margin-bottom:8px}
@@ -478,5 +487,8 @@ container.appendChild(piece);
 setTimeout(function(){container.classList.remove('show');container.innerHTML=''},3000);
 }
 </script>
-<div style="text-align:center;padding:16px 24px;font-size:.55rem;color:#333;max-width:500px;margin:0 auto" data-en="This program focuses on athlete development, branding, and future opportunities. We do not guarantee specific outcomes or opportunities." data-es="Este programa se enfoca en desarrollo del atleta, marca personal y oportunidades futuras. No garantizamos resultados específicos ni oportunidades.">This program focuses on athlete development, branding, and future opportunities. We do not guarantee specific outcomes or opportunities.</div>
+<footer><div class="footer-inner">
+<div class="footer-links"><a href="/privacy.html" data-en="Privacy" data-es="Privacidad">Privacy</a><a href="/terms.html" data-en="Terms" data-es="Términos">Terms</a></div>
+<div class="footer-copy">© 2026 GoStar Digital LLC. All Rights Reserved.</div>
+</div></footer>
 </body></html>
