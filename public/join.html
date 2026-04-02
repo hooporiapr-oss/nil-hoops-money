@@ -5,35 +5,41 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Create Your Profile — Hooporia</title>
 <link rel="icon" href="/hooporia.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0a0a0a;color:#fafaf9;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:24px;line-height:1.6}
+body{font-family:'Outfit',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0a0a0a;color:#fafaf9;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:24px;line-height:1.6;-webkit-font-smoothing:antialiased}
 a{text-decoration:none;color:inherit}
 button{cursor:pointer;border:none;font-family:inherit}
 input,select,textarea{font-family:inherit}
-:root{--black:#0a0a0a;--black2:#131313;--black3:#1a1a1a;--orange:#e8611a;--orange-light:#f4832f;--white:#fafaf9;--gray:#8a8a8a;--green:#22c55e;--purple:#a855f7;--blue:#3b82f6}
+:root{--black:#0a0a0f;--black2:#111118;--black3:#1a1a22;--surface:#16161e;--gold:#FFD700;--gold-dim:rgba(255,215,0,0.08);--gold-border:rgba(255,215,0,0.15);--orange:#FF6B35;--orange-light:#f4832f;--white:#fafaf9;--gray:#7a7a8a;--gray-light:#aaa;--green:#22c55e;--purple:#9B59B6;--cyan:#00CED1;--teal:#00D9A5;--blue:#3b82f6}
 html[lang="en"] .es{display:none!important}
 html[lang="es"] .en{display:none!important}
 
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 24px;background:rgba(10,10,10,.9);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.06)}
-.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}
-.nav-brand{display:flex;align-items:center}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 24px;background:rgba(10,10,15,.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.04)}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav-brand{display:flex;align-items:center;gap:10px}
+.nav-brand img{height:32px}
+.nav-brand span{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:2px}
 .nav-right{display:flex;align-items:center;gap:14px}
-.nav-link{font-size:.75rem;font-weight:600;color:var(--gray);transition:color .2s}
+.nav-link{font-size:.78rem;font-weight:600;color:var(--gray);transition:color .2s}
 .nav-link:hover{color:var(--white)}
-.nav-cta{padding:8px 18px;border-radius:8px;font-size:.75rem;font-weight:700;background:#FFD700;color:var(--black);border:none;cursor:pointer;font-family:inherit}
-.lang-btn{padding:5px 10px;border-radius:5px;font-size:.65rem;font-weight:700;background:transparent;color:var(--gray);transition:all .2s;border:none;cursor:pointer}
-.lang-btn.active{background:#FFD700;color:var(--black)}
+.nav-cta{padding:8px 22px;border-radius:8px;font-size:.78rem;font-weight:700;background:var(--gold);color:var(--black);border:none;cursor:pointer;transition:all .2s;font-family:'Outfit',sans-serif}
+.nav-cta:hover{background:#ffe44d}
+.lang-btn{padding:5px 10px;border-radius:5px;font-size:.65rem;font-weight:700;background:transparent;color:var(--gray);transition:all .2s;letter-spacing:.05em;border:none;cursor:pointer}
+.lang-btn.active{background:var(--gold);color:var(--black)}
 .hamburger{background:none;border:none;color:var(--white);font-size:1.4rem;cursor:pointer;padding:6px 10px;line-height:1;border-radius:8px;transition:background .2s}
 .hamburger:hover{background:rgba(255,255,255,.06)}
-.mobile-menu{display:none;position:fixed;top:60px;left:0;right:0;background:rgba(10,10,15,.97);backdrop-filter:blur(20px);padding:16px 24px 24px;border-bottom:1px solid rgba(255,255,255,.06);z-index:99;flex-direction:column;gap:4px}
+.mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;background:rgba(10,10,15,.97);backdrop-filter:blur(20px);padding:16px 24px 24px;border-bottom:1px solid rgba(255,255,255,.06);z-index:99;flex-direction:column;gap:4px}
 .mobile-menu.open{display:flex}
-.mobile-menu a{display:block;padding:12px 16px;font-size:.88rem;font-weight:600;color:#aaa;border-radius:10px;transition:all .2s}
+.mobile-menu a{display:block;padding:12px 16px;font-size:.88rem;font-weight:600;color:var(--gray-light);border-radius:10px;transition:all .2s}
 .mobile-menu a:hover{background:rgba(255,255,255,.04);color:var(--white)}
 .mm-lang{display:flex;gap:4px;padding:12px 16px}
-.mm-cta{background:#FFD700!important;color:var(--black)!important;text-align:center;font-weight:700!important;border-radius:10px!important;margin-top:8px}
-@media(max-width:600px){.nav-link{display:none}.nav-cta{display:none}}
+.mm-cta{background:var(--gold)!important;color:var(--black)!important;text-align:center;font-weight:700!important;border-radius:10px!important;margin-top:8px}
 
+/* CARD */
 .card{background:#fff;border-radius:16px;padding:40px;max-width:540px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,.4);margin-top:80px}
 .card h1{font-size:1.5rem;font-weight:900;color:#000;text-align:center;margin-bottom:4px}
 .card .subtitle{font-size:.85rem;color:#666;text-align:center;margin-bottom:28px}
@@ -81,6 +87,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 24px;background:rg
 .info-dropdown{font-size:.75rem;color:#555;background:#f8f8f8;border:1px solid #eee;border-radius:8px;padding:10px 12px;margin-top:6px;display:none;line-height:1.5}
 .info-dropdown.open{display:block}
 
+@media(max-width:600px){.nav-link{display:none}.nav-cta{display:none}}
 @media(max-width:520px){
   .card{padding:28px 20px}
   .form-row{grid-template-columns:1fr}
@@ -88,14 +95,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 24px;background:rg
 </style>
 <script>
 var currentLang='en';
-function setLang(l){currentLang=l;document.documentElement.lang=l;document.querySelectorAll('.lang-btn').forEach(function(b){b.classList.toggle('active',b.dataset.l===l)})}
+function setLang(l){currentLang=l;document.documentElement.lang=l;
+document.querySelectorAll('[data-en]').forEach(function(el){var v=el.getAttribute('data-'+l);if(v){if(v.indexOf('<')!==-1)el.innerHTML=v;else el.textContent=v}});
+document.querySelectorAll('.lang-btn').forEach(function(b){b.classList.toggle('active',b.dataset.l===l)});
+try{localStorage.setItem('lc-lang',l)}catch(e){}}
 function toggleInfo(id){document.getElementById(id).classList.toggle('open')}
 </script>
 </head>
 <body>
 <script>function toggleMenu(){var m=document.getElementById('mobileMenu');var b=document.getElementById('hamBtn');if(m.classList.contains('open')){m.classList.remove('open');b.textContent='☰'}else{m.classList.add('open');b.textContent='✕'}}</script>
 <nav><div class="nav-inner">
-<a href="/" class="nav-brand"><img src="/hooporia.png" alt="Hooporia" style="height:28px"><span style="font-family:-apple-system,sans-serif;font-size:1.2rem;font-weight:900;letter-spacing:.01em;margin-left:8px">HOOPORIA</span></a>
+<a href="/" class="nav-brand"><img src="/hooporia.png" alt="Hooporia"><span>HOOPORIA</span></a>
 <div class="nav-right">
 <a href="/programs.html" class="nav-link" data-en="Programs" data-es="Programas">Programs</a>
 <a href="/cognitive-report.html" class="nav-link" data-en="AI Report" data-es="Reporte IA">AI Report</a>
@@ -146,92 +156,64 @@ function toggleInfo(id){document.getElementById(id).classList.toggle('open')}
       <input type="password" id="confirmPw" placeholder="Re-enter password" autocomplete="new-password">
     </div>
     <button class="btn-primary" onclick="goStep(2)"><span class="en">Next</span><span class="es">Siguiente</span></button>
-    <div class="login-link"><span class="en">Already have a profile? <a href="/login.html">Log in</a></span><span class="es">¿Ya tienes perfil? <a href="/login.html">Entrar</a></span></div>
+    <div class="login-link"><span class="en">Already have a profile? <a href="/login.html">Log in</a></span><span class="es">¿Ya tienes perfil? <a href="/login.html">Entra aquí</a></span></div>
   </div>
 
   <!-- STEP 2: Player Info -->
   <div class="step-panel" id="step2">
     <h1 class="en">Player Info</h1>
     <h1 class="es">Info del Jugador</h1>
-    <p class="subtitle en">Step 2 — Your basketball profile</p>
-    <p class="subtitle es">Paso 2 — Tu perfil de baloncesto</p>
+    <p class="subtitle en">Step 2 — Tell us about you</p>
+    <p class="subtitle es">Paso 2 — Cuéntanos de ti</p>
     <div class="form-row">
-      <div class="form-group">
-        <label class="en">First Name</label><label class="es">Nombre</label>
-        <input type="text" id="firstName" placeholder="Marcus">
-      </div>
-      <div class="form-group">
-        <label class="en">Last Name</label><label class="es">Apellido</label>
-        <input type="text" id="lastName" placeholder="Rivera">
-      </div>
+      <div class="form-group"><label class="en">First Name</label><label class="es">Nombre</label><input type="text" id="firstName" placeholder="First name"></div>
+      <div class="form-group"><label class="en">Last Name</label><label class="es">Apellido</label><input type="text" id="lastName" placeholder="Last name"></div>
     </div>
     <div class="form-group">
-      <label class="en">Profile Slug (URL)</label><label class="es">Slug del Perfil (URL)</label>
-      <input type="text" id="slug" placeholder="marcus-rivera" oninput="this.value=this.value.toLowerCase().replace(/[^a-z0-9-]/g,'');document.getElementById('slugPreview').textContent=this.value||'your-name'">
-      <div style="font-size:.7rem;color:#888;margin-top:4px">hooporia.com/player/<span id="slugPreview">your-name</span></div>
-    </div>
-    <div class="form-group">
-      <label class="en">Position</label><label class="es">Posición</label>
-      <select id="position">
-        <option value="">--</option>
-        <option value="PG">PG</option>
-        <option value="SG">SG</option>
-        <option value="SF">SF</option>
-        <option value="PF">PF</option>
-        <option value="C">C</option>
-        <option value="G">G</option>
-        <option value="F">F</option>
-      </select>
+      <label class="en">Profile URL</label><label class="es">URL del Perfil</label>
+      <input type="text" id="slug" placeholder="your-name" oninput="this.value=this.value.toLowerCase().replace(/[^a-z0-9-]/g,'')">
+      <div style="font-size:.7rem;color:#888;margin-top:4px">hooporia.com/player/<strong id="slugPreview">your-name</strong></div>
+      <script>document.getElementById('slug').addEventListener('input',function(){document.getElementById('slugPreview').textContent=this.value||'your-name'})</script>
     </div>
     <div class="form-row">
-      <div class="form-group">
-        <label class="en">Height</label><label class="es">Altura</label>
-        <input type="text" id="height" placeholder="6'1&quot;">
+      <div class="form-group"><label class="en">Position</label><label class="es">Posición</label>
+        <select id="position"><option value="PG">PG — Point Guard</option><option value="SG">SG — Shooting Guard</option><option value="SF">SF — Small Forward</option><option value="PF">PF — Power Forward</option><option value="C">C — Center</option><option value="G">G — Guard</option><option value="F">F — Forward</option></select>
       </div>
-      <div class="form-group">
-        <label class="en">Weight</label><label class="es">Peso</label>
-        <input type="text" id="weight" placeholder="175 lbs">
-      </div>
+      <div class="form-group"><label class="en">Age</label><label class="es">Edad</label><input type="number" id="age" placeholder="16" min="13" max="99"></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label class="en">Height</label><label class="es">Altura</label><input type="text" id="height" placeholder="6'2&quot;"></div>
+      <div class="form-group"><label class="en">Weight</label><label class="es">Peso</label><input type="text" id="weight" placeholder="185 lbs"></div>
     </div>
     <div class="form-group">
-      <label class="en">Age</label><label class="es">Edad</label>
-      <input type="number" id="age" placeholder="16">
+      <label class="en">Highlight Video Link</label><label class="es">Link de Video Highlight</label>
+      <input type="url" id="highlight" placeholder="https://youtube.com/watch?v=...">
     </div>
-
     <div class="btn-row">
       <button class="btn-back" onclick="goStep(1)">&#8592;</button>
       <button class="btn-primary" onclick="goStep(3)" style="flex:1"><span class="en">Next</span><span class="es">Siguiente</span></button>
     </div>
   </div>
 
-  <!-- STEP 3: NIL -->
+  <!-- STEP 3: NIL Profile -->
   <div class="step-panel" id="step3">
-    <h1 class="en">Your NIL Profile</h1>
-    <h1 class="es">Tu Perfil NIL</h1>
-    <p class="subtitle en">Step 3 — Get discovered</p>
-    <p class="subtitle es">Paso 3 — Hazte visible</p>
-
-    <div class="form-group">
-      <label class="en">Highlight Reel Link</label><label class="es">Link de Highlights</label>
-      <input type="url" id="highlight" placeholder="https://youtube.com/watch?v=...">
-    </div>
-
+    <h1 class="en">NIL Profile</h1>
+    <h1 class="es">Perfil NIL</h1>
+    <p class="subtitle en">Step 3 — Your brand</p>
+    <p class="subtitle es">Paso 3 — Tu marca</p>
     <div class="form-group">
       <label class="en">NIL Contact Email</label><label class="es">Email de Contacto NIL</label>
-      <input type="email" id="nilEmail" placeholder="athlete@email.com">
-      <div class="info-toggle en" onclick="toggleInfo('nilEmailInfo')">&#9432; What's this?</div>
-      <div class="info-toggle es" onclick="toggleInfo('nilEmailInfo')">&#9432; ¿Qué es esto?</div>
+      <input type="email" id="nilEmail" placeholder="Optional — defaults to signup email">
+      <span class="info-toggle" onclick="toggleInfo('nilEmailInfo')">ℹ️ <span class="en">What is this?</span><span class="es">¿Qué es esto?</span></span>
       <div class="info-dropdown" id="nilEmailInfo">
-        <span class="en">Your NIL (Name, Image, Likeness) contact email is the address that college coaches, scouts, and brands will use to reach out to you about sponsorship deals, recruiting, and NIL opportunities. This can be different from your login email — use whichever email you check most for business inquiries.</span>
-        <span class="es">Tu email de contacto NIL (Nombre, Imagen, Semejanza) es la dirección que coaches universitarios, scouts y marcas usarán para contactarte sobre acuerdos de patrocinio, reclutamiento y oportunidades NIL. Puede ser diferente a tu email de inicio de sesión — usa el correo que más revises para consultas profesionales.</span>
+        <span class="en">This is the email coaches, scouts, and brands will see on your public profile. If left blank, we'll use your signup email.</span>
+        <span class="es">Este es el correo que coaches, scouts y marcas verán en tu perfil público. Si lo dejas vacío, usaremos tu correo de registro.</span>
       </div>
     </div>
-
     <div class="form-group">
       <label class="en">NIL Bio</label><label class="es">Bio NIL</label>
-      <textarea id="nilBio" placeholder="Tell scouts and brands about yourself..." rows="3"></textarea>
-      <div class="info-toggle en" onclick="toggleInfo('nilBioInfo')">&#9432; What's this?</div>
-      <div class="info-toggle es" onclick="toggleInfo('nilBioInfo')">&#9432; ¿Qué es esto?</div>
+      <textarea id="nilBio" rows="3" placeholder="Tell coaches, scouts, and brands about yourself..."></textarea>
+      <span class="info-toggle" onclick="toggleInfo('nilBioInfo')">ℹ️ <span class="en">Tips for a great bio</span><span class="es">Tips para una buena bio</span></span>
       <div class="info-dropdown" id="nilBioInfo">
         <span class="en">Your NIL bio is a short personal statement that tells coaches, scouts, and brands who you are — on and off the court. Mention your playing style, achievements, goals, community involvement, and what makes you unique. Think of it as your elevator pitch to anyone looking to recruit or partner with you.</span>
         <span class="es">Tu bio NIL es una breve declaración personal que le dice a coaches, scouts y marcas quién eres — dentro y fuera de la cancha. Menciona tu estilo de juego, logros, metas, participación comunitaria y lo que te hace único. Piénsalo como tu presentación rápida para cualquiera que quiera reclutarte o asociarse contigo.</span>
@@ -366,6 +348,7 @@ document.addEventListener('keydown',function(e){
     else if(currentStep===3)submitProfile();
   }
 });
+try{var sl=localStorage.getItem('lc-lang');if(sl)setLang(sl);else setLang('en')}catch(e){setLang('en')}
 </script>
 </body>
 </html>
