@@ -20,16 +20,25 @@ input,select{font-family:inherit}
 html[lang="en"] .es{display:none!important}
 html[lang="es"] .en{display:none!important}
 
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 24px;background:rgba(10,10,10,.9);backdrop-filter:blur(20px);display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.06)}
-.nav-logo{display:block;height:36px}
-.nav-logo img{height:36px;width:auto}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav-brand{display:flex;align-items:center;gap:10px}
+.nav-brand img{height:32px}
+.nav-brand span{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:2px}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 24px;background:rgba(10,10,10,.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.06);padding-top:env(safe-area-inset-top,0px)}
 .nav-right{display:flex;align-items:center;gap:12px}
-.nav-link{font-size:.8rem;font-weight:600;color:var(--gray);transition:color .2s;padding:6px 14px;border-radius:6px}
+.nav-link{font-size:.75rem;font-weight:600;color:var(--gray);transition:color .2s}
 .nav-link:hover{color:var(--white)}
-.nav-link.active{background:rgba(232,97,26,.12);color:var(--orange)}
-.lang-toggle{display:flex;gap:4px;background:var(--black3);border-radius:6px;padding:2px}
+.nav-cta{padding:8px 18px;border-radius:8px;font-size:.75rem;font-weight:700;background:var(--gold);color:var(--black);border:none;cursor:pointer;font-family:'Outfit',sans-serif}
+.hamburger{background:none;border:none;color:var(--white);font-size:1.4rem;cursor:pointer;padding:6px 10px;line-height:1;border-radius:8px;transition:background .2s}
+.hamburger:hover{background:rgba(255,255,255,.06)}
+.mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;background:rgba(10,10,15,.97);backdrop-filter:blur(20px);padding:16px 24px 24px;border-bottom:1px solid rgba(255,255,255,.06);z-index:99;flex-direction:column;gap:4px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{display:block;padding:12px 16px;font-size:.88rem;font-weight:600;color:var(--gray-light);border-radius:10px;transition:all .2s}
+.mobile-menu a:hover{background:rgba(255,255,255,.04);color:var(--white)}
+.mm-lang{display:flex;gap:4px;padding:12px 16px}
+.mm-cta{background:var(--gold)!important;color:var(--black)!important;text-align:center;font-weight:700;border-radius:10px;margin-top:8px}
 .lang-btn{padding:5px 10px;border-radius:5px;font-size:.7rem;font-weight:700;background:transparent;color:var(--gray);transition:all .2s;letter-spacing:.05em;border:none;cursor:pointer}
-.lang-btn.active{background:var(--orange);color:#fff}
+.lang-btn.active{background:var(--gold);color:var(--black)}
 
 .scout-hero{padding:90px 24px 32px;text-align:center}
 .scout-hero h1{font-size:2rem;font-weight:800;margin-bottom:8px}
@@ -89,24 +98,32 @@ html[lang="es"] .en{display:none!important}
   .filters{flex-direction:column}
   .filter-input{width:100%}
   .nav-link{display:none}
+  .nav-cta{display:none}
 }
 </style>
 </head>
 <body>
 
-<nav class="nav">
-  <a href="/" class="nav-logo"><img src="/hooporia.png" alt="Hooporia"></a>
-  <div class="nav-right">
-    <a href="/" class="nav-link"><span class="en">Home</span><span class="es">Inicio</span></a>
-    <a href="/cognitive-hoops.html" class="nav-link"><span class="en">Hoops Mindset</span><span class="es">Hoops Mindset</span></a>
-    <a href="/discover.html" class="nav-link active"><span class="en">Discover</span><span class="es">Discover</span></a>
-    <a href="/login.html" class="nav-link"><span class="en">Log In</span><span class="es">Entrar</span></a>
-    <div class="lang-toggle">
-      <button class="lang-btn active" data-l="en" onclick="setLang('en')">EN</button>
-      <button class="lang-btn" data-l="es" onclick="setLang('es')">ES</button>
-    </div>
-  </div>
-</nav>
+<nav><div class="nav-inner">
+<a href="/" class="nav-brand"><img src="/hooporia.png" alt="Hooporia"><span>HOOPORIA</span></a>
+<div class="nav-right">
+<a href="/programs.html" class="nav-link" data-en="Programs" data-es="Programas">Programs</a>
+<a href="/cognitive-report.html" class="nav-link" data-en="AI Report" data-es="Reporte IA">AI Report</a>
+<a href="/cognitive-hoops.html" class="nav-link" data-en="Drills" data-es="Drills">Drills</a>
+<button class="hamburger" id="hamBtn" onclick="toggleMenu()" aria-label="Menu">☰</button>
+<a href="/join.html"><button class="nav-cta" data-en="Join Free" data-es="Únete Gratis">Join Free</button></a>
+</div></div>
+<div class="mobile-menu" id="mobileMenu">
+<a href="/programs.html" data-en="Programs" data-es="Programas">Programs</a>
+<a href="/cognitive-report.html" data-en="AI Report" data-es="Reporte IA">AI Report</a>
+<a href="/cognitive-hoops.html" data-en="Cognitive Drills" data-es="Drills Cognitivos">Cognitive Drills</a>
+<a href="/discover.html" data-en="Discover" data-es="Descubrir">Discover</a>
+<a href="/leaderboard.html" data-en="Leaderboard" data-es="Clasificación">Leaderboard</a>
+<a href="/ritnome.html" data-en="RITNOME™" data-es="RITNOME™">RITNOME™</a>
+<a href="/login.html" data-en="Log In" data-es="Entrar">Log In</a>
+<div class="mm-lang"><button class="lang-btn active" data-l="en" onclick="setLang('en')">EN</button><button class="lang-btn" data-l="es" onclick="setLang('es')">ES</button></div>
+<a href="/join.html" class="mm-cta" data-en="Join Free" data-es="Únete Gratis">Join Free</a>
+</div></nav>
 
 <div class="scout-hero">
   <h1><span class="en">🎓 Discover</span><span class="es">🎓 Discover</span></h1>
@@ -281,6 +298,7 @@ function renderPlayers(players){
 }
 
 function esc(s){if(!s)return'';var d=document.createElement('div');d.textContent=s;return d.innerHTML}
+function toggleMenu(){var m=document.getElementById('mobileMenu');var b=document.getElementById('hamBtn');if(m.classList.contains('open')){m.classList.remove('open');b.textContent='☰'}else{m.classList.add('open');b.textContent='✕'}}
 </script>
 </body>
 </html>
