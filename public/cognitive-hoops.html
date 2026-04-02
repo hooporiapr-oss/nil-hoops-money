@@ -139,18 +139,26 @@ body{min-height:100vh;font-family:'Outfit',sans-serif;background:var(--dark);col
 .final-cta h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,6vw,3rem);letter-spacing:4px;margin-bottom:12px}
 .final-cta p{color:var(--muted);margin-bottom:30px;font-size:0.9rem}
 
-.top-bar{position:fixed;top:0;left:0;right:0;z-index:100;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,10,15,0.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding-top:calc(12px + env(safe-area-inset-top))}
-.top-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
-.top-logo img{height:28px;width:auto}
-.top-logo span{font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:2px;color:var(--text)}
-.top-right{display:flex;gap:8px}
-.top-link{padding:8px 16px;border:1px solid var(--border);border-radius:8px;color:var(--muted);font-size:0.7rem;font-weight:600;text-decoration:none;transition:all 0.2s}
-.top-link:hover{border-color:var(--gold);color:var(--gold)}
-.top-link.gold{background:rgba(255,215,0,0.1);border-color:rgba(255,215,0,0.3);color:var(--gold)}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav-brand{display:flex;align-items:center;gap:10px}
+.nav-brand img{height:32px}
+.nav-brand span{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:2px;color:var(--text)}
+.nav-right{display:flex;align-items:center;gap:14px}
+.nav-link{font-size:.75rem;font-weight:600;color:var(--muted);transition:color .2s}
+.nav-link:hover{color:var(--text)}
+.nav-cta{padding:8px 18px;border-radius:8px;font-size:.75rem;font-weight:700;background:var(--gold);color:var(--dark);border:none;cursor:pointer;font-family:'Outfit',sans-serif}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 20px;background:rgba(10,10,15,0.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding-top:env(safe-area-inset-top,0px)}
+.hamburger{background:none;border:none;color:var(--text);font-size:1.4rem;cursor:pointer;padding:6px 10px;line-height:1;border-radius:8px;transition:background .2s}
+.hamburger:hover{background:rgba(255,255,255,.06)}
+.mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;background:rgba(10,10,15,.97);backdrop-filter:blur(20px);padding:16px 24px 24px;border-bottom:1px solid var(--border);z-index:99;flex-direction:column;gap:4px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{display:block;padding:12px 16px;font-size:.88rem;font-weight:600;color:var(--muted);border-radius:10px;transition:all .2s}
+.mobile-menu a:hover{background:rgba(255,255,255,.04);color:var(--text)}
+.mm-lang{display:flex;gap:4px;padding:12px 16px}
+.mm-cta{background:var(--gold)!important;color:var(--dark)!important;text-align:center;font-weight:700!important;border-radius:10px!important;margin-top:8px}
 
-.lang-toggle{display:flex;gap:2px}
-.lang-btn{padding:6px 10px;border:1px solid var(--border);background:transparent;color:var(--muted);border-radius:6px;font-size:0.6rem;font-weight:700;cursor:pointer;transition:all 0.2s}
-.lang-btn.active{border-color:var(--gold);color:var(--gold)}
+.lang-btn{padding:5px 10px;border-radius:5px;font-size:.65rem;font-weight:700;background:transparent;color:var(--muted);border:none;cursor:pointer;transition:all 0.2s}
+.lang-btn.active{background:var(--gold);color:var(--dark)}
 
 /* PREMIUM LOCKS */
 .challenge-card.locked{pointer-events:none;opacity:.45;position:relative}
@@ -166,26 +174,33 @@ body{min-height:100vh;font-family:'Outfit',sans-serif;background:var(--dark);col
   .card-icon{width:60px;height:60px;font-size:1.5rem}
   .card-header{flex-direction:column;align-items:flex-start;gap:6px}
   .hero-stats{gap:20px}
-  .top-right .top-link:not(.gold){display:none}
+  .nav-link{display:none}
+  .nav-cta{display:none}
 }
 </style>
 </head>
 <body>
 
-<nav class="top-bar">
-  <a href="/" class="top-logo">
-    <img src="/hooporia.png" alt="Hooporia">
-    <span>HOOPORIA</span>
-  </a>
-  <div class="top-right">
-    <div class="lang-toggle">
-      <button class="lang-btn active" onclick="setLang('en')">EN</button>
-      <button class="lang-btn" onclick="setLang('es')">ES</button>
-    </div>
-    <a href="/join.html" class="top-link gold" data-en="JOIN FREE" data-es="ÚNETE GRATIS">JOIN FREE</a>
-    <a href="/login.html" class="top-link" data-en="LOG IN" data-es="ENTRAR">LOG IN</a>
-  </div>
-</nav>
+<nav><div class="nav-inner">
+<a href="/" class="nav-brand"><img src="/hooporia.png" alt="Hooporia"><span>HOOPORIA</span></a>
+<div class="nav-right">
+<a href="/programs.html" class="nav-link" data-en="Programs" data-es="Programas">Programs</a>
+<a href="/cognitive-report.html" class="nav-link" data-en="AI Report" data-es="Reporte IA">AI Report</a>
+<a href="/cognitive-hoops.html" class="nav-link" data-en="Drills" data-es="Drills">Drills</a>
+<button class="hamburger" id="hamBtn" onclick="toggleMenu()" aria-label="Menu">☰</button>
+<a href="/join.html"><button class="nav-cta" data-en="Join Free" data-es="Únete Gratis">Join Free</button></a>
+</div></div>
+<div class="mobile-menu" id="mobileMenu">
+<a href="/programs.html" data-en="Programs" data-es="Programas">Programs</a>
+<a href="/cognitive-report.html" data-en="AI Report" data-es="Reporte IA">AI Report</a>
+<a href="/cognitive-hoops.html" data-en="Cognitive Drills" data-es="Drills Cognitivos">Cognitive Drills</a>
+<a href="/discover.html" data-en="Discover" data-es="Descubrir">Discover</a>
+<a href="/leaderboard.html" data-en="Leaderboard" data-es="Clasificación">Leaderboard</a>
+<a href="/ritnome.html" data-en="RITNOME™" data-es="RITNOME™">RITNOME™</a>
+<a href="/login.html" data-en="Log In" data-es="Entrar">Log In</a>
+<div class="mm-lang"><button class="lang-btn active" data-l="en" onclick="setLang('en')">EN</button><button class="lang-btn" data-l="es" onclick="setLang('es')">ES</button></div>
+<a href="/join.html" class="mm-cta" data-en="Join Free" data-es="Únete Gratis">Join Free</a>
+</div></nav>
 
 <section class="hero">
   <div class="hero-badge"><span class="dot"></span> <span data-en="HOOPORIA™ COGNITIVE DRILLS" data-es="DRILLS COGNITIVOS HOOPORIA™">HOOPORIA™ COGNITIVE DRILLS</span></div>
@@ -380,6 +395,8 @@ function setLang(l) {
     b.classList.toggle('active', b.textContent.trim().toLowerCase() === l);
   });
 }
+
+function toggleMenu(){var m=document.getElementById('mobileMenu');var b=document.getElementById('hamBtn');if(m.classList.contains('open')){m.classList.remove('open');b.textContent='☰'}else{m.classList.add('open');b.textContent='✕'}}
 
 setLang(currentLang);
 
