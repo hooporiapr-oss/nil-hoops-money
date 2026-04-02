@@ -82,6 +82,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.92
 .up-btn{display:inline-block;padding:14px 32px;border-radius:10px;font-size:.9rem;font-weight:700;background:linear-gradient(135deg,var(--gold),#FFA500);color:var(--black)}
 .up-btn-secondary{display:inline-block;padding:10px 28px;border-radius:10px;font-size:.8rem;font-weight:600;color:var(--gray-light);border:1.5px solid rgba(255,255,255,.12)}
 .powered{text-align:center;padding:24px;margin-top:12px}.powered a{font-size:.7rem;color:var(--gray);font-weight:600;display:flex;align-items:center;justify-content:center;gap:6px}.powered img{height:16px;opacity:.5}
+.hf-wrap{display:flex;align-items:center;justify-content:center;gap:16px;padding:20px;margin-bottom:16px}
+.hf-btn{display:flex;align-items:center;gap:10px;padding:14px 28px;border-radius:14px;font-size:.95rem;font-weight:700;background:rgba(255,215,0,.08);border:1.5px solid rgba(255,215,0,.2);color:var(--gold);cursor:pointer;transition:all .2s;font-family:'Outfit',sans-serif}
+.hf-btn:hover{background:rgba(255,215,0,.15);border-color:var(--gold);transform:scale(1.05)}
+.hf-btn:active{transform:scale(.95)}
+.hf-btn.done{background:rgba(34,197,94,.08);border-color:rgba(34,197,94,.2);color:var(--green);cursor:default}
+.hf-btn.done:hover{transform:none}
+.hf-emoji{font-size:1.4rem;transition:transform .2s}
+.hf-btn:active .hf-emoji{transform:rotate(-15deg) scale(1.3)}
+.hf-count{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--gold);letter-spacing:1px}
+.hf-label{font-size:.6rem;color:var(--gray);text-transform:uppercase;letter-spacing:1px}
+@keyframes hfPop{0%{transform:scale(1)}50%{transform:scale(1.3)}100%{transform:scale(1)}}
 .timeline{position:relative;padding-left:24px}
 .timeline::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--gold),rgba(255,215,0,.1))}
 .tl-item{position:relative;margin-bottom:20px;padding-left:20px}
@@ -206,6 +217,19 @@ if(pm)h+='<span class="tag premium-tag">⭐ Premium</span>';
 h+='</div></div>';
 
 if(pm&&p.nil_contact_email)h+='<a href="mailto:'+esc(p.nil_contact_email)+'" class="contact-btn" data-en="✉ Contact This Player" data-es="✉ Contactar Jugador">✉ Contact This Player</a>';
+
+// HIGH-FIVE
+var hfGiven=false;
+try{var hfKey='hf_'+p.id;hfGiven=localStorage.getItem(hfKey)==='1'}catch(e){}
+var hfCount=p.high_fives||0;
+h+='<div class="hf-wrap">';
+h+='<div style="text-align:center"><div class="hf-count" id="hfCount">'+hfCount+'</div><div class="hf-label" data-en="High-Fives" data-es="High-Fives">High-Fives</div></div>';
+if(hfGiven){
+h+='<div class="hf-btn done"><span class="hf-emoji">✋</span> <span data-en="High-Fived!" data-es="¡High-Five!">High-Fived!</span></div>';
+}else{
+h+='<button class="hf-btn" id="hfBtn" onclick="giveHighFive(\''+p.id+'\','+hfCount+')"><span class="hf-emoji">🖐️</span> <span data-en="High-Five!" data-es="¡High-Five!">High-Five!</span></button>';
+}
+h+='</div>';
 
 h+='<div class="card '+(pm?'pc':'')+'"><div class="card-title" data-en="📊 Stats" data-es="📊 Estadísticas">📊 Stats</div><div class="stats-row">';
 if(p.stats_ppg)h+=stB(p.stats_ppg,'PPG');if(p.stats_rpg)h+=stB(p.stats_rpg,'RPG');if(p.stats_apg)h+=stB(p.stats_apg,'APG');
@@ -347,6 +371,24 @@ window.openLightbox=function(url){
 var lb=document.getElementById('lightbox');
 document.getElementById('lightboxImg').src=url;
 lb.classList.add('show');
+};
+
+window.giveHighFive=async function(playerId,currentCount){
+var hfKey='hf_'+playerId;
+try{if(localStorage.getItem(hfKey)==='1')return}catch(e){}
+var btn=document.getElementById('hfBtn');
+var countEl=document.getElementById('hfCount');
+if(!btn)return;
+var newCount=currentCount+1;
+// Update UI immediately
+countEl.textContent=newCount;
+countEl.style.animation='hfPop .4s ease';
+btn.classList.add('done');
+btn.onclick=null;
+btn.innerHTML='<span class="hf-emoji">✋</span> <span>High-Fived!</span>';
+try{localStorage.setItem(hfKey,'1')}catch(e){}
+// Update Supabase
+try{await sb.from('players').update({high_fives:newCount}).eq('id',playerId)}catch(e){console.log('High-five save error:',e)}
 };
 </script>
 <div style="text-align:center;padding:16px 24px;font-size:.55rem;color:#333;max-width:500px;margin:0 auto" data-en="This program focuses on athlete development, branding, and future opportunities. We do not guarantee specific outcomes or opportunities." data-es="Este programa se enfoca en desarrollo del atleta, marca personal y oportunidades futuras. No garantizamos resultados específicos ni oportunidades.">This program focuses on athlete development, branding, and future opportunities. We do not guarantee specific outcomes or opportunities.</div>
