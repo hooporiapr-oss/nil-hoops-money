@@ -231,7 +231,7 @@ h+='<button class="hf-btn" id="hfBtn" onclick="giveHighFive(\''+p.id+'\','+hfCou
 }
 h+='</div>';
 
-h+='<div class="card '+(pm?'pc':'')+'"><div class="card-title" data-en="📊 Stats" data-es="📊 Estadísticas">📊 Stats</div><div class="stats-row">';
+h+='<div class="card '+(pm?'pc':'')+'"><div class="card-title" data-en="📊 Stats" data-es="📊 Estadísticas">📊 Stats</div><div style="font-size:.6rem;color:#555;margin-top:-10px;margin-bottom:12px" data-en="Self-reported by player" data-es="Reportadas por el jugador">Self-reported by player</div><div class="stats-row">';
 if(p.stats_ppg)h+=stB(p.stats_ppg,'PPG');if(p.stats_rpg)h+=stB(p.stats_rpg,'RPG');if(p.stats_apg)h+=stB(p.stats_apg,'APG');
 if(pm){if(p.stats_spg)h+=stB(p.stats_spg,'SPG');if(p.stats_bpg)h+=stB(p.stats_bpg,'BPG');if(p.games_played)h+=stB(p.games_played,'GP')}
 h+='</div>';
@@ -239,7 +239,7 @@ if(pm&&(p.fg_pct||p.three_pct||p.ft_pct)){h+='<div class="stats-row" style="marg
 if(!p.stats_ppg&&!p.stats_rpg&&!p.stats_apg)h+='<div style="text-align:center;padding:16px;color:var(--gray);font-size:.8rem" data-en="No stats entered yet" data-es="Sin estadísticas aún">No stats entered yet</div>';
 h+='</div>';
 
-if(pm&&(p.wingspan||p.vertical)){h+='<div class="card pc"><div class="card-title" data-en="📏 Measurables" data-es="📏 Medidas">📏 Measurables</div><div class="meas-row">';
+if(pm&&(p.wingspan||p.vertical)){h+='<div class="card pc"><div class="card-title" data-en="📏 Measurables" data-es="📏 Medidas">📏 Measurables</div><div style="font-size:.6rem;color:#555;margin-top:-10px;margin-bottom:12px" data-en="Self-reported by player" data-es="Reportadas por el jugador">Self-reported by player</div><div class="meas-row">';
 if(p.height)h+='<div class="meas"><div class="val">'+esc(p.height)+'</div><div class="lbl" data-en="Height" data-es="Altura">Height</div></div>';
 if(p.weight)h+='<div class="meas"><div class="val">'+esc(p.weight)+'</div><div class="lbl" data-en="Weight" data-es="Peso">Weight</div></div>';
 if(p.wingspan)h+='<div class="meas"><div class="val">'+esc(p.wingspan)+'</div><div class="lbl" data-en="Wingspan" data-es="Envergadura">Wingspan</div></div>';
@@ -299,7 +299,7 @@ h+='</div></div>';
 h+='</div></div>';
 }
 
-h+='<div class="card '+(pm?'pc':'')+'"><div class="card-title" data-en="🧠 Hoops Mindset" data-es="🧠 Hoops Mindset">🧠 Hoops Mindset</div>';
+h+='<div class="card '+(pm?'pc':'')+'"><div class="card-title" data-en="🧠 Hoops Mindset" data-es="🧠 Hoops Mindset">🧠 Hoops Mindset</div><div style="font-size:.6rem;color:var(--green);margin-top:-10px;margin-bottom:12px;display:flex;align-items:center;gap:4px" data-en="✓ Verified by Hooporia" data-es="✓ Verificado por Hooporia">✓ Verified by Hooporia</div>';
 var tc=Object.keys(bt).length;
 if(tc>0){var av=cogAvg(bt),ac=av>=8?'var(--gold)':av>=5?'var(--green)':'var(--orange)';
 h+='<div class="cog-overall"><div class="cog-overall-lbl" data-en="OVERALL RATING" data-es="CALIFICACIÓN GENERAL">OVERALL RATING</div><div class="cog-overall-val" style="color:'+ac+'">L'+av+'</div><div class="cog-overall-rat">'+(RL[av]||'')+'</div></div>';
