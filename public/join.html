@@ -15,15 +15,24 @@ input,select,textarea{font-family:inherit}
 html[lang="en"] .es{display:none!important}
 html[lang="es"] .en{display:none!important}
 
-.top-bar{position:fixed;top:0;left:0;right:0;z-index:100;padding:12px 24px;background:rgba(10,10,10,.9);backdrop-filter:blur(16px);display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.06)}
-.nav-brand{font-family:-apple-system,sans-serif;font-size:1.3rem;font-weight:900;letter-spacing:.01em}
-.nav-brand .dot{color:var(--orange)}
-.nav-right{display:flex;align-items:center;gap:12px}
-.nav-right a{font-size:.8rem;color:var(--gray);font-weight:600}
-.nav-right a:hover{color:var(--white)}
-.lang-toggle{display:flex;gap:4px;background:var(--black3);border-radius:6px;padding:2px}
-.lang-btn{padding:5px 10px;border-radius:5px;font-size:.7rem;font-weight:700;background:transparent;color:var(--gray);transition:all .2s;letter-spacing:.05em;border:none;cursor:pointer}
-.lang-btn.active{background:var(--orange);color:#fff}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 24px;background:rgba(10,10,10,.9);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.06)}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-brand{display:flex;align-items:center}
+.nav-right{display:flex;align-items:center;gap:14px}
+.nav-link{font-size:.75rem;font-weight:600;color:var(--gray);transition:color .2s}
+.nav-link:hover{color:var(--white)}
+.nav-cta{padding:8px 18px;border-radius:8px;font-size:.75rem;font-weight:700;background:#FFD700;color:var(--black);border:none;cursor:pointer;font-family:inherit}
+.lang-btn{padding:5px 10px;border-radius:5px;font-size:.65rem;font-weight:700;background:transparent;color:var(--gray);transition:all .2s;border:none;cursor:pointer}
+.lang-btn.active{background:#FFD700;color:var(--black)}
+.hamburger{background:none;border:none;color:var(--white);font-size:1.4rem;cursor:pointer;padding:6px 10px;line-height:1;border-radius:8px;transition:background .2s}
+.hamburger:hover{background:rgba(255,255,255,.06)}
+.mobile-menu{display:none;position:fixed;top:60px;left:0;right:0;background:rgba(10,10,15,.97);backdrop-filter:blur(20px);padding:16px 24px 24px;border-bottom:1px solid rgba(255,255,255,.06);z-index:99;flex-direction:column;gap:4px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{display:block;padding:12px 16px;font-size:.88rem;font-weight:600;color:#aaa;border-radius:10px;transition:all .2s}
+.mobile-menu a:hover{background:rgba(255,255,255,.04);color:var(--white)}
+.mm-lang{display:flex;gap:4px;padding:12px 16px}
+.mm-cta{background:#FFD700!important;color:var(--black)!important;text-align:center;font-weight:700!important;border-radius:10px!important;margin-top:8px}
+@media(max-width:600px){.nav-link{display:none}.nav-cta{display:none}}
 
 .card{background:#fff;border-radius:16px;padding:40px;max-width:540px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,.4);margin-top:80px}
 .card h1{font-size:1.5rem;font-weight:900;color:#000;text-align:center;margin-bottom:4px}
@@ -84,18 +93,26 @@ function toggleInfo(id){document.getElementById(id).classList.toggle('open')}
 </script>
 </head>
 <body>
-
-<div class="top-bar">
-  <a href="/" class="nav-brand">HOOPORIA</a>
-  <div class="nav-right">
-    <a href="/login.html" class="en">Log In</a>
-    <a href="/login.html" class="es">Entrar</a>
-    <div class="lang-toggle">
-      <button class="lang-btn active" data-l="en" onclick="setLang('en')">EN</button>
-      <button class="lang-btn" data-l="es" onclick="setLang('es')">ES</button>
-    </div>
-  </div>
-</div>
+<script>function toggleMenu(){var m=document.getElementById('mobileMenu');var b=document.getElementById('hamBtn');if(m.classList.contains('open')){m.classList.remove('open');b.textContent='☰'}else{m.classList.add('open');b.textContent='✕'}}</script>
+<nav><div class="nav-inner">
+<a href="/" class="nav-brand"><img src="/hooporia.png" alt="Hooporia" style="height:28px"><span style="font-family:-apple-system,sans-serif;font-size:1.2rem;font-weight:900;letter-spacing:.01em;margin-left:8px">HOOPORIA</span></a>
+<div class="nav-right">
+<a href="/programs.html" class="nav-link" data-en="Programs" data-es="Programas">Programs</a>
+<a href="/cognitive-report.html" class="nav-link" data-en="AI Report" data-es="Reporte IA">AI Report</a>
+<a href="/cognitive-hoops.html" class="nav-link" data-en="Drills" data-es="Drills">Drills</a>
+<button class="hamburger" id="hamBtn" onclick="toggleMenu()" aria-label="Menu">☰</button>
+<a href="/login.html"><button class="nav-cta" data-en="Log In" data-es="Entrar">Log In</button></a>
+</div></div>
+<div class="mobile-menu" id="mobileMenu">
+<a href="/programs.html" data-en="Programs" data-es="Programas">Programs</a>
+<a href="/cognitive-report.html" data-en="AI Report" data-es="Reporte IA">AI Report</a>
+<a href="/cognitive-hoops.html" data-en="Cognitive Drills" data-es="Drills Cognitivos">Cognitive Drills</a>
+<a href="/discover.html" data-en="Discover" data-es="Descubrir">Discover</a>
+<a href="/leaderboard.html" data-en="Leaderboard" data-es="Clasificación">Leaderboard</a>
+<a href="/ritnome.html" data-en="RITNOME™" data-es="RITNOME™">RITNOME™</a>
+<div class="mm-lang"><button class="lang-btn active" data-l="en" onclick="setLang('en')">EN</button><button class="lang-btn" data-l="es" onclick="setLang('es')">ES</button></div>
+<a href="/login.html" class="mm-cta" data-en="Log In" data-es="Entrar">Log In</a>
+</div></nav>
 
 <div class="card">
   <div class="steps-bar">
