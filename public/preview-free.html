@@ -14,11 +14,20 @@
 body{font-family:'Outfit',sans-serif;background:var(--black);color:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
 a{text-decoration:none;color:inherit}
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.04);padding:0 24px}
-.ni{max-width:1000px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}
-.nb{display:flex;align-items:center;gap:8px}.nb img{height:28px}.nb span{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:2px}
-.nr{display:flex;align-items:center;gap:12px}
-.nl{font-size:.75rem;font-weight:600;color:var(--gray)}.nl:hover{color:var(--white)}
-.lt{display:flex;gap:3px;background:rgba(26,26,34,1);border-radius:6px;padding:2px}.lb{padding:4px 8px;border-radius:4px;font-size:.6rem;font-weight:700;background:transparent;color:var(--gray);border:none;cursor:pointer}.lb.active{background:var(--gold);color:var(--black)}
+.nav-inner{max-width:1000px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-brand{display:flex;align-items:center;gap:8px}.nav-brand img{height:28px}.nav-brand span{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:2px}
+.nav-right{display:flex;align-items:center;gap:12px}
+.nav-link{font-size:.75rem;font-weight:600;color:var(--gray)}.nav-link:hover{color:var(--white)}
+.nav-cta{padding:8px 18px;border-radius:8px;font-size:.75rem;font-weight:700;background:var(--gold);color:var(--black);border:none;cursor:pointer;font-family:'Outfit',sans-serif}
+.lb{padding:4px 8px;border-radius:4px;font-size:.6rem;font-weight:700;background:transparent;color:var(--gray);border:none;cursor:pointer}.lb.active{background:var(--gold);color:var(--black)}
+.hamburger{background:none;border:none;color:var(--white);font-size:1.4rem;cursor:pointer;padding:6px 10px;line-height:1;border-radius:8px;transition:background .2s}
+.hamburger:hover{background:rgba(255,255,255,.06)}
+.mobile-menu{display:none;position:fixed;top:60px;left:0;right:0;background:rgba(10,10,15,.97);backdrop-filter:blur(20px);padding:16px 24px 24px;border-bottom:1px solid rgba(255,255,255,.06);z-index:99;flex-direction:column;gap:4px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{display:block;padding:12px 16px;font-size:.88rem;font-weight:600;color:var(--gray-light);border-radius:10px;transition:all .2s}
+.mobile-menu a:hover{background:rgba(255,255,255,.04);color:var(--white)}
+.mm-lang{display:flex;gap:4px;padding:12px 16px}
+.mm-cta{background:var(--gold)!important;color:var(--black)!important;text-align:center;font-weight:700!important;border-radius:10px!important;margin-top:8px}
 .container{max-width:680px;margin:0 auto;padding:80px 24px 40px}
 .banner{text-align:center;padding:14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:14px;margin-bottom:20px;font-size:.8rem;color:var(--gray)}.banner a{color:var(--gold);font-weight:700}
 .hero-card{border-radius:24px;padding:40px 28px 32px;margin-bottom:20px;background:var(--surface);border:1px solid rgba(255,255,255,.04)}
@@ -54,11 +63,23 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.92
 .ubtn{display:inline-block;padding:14px 32px;border-radius:10px;font-size:.9rem;font-weight:700;background:linear-gradient(135deg,var(--gold),#FFA500);color:var(--black);margin-bottom:8px}
 .ubtn-sub{display:inline-block;padding:10px 28px;border-radius:10px;font-size:.8rem;font-weight:600;color:var(--gray-light);border:1.5px solid rgba(255,255,255,.12)}
 .pw{text-align:center;padding:24px}.pw a{font-size:.7rem;color:var(--gray);display:flex;align-items:center;justify-content:center;gap:6px}.pw img{height:16px;opacity:.5}
-@media(max-width:600px){.ht{flex-direction:column;text-align:center}.tags{justify-content:center}.cg{grid-template-columns:repeat(2,1fr)}.soc{justify-content:center}.nl{display:none}}
+@media(max-width:600px){.ht{flex-direction:column;text-align:center}.tags{justify-content:center}.cg{grid-template-columns:repeat(2,1fr)}.soc{justify-content:center}.nav-link{display:none}.nav-cta{display:none}}
 </style>
 </head>
 <body>
-<nav><div class="ni"><a href="/" class="nb"><img src="/hooporia.png" alt="Hooporia"><span>HOOPORIA</span></a><div class="nr"><a href="/preview-premium.html" class="nl" style="color:var(--gold)" data-en="⭐ See Premium" data-es="⭐ Ver Premium">⭐ See Premium</a><div class="lt"><button class="lb active" data-l="en" onclick="setLang('en')">EN</button><button class="lb" data-l="es" onclick="setLang('es')">ES</button></div></div></div></nav>
+<script>function toggleMenu(){var m=document.getElementById('mobileMenu');var b=document.getElementById('hamBtn');if(m.classList.contains('open')){m.classList.remove('open');b.textContent='☰'}else{m.classList.add('open');b.textContent='✕'}}</script>
+<nav><div class="nav-inner"><a href="/" class="nav-brand"><img src="/hooporia.png" alt="Hooporia"><span>HOOPORIA</span></a><div class="nav-right"><a href="/programs.html" class="nav-link" data-en="Programs" data-es="Programas">Programs</a><a href="/cognitive-report.html" class="nav-link" data-en="AI Report" data-es="Reporte IA">AI Report</a><a href="/cognitive-hoops.html" class="nav-link" data-en="Drills" data-es="Drills">Drills</a><button class="hamburger" id="hamBtn" onclick="toggleMenu()" aria-label="Menu">☰</button><a href="/preview-premium.html"><button class="nav-cta" data-en="⭐ See Premium" data-es="⭐ Ver Premium">⭐ See Premium</button></a></div></div>
+<div class="mobile-menu" id="mobileMenu">
+<a href="/preview-premium.html" style="color:var(--gold);font-weight:700" data-en="⭐ See Premium Profile" data-es="⭐ Ver Perfil Premium">⭐ See Premium Profile</a>
+<a href="/programs.html" data-en="Programs" data-es="Programas">Programs</a>
+<a href="/cognitive-report.html" data-en="AI Report" data-es="Reporte IA">AI Report</a>
+<a href="/cognitive-hoops.html" data-en="Cognitive Drills" data-es="Drills Cognitivos">Cognitive Drills</a>
+<a href="/discover.html" data-en="Discover" data-es="Descubrir">Discover</a>
+<a href="/ritnome.html" data-en="RITNOME™" data-es="RITNOME™">RITNOME™</a>
+<a href="/login.html" data-en="Log In" data-es="Entrar">Log In</a>
+<div class="mm-lang"><button class="lb active" data-l="en" onclick="setLang('en')">EN</button><button class="lb" data-l="es" onclick="setLang('es')">ES</button></div>
+<a href="/join.html" class="mm-cta" data-en="Join Free" data-es="Únete Gratis">Join Free</a>
+</div></nav>
 
 <div class="container">
 <div class="banner" data-en="👁️ This is a preview of the <strong>FREE</strong> player profile. <a href='/preview-premium.html'>See Premium →</a>" data-es="👁️ Vista previa del perfil <strong>GRATIS</strong>. <a href='/preview-premium.html'>Ver Premium →</a>">👁️ This is a preview of the <strong>FREE</strong> player profile. <a href="/preview-premium.html">See Premium →</a></div>
