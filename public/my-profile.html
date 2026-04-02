@@ -178,7 +178,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.92
 .mm-lang{display:flex;gap:4px;padding:12px 16px}
 .mm-cta{background:var(--gold)!important;color:var(--black)!important;text-align:center;font-weight:700;border-radius:10px;margin-top:8px}
 @media(max-width:600px){
-/* NAV */
 nav{padding:0 12px}
 .nav-inner{height:52px}
 .nav-brand img{height:22px}
@@ -186,9 +185,7 @@ nav{padding:0 12px}
 .nav-right{gap:6px}
 .nav-link{display:none}
 .logout-btn{font-size:.6rem;padding:5px 10px}
-/* CONTAINER */
 .container{padding:calc(60px + env(safe-area-inset-top,0px)) 14px 40px}
-/* HEADER */
 .profile-header{flex-direction:column;text-align:center;gap:14px;margin-bottom:20px}
 .header-avatar{width:60px;height:60px;border-radius:14px;font-size:1.4rem}
 .header-info{min-width:0}
@@ -196,33 +193,27 @@ nav{padding:0 12px}
 .header-meta{font-size:.72rem}
 .header-actions{justify-content:center;width:100%;gap:6px}
 .btn-view,.btn-share{padding:10px 16px;font-size:.72rem;flex:1;text-align:center}
-/* TABS */
 .tabs{gap:0;margin-bottom:16px;-webkit-overflow-scrolling:touch;scrollbar-width:none;-ms-overflow-style:none}
 .tabs::-webkit-scrollbar{display:none}
 .tab{padding:10px 12px;font-size:.68rem;flex-shrink:0}
-/* CARDS */
 .card{padding:16px;margin-bottom:14px;border-radius:14px}
 .card-title{font-size:.95rem;margin-bottom:12px}
-/* OVERVIEW */
 .views-card{padding:14px 16px}
 .views-num{font-size:1.6rem}
 .quick-links{grid-template-columns:1fr;gap:8px}
 .quick-link{padding:12px 14px;font-size:.78rem}
-/* FORM FIELDS */
 .field{margin-bottom:10px}
 .field label{font-size:.65rem;margin-bottom:4px}
 .field input,.field select,.field textarea{padding:10px 12px;font-size:.82rem;border-radius:8px}
 .field-row{grid-template-columns:1fr;gap:8px}
 .field-row-3{grid-template-columns:1fr;gap:8px}
 .btn-save{width:100%;padding:14px;font-size:.85rem;text-align:center}
-/* SEASON FORM */
 .season-form{padding:14px;border-radius:14px}
 .sf-row{grid-template-columns:1fr;gap:8px;margin-bottom:8px}
 .sf-row-3{grid-template-columns:1fr;gap:8px;margin-bottom:8px}
 .sf-field input,.sf-field select,.sf-field textarea{padding:10px 12px;font-size:.8rem}
 .sf-btns{flex-direction:column}
 .sf-save,.sf-cancel{width:100%;text-align:center;padding:14px}
-/* COGNITIVE */
 .cog-grid{grid-template-columns:repeat(2,1fr);gap:8px}
 .cog-item{padding:10px 6px;border-radius:10px}
 .cog-emoji{font-size:1.1rem;margin-bottom:4px}
@@ -230,7 +221,6 @@ nav{padding:0 12px}
 .cog-level{font-size:1.1rem}
 .cog-overall{padding:14px}
 .cog-overall-value{font-size:2rem}
-/* TIMELINE */
 .timeline{padding-left:18px}
 .tl-item{padding-left:16px;margin-bottom:14px}
 .tl-card{padding:12px}
@@ -239,7 +229,6 @@ nav{padding:0 12px}
 .tl-stat{padding:5px 6px;min-width:38px}
 .tl-stat .v{font-size:.8rem}
 .tl-stat .l{font-size:.45rem}
-/* MEDIA TAB */
 .avatar-preview{gap:14px}
 .avatar-img,.avatar-placeholder{width:64px;height:64px;border-radius:16px}
 .avatar-placeholder{font-size:1.4rem}
@@ -253,15 +242,20 @@ nav{padding:0 12px}
 .video-item video{width:60px;height:45px}
 .vl-item{gap:6px}
 .vl-item .del-btn{width:28px;height:28px}
-/* TOAST */
 .toast{left:14px;right:14px;transform:translateX(0) translateY(100px);border-radius:10px;font-size:.82rem;padding:12px 16px;text-align:center}
 .toast.show{transform:translateX(0) translateY(0)}
-/* INFO TOGGLES */
 .info-toggle{font-size:.62rem}
 .info-dropdown{font-size:.7rem;padding:8px 10px}
-/* REPORT SECTION */
 #cogReportSection .btn-save{width:auto}
 }
+
+/* FOOTER */
+footer{border-top:1px solid rgba(255,255,255,.04);padding:28px 0}
+.footer-inner{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;max-width:800px;margin:0 auto;padding:0 24px}
+.footer-links{display:flex;gap:20px}
+.footer-links a{font-size:.78rem;color:var(--gray);transition:color .2s}
+.footer-links a:hover{color:var(--white)}
+.footer-copy{font-size:.65rem;color:#444}
 </style>
 </head>
 <body>
@@ -304,8 +298,6 @@ nav{padding:0 12px}
 <div class="tab" onclick="showTab('media',this)" data-en="📸 Media" data-es="📸 Media">📸 Media</div>
 <div class="tab" onclick="showTab('mindset',this)">🧠 Mindset</div>
 </div>
-
-<!-- OVERVIEW -->
 <div class="tab-panel active" id="tab-overview">
 <div class="card views-card"><div><div class="views-num" id="oViews">0</div><div class="views-label" data-en="Profile Views" data-es="Vistas del Perfil">Profile Views</div></div><div style="text-align:right"><div style="font-size:.75rem;color:var(--gray)" data-en="Profile" data-es="Perfil">Profile</div><div style="font-size:.85rem;font-weight:700;color:var(--green)" id="oStatus">Active</div></div></div>
 <div class="card"><div class="card-title" data-en="⚡ Quick Actions" data-es="⚡ Acciones Rápidas">⚡ Quick Actions</div>
@@ -322,8 +314,6 @@ nav{padding:0 12px}
 <div style="text-align:center;flex:1;min-width:60px"><div style="font-size:1.4rem;font-weight:800;color:var(--green)" id="oAPG">—</div><div style="font-size:.65rem;color:var(--gray)">Assists</div></div>
 <div style="text-align:center;flex:1;min-width:60px"><div style="font-size:1.4rem;font-weight:800;color:var(--purple)" id="oCOG">—</div><div style="font-size:.65rem;color:var(--gray)">🧠 COG</div></div>
 </div></div></div>
-
-<!-- STATS -->
 <div class="tab-panel" id="tab-stats">
 <div class="card"><div class="card-title">📊 Game Stats</div>
 <div class="field-row-3"><div class="field"><label>Points Per Game</label><input type="number" step="0.1" id="fPPG" placeholder="0.0"></div><div class="field"><label>Rebounds Per Game</label><input type="number" step="0.1" id="fRPG" placeholder="0.0"></div><div class="field"><label>Assists Per Game</label><input type="number" step="0.1" id="fAPG" placeholder="0.0"></div></div>
@@ -334,8 +324,6 @@ nav{padding:0 12px}
 <div class="field-row"><div class="field"><label>Height</label><input type="text" id="fHeight" placeholder="6'1&quot;"></div><div class="field"><label>Weight</label><input type="text" id="fWeight" placeholder="175 lbs"></div></div>
 <div class="field-row"><div class="field"><label>Wingspan</label><input type="text" id="fWingspan" placeholder="6'4&quot;"></div><div class="field"><label>Vertical</label><input type="text" id="fVertical" placeholder="32&quot;"></div></div>
 <button class="btn-save" onclick="saveMeasurables()">Save Measurables</button><span class="save-status" id="measSaved">✓</span></div></div>
-
-<!-- TIMELINE -->
 <div class="tab-panel" id="tab-timeline">
 <div class="card"><div class="card-title">📅 YOUR BASKETBALL TIMELINE</div>
 <p style="font-size:.82rem;color:var(--gray);margin-bottom:16px">Every season, every tournament, every camp. Your basketball story — forever.</p>
@@ -356,8 +344,6 @@ nav{padding:0 12px}
 <div class="sf-field"><label>Notes / Memories</label><textarea id="sfNotes" placeholder="The game where I hit the buzzer beater..." rows="3"></textarea></div>
 <div class="sf-btns"><button class="sf-save" onclick="saveSeason()">Save to Timeline</button><button class="sf-cancel" onclick="toggleSeasonForm()">Cancel</button></div></div>
 <div id="timelineList"></div></div>
-
-<!-- PROFILE -->
 <div class="tab-panel" id="tab-profile">
 <div class="card"><div class="card-title">👤 Basic Info</div>
 <div class="field-row"><div class="field"><label>First Name</label><input type="text" id="fFirst" placeholder="Marcus"></div><div class="field"><label>Last Name</label><input type="text" id="fLast" placeholder="Rivera"></div></div>
@@ -366,8 +352,6 @@ nav{padding:0 12px}
 <div class="field-row"><div class="field"><label data-en="Play Style" data-es="Estilo de Juego">Play Style</label><select id="fStyle"><option value="">--</option><option value="Scorer">Scorer</option><option value="Playmaker">Playmaker</option><option value="Defender">Defender</option><option value="Rebounder">Rebounder</option><option value="Sharpshooter">Sharpshooter</option><option value="Slasher">Slasher</option><option value="All-Around">All-Around</option></select></div><div class="field"><label data-en="Competition Level" data-es="Nivel de Competencia">Competition Level</label><select id="fComp"><option value="">--</option><option value="Rec League">Rec League</option><option value="School JV">School JV</option><option value="School Varsity">School Varsity</option><option value="AAU / Travel">AAU / Travel</option><option value="Elite / National">Elite / National</option><option value="College">College</option><option value="Pro">Pro</option></select></div></div>
 <div class="field"><label>Profile Slug</label><input type="text" id="fSlug" placeholder="marcus-rivera" disabled><div class="hint">hooporia.com/player/<span id="slugShow">—</span></div></div>
 <button class="btn-save" onclick="saveProfile()">Save Profile</button><span class="save-status" id="profileSaved">✓</span></div></div>
-
-<!-- BRANDING & SOCIALS -->
 <div class="tab-panel" id="tab-nil">
 <div class="card"><div class="card-title">🎥 Highlights</div>
 <div class="field"><label>Highlight Reel URL</label><input type="url" id="fHighlight" placeholder="https://youtube.com/watch?v=..."></div>
@@ -386,16 +370,12 @@ nav{padding:0 12px}
 <div class="info-dropdown" id="nilBioInfo" data-en="Your player bio is a short personal statement that tells coaches, scouts, and brands who you are — on and off the court. Mention your playing style, achievements, goals, community involvement, and what makes you unique. Think of it as your elevator pitch to anyone looking to recruit or partner with you." data-es="Tu bio de jugador es una breve declaración personal que le dice a coaches, scouts y marcas quién eres — dentro y fuera de la cancha. Menciona tu estilo de juego, logros, metas, participación comunitaria y lo que te hace único. Piénsalo como tu presentación rápida para cualquiera que quiera reclutarte o asociarse contigo.">Your player bio is a short personal statement that tells coaches, scouts, and brands who you are — on and off the court. Mention your playing style, achievements, goals, community involvement, and what makes you unique. Think of it as your elevator pitch to anyone looking to recruit or partner with you.</div>
 </div>
 <button class="btn-save" onclick="saveNIL()">Save Contact Info</button></div></div>
-
-<!-- MEDIA -->
 <div class="tab-panel" id="tab-media">
 <div class="card"><div class="card-title">📸 Profile Photo</div><div class="avatar-preview"><div id="avatarPreview"></div><div class="avatar-actions"><div class="upload-zone" style="padding:12px 20px;border-radius:10px"><input type="file" accept="image/*" onchange="uploadFile(this.files[0],'avatars','avatar_url',function(url){player.avatar_url=url;renderAvatarPreview();updateHeaderAvatar()})"><span style="font-size:.78rem;font-weight:700;color:var(--gold)">Upload Photo</span></div><button class="add-link-btn" style="font-size:.68rem;color:var(--red)" onclick="deleteMedia('avatar_url')">Remove</button></div></div><div class="upload-hint">JPG, PNG, WebP · Max 5MB</div></div>
 <div class="card"><div class="card-title">🖼️ Cover Photo</div><div id="coverPreview"></div><div class="upload-zone"><input type="file" accept="image/*" onchange="uploadFile(this.files[0],'covers','cover_url',function(url){player.cover_url=url;renderCoverPreview()})"><div class="upload-icon">🖼️</div><div class="upload-text">Click or drag to upload cover photo</div><div class="upload-hint">Recommended: 1200 × 400px · Max 5MB</div></div><button class="add-link-btn" style="margin-top:8px;font-size:.68rem;color:var(--red)" onclick="deleteMedia('cover_url')">Remove Cover</button></div>
 <div class="card"><div class="card-title">📷 Action Photos</div><div class="gallery-grid" id="galleryGrid"></div><div class="upload-zone"><input type="file" accept="image/*" multiple onchange="uploadGalleryFiles(this.files)"><div class="upload-icon">📷</div><div class="upload-text">Upload game & training photos</div><div class="upload-hint">Select multiple · Max 5MB each · Up to 12 photos</div></div></div>
 <div class="card"><div class="card-title">🎥 Video Highlights</div><div class="video-links-list" id="videoLinksList"></div><div style="display:flex;gap:8px;margin-bottom:16px"><button class="add-link-btn" onclick="addVideoLinkField()">+ Add Video Link</button></div><div class="upload-hint">YouTube, Instagram, TikTok links</div><button class="btn-save" onclick="saveVideoLinks()" style="margin-top:12px">Save Video Links</button><span class="save-status" id="videosSaved">✓</span></div>
 <div class="card"><div class="card-title">🎬 Direct Video Upload</div><div class="video-list" id="videoList"></div><div class="upload-zone"><input type="file" accept="video/*" onchange="uploadVideoFile(this.files[0])"><div class="upload-icon">🎬</div><div class="upload-text">Upload highlight clips directly</div><div class="upload-hint">MP4, MOV · Max 50MB · Up to 5 videos</div></div><div class="upload-progress" id="videoProgress"><div class="upload-bar"><div class="upload-bar-fill" id="videoBar"></div></div></div></div></div>
-
-<!-- MINDSET -->
 <div class="tab-panel" id="tab-mindset"><div id="cogContent">
 <div class="cog-overall" id="cogOverallCard"><div class="cog-overall-label">HOOPS MINDSET — OVERALL RATING</div><div class="cog-overall-value" id="cogOverallValue">—</div><div class="cog-overall-rating" id="cogOverallRating">Play drills to build your rating</div></div>
 <div class="cog-grid" id="cogGrid"></div>
@@ -519,23 +499,18 @@ function initMediaTab(){renderAvatarPreview();renderCoverPreview();renderGallery
 function applyFreeLimits(){
 var isPrem=player&&(player.profile_tier==='premium'||player.profile_tier==='pro');
 if(isPrem)return;
-// LOCK 1: Timeline — premium only
 var tlTab=document.getElementById('tab-timeline');
 if(tlTab)tlTab.innerHTML='<div style="text-align:center;padding:60px 20px"><div style="font-size:2.5rem;margin-bottom:12px">📅</div><div style="font-family:Bebas Neue,sans-serif;font-size:1.3rem;letter-spacing:2px;color:var(--gold);margin-bottom:8px">PREMIUM FEATURE</div><p style="color:var(--gray);font-size:.85rem;margin-bottom:20px">Your basketball timeline is a premium feature. Track every season, tournament, camp, and award — forever.</p><a href="https://buy.stripe.com/eVq28s8yrgwuaMEgP88Zq03" style="display:inline-block;padding:14px 28px;border-radius:10px;font-size:.9rem;font-weight:700;background:var(--gold);color:var(--black);margin-bottom:8px">⭐ $49/year — Best Value</a><br><a href="https://buy.stripe.com/00wdRa7un2FEf2U0Qa8Zq02" style="display:inline-block;padding:10px 24px;border-radius:10px;font-size:.8rem;font-weight:600;color:var(--gray-light);border:1.5px solid rgba(255,255,255,.12);margin-top:8px">$7/month</a></div>';
-// LOCK 2: Shooting % fields — disabled for free
 ['fFG','f3PT','fFT'].forEach(function(id){var el=document.getElementById(id);if(el){el.disabled=true;el.placeholder='Premium only';el.value='';el.style.opacity='.4'}});
-// LOCK 3: Add Season quick link — swap to premium prompt
 var qlLinks=document.querySelectorAll('.quick-link');
 qlLinks.forEach(function(ql){if(ql.innerHTML.indexOf('Add Season')>-1||ql.innerHTML.indexOf('Agregar Temporada')>-1){ql.onclick=function(e){e.preventDefault();showTab('timeline',document.querySelector('.tab:nth-child(3)'));return false};ql.innerHTML='<span class="ql-icon">🔒</span> <span>Timeline (Premium)</span>';ql.style.opacity='.5'}});
-// LOCK 4: Cognitive report — show locked state
 var rs=document.getElementById('cogReportSection');
 if(rs){rs.style.display='block';document.getElementById('generateReportBtn').style.display='none';document.getElementById('reportLocked').style.display='block'}
 }
 
-// Cognitive report - show section for premium users with scores
 function initReportSection(){
 var isPrem=player&&(player.profile_tier==='premium'||player.profile_tier==='pro');
-if(!isPrem)return; // free users handled by applyFreeLimits
+if(!isPrem)return;
 var rs=document.getElementById('cogReportSection');
 if(rs)rs.style.display='block';
 }
@@ -550,7 +525,6 @@ btn.style.display='none';
 output.style.display='none';
 loading.style.display='block';
 try{
-// Gather cognitive scores
 var{data:cogData}=await sb.from('cognitive_scores').select('*').eq('player_id',player.id);
 var bestByTest={};
 if(cogData)cogData.forEach(function(s){if(!bestByTest[s.test_name]||s.level>bestByTest[s.test_name].level)bestByTest[s.test_name]=s});
@@ -558,7 +532,6 @@ var scores={};
 ['react','recall','reflex','replay','ritmo','beat'].forEach(function(t){if(bestByTest[t])scores[t]={level:bestByTest[t].level,speed:bestByTest[t].speed,score:bestByTest[t].score}});
 if(Object.keys(scores).length===0){loading.style.display='none';btn.style.display='';showToast('Play drills first to generate a report');return}
 
-// Gather timeline data
 var{data:seasonData}=await sb.from('player_seasons').select('*').eq('player_id',player.id).order('season_year',{ascending:false});
 var totalSeasons=0,totalGames=0,totalAwards=0,seasonHistory='';
 if(seasonData&&seasonData.length){
@@ -626,6 +599,9 @@ return isPremiumUser;
 
 async function doLogout(){if(sb){await sb.auth.signOut()}window.location.href='/login.html'}
 </script>
-<div style="text-align:center;padding:16px 24px;font-size:.55rem;color:#333;max-width:500px;margin:0 auto" data-en="This program focuses on athlete development, branding, and future opportunities. We do not guarantee specific outcomes or opportunities." data-es="Este programa se enfoca en desarrollo del atleta, marca personal y oportunidades futuras. No garantizamos resultados específicos ni oportunidades.">This program focuses on athlete development, branding, and future opportunities. We do not guarantee specific outcomes or opportunities.</div>
+<footer><div class="footer-inner">
+<div class="footer-links"><a href="/privacy.html" data-en="Privacy" data-es="Privacidad">Privacy</a><a href="/terms.html" data-en="Terms" data-es="Términos">Terms</a></div>
+<div class="footer-copy">© 2026 GoStar Digital LLC. All Rights Reserved.</div>
+</div></footer>
 </body>
 </html>
