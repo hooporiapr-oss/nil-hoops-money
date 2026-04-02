@@ -235,6 +235,7 @@ footer{border-top:1px solid rgba(255,255,255,.04);padding:28px 0}
 </style>
 </head>
 <body>
+<script>function toggleMenu(){var m=document.getElementById('mobileMenu');var b=document.getElementById('hamBtn');if(m.classList.contains('open')){m.classList.remove('open');b.textContent='☰'}else{m.classList.add('open');b.textContent='✕'}}</script>
 
 <nav><div class="nav-inner">
 <a href="/" class="nav-brand"><img src="/hooporia.png" alt="Hooporia"><span>HOOPORIA</span></a>
@@ -444,7 +445,6 @@ footer{border-top:1px solid rgba(255,255,255,.04);padding:28px 0}
 </div></div></footer>
 
 <script>
-function toggleMenu(){var m=document.getElementById('mobileMenu');var b=document.getElementById('hamBtn');if(m.classList.contains('open')){m.classList.remove('open');b.textContent='☰'}else{m.classList.add('open');b.textContent='✕'}}
 try{var sl=localStorage.getItem('lc-lang');if(sl)setLang(sl);else setLang('en')}catch(e){setLang('en')}
 window.setPrev=function(prem){
 var card=document.getElementById('prevCard'),av=document.getElementById('pcAvatar'),tf=document.getElementById('togFree'),tp=document.getElementById('togPrem');
