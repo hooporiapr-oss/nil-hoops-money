@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service — Hooporia</title>
+<meta name="description" content="Terms of Service for Hooporia by GoStar Digital LLC.">
+<link rel="icon" href="/hooporia.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<script>
+var currentLang='en';
+function setLang(l){currentLang=l;document.documentElement.lang=l;
+document.querySelectorAll('[data-en]').forEach(function(el){var v=el.getAttribute('data-'+l);if(v){if(v.indexOf('<')!==-1)el.innerHTML=v;else el.textContent=v}});
+document.querySelectorAll('.lang-btn').forEach(function(b){b.classList.toggle('active',b.dataset.l===l)});
+try{localStorage.setItem('lc-lang',l)}catch(e){}}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--black:#0a0a0f;--black2:#111118;--black3:#1a1a22;--surface:#16161e;--gold:#FFD700;--gold-dim:rgba(255,215,0,0.08);--gold-border:rgba(255,215,0,0.15);--orange:#FF6B35;--white:#fafaf9;--gray:#7a7a8a;--gray-light:#aaa;--green:#22c55e;--purple:#9B59B6;--cyan:#00CED1;--teal:#00D9A5}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:var(--black);color:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+html[lang="en"] .es{display:none!important}
+html[lang="es"] .en{display:none!important}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.04);padding:0 24px}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav-brand{display:flex;align-items:center;gap:10px}
+.nav-brand img{height:32px}
+.nav-brand span{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:2px}
+.nav-right{display:flex;align-items:center;gap:14px}
+.nav-link{font-size:.78rem;font-weight:600;color:var(--gray);transition:color .2s}
+.nav-link:hover{color:var(--white)}
+.lang-btn{padding:5px 10px;border-radius:5px;font-size:.65rem;font-weight:700;background:transparent;color:var(--gray);transition:all .2s;letter-spacing:.05em;border:none;cursor:pointer}
+.lang-btn.active{background:var(--gold);color:var(--black)}
+.nav-cta{padding:8px 22px;border-radius:8px;font-size:.78rem;font-weight:700;background:var(--gold);color:var(--black);border:none;cursor:pointer;transition:all .2s;font-family:'Outfit',sans-serif}
+.nav-cta:hover{background:#ffe44d}
+.hamburger{background:none;border:none;color:var(--white);font-size:1.4rem;cursor:pointer;padding:6px 10px;line-height:1;border-radius:8px;transition:background .2s}
+.hamburger:hover{background:rgba(255,255,255,.06)}
+.mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;background:rgba(10,10,15,.97);backdrop-filter:blur(20px);padding:16px 24px 24px;border-bottom:1px solid rgba(255,255,255,.06);z-index:99;flex-direction:column;gap:4px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{display:block;padding:12px 16px;font-size:.88rem;font-weight:600;color:var(--gray-light);border-radius:10px;transition:all .2s}
+.mobile-menu a:hover{background:rgba(255,255,255,.04);color:var(--white)}
+.mm-lang{display:flex;gap:4px;padding:12px 16px}
+.mm-cta{background:var(--gold)!important;color:var(--black)!important;text-align:center;font-weight:700!important;border-radius:10px!important;margin-top:8px}
+
+/* CONTENT */
+.container{max-width:760px;margin:0 auto;padding:100px 24px 60px}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,6vw,3rem);letter-spacing:3px;text-align:center;margin-bottom:6px}
+.page-title .gold{color:var(--gold)}
+.page-updated{text-align:center;font-size:.8rem;color:var(--gray);margin-bottom:40px}
+.section{margin-bottom:32px}
+.section h2{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:2px;color:var(--gold);margin-bottom:10px}
+.section p,.section li{font-size:.88rem;color:var(--gray-light);line-height:1.7;margin-bottom:10px}
+.section ul{padding-left:20px;margin-bottom:10px}
+.section li{margin-bottom:6px}
+.section a{color:var(--gold);font-weight:600;border-bottom:1px dashed rgba(255,215,0,.3);padding-bottom:1px}
+.section a:hover{border-bottom-style:solid}
+.highlight-box{background:var(--surface);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:16px 20px;margin:16px 0;font-size:.82rem;color:var(--gray-light)}
+
+/* FOOTER */
+footer{border-top:1px solid rgba(255,255,255,.04);padding:28px 0}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.footer-brand{display:flex;align-items:center;gap:8px}
+.footer-brand img{height:22px}
+.footer-brand span{font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:1px}
+.footer-links{display:flex;gap:20px}
+.footer-links a{font-size:.78rem;color:var(--gray);transition:color .2s}
+.footer-links a:hover{color:var(--white)}
+.footer-copy{font-size:.65rem;color:#444}
+
+@media(max-width:600px){
+  .nav-link{display:none}
+  .nav-cta{display:none}
+  .container{padding:80px 16px 40px}
+  .footer-inner{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+<script>function toggleMenu(){var m=document.getElementById('mobileMenu');var b=document.getElementById('hamBtn');if(m.classList.contains('open')){m.classList.remove('open');b.textContent='☰'}else{m.classList.add('open');b.textContent='✕'}}</script>
+<nav><div class="nav-inner">
+<a href="/" class="nav-brand"><img src="/hooporia.png" alt="Hooporia"><span>HOOPORIA</span></a>
+<div class="nav-right">
+<a href="/programs.html" class="nav-link" data-en="Programs" data-es="Programas">Programs</a>
+<a href="/cognitive-report.html" class="nav-link" data-en="AI Report" data-es="Reporte IA">AI Report</a>
+<a href="/cognitive-hoops.html" class="nav-link" data-en="Drills" data-es="Drills">Drills</a>
+<button class="hamburger" id="hamBtn" onclick="toggleMenu()" aria-label="Menu">☰</button>
+<a href="/join.html"><button class="nav-cta" data-en="Join Free" data-es="Únete Gratis">Join Free</button></a>
+</div></div>
+<div class="mobile-menu" id="mobileMenu">
+<a href="/programs.html" data-en="Programs" data-es="Programas">Programs</a>
+<a href="/cognitive-report.html" data-en="AI Report" data-es="Reporte IA">AI Report</a>
+<a href="/cognitive-hoops.html" data-en="Cognitive Drills" data-es="Drills Cognitivos">Cognitive Drills</a>
+<a href="/discover.html" data-en="Discover" data-es="Descubrir">Discover</a>
+<a href="/leaderboard.html" data-en="Leaderboard" data-es="Clasificación">Leaderboard</a>
+<a href="/ritnome.html" data-en="RITNOME™" data-es="RITNOME™">RITNOME™</a>
+<a href="/login.html" data-en="Log In" data-es="Entrar">Log In</a>
+<div class="mm-lang"><button class="lang-btn active" data-l="en" onclick="setLang('en')">EN</button><button class="lang-btn" data-l="es" onclick="setLang('es')">ES</button></div>
+<a href="/join.html" class="mm-cta" data-en="Join Free" data-es="Únete Gratis">Join Free</a>
+</div></nav>
+
+<div class="container">
+
+<h1 class="page-title" data-en="TERMS OF <span class='gold'>SERVICE</span>" data-es="TÉRMINOS DE <span class='gold'>SERVICIO</span>">TERMS OF <span class="gold">SERVICE</span></h1>
+<p class="page-updated" data-en="Last updated: April 2, 2026" data-es="Última actualización: 2 de abril de 2026">Last updated: April 2, 2026</p>
+
+<!-- EN -->
+<div class="en">
+
+<div class="section">
+<h2>1. AGREEMENT TO TERMS</h2>
+<p>By accessing or using Hooporia™ ("the Platform"), you agree to be bound by these Terms of Service. If you do not agree, do not use the Platform. Hooporia is operated by <strong>GoStar Digital LLC</strong>, a company based in San Juan, Puerto Rico.</p>
+</div>
+
+<div class="section">
+<h2>2. ELIGIBILITY</h2>
+<p>You must be at least <strong>13 years old</strong> to create an account on Hooporia. If you are between 13 and 17 years old, you must have a parent or legal guardian create the account with you or provide consent. By creating an account, you represent that you meet these requirements.</p>
+</div>
+
+<div class="section">
+<h2>3. YOUR ACCOUNT</h2>
+<p>You are responsible for maintaining the security of your account credentials (email and password). You are responsible for all activity that occurs under your account. You agree to provide accurate, current, and complete information when creating your profile. You must notify us immediately if you suspect unauthorized access to your account.</p>
+</div>
+
+<div class="section">
+<h2>4. YOUR PLAYER PROFILE</h2>
+<p>Your Hooporia player profile is <strong>public by design</strong>. Information you add to your profile — including your name, position, stats, photos, videos, cognitive scores, NIL bio, and contact email — will be visible to anyone on the internet, including coaches, scouts, programs, brands, and the general public.</p>
+<p>You are solely responsible for the content you upload to your profile. You agree not to upload content that is false, misleading, offensive, illegal, infringing on others' rights, or harmful. We reserve the right to remove content or suspend accounts that violate these terms.</p>
+</div>
+
+<div class="section">
+<h2>5. COGNITIVE DRILLS & RITNOME™</h2>
+<p>Hooporia offers six cognitive drills (React, Recall, Reflex, Replay, Ritmo, Beat) powered by the proprietary RITNOME™ scoring system. Your scores and levels are recorded and may appear on the public Leaderboard and your player profile.</p>
+<p>RITNOME™ is a trademark of GoStar Digital LLC. The scoring methodology, drill designs, level system, and speed framework are proprietary. You may not copy, reproduce, reverse-engineer, or create derivative works based on the RITNOME™ system or any Hooporia cognitive drills.</p>
+</div>
+
+<div class="section">
+<h2>6. AI COGNITIVE SCOUTING REPORT</h2>
+<p>Premium users can generate an AI-powered Cognitive Scouting Report. This report is generated by sending your cognitive scores to Anthropic's Claude AI for analysis. The report is intended as a developmental tool and for personal branding purposes.</p>
+<div class="highlight-box">The AI report is not a professional scouting evaluation. It is generated by artificial intelligence based on your cognitive drill performance and should not be treated as a guarantee of athletic ability, potential, or future opportunities.</div>
+</div>
+
+<div class="section">
+<h2>7. PREMIUM SUBSCRIPTIONS</h2>
+<p>Hooporia offers a Premium tier at <strong>$49/year</strong> or <strong>$7/month</strong>, processed by Stripe. Premium unlocks additional drills (Replay, Ritmo, Beat), the AI Cognitive Scouting Report, basketball timeline, and full profile features.</p>
+<ul>
+<li>Payments are processed securely by Stripe. We do not store your credit card information.</li>
+<li>You must use the <strong>same email address</strong> for your Stripe payment and your Hooporia account to ensure your upgrade is applied correctly.</li>
+<li>Subscriptions renew automatically unless cancelled. You may cancel at any time through Stripe's customer portal.</li>
+<li>Refunds are handled on a case-by-case basis. Contact us if you have billing concerns.</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>8. INTELLECTUAL PROPERTY</h2>
+<p>Hooporia™, RITNOME™, the Hooporia logo, cognitive drill designs, page layouts, and all original content on the Platform are the property of GoStar Digital LLC and protected by intellectual property laws. You may not use our trademarks, branding, or proprietary content without written permission.</p>
+<p>You retain ownership of the content you upload (photos, videos, bio text). By uploading content, you grant GoStar Digital LLC a non-exclusive, worldwide, royalty-free license to display, distribute, and promote that content within the Platform and related marketing materials.</p>
+</div>
+
+<div class="section">
+<h2>9. PROHIBITED CONDUCT</h2>
+<p>You agree not to:</p>
+<ul>
+<li>Use the Platform for any unlawful purpose.</li>
+<li>Impersonate another person or create a fake player profile.</li>
+<li>Upload false statistics, fraudulent credentials, or misleading information.</li>
+<li>Harass, bully, or threaten other users.</li>
+<li>Attempt to scrape, crawl, or extract data from the Platform using automated tools.</li>
+<li>Interfere with the Platform's security, infrastructure, or functionality.</li>
+<li>Use the Platform to spam, advertise, or solicit users without permission.</li>
+</ul>
+<p>We reserve the right to suspend or terminate accounts that engage in prohibited conduct, without notice or refund.</p>
+</div>
+
+<div class="section">
+<h2>10. DISCLAIMER OF WARRANTIES</h2>
+<div class="highlight-box">This program focuses on athlete development, branding, and future opportunities. We do not guarantee specific outcomes or opportunities.</div>
+<p>Hooporia is provided on an "as is" and "as available" basis. GoStar Digital LLC makes no warranties, express or implied, regarding the Platform's availability, accuracy, reliability, or fitness for a particular purpose. We do not guarantee that using Hooporia will result in athletic recruitment, scholarships, NIL deals, or any other specific opportunities.</p>
+</div>
+
+<div class="section">
+<h2>11. LIMITATION OF LIABILITY</h2>
+<p>To the fullest extent permitted by law, GoStar Digital LLC and its owners, employees, and partners shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the Platform. Our total liability for any claim related to the Platform shall not exceed the amount you paid us in the twelve months preceding the claim.</p>
+</div>
+
+<div class="section">
+<h2>12. THIRD-PARTY SERVICES</h2>
+<p>Hooporia integrates with third-party services including Supabase (database and authentication), Stripe (payments), Anthropic (AI reports), and Vercel (hosting). Your use of these services is subject to their respective terms and privacy policies. We are not responsible for the actions, content, or policies of third-party services.</p>
+</div>
+
+<div class="section">
+<h2>13. ACCOUNT TERMINATION</h2>
+<p>You may request deletion of your account at any time by contacting us. We reserve the right to suspend or terminate your account if you violate these Terms. Upon termination, your public profile will be removed and your data will be deleted in accordance with our <a href="/privacy.html">Privacy Policy</a>.</p>
+</div>
+
+<div class="section">
+<h2>14. CHANGES TO TERMS</h2>
+<p>We may update these Terms from time to time. Changes will be posted on this page with an updated "Last updated" date. Continued use of Hooporia after changes constitutes acceptance of the revised Terms. For material changes, we may provide additional notice.</p>
+</div>
+
+<div class="section">
+<h2>15. GOVERNING LAW</h2>
+<p>These Terms are governed by the laws of the Commonwealth of Puerto Rico and applicable federal law of the United States. Any disputes arising from these Terms or your use of the Platform shall be resolved in the courts located in San Juan, Puerto Rico.</p>
+</div>
+
+<div class="section">
+<h2>16. CONTACT US</h2>
+<p>If you have questions about these Terms, contact us:</p>
+<div class="highlight-box">
+<strong>GoStar Digital LLC</strong><br>
+San Juan, Puerto Rico<br>
+Email: <a href="mailto:legal@hooporia.com">legal@hooporia.com</a>
+</div>
+</div>
+
+</div>
+
+<!-- ES -->
+<div class="es">
+
+<div class="section">
+<h2>1. ACEPTACIÓN DE TÉRMINOS</h2>
+<p>Al acceder o usar Hooporia™ ("la Plataforma"), aceptas estar sujeto a estos Términos de Servicio. Si no estás de acuerdo, no uses la Plataforma. Hooporia es operado por <strong>GoStar Digital LLC</strong>, una empresa con sede en San Juan, Puerto Rico.</p>
+</div>
+
+<div class="section">
+<h2>2. ELEGIBILIDAD</h2>
+<p>Debes tener al menos <strong>13 años</strong> para crear una cuenta en Hooporia. Si tienes entre 13 y 17 años, un padre o tutor legal debe crear la cuenta contigo o proporcionar consentimiento. Al crear una cuenta, declaras que cumples con estos requisitos.</p>
+</div>
+
+<div class="section">
+<h2>3. TU CUENTA</h2>
+<p>Eres responsable de mantener la seguridad de tus credenciales de cuenta (correo y contraseña). Eres responsable de toda la actividad que ocurra bajo tu cuenta. Aceptas proporcionar información precisa, actual y completa al crear tu perfil. Debes notificarnos inmediatamente si sospechas acceso no autorizado a tu cuenta.</p>
+</div>
+
+<div class="section">
+<h2>4. TU PERFIL DE JUGADOR</h2>
+<p>Tu perfil de jugador en Hooporia es <strong>público por diseño</strong>. La información que añadas a tu perfil — incluyendo tu nombre, posición, estadísticas, fotos, videos, puntajes cognitivos, bio NIL y correo de contacto — será visible para cualquier persona en internet, incluyendo coaches, scouts, programas, marcas y el público general.</p>
+<p>Eres el único responsable del contenido que subes a tu perfil. Aceptas no subir contenido falso, engañoso, ofensivo, ilegal, que infrinja los derechos de otros, o dañino. Nos reservamos el derecho de eliminar contenido o suspender cuentas que violen estos términos.</p>
+</div>
+
+<div class="section">
+<h2>5. DRILLS COGNITIVOS Y RITNOME™</h2>
+<p>Hooporia ofrece seis drills cognitivos (React, Recall, Reflex, Replay, Ritmo, Beat) impulsados por el sistema propietario de puntuación RITNOME™. Tus puntajes y niveles son registrados y pueden aparecer en el Leaderboard público y tu perfil de jugador.</p>
+<p>RITNOME™ es una marca registrada de GoStar Digital LLC. La metodología de puntuación, diseños de drills, sistema de niveles y marco de velocidades son propietarios. No puedes copiar, reproducir, hacer ingeniería inversa ni crear obras derivadas basadas en el sistema RITNOME™ ni en ningún drill cognitivo de Hooporia.</p>
+</div>
+
+<div class="section">
+<h2>6. REPORTE DE SCOUTING COGNITIVO IA</h2>
+<p>Los usuarios Premium pueden generar un Reporte de Scouting Cognitivo impulsado por IA. Este reporte se genera enviando tus puntajes cognitivos a la IA Claude de Anthropic para su análisis. El reporte está diseñado como herramienta de desarrollo y para propósitos de marca personal.</p>
+<div class="highlight-box">El reporte IA no es una evaluación profesional de scouting. Es generado por inteligencia artificial basada en tu rendimiento en drills cognitivos y no debe tratarse como una garantía de habilidad atlética, potencial u oportunidades futuras.</div>
+</div>
+
+<div class="section">
+<h2>7. SUSCRIPCIONES PREMIUM</h2>
+<p>Hooporia ofrece un nivel Premium a <strong>$49/año</strong> o <strong>$7/mes</strong>, procesado por Stripe. Premium desbloquea drills adicionales (Replay, Ritmo, Beat), el Reporte de Scouting Cognitivo IA, línea de tiempo de baloncesto y todas las funciones del perfil.</p>
+<ul>
+<li>Los pagos son procesados de forma segura por Stripe. No almacenamos tu información de tarjeta de crédito.</li>
+<li>Debes usar el <strong>mismo correo electrónico</strong> para tu pago en Stripe y tu cuenta de Hooporia para que tu actualización se aplique correctamente.</li>
+<li>Las suscripciones se renuevan automáticamente a menos que se cancelen. Puedes cancelar en cualquier momento a través del portal de clientes de Stripe.</li>
+<li>Los reembolsos se manejan caso por caso. Contáctanos si tienes inquietudes de facturación.</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>8. PROPIEDAD INTELECTUAL</h2>
+<p>Hooporia™, RITNOME™, el logo de Hooporia, diseños de drills cognitivos, diseños de páginas y todo el contenido original de la Plataforma son propiedad de GoStar Digital LLC y están protegidos por leyes de propiedad intelectual. No puedes usar nuestras marcas, identidad visual ni contenido propietario sin permiso escrito.</p>
+<p>Conservas la propiedad del contenido que subes (fotos, videos, texto de bio). Al subir contenido, otorgas a GoStar Digital LLC una licencia no exclusiva, mundial y libre de regalías para mostrar, distribuir y promover ese contenido dentro de la Plataforma y materiales de marketing relacionados.</p>
+</div>
+
+<div class="section">
+<h2>9. CONDUCTA PROHIBIDA</h2>
+<p>Aceptas no:</p>
+<ul>
+<li>Usar la Plataforma para cualquier propósito ilegal.</li>
+<li>Hacerte pasar por otra persona o crear un perfil de jugador falso.</li>
+<li>Subir estadísticas falsas, credenciales fraudulentas o información engañosa.</li>
+<li>Acosar, intimidar o amenazar a otros usuarios.</li>
+<li>Intentar extraer o recopilar datos de la Plataforma usando herramientas automatizadas.</li>
+<li>Interferir con la seguridad, infraestructura o funcionalidad de la Plataforma.</li>
+<li>Usar la Plataforma para enviar spam, publicidad o solicitar usuarios sin permiso.</li>
+</ul>
+<p>Nos reservamos el derecho de suspender o terminar cuentas que participen en conducta prohibida, sin aviso ni reembolso.</p>
+</div>
+
+<div class="section">
+<h2>10. DESCARGO DE GARANTÍAS</h2>
+<div class="highlight-box">Este programa se enfoca en desarrollo del atleta, marca personal y oportunidades futuras. No garantizamos resultados específicos ni oportunidades.</div>
+<p>Hooporia se proporciona "tal cual" y "según disponibilidad". GoStar Digital LLC no ofrece garantías, expresas o implícitas, sobre la disponibilidad, precisión, confiabilidad o idoneidad de la Plataforma para un propósito particular. No garantizamos que usar Hooporia resulte en reclutamiento atlético, becas, acuerdos NIL ni ninguna otra oportunidad específica.</p>
+</div>
+
+<div class="section">
+<h2>11. LIMITACIÓN DE RESPONSABILIDAD</h2>
+<p>En la medida máxima permitida por la ley, GoStar Digital LLC y sus propietarios, empleados y socios no serán responsables por daños indirectos, incidentales, especiales, consecuentes o punitivos derivados de tu uso de la Plataforma. Nuestra responsabilidad total por cualquier reclamo relacionado con la Plataforma no excederá la cantidad que nos pagaste en los doce meses anteriores al reclamo.</p>
+</div>
+
+<div class="section">
+<h2>12. SERVICIOS DE TERCEROS</h2>
+<p>Hooporia se integra con servicios de terceros incluyendo Supabase (base de datos y autenticación), Stripe (pagos), Anthropic (reportes IA) y Vercel (alojamiento). Tu uso de estos servicios está sujeto a sus respectivos términos y políticas de privacidad. No somos responsables de las acciones, contenido o políticas de servicios de terceros.</p>
+</div>
+
+<div class="section">
+<h2>13. TERMINACIÓN DE CUENTA</h2>
+<p>Puedes solicitar la eliminación de tu cuenta en cualquier momento contactándonos. Nos reservamos el derecho de suspender o terminar tu cuenta si violas estos Términos. Al terminar, tu perfil público será removido y tus datos serán eliminados de acuerdo con nuestra <a href="/privacy.html">Política de Privacidad</a>.</p>
+</div>
+
+<div class="section">
+<h2>14. CAMBIOS A LOS TÉRMINOS</h2>
+<p>Podemos actualizar estos Términos periódicamente. Los cambios se publicarán en esta página con una fecha de "Última actualización" revisada. El uso continuado de Hooporia después de los cambios constituye aceptación de los Términos revisados. Para cambios materiales, podemos proporcionar aviso adicional.</p>
+</div>
+
+<div class="section">
+<h2>15. LEY APLICABLE</h2>
+<p>Estos Términos se rigen por las leyes del Estado Libre Asociado de Puerto Rico y la ley federal aplicable de los Estados Unidos. Cualquier disputa derivada de estos Términos o tu uso de la Plataforma será resuelta en los tribunales ubicados en San Juan, Puerto Rico.</p>
+</div>
+
+<div class="section">
+<h2>16. CONTÁCTANOS</h2>
+<p>Si tienes preguntas sobre estos Términos, contáctanos:</p>
+<div class="highlight-box">
+<strong>GoStar Digital LLC</strong><br>
+San Juan, Puerto Rico<br>
+Email: <a href="mailto:legal@hooporia.com">legal@hooporia.com</a>
+</div>
+</div>
+
+</div>
+
+</div>
+
+<footer><div class="wrap"><div class="footer-inner">
+<div class="footer-brand"><img src="/hooporia.png" alt="Hooporia"><span>HOOPORIA</span></div>
+<div class="footer-links"><a href="/privacy.html" data-en="Privacy" data-es="Privacidad">Privacy</a><a href="/terms.html" data-en="Terms" data-es="Términos">Terms</a><a href="/cognitive-hoops.html" data-en="Drills" data-es="Drills">Drills</a><a href="/discover.html" data-en="Discover" data-es="Descubrir">Discover</a></div>
+<div class="footer-copy">© 2026 GoStar Digital LLC · Hooporia™</div>
+</div>
+<div style="font-size:.55rem;color:#333;margin-top:6px;max-width:500px;text-align:center;margin-left:auto;margin-right:auto" data-en="This program focuses on athlete development, branding, and future opportunities. We do not guarantee specific outcomes or opportunities." data-es="Este programa se enfoca en desarrollo del atleta, marca personal y oportunidades futuras. No garantizamos resultados específicos ni oportunidades.">This program focuses on athlete development, branding, and future opportunities. We do not guarantee specific outcomes or opportunities.</div>
+</div></footer>
+
+<script>
+try{var sl=localStorage.getItem('lc-lang');if(sl)setLang(sl);else setLang('en')}catch(e){setLang('en')}
+</script>
+</body>
+</html>
