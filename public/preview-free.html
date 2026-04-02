@@ -39,11 +39,20 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.92
 .vlc{display:flex;align-items:center;gap:12px;padding:14px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.04);border-radius:12px;margin-bottom:8px;color:var(--white);font-size:.82rem;font-weight:600}.vli{font-size:1.3rem;flex-shrink:0}
 .soc{display:flex;gap:6px;flex-wrap:wrap}.sb{padding:8px 16px;border-radius:8px;font-size:.75rem;font-weight:700;background:rgba(255,255,255,.04);color:var(--gray-light);border:1px solid rgba(255,255,255,.04)}
 .locked{position:relative;opacity:.4;pointer-events:none}.locked::after{content:'🔒 PREMIUM';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Bebas Neue',sans-serif;font-size:.9rem;color:var(--gold);letter-spacing:2px;text-shadow:0 0 20px rgba(0,0,0,.9);z-index:10;background:rgba(0,0,0,.7);padding:6px 16px;border-radius:8px;border:1px solid var(--gold-border)}
+.report-locked{position:relative;border-radius:18px;overflow:hidden;margin-bottom:16px}
+.report-blur{filter:blur(4px);pointer-events:none;user-select:none;padding:24px;background:var(--surface);border:1px solid rgba(255,255,255,.04);border-radius:18px}
+.report-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(10,10,15,.65);border-radius:18px;gap:10px;z-index:10}
+.report-overlay .ro-icon{font-size:2rem}
+.report-overlay .ro-title{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:2px;color:var(--gold)}
+.report-overlay .ro-sub{font-size:.75rem;color:var(--gray);max-width:260px;text-align:center}
+.report-overlay .ro-btn{padding:10px 24px;border-radius:10px;font-size:.8rem;font-weight:700;background:var(--gold);color:var(--black)}
+.report-overlay .ro-link{font-size:.7rem;color:var(--gold)}
 .ub{background:linear-gradient(135deg,rgba(255,215,0,.06),rgba(255,107,53,.04));border:1.5px solid rgba(255,215,0,.15);border-radius:18px;padding:28px;text-align:center;margin-bottom:16px}
 .ub h3{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:2px;color:var(--gold);margin-bottom:6px}
 .ub p{font-size:.8rem;color:var(--gray);margin-bottom:16px}
 .ub ul{list-style:none;text-align:left;max-width:320px;margin:0 auto 20px}.ub li{font-size:.78rem;color:var(--gray-light);padding:4px 0;display:flex;align-items:center;gap:6px}.ub li::before{content:'✓';color:var(--gold);font-weight:700}
-.ubtn{display:inline-block;padding:14px 32px;border-radius:10px;font-size:.9rem;font-weight:700;background:linear-gradient(135deg,var(--gold),#FFA500);color:var(--black)}
+.ubtn{display:inline-block;padding:14px 32px;border-radius:10px;font-size:.9rem;font-weight:700;background:linear-gradient(135deg,var(--gold),#FFA500);color:var(--black);margin-bottom:8px}
+.ubtn-sub{display:inline-block;padding:10px 28px;border-radius:10px;font-size:.8rem;font-weight:600;color:var(--gray-light);border:1.5px solid rgba(255,255,255,.12)}
 .pw{text-align:center;padding:24px}.pw a{font-size:.7rem;color:var(--gray);display:flex;align-items:center;justify-content:center;gap:6px}.pw img{height:16px;opacity:.5}
 @media(max-width:600px){.ht{flex-direction:column;text-align:center}.tags{justify-content:center}.cg{grid-template-columns:repeat(2,1fr)}.soc{justify-content:center}.nl{display:none}}
 </style>
@@ -87,6 +96,28 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.92
 <div class="ci"><div class="ce">🏀</div><div class="cn" style="color:#FFD700">BEAT</div><div class="cl" style="color:#FFD700">L5</div><div class="cd">Training · 150 pts</div><div class="cb"><div class="cbf" style="width:50%;background:#FFD700"></div></div></div>
 </div></div>
 
+<!-- Locked: AI Cognitive Scouting Report -->
+<div class="report-locked">
+<div class="report-blur">
+<div class="ct">📋 AI COGNITIVE SCOUTING REPORT</div>
+<div style="font-size:.82rem;color:var(--gray-light);line-height:1.8">
+<p style="margin-bottom:10px"><strong style="color:var(--gold)">📊 EXECUTIVE SUMMARY</strong></p>
+<p style="margin-bottom:10px">Marcus Rivera is a high-IQ floor general with elite visual processing and above-average reactive timing. His cognitive profile suggests a player who sees the play develop before it happens.</p>
+<p style="margin-bottom:10px"><strong style="color:var(--green)">💪 COGNITIVE STRENGTHS</strong></p>
+<p style="margin-bottom:10px">Court Vision (L9 Reflex — Hall of Fame): In the 99th percentile for visual processing. This player captures the entire floor in a split second.</p>
+<p style="margin-bottom:10px"><strong style="color:var(--orange)">⚡ AREAS FOR DEVELOPMENT</strong></p>
+<p>Play Recall (L6 Replay — Pro): Complex sequences show slight degradation under speed pressure. Recommend drilling full offensive sets...</p>
+</div>
+</div>
+<div class="report-overlay">
+<div class="ro-icon">🔒</div>
+<div class="ro-title" data-en="AI SCOUTING REPORT — PREMIUM" data-es="REPORTE IA — PREMIUM">AI SCOUTING REPORT — PREMIUM</div>
+<div class="ro-sub" data-en="Get an AI-generated cognitive scouting report written for coaches and scouts" data-es="Obtén un reporte cognitivo generado por IA para coaches y scouts">Get an AI-generated cognitive scouting report written for coaches and scouts</div>
+<a href="https://buy.stripe.com/eVq28s8yrgwuaMEgP88Zq03" class="ro-btn" data-en="⭐ Unlock — $49/year" data-es="⭐ Desbloquear — $49/año">⭐ Unlock — $49/year</a>
+<a href="/cognitive-report.html" class="ro-link" data-en="Learn more →" data-es="Más info →">Learn more →</a>
+</div>
+</div>
+
 <!-- Highlight (Free: 1 link) -->
 <div class="card"><div class="ct" data-en="🎥 Highlights" data-es="🎥 Highlights">🎥 Highlights</div>
 <div class="vlc"><span class="vli">▶</span> <span data-en="Watch Highlight Reel" data-es="Ver Highlights">Watch Highlight Reel</span></div>
@@ -122,15 +153,18 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.92
 <div class="ub"><h3 data-en="⭐ GO PREMIUM" data-es="⭐ HAZTE PREMIUM">⭐ GO PREMIUM</h3>
 <p data-en="Unlock everything you see locked above" data-es="Desbloquea todo lo que ves bloqueado arriba">Unlock everything you see locked above</p>
 <ul>
+<li data-en="AI Cognitive Scouting Report" data-es="Reporte Cognitivo con IA">AI Cognitive Scouting Report</li>
 <li data-en="Cover photo & photo gallery" data-es="Foto de portada y galería">Cover photo & photo gallery</li>
 <li data-en="Direct video uploads" data-es="Subir videos directos">Direct video uploads</li>
 <li data-en="Full stats, measurables, shooting %" data-es="Stats completos, medidas, % de tiro">Full stats, measurables, shooting %</li>
 <li data-en="NIL bio & about section" data-es="Bio NIL y sección acerca de">NIL bio & about section</li>
 <li data-en="Verified badge ✓" data-es="Insignia verificada ✓">Verified badge ✓</li>
 <li data-en="Direct contact button for scouts" data-es="Botón de contacto para scouts">Direct contact button for scouts</li>
-<li data-en="No Hooporia branding" data-es="Sin branding de Hooporia">No Hooporia branding</li>
+<li data-en="Basketball timeline — forever" data-es="Historia de baloncesto — para siempre">Basketball timeline — forever</li>
 </ul>
-<a href="/join.html" class="ubtn" data-en="Upgrade — $49/year" data-es="Mejorar — $49/año">Upgrade — $49/year</a></div>
+<p style="font-size:.65rem;color:var(--gray);margin-bottom:10px" data-en="⚠️ Use the same email as your Hooporia profile" data-es="⚠️ Usa el mismo email de tu perfil Hooporia">⚠️ Use the same email as your Hooporia profile</p>
+<a href="https://buy.stripe.com/eVq28s8yrgwuaMEgP88Zq03" class="ubtn" data-en="⭐ $49/year — Best Value" data-es="⭐ $49/año — Mejor Valor">⭐ $49/year — Best Value</a><br>
+<a href="https://buy.stripe.com/00wdRa7un2FEf2U0Qa8Zq02" class="ubtn-sub" data-en="$7/month" data-es="$7/mes">$7/month</a></div>
 
 <div class="pw"><a href="/"><img src="/hooporia.png" alt="Hooporia"> Powered by Hooporia™</a></div>
 </div>
