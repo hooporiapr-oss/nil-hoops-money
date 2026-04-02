@@ -82,17 +82,29 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.92
 .up-btn{display:inline-block;padding:14px 32px;border-radius:10px;font-size:.9rem;font-weight:700;background:linear-gradient(135deg,var(--gold),#FFA500);color:var(--black)}
 .up-btn-secondary{display:inline-block;padding:10px 28px;border-radius:10px;font-size:.8rem;font-weight:600;color:var(--gray-light);border:1.5px solid rgba(255,255,255,.12)}
 .powered{text-align:center;padding:24px;margin-top:12px}.powered a{font-size:.7rem;color:var(--gray);font-weight:600;display:flex;align-items:center;justify-content:center;gap:6px}.powered img{height:16px;opacity:.5}
-.hf-wrap{display:flex;align-items:center;justify-content:center;gap:16px;padding:20px;margin-bottom:16px}
-.hf-btn{display:flex;align-items:center;gap:10px;padding:14px 28px;border-radius:14px;font-size:.95rem;font-weight:700;background:rgba(255,215,0,.08);border:1.5px solid rgba(255,215,0,.2);color:var(--gold);cursor:pointer;transition:all .2s;font-family:'Outfit',sans-serif}
-.hf-btn:hover{background:rgba(255,215,0,.15);border-color:var(--gold);transform:scale(1.05)}
-.hf-btn:active{transform:scale(.95)}
-.hf-btn.done{background:rgba(34,197,94,.08);border-color:rgba(34,197,94,.2);color:var(--green);cursor:default}
+.hf-section{background:var(--surface);border:1px solid rgba(255,255,255,.04);border-radius:18px;padding:24px;margin-bottom:16px;text-align:center}
+.hf-wrap{display:flex;align-items:center;justify-content:center;gap:20px;margin-bottom:12px}
+.hf-btn{display:flex;align-items:center;gap:10px;padding:16px 32px;border-radius:14px;font-size:1rem;font-weight:700;background:rgba(255,215,0,.08);border:1.5px solid rgba(255,215,0,.2);color:var(--gold);cursor:pointer;transition:all .25s;font-family:'Outfit',sans-serif}
+.hf-btn:hover{background:rgba(255,215,0,.15);border-color:var(--gold);transform:scale(1.08)}
+.hf-btn:active{transform:scale(.9)}
+.hf-btn.done{background:rgba(34,197,94,.08);border-color:rgba(34,197,94,.25);color:var(--green);cursor:default}
 .hf-btn.done:hover{transform:none}
-.hf-emoji{font-size:1.4rem;transition:transform .2s}
-.hf-btn:active .hf-emoji{transform:rotate(-15deg) scale(1.3)}
-.hf-count{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--gold);letter-spacing:1px}
-.hf-label{font-size:.6rem;color:var(--gray);text-transform:uppercase;letter-spacing:1px}
-@keyframes hfPop{0%{transform:scale(1)}50%{transform:scale(1.3)}100%{transform:scale(1)}}
+.hf-emoji{font-size:1.6rem;transition:transform .2s}
+.hf-count{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:var(--gold);letter-spacing:1px;transition:all .3s}
+.hf-count.pop{animation:hfPop .5s ease}
+.hf-label{font-size:.65rem;color:var(--gray);text-transform:uppercase;letter-spacing:1.5px;margin-top:2px}
+.hf-share{display:none;margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.04)}
+.hf-share.show{display:block}
+.hf-share-btn{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:10px;font-size:.78rem;font-weight:700;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);color:var(--gray-light);cursor:pointer;transition:all .2s;font-family:'Outfit',sans-serif}
+.hf-share-btn:hover{background:rgba(255,215,0,.08);border-color:rgba(255,215,0,.2);color:var(--gold)}
+.hf-milestone{display:none;margin-top:12px;padding:12px 20px;background:linear-gradient(135deg,rgba(255,215,0,.1),rgba(255,107,53,.06));border:1px solid rgba(255,215,0,.2);border-radius:12px;font-size:.85rem;font-weight:700;color:var(--gold);animation:milestoneIn .5s ease}
+.hf-milestone.show{display:inline-block}
+.hf-confetti{position:fixed;top:0;left:0;right:0;bottom:0;pointer-events:none;z-index:200;display:none}
+.hf-confetti.show{display:block}
+.confetti-piece{position:absolute;width:8px;height:8px;border-radius:2px;animation:confettiFall 1.5s ease-out forwards}
+@keyframes hfPop{0%{transform:scale(1)}30%{transform:scale(1.4)}60%{transform:scale(.95)}100%{transform:scale(1)}}
+@keyframes milestoneIn{0%{opacity:0;transform:scale(.8) translateY(10px)}100%{opacity:1;transform:scale(1) translateY(0)}}
+@keyframes confettiFall{0%{opacity:1;transform:translateY(0) rotate(0deg)}100%{opacity:0;transform:translateY(120vh) rotate(720deg)}}
 .timeline{position:relative;padding-left:24px}
 .timeline::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--gold),rgba(255,215,0,.1))}
 .tl-item{position:relative;margin-bottom:20px;padding-left:20px}
@@ -222,14 +234,24 @@ if(pm&&p.nil_contact_email)h+='<a href="mailto:'+esc(p.nil_contact_email)+'" cla
 var hfGiven=false;
 try{var hfKey='hf_'+p.id;hfGiven=localStorage.getItem(hfKey)==='1'}catch(e){}
 var hfCount=p.high_fives||0;
+var playerUrl='https://www.hooporia.com/player/'+esc(p.slug);
+var playerFullName=esc(p.first_name)+' '+esc(p.last_name);
+h+='<div class="hf-section">';
 h+='<div class="hf-wrap">';
 h+='<div style="text-align:center"><div class="hf-count" id="hfCount">'+hfCount+'</div><div class="hf-label" data-en="High-Fives" data-es="High-Fives">High-Fives</div></div>';
 if(hfGiven){
 h+='<div class="hf-btn done"><span class="hf-emoji">✋</span> <span data-en="High-Fived!" data-es="¡High-Five!">High-Fived!</span></div>';
 }else{
-h+='<button class="hf-btn" id="hfBtn" onclick="giveHighFive(\''+p.id+'\','+hfCount+')"><span class="hf-emoji">🖐️</span> <span data-en="High-Five!" data-es="¡High-Five!">High-Five!</span></button>';
+h+='<button class="hf-btn" id="hfBtn" onclick="giveHighFive(\''+p.id+'\','+hfCount+',\''+esc(p.slug)+'\',\''+playerFullName+'\')"><span class="hf-emoji">🖐️</span> <span data-en="High-Five!" data-es="¡High-Five!">High-Five!</span></button>';
 }
 h+='</div>';
+h+='<div class="hf-milestone" id="hfMilestone"></div>';
+// Share section
+h+='<div class="hf-share'+(hfGiven?' show':'')+'" id="hfShare">';
+h+='<button class="hf-share-btn" onclick="shareProfile(\''+playerFullName+'\',\''+playerUrl+'\','+hfCount+')">📣 <span data-en="Share This Profile" data-es="Compartir Perfil">Share This Profile</span></button>';
+h+='</div>';
+h+='</div>';
+h+='<div class="hf-confetti" id="hfConfetti"></div>';
 
 h+='<div class="card '+(pm?'pc':'')+'"><div class="card-title" data-en="📊 Stats" data-es="📊 Estadísticas">📊 Stats</div><div style="font-size:.6rem;color:#555;margin-top:-10px;margin-bottom:12px" data-en="Self-reported by player" data-es="Reportadas por el jugador">Self-reported by player</div><div class="stats-row">';
 if(p.stats_ppg)h+=stB(p.stats_ppg,'PPG');if(p.stats_rpg)h+=stB(p.stats_rpg,'RPG');if(p.stats_apg)h+=stB(p.stats_apg,'APG');
@@ -373,23 +395,73 @@ document.getElementById('lightboxImg').src=url;
 lb.classList.add('show');
 };
 
-window.giveHighFive=async function(playerId,currentCount){
+window.giveHighFive=async function(playerId,currentCount,slug,playerName){
 var hfKey='hf_'+playerId;
 try{if(localStorage.getItem(hfKey)==='1')return}catch(e){}
 var btn=document.getElementById('hfBtn');
 var countEl=document.getElementById('hfCount');
 if(!btn)return;
 var newCount=currentCount+1;
-// Update UI immediately
+// Animate counter
 countEl.textContent=newCount;
-countEl.style.animation='hfPop .4s ease';
+countEl.classList.remove('pop');
+void countEl.offsetWidth;
+countEl.classList.add('pop');
+// Update button
 btn.classList.add('done');
 btn.onclick=null;
 btn.innerHTML='<span class="hf-emoji">✋</span> <span>High-Fived!</span>';
 try{localStorage.setItem(hfKey,'1')}catch(e){}
+// Show share prompt
+var shareEl=document.getElementById('hfShare');
+if(shareEl)shareEl.classList.add('show');
+// Check milestones
+var milestones=[10,25,50,100,250,500,1000];
+var hit=milestones.find(function(m){return newCount===m});
+if(hit){
+var msEl=document.getElementById('hfMilestone');
+var msgs={10:'🎉 10 High-Fives!',25:'🔥 25 High-Fives!',50:'⭐ 50 High-Fives! On Fire!',100:'🏆 100 High-Fives! Legend!',250:'💎 250 High-Fives! Diamond!',500:'👑 500 High-Fives! Royalty!',1000:'🐐 1000 High-Fives! GOAT!'};
+if(msEl){msEl.textContent=msgs[hit]||('🎉 '+hit+' High-Fives!');msEl.classList.add('show')}
+launchConfetti();
+}
 // Update Supabase
 try{await sb.from('players').update({high_fives:newCount}).eq('id',playerId)}catch(e){console.log('High-five save error:',e)}
 };
+
+window.shareProfile=function(playerName,profileUrl,count){
+var text='🖐️ '+count+' High-Fives for '+playerName+' on Hooporia! Check out their basketball profile and cognitive scores 🏀🧠\n\n'+profileUrl;
+if(navigator.share){
+navigator.share({title:playerName+' — Hooporia',text:text,url:profileUrl}).catch(function(){})
+}else{
+navigator.clipboard.writeText(text).then(function(){
+var btn=event.target.closest('.hf-share-btn');
+if(btn){var orig=btn.innerHTML;btn.innerHTML='✓ Copied!';setTimeout(function(){btn.innerHTML=orig},2000)}
+}).catch(function(){
+prompt('Copy this link:',text);
+});
+}
+};
+
+function launchConfetti(){
+var container=document.getElementById('hfConfetti');
+if(!container)return;
+container.classList.add('show');
+var colors=['#FFD700','#FF6B35','#9B59B6','#00CED1','#22c55e','#FF1493','#9ACD32'];
+for(var i=0;i<40;i++){
+var piece=document.createElement('div');
+piece.className='confetti-piece';
+piece.style.left=Math.random()*100+'%';
+piece.style.top='-10px';
+piece.style.background=colors[Math.floor(Math.random()*colors.length)];
+piece.style.animationDelay=Math.random()*0.5+'s';
+piece.style.animationDuration=(1+Math.random()*1.5)+'s';
+piece.style.width=(5+Math.random()*8)+'px';
+piece.style.height=(5+Math.random()*8)+'px';
+piece.style.borderRadius=Math.random()>0.5?'50%':'2px';
+container.appendChild(piece);
+}
+setTimeout(function(){container.classList.remove('show');container.innerHTML=''},3000);
+}
 </script>
 <div style="text-align:center;padding:16px 24px;font-size:.55rem;color:#333;max-width:500px;margin:0 auto" data-en="This program focuses on athlete development, branding, and future opportunities. We do not guarantee specific outcomes or opportunities." data-es="Este programa se enfoca en desarrollo del atleta, marca personal y oportunidades futuras. No garantizamos resultados específicos ni oportunidades.">This program focuses on athlete development, branding, and future opportunities. We do not guarantee specific outcomes or opportunities.</div>
 </body></html>
