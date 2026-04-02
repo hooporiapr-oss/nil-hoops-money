@@ -170,6 +170,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.92
 </style>
 </head>
 <body>
+<script>function toggleMenu(){var m=document.getElementById('mobileMenu');var b=document.getElementById('hamBtn');if(m.classList.contains('open')){m.classList.remove('open');b.textContent='☰'}else{m.classList.add('open');b.textContent='✕'}}</script>
 <nav><div class="nav-inner">
 <a href="/" class="nav-brand"><img src="/hooporia.png" alt="Hooporia"><span>HOOPORIA</span></a>
 <div class="nav-right">
@@ -402,7 +403,6 @@ function detectPlatform(url){if(!url)return'';url=url.toLowerCase();if(url.index
 function platformIcon(url){var p=detectPlatform(url);if(p==='YouTube')return'📺';if(p==='Instagram')return'📸';if(p==='TikTok')return'🎵';return'▶'}
 function shortenUrl(url){try{var u=new URL(url);return u.hostname+u.pathname.substring(0,30)+(u.pathname.length>30?'...':'')}catch(e){return url.substring(0,40)}}
 
-function toggleMenu(){var m=document.getElementById('mobileMenu');var b=document.getElementById('hamBtn');if(m.classList.contains('open')){m.classList.remove('open');b.textContent='☰'}else{m.classList.add('open');b.textContent='✕'}}
 
 window.openLightbox=function(url){
 var lb=document.getElementById('lightbox');
