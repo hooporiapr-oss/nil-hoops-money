@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hooporia™ — BPM Basketball™ Training</title>
-<meta name="description" content="Train your BPM with 6 basketball drills, earn your score, and get an AI scouting report. The smartest basketball platform. Free to start.">
+<meta name="description" content="Train your Basketball BPM with 6 drills, earn your score, and get an AI scouting report. The smartest basketball platform. Free to start.">
 <link rel="icon" href="/hooporia.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -25,6 +25,7 @@ a{text-decoration:none;color:inherit}
 @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 @keyframes pulse{0%,100%{opacity:.4;transform:scale(.8)}50%{opacity:1;transform:scale(1.2)}}
 @keyframes shimmer{0%{background-position:200% center}100%{background-position:-200% center}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
 
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.04);padding:0 24px}
 .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}
@@ -46,6 +47,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.92
 .mm-lang{display:flex;gap:4px;padding:12px 16px}
 .mm-cta{background:var(--gold)!important;color:var(--black)!important;text-align:center;font-weight:700!important;border-radius:10px!important;margin-top:8px}
 
+/* HERO */
 .hero{min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 20px 40px;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 40% at 50% 30%,rgba(255,215,0,.06),transparent 70%);pointer-events:none}
 .hero-logo{width:180px;height:180px;margin-bottom:16px;display:block;filter:drop-shadow(0 12px 40px rgba(255,215,0,.5));animation:fadeUp .6s ease both;border-radius:32px}
@@ -62,50 +64,30 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.92
 .hero-stat-num{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--gold)}
 .hero-stat-label{font-size:.55rem;color:var(--gray);font-weight:600;letter-spacing:1px;text-transform:uppercase}
 
-.wrap{max-width:680px;margin:0 auto;padding:0 20px}
+/* PROMPTS SECTION */
+.prompts-section{padding:40px 0 50px}
+.prompts-wrap{max-width:680px;margin:0 auto;padding:0 20px}
+.prompts-intro{text-align:center;margin-bottom:28px}
+.prompts-intro h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.5rem,5vw,2.2rem);letter-spacing:2px;margin-bottom:6px}
+.prompts-intro h2 .gold{color:var(--gold)}
+.prompts-intro p{font-size:.82rem;color:var(--gray-light);max-width:400px;margin:0 auto;line-height:1.6}
+.prompts-grid{display:flex;flex-direction:column;gap:8px}
+.prompt-btn{display:flex;align-items:center;gap:14px;width:100%;padding:16px 18px;background:var(--surface);border:1px solid rgba(255,255,255,.04);border-radius:14px;cursor:pointer;transition:all .25s;-webkit-tap-highlight-color:transparent;text-align:left}
+.prompt-btn:hover{border-color:rgba(255,215,0,.15);transform:translateX(4px);background:rgba(255,215,0,.03)}
+.prompt-btn:active{transform:scale(.98)}
+.prompt-icon{font-size:1.3rem;width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:10px;background:rgba(255,215,0,.06);flex-shrink:0}
+.prompt-text{flex:1}
+.prompt-title{font-family:'Bebas Neue',sans-serif;font-size:.88rem;letter-spacing:1.5px;color:var(--white);margin-bottom:1px}
+.prompt-sub{font-size:.65rem;color:var(--gray);font-weight:500}
+.prompt-arrow{color:rgba(255,215,0,.3);font-size:.8rem;flex-shrink:0;transition:all .25s}
+.prompt-btn:hover .prompt-arrow{color:var(--gold);transform:translateX(4px)}
 
-.accordion-section{padding:40px 0 60px}
-.accordion-intro{text-align:center;margin-bottom:28px}
-.accordion-intro h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.6rem,5vw,2.4rem);letter-spacing:2px;margin-bottom:6px}
-.accordion-intro h2 .gold{color:var(--gold)}
-.accordion-intro p{font-size:.82rem;color:var(--gray-light);max-width:460px;margin:0 auto;line-height:1.6}
+/* BUSINESS LINE */
+.business-line{text-align:center;padding:40px 20px 0}
+.business-line h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.6rem,5vw,2.6rem);letter-spacing:3px;color:var(--gold)}
 
-.accordion{display:flex;flex-direction:column;gap:8px}
-.acc-item{background:var(--surface);border:1px solid rgba(255,255,255,.04);border-radius:14px;overflow:hidden;transition:all .3s}
-.acc-item:hover{border-color:rgba(255,215,0,.1)}
-.acc-item.open{border-color:rgba(255,215,0,.15)}
-.acc-header{display:flex;align-items:center;gap:12px;padding:16px 18px;cursor:pointer;transition:all .2s;-webkit-tap-highlight-color:transparent}
-.acc-header:active{background:rgba(255,255,255,.02)}
-.acc-icon{font-size:1.4rem;flex-shrink:0;width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:10px;background:rgba(255,215,0,.06)}
-.acc-header-text{flex:1}
-.acc-title{font-family:'Bebas Neue',sans-serif;font-size:.95rem;letter-spacing:2px;color:var(--white)}
-.acc-subtitle{font-size:.68rem;color:var(--gray);font-weight:500;margin-top:1px}
-.acc-arrow{color:rgba(255,215,0,.4);font-size:.7rem;transition:transform .3s;flex-shrink:0}
-.acc-item.open .acc-arrow{transform:rotate(180deg);color:var(--gold)}
-.acc-item.open .acc-title{color:var(--gold)}
-.acc-body{max-height:0;overflow:hidden;transition:max-height .4s ease}
-.acc-body-inner{padding:0 18px 18px;font-size:.78rem;color:var(--gray-light);line-height:1.65}
-.acc-body-inner strong{color:var(--white);font-weight:600}
-.acc-body-inner .gold{color:var(--gold);font-weight:600}
-.acc-body-inner .green{color:var(--green)}
-
-.drill-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:10px}
-.drill-chip{display:flex;align-items:center;gap:8px;padding:10px 12px;background:rgba(255,255,255,.03);border-radius:10px;border:1px solid rgba(255,255,255,.04)}
-.drill-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-.drill-chip-text{font-size:.7rem;color:var(--white);font-weight:600}
-.drill-chip-sub{font-size:.55rem;color:var(--gray);display:block;font-weight:400;margin-top:1px}
-.drill-chip .tag{font-size:.45rem;padding:2px 6px;border-radius:4px;font-weight:700;letter-spacing:.5px;margin-left:auto;flex-shrink:0}
-.tag.free{background:rgba(34,197,94,.1);color:var(--green)}
-.tag.prem{background:rgba(255,215,0,.1);color:var(--gold)}
-
-.price-row{display:flex;gap:10px;margin-top:12px}
-.price-card{flex:1;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:14px;text-align:center}
-.price-card.featured{border-color:rgba(255,215,0,.2);background:rgba(255,215,0,.04)}
-.price-amount{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:var(--gold)}
-.price-period{font-size:.6rem;color:var(--gray);margin-top:2px}
-.price-note{font-size:.6rem;color:var(--green);margin-top:6px;font-weight:600}
-
-.cta-section{text-align:center;padding:40px 20px 50px;position:relative}
+/* CTA */
+.cta-section{text-align:center;padding:32px 20px 50px;position:relative}
 .cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 70% at 50% 100%,rgba(255,215,0,.04),transparent);pointer-events:none}
 .cta-section h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.8rem,6vw,3rem);letter-spacing:2px;margin-bottom:8px}
 .cta-section h2 .gold{color:var(--gold)}
@@ -113,8 +95,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.92
 .cta-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:16px}
 .cta-or{font-size:.65rem;color:var(--gray);margin-bottom:8px}
 .cta-chat-hint{display:inline-flex;align-items:center;gap:6px;font-size:.7rem;color:var(--gray);padding:8px 16px;background:rgba(255,215,0,.04);border:1px solid rgba(255,215,0,.1);border-radius:20px}
-.cta-chat-hint .ball{font-size:1rem}
+.cta-chat-hint .ball{font-size:1rem;animation:float 2s ease-in-out infinite}
 
+/* POWERED */
 .powered-strip{display:flex;align-items:center;justify-content:center;gap:8px;padding:16px 0}
 .powered-dot{width:6px;height:6px;background:var(--gold);border-radius:50%;animation:pulse 1.5s ease-in-out infinite}
 .powered-label{font-size:.55rem;color:var(--gray);letter-spacing:2px}
@@ -130,32 +113,31 @@ footer{border-top:1px solid rgba(255,255,255,.04);padding:20px 0}
 .footer-links a:hover{color:var(--white)}
 .footer-copy{font-size:.55rem;color:#444}
 
+/* MOBILE */
 @media(max-width:768px){
 .nav-link,.nav-cta{display:none}
 .hero{padding:74px 16px 32px;min-height:auto}
+.hero-logo{width:140px;height:140px}
 .hero-title{font-size:clamp(2.2rem,9vw,4rem)}
 .hero-sub{font-size:.84rem}
 .hero-btns{flex-direction:column;align-items:center;width:100%;max-width:260px;margin:0 auto 18px}
 .btn-gold,.btn-outline{width:100%;text-align:center;padding:13px 20px;font-size:.84rem}
 .hero-stats{gap:20px}
 .hero-stat-num{font-size:1.5rem}
-.wrap{padding:0 16px}
-.accordion-section{padding:32px 0 44px}
-.acc-header{padding:14px 14px}
-.acc-icon{width:32px;height:32px;font-size:1.2rem;border-radius:8px}
-.acc-title{font-size:.88rem}
-.acc-subtitle{font-size:.62rem}
-.acc-body-inner{padding:0 14px 16px;font-size:.75rem}
-.drill-grid{grid-template-columns:1fr}
-.price-row{flex-direction:column}
-.cta-section{padding:32px 16px 40px}
+.prompts-wrap{padding:0 16px}
+.prompts-section{padding:32px 0 40px}
+.prompt-btn{padding:14px 14px}
+.prompt-icon{width:36px;height:36px;font-size:1.1rem;border-radius:8px}
+.prompt-title{font-size:.82rem}
+.prompt-sub{font-size:.6rem}
+.cta-section{padding:24px 16px 40px}
 .cta-btns{flex-direction:column;align-items:center;width:100%;max-width:260px;margin:0 auto 14px}
 }
 @media(max-width:380px){
 .hero-title{font-size:2rem}
-.hero-logo{width:140px;height:140px}
+.hero-logo{width:120px;height:120px}
 .hero-stat-num{font-size:1.3rem}
-.acc-title{font-size:.82rem}
+.prompt-title{font-size:.78rem}
 }
 </style>
 </head>
@@ -182,6 +164,7 @@ footer{border-top:1px solid rgba(255,255,255,.04);padding:20px 0}
 <a href="/join.html" class="mm-cta" data-en="Join Free" data-es="Únete Gratis">Join Free</a>
 </div></nav>
 
+<!-- HERO -->
 <section class="hero">
 <img src="/hooporia.png" alt="Hooporia" class="hero-logo">
 <h1 class="hero-title" data-en="TRAIN YOUR BASKETBALL BPM" data-es="ENTRENA TU BASKETBALL BPM">TRAIN YOUR BASKETBALL BPM</h1>
@@ -198,179 +181,105 @@ footer{border-top:1px solid rgba(255,255,255,.04);padding:20px 0}
 </div>
 </section>
 
-<section class="accordion-section"><div class="wrap">
-<div class="accordion-intro">
-<h2 data-en="EVERYTHING YOU NEED TO <span class='gold'>KNOW</span>" data-es="TODO LO QUE NECESITAS <span class='gold'>SABER</span>">EVERYTHING YOU NEED TO <span class="gold">KNOW</span></h2>
-<p data-en="Tap any topic below. Or tap the 🏀 to ask anything." data-es="Toca cualquier tema. O toca el 🏀 para preguntar lo que sea.">Tap any topic below. Or tap the 🏀 to ask anything.</p>
+<!-- CONVERSATION PROMPTS -->
+<section class="prompts-section"><div class="prompts-wrap">
+<div class="prompts-intro">
+<h2 data-en="ASK THE <span class='gold'>🏀</span> ANYTHING" data-es="PREGÚNTALE AL <span class='gold'>🏀</span> LO QUE SEA">ASK THE <span class="gold">🏀</span> ANYTHING</h2>
+<p data-en="Tap a topic to start a conversation with our AI expert." data-es="Toca un tema para iniciar una conversación con nuestro experto IA.">Tap a topic to start a conversation with our AI expert.</p>
 </div>
 
-<div class="accordion">
+<div class="prompts-grid">
 
-<!-- 1. WHAT IS BPM BASKETBALL -->
-<div class="acc-item">
-<div class="acc-header" onclick="toggleAcc(this)">
-<div class="acc-icon">🏀</div>
-<div class="acc-header-text">
-<div class="acc-title" data-en="WHAT IS BPM BASKETBALL™?" data-es="¿QUÉ ES BPM BASKETBALL™?">WHAT IS BPM BASKETBALL™?</div>
-<div class="acc-subtitle" data-en="The system behind the score" data-es="El sistema detrás del puntaje">The system behind the score</div>
+<div class="prompt-btn" onclick="askHooporia(currentLang==='es'?'¿Qué es BPM Basketball y cómo funciona?':'What is BPM Basketball and how does it work?')">
+<div class="prompt-icon">🏀</div>
+<div class="prompt-text">
+<div class="prompt-title" data-en="WHAT IS BPM BASKETBALL™?" data-es="¿QUÉ ES BPM BASKETBALL™?">WHAT IS BPM BASKETBALL™?</div>
+<div class="prompt-sub" data-en="The system behind the score" data-es="El sistema detrás del puntaje">The system behind the score</div>
 </div>
-<span class="acc-arrow">▼</span>
-</div>
-<div class="acc-body"><div class="acc-body-inner">
-<span data-en="<strong class='gold'>BPM Basketball™</strong> is a proprietary training system that measures how fast your brain processes the game.<br><br><strong>BPM</strong> stands for <strong class='gold'>Beats Per Minute</strong> — because every drill runs on rhythm — and <strong class='gold'>Box Plus/Minus</strong> — the way real basketball measures impact.<br><br><strong>3 Speeds:</strong> Training (60 BPM) · Tempo (90 BPM) · Elite (120 BPM)<br><strong>10 Levels:</strong> L1 Rookie → L10 GOAT<br><br>Your BPM score is your basketball brain — measurable, trainable, and visible to every coach and scout who views your profile." data-es="<strong class='gold'>BPM Basketball™</strong> es un sistema de entrenamiento que mide qué tan rápido tu cerebro procesa el juego.<br><br><strong>BPM</strong> significa <strong class='gold'>Beats Per Minute</strong> — porque cada drill se basa en ritmo — y <strong class='gold'>Box Plus/Minus</strong> — como el baloncesto real mide impacto.<br><br><strong>3 Velocidades:</strong> Training (60 BPM) · Tempo (90 BPM) · Elite (120 BPM)<br><strong>10 Niveles:</strong> L1 Novato → L10 GOAT<br><br>Tu puntaje BPM es tu basketball brain — medible, entrenable, y visible para cada coach y scout que vea tu perfil."><strong class="gold">BPM Basketball™</strong> is a proprietary training system that measures how fast your brain processes the game.<br><br><strong>BPM</strong> stands for <strong class="gold">Beats Per Minute</strong> — because every drill runs on rhythm — and <strong class="gold">Box Plus/Minus</strong> — the way real basketball measures impact.<br><br><strong>3 Speeds:</strong> Training (60 BPM) · Tempo (90 BPM) · Elite (120 BPM)<br><strong>10 Levels:</strong> L1 Rookie → L10 GOAT<br><br>Your BPM score is your basketball brain — measurable, trainable, and visible to every coach and scout who views your profile.</span>
-<div style="margin-top:10px"><a href="/bpm-basketball.html" style="color:var(--gold);font-weight:700;font-size:.75rem" data-en="→ Learn more about BPM Basketball™" data-es="→ Más sobre BPM Basketball™">→ Learn more about BPM Basketball™</a></div>
-</div></div>
+<span class="prompt-arrow">→</span>
 </div>
 
-<!-- 2. AI SCOUTING REPORT -->
-<div class="acc-item">
-<div class="acc-header" onclick="toggleAcc(this)">
-<div class="acc-icon">📋</div>
-<div class="acc-header-text">
-<div class="acc-title" data-en="AI SCOUTING REPORT" data-es="REPORTE IA DE SCOUTING">AI SCOUTING REPORT</div>
-<div class="acc-subtitle" data-en="A professional report you can send to any coach" data-es="Un reporte profesional que puedes enviar a cualquier coach">A professional report you can send to any coach</div>
+<div class="prompt-btn" onclick="askHooporia(currentLang==='es'?'Cuéntame sobre el reporte de scouting IA. ¿Qué incluye y cómo lo puedo usar?':'Tell me about the AI scouting report. What does it include and how can I use it?')">
+<div class="prompt-icon">📋</div>
+<div class="prompt-text">
+<div class="prompt-title" data-en="AI SCOUTING REPORT" data-es="REPORTE IA DE SCOUTING">AI SCOUTING REPORT</div>
+<div class="prompt-sub" data-en="A professional report you can send to any coach" data-es="Un reporte profesional para enviar a cualquier coach">A professional report you can send to any coach</div>
 </div>
-<span class="acc-arrow">▼</span>
-</div>
-<div class="acc-body"><div class="acc-body-inner">
-<span data-en="This is the game changer. AI analyzes your performance across all 6 BPM drills and generates a <strong class='gold'>professional scouting report</strong> — the kind that used to cost hundreds of dollars from private scouts.<br><br><strong>What's in the report:</strong><br>• <strong>Strengths</strong> — what you do best on the court<br>• <strong>Development areas</strong> — where to focus next<br>• <strong>On-court translation</strong> — how your BPM scores map to real game situations<br>• <strong>Specific recommendations</strong> — personalized to your position, play style, and competition level<br><br>Share it with any college coach, scout, AAU director, or program. It's your proof — backed by data, written by AI, built for basketball." data-es="Esto es lo que cambia el juego. La IA analiza tu rendimiento en los 6 drills BPM y genera un <strong class='gold'>reporte profesional de scouting</strong> — el tipo que solía costar cientos de dólares con scouts privados.<br><br><strong>Qué incluye el reporte:</strong><br>• <strong>Fortalezas</strong> — lo que mejor haces en cancha<br>• <strong>Áreas de desarrollo</strong> — dónde enfocarte<br>• <strong>Traducción en cancha</strong> — cómo tus puntajes BPM se traducen a situaciones reales<br>• <strong>Recomendaciones específicas</strong> — personalizadas a tu posición, estilo y nivel<br><br>Compártelo con cualquier coach, scout, director AAU o programa. Es tu prueba — respaldada por datos, escrita por IA, hecha para baloncesto.">This is the game changer. AI analyzes your performance across all 6 BPM drills and generates a <strong class="gold">professional scouting report</strong> — the kind that used to cost hundreds of dollars from private scouts.<br><br><strong>What's in the report:</strong><br>• <strong>Strengths</strong> — what you do best on the court<br>• <strong>Development areas</strong> — where to focus next<br>• <strong>On-court translation</strong> — how your BPM scores map to real game situations<br>• <strong>Specific recommendations</strong> — personalized to your position, play style, and competition level<br><br>Share it with any college coach, scout, AAU director, or program. It's your proof — backed by data, written by AI, built for basketball.</span>
-<div style="margin-top:12px;display:flex;gap:8px;align-items:center;flex-wrap:wrap"><span class="tag prem" style="font-size:.55rem;padding:3px 10px">PREMIUM</span><a href="/cognitive-report.html" style="color:var(--gold);font-weight:700;font-size:.75rem" data-en="→ See a sample report" data-es="→ Ver un reporte de muestra">→ See a sample report</a></div>
-</div></div>
+<span class="prompt-arrow">→</span>
 </div>
 
-<!-- 3. DISCOVER -->
-<div class="acc-item">
-<div class="acc-header" onclick="toggleAcc(this)">
-<div class="acc-icon">🔍</div>
-<div class="acc-header-text">
-<div class="acc-title" data-en="DISCOVER — GET FOUND BY SCOUTS" data-es="DISCOVER — QUE TE ENCUENTREN LOS SCOUTS">DISCOVER — GET FOUND BY SCOUTS</div>
-<div class="acc-subtitle" data-en="Your profile in our talent database" data-es="Tu perfil en nuestra base de datos de talento">Your profile in our talent database</div>
+<div class="prompt-btn" onclick="askHooporia(currentLang==='es'?'¿Cómo funciona Discover? ¿Cómo me encuentran los scouts?':'How does Discover work? How do scouts find me?')">
+<div class="prompt-icon">🔍</div>
+<div class="prompt-text">
+<div class="prompt-title" data-en="DISCOVER — GET FOUND" data-es="DISCOVER — QUE TE ENCUENTREN">DISCOVER — GET FOUND</div>
+<div class="prompt-sub" data-en="How scouts and coaches find you" data-es="Cómo los scouts y coaches te encuentran">How scouts and coaches find you</div>
 </div>
-<span class="acc-arrow">▼</span>
-</div>
-<div class="acc-body"><div class="acc-body-inner">
-<span data-en="Every Hooporia player appears in the <strong class='gold'>Discover</strong> database — a searchable talent browser where coaches and scouts find players by position, grad year, location, and BPM scores.<br><br>Scouts don't have to know your name. They search for <strong>'PG, Class of 2027, L7+ BPM'</strong> — and your profile shows up. Your drills speak for you.<br><br>The more you train, the higher your BPM, the more visible you become. <strong class='green'>Free for every player.</strong>" data-es="Cada jugador de Hooporia aparece en la base de datos <strong class='gold'>Discover</strong> — un buscador de talento donde coaches y scouts encuentran jugadores por posición, año de graduación, ubicación y puntajes BPM.<br><br>Los scouts no tienen que saber tu nombre. Buscan <strong>'PG, Clase 2027, L7+ BPM'</strong> — y tu perfil aparece. Tus drills hablan por ti.<br><br>Mientras más entrenas, más alto tu BPM, más visible eres. <strong class='green'>Gratis para cada jugador.</strong>">Every Hooporia player appears in the <strong class="gold">Discover</strong> database — a searchable talent browser where coaches and scouts find players by position, grad year, location, and BPM scores.<br><br>Scouts don't have to know your name. They search for <strong>"PG, Class of 2027, L7+ BPM"</strong> — and your profile shows up. Your drills speak for you.<br><br>The more you train, the higher your BPM, the more visible you become. <strong class="green">Free for every player.</strong></span>
-<div style="margin-top:10px"><a href="/discover.html" style="color:var(--gold);font-weight:700;font-size:.75rem" data-en="→ Browse the Discover database" data-es="→ Explora la base de datos Discover">→ Browse the Discover database</a></div>
-</div></div>
+<span class="prompt-arrow">→</span>
 </div>
 
-<!-- 4. THE 6 BPM DRILLS -->
-<div class="acc-item">
-<div class="acc-header" onclick="toggleAcc(this)">
-<div class="acc-icon">🎯</div>
-<div class="acc-header-text">
-<div class="acc-title" data-en="THE 6 BPM DRILLS" data-es="LOS 6 DRILLS BPM">THE 6 BPM DRILLS</div>
-<div class="acc-subtitle" data-en="Train reaction, memory, vision, and rhythm" data-es="Entrena reacción, memoria, visión y ritmo">Train reaction, memory, vision, and rhythm</div>
+<div class="prompt-btn" onclick="askHooporia(currentLang==='es'?'¿Cuáles son los 6 drills BPM y qué entrena cada uno?':'What are the 6 BPM drills and what does each one train?')">
+<div class="prompt-icon">🎯</div>
+<div class="prompt-text">
+<div class="prompt-title" data-en="THE 6 BPM DRILLS" data-es="LOS 6 DRILLS BPM">THE 6 BPM DRILLS</div>
+<div class="prompt-sub" data-en="Reaction, memory, vision, rhythm" data-es="Reacción, memoria, visión, ritmo">Reaction, memory, vision, rhythm</div>
 </div>
-<span class="acc-arrow">▼</span>
-</div>
-<div class="acc-body"><div class="acc-body-inner">
-<span data-en="Each drill trains a different BPM skill that translates directly to on-court performance. Play from your phone — no equipment needed." data-es="Cada drill entrena una habilidad BPM diferente que se traduce directamente a la cancha. Juega desde tu teléfono — sin equipo.">Each drill trains a different BPM skill that translates directly to on-court performance. Play from your phone — no equipment needed.</span>
-<div class="drill-grid">
-<div class="drill-chip"><div class="drill-dot" style="background:var(--purple)"></div><div class="drill-chip-text">THE REACT<span class="drill-chip-sub" data-en="Rhythm reaction" data-es="Reacción rítmica">Rhythm reaction</span></div><span class="tag free">FREE</span></div>
-<div class="drill-chip"><div class="drill-dot" style="background:var(--orange)"></div><div class="drill-chip-text">THE RECALL<span class="drill-chip-sub" data-en="Number memory" data-es="Memoria numérica">Number memory</span></div><span class="tag free">FREE</span></div>
-<div class="drill-chip"><div class="drill-dot" style="background:var(--cyan)"></div><div class="drill-chip-text">THE REFLEX<span class="drill-chip-sub" data-en="Flash memory" data-es="Memoria visual">Flash memory</span></div><span class="tag free">FREE</span></div>
-<div class="drill-chip"><div class="drill-dot" style="background:var(--teal)"></div><div class="drill-chip-text">THE REPLAY<span class="drill-chip-sub" data-en="Sequence replay" data-es="Secuencia">Sequence replay</span></div><span class="tag prem">PREMIUM</span></div>
-<div class="drill-chip"><div class="drill-dot" style="background:var(--lime)"></div><div class="drill-chip-text">THE RITMO<span class="drill-chip-sub" data-en="Spot the change" data-es="Encuentra el cambio">Spot the change</span></div><span class="tag prem">PREMIUM</span></div>
-<div class="drill-chip"><div class="drill-dot" style="background:var(--gold)"></div><div class="drill-chip-text">THE BEAT<span class="drill-chip-sub" data-en="Rhythm training" data-es="Entrenamiento rítmico">Rhythm training</span></div><span class="tag prem">PREMIUM</span></div>
-</div>
-<div style="margin-top:12px"><a href="/cognitive-hoops.html" style="color:var(--gold);font-weight:700;font-size:.75rem" data-en="▶ Play now — no signup needed" data-es="▶ Juega ahora — sin registro">▶ Play now — no signup needed</a></div>
-</div></div>
+<span class="prompt-arrow">→</span>
 </div>
 
-<!-- 5. LEADERBOARD -->
-<div class="acc-item">
-<div class="acc-header" onclick="toggleAcc(this)">
-<div class="acc-icon">🏆</div>
-<div class="acc-header-text">
-<div class="acc-title" data-en="BASKETBALL BPM LEADERBOARD" data-es="BASKETBALL BPM LEADERBOARD">BASKETBALL BPM LEADERBOARD</div>
-<div class="acc-subtitle" data-en="See where you rank against other players" data-es="Mira dónde te clasificas contra otros jugadores">See where you rank against other players</div>
+<div class="prompt-btn" onclick="askHooporia(currentLang==='es'?'¿Cómo funciona el leaderboard? ¿Cómo me clasifico contra otros jugadores?':'How does the leaderboard work? How do I rank against other players?')">
+<div class="prompt-icon">🏆</div>
+<div class="prompt-text">
+<div class="prompt-title" data-en="BASKETBALL BPM LEADERBOARD" data-es="BASKETBALL BPM LEADERBOARD">BASKETBALL BPM LEADERBOARD</div>
+<div class="prompt-sub" data-en="See where you rank" data-es="Mira dónde te clasificas">See where you rank</div>
 </div>
-<span class="acc-arrow">▼</span>
-</div>
-<div class="acc-body"><div class="acc-body-inner">
-<span data-en="The <strong class='gold'>Leaderboard</strong> ranks every Hooporia player by BPM performance. Filter by drill, speed, position, and grad year.<br><br>See who's #1 in React. Who has the fastest Reflex. Who dominates at Elite speed. Top 3 players get the podium — gold, silver, bronze.<br><br>It's not about who scores the most points in a game. It's about who <strong>processes the game fastest</strong>. That's what BPM measures, and the Leaderboard proves it." data-es="El <strong class='gold'>Leaderboard</strong> clasifica a cada jugador de Hooporia por rendimiento BPM. Filtra por drill, velocidad, posición y año de graduación.<br><br>Mira quién es #1 en React. Quién tiene el Reflex más rápido. Quién domina en velocidad Elite. Los top 3 obtienen el podio — oro, plata, bronce.<br><br>No se trata de quién anota más puntos. Se trata de quién <strong>procesa el juego más rápido</strong>. Eso mide el BPM, y el Leaderboard lo demuestra.">The <strong class="gold">Leaderboard</strong> ranks every Hooporia player by BPM performance. Filter by drill, speed, position, and grad year.<br><br>See who's #1 in React. Who has the fastest Reflex. Who dominates at Elite speed. Top 3 players get the podium — gold, silver, bronze.<br><br>It's not about who scores the most points in a game. It's about who <strong>processes the game fastest</strong>. That's what BPM measures, and the Leaderboard proves it.</span>
-<div style="margin-top:10px"><a href="/leaderboard.html" style="color:var(--gold);font-weight:700;font-size:.75rem" data-en="→ View the Leaderboard" data-es="→ Ver el Leaderboard">→ View the Leaderboard</a></div>
-</div></div>
+<span class="prompt-arrow">→</span>
 </div>
 
-<!-- 6. FREE VS PREMIUM -->
-<div class="acc-item">
-<div class="acc-header" onclick="toggleAcc(this)">
-<div class="acc-icon">🆓</div>
-<div class="acc-header-text">
-<div class="acc-title" data-en="FREE VS PREMIUM" data-es="GRATIS VS PREMIUM">FREE VS PREMIUM</div>
-<div class="acc-subtitle" data-en="Start free. Upgrade when you're ready." data-es="Empieza gratis. Mejora cuando quieras.">Start free. Upgrade when you're ready.</div>
+<div class="prompt-btn" onclick="askHooporia(currentLang==='es'?'¿Qué es gratis y qué es premium? ¿Cuánto cuesta?':'What is free and what is premium? How much does it cost?')">
+<div class="prompt-icon">🆓</div>
+<div class="prompt-text">
+<div class="prompt-title" data-en="FREE VS PREMIUM" data-es="GRATIS VS PREMIUM">FREE VS PREMIUM</div>
+<div class="prompt-sub" data-en="Start free. Upgrade when ready." data-es="Empieza gratis. Mejora cuando quieras.">Start free. Upgrade when ready.</div>
 </div>
-<span class="acc-arrow">▼</span>
-</div>
-<div class="acc-body"><div class="acc-body-inner">
-<span data-en="<strong class='green'>FREE:</strong> Player profile, React + Recall + Reflex drills, Discover database, basic BPM scores.<br><br><strong class='gold'>PREMIUM:</strong> All 6 drills (adds Replay, Ritmo, Beat), <strong>AI Scouting Report</strong>, full BPM profile, basketball timeline." data-es="<strong class='green'>GRATIS:</strong> Perfil de jugador, drills React + Recall + Reflex, base de datos Discover, puntajes BPM básicos.<br><br><strong class='gold'>PREMIUM:</strong> Los 6 drills (añade Replay, Ritmo, Beat), <strong>Reporte IA de Scouting</strong>, perfil BPM completo, timeline de baloncesto."><strong class="green">FREE:</strong> Player profile, React + Recall + Reflex drills, Discover database, basic BPM scores.<br><br><strong class="gold">PREMIUM:</strong> All 6 drills (adds Replay, Ritmo, Beat), <strong>AI Scouting Report</strong>, full BPM profile, basketball timeline.</span>
-<div class="price-row">
-<div class="price-card featured"><div class="price-amount">$49</div><div class="price-period" data-en="/year" data-es="/año">/year</div><div class="price-note" data-en="Best value — includes AI Report" data-es="Mejor valor — incluye Reporte IA">Best value — includes AI Report</div></div>
-<div class="price-card"><div class="price-amount">$7</div><div class="price-period" data-en="/month" data-es="/mes">/month</div></div>
-</div>
-</div></div>
+<span class="prompt-arrow">→</span>
 </div>
 
-<!-- 5. FOR PROGRAMS -->
-<div class="acc-item">
-<div class="acc-header" onclick="toggleAcc(this)">
-<div class="acc-icon">🏟️</div>
-<div class="acc-header-text">
-<div class="acc-title" data-en="FOR PROGRAMS & COACHES" data-es="PARA PROGRAMAS Y COACHES">FOR PROGRAMS & COACHES</div>
-<div class="acc-subtitle" data-en="Free for your AAU, school, or league" data-es="Gratis para tu AAU, escuela o liga">Free for your AAU, school, or league</div>
+<div class="prompt-btn" onclick="askHooporia(currentLang==='es'?'Soy coach. ¿Cómo puedo usar Hooporia para mi programa AAU, escuela o liga?':'I am a coach. How can I use Hooporia for my AAU, school, or league program?')">
+<div class="prompt-icon">🏟️</div>
+<div class="prompt-text">
+<div class="prompt-title" data-en="FOR PROGRAMS & COACHES" data-es="PARA PROGRAMAS Y COACHES">FOR PROGRAMS & COACHES</div>
+<div class="prompt-sub" data-en="Free for your program — $0" data-es="Gratis para tu programa — $0">Free for your program — $0</div>
 </div>
-<span class="acc-arrow">▼</span>
-</div>
-<div class="acc-body"><div class="acc-body-inner">
-<span data-en="<strong class='green'>Cost to your program: $0.</strong><br><br>Share hooporia.com with your players. They create free profiles, play BPM drills, and earn BPM scores. You get measurable development data that no other program offers.<br><br><strong>The pitch to parents:</strong> <em>'We don't just develop athletes — we develop <span class='gold'>basketball minds</span>.'</em><br><br>Premium is optional and paid by the player/parent — not your program budget." data-es="<strong class='green'>Costo para tu programa: $0.</strong><br><br>Comparte hooporia.com con tus jugadores. Crean perfiles gratis, juegan drills BPM y ganan puntajes BPM. Obtienes datos medibles que ningún otro programa ofrece.<br><br><strong>El pitch para padres:</strong> <em>'No solo desarrollamos atletas — desarrollamos <span class='gold'>mentes de baloncesto</span>.'</em><br><br>Premium es opcional y lo paga el jugador/padre — no tu presupuesto."><strong class="green">Cost to your program: $0.</strong><br><br>Share hooporia.com with your players. They create free profiles, play BPM drills, and earn BPM scores. You get measurable development data that no other program offers.<br><br><strong>The pitch to parents:</strong> <em>"We don't just develop athletes — we develop <span class="gold">basketball minds</span>."</em><br><br>Premium is optional and paid by the player/parent — not your program budget.</span>
-<div style="margin-top:10px"><a href="/programs.html" style="color:var(--gold);font-weight:700;font-size:.75rem" data-en="→ Full Programs page" data-es="→ Página completa de Programas">→ Full Programs page</a></div>
-</div></div>
+<span class="prompt-arrow">→</span>
 </div>
 
-<!-- 6. PLAYER PROFILE -->
-<div class="acc-item">
-<div class="acc-header" onclick="toggleAcc(this)">
-<div class="acc-icon">👤</div>
-<div class="acc-header-text">
-<div class="acc-title" data-en="YOUR PLAYER PROFILE" data-es="TU PERFIL DE JUGADOR">YOUR PLAYER PROFILE</div>
-<div class="acc-subtitle" data-en="Position, BPM scores, shareable URL" data-es="Posición, puntajes BPM, URL compartible">Position, BPM scores, shareable URL</div>
+<div class="prompt-btn" onclick="askHooporia(currentLang==='es'?'Muéstrame la diferencia entre el reporte gratis y el premium':'Show me the difference between the free and premium reports')">
+<div class="prompt-icon">📄</div>
+<div class="prompt-text">
+<div class="prompt-title" data-en="VIEW FREE & PREMIUM REPORTS" data-es="VER REPORTES GRATIS Y PREMIUM">VIEW FREE & PREMIUM REPORTS</div>
+<div class="prompt-sub" data-en="See what you get before you upgrade" data-es="Mira lo que obtienes antes de mejorar">See what you get before you upgrade</div>
 </div>
-<span class="acc-arrow">▼</span>
-</div>
-<div class="acc-body"><div class="acc-body-inner">
-<span data-en="Every player gets a personal profile with position, measurables, social links, and BPM scores. Share your URL with coaches and scouts.<br><br>Your profile appears in the <strong>Discover</strong> database — where scouts browse talent. <strong class='green'>Free to create.</strong>" data-es="Cada jugador obtiene un perfil personal con posición, medidas, redes sociales y puntajes BPM. Comparte tu URL con coaches y scouts.<br><br>Tu perfil aparece en la base de datos <strong>Discover</strong> — donde los scouts buscan talento. <strong class='green'>Gratis.</strong>">Every player gets a personal profile with position, measurables, social links, and BPM scores. Share your URL with coaches and scouts.<br><br>Your profile appears in the <strong>Discover</strong> database — where scouts browse talent. <strong class="green">Free to create.</strong></span>
-<div style="margin-top:10px"><a href="/join.html" style="color:var(--gold);font-weight:700;font-size:.75rem" data-en="→ Create your profile" data-es="→ Crea tu perfil">→ Create your profile</a></div>
-</div></div>
+<span class="prompt-arrow">→</span>
 </div>
 
-<!-- 9. VIEW REPORTS -->
-<div class="acc-item" style="border-color:rgba(255,215,0,.12);background:rgba(255,215,0,.02)">
-<div class="acc-header" onclick="toggleAcc(this)">
-<div class="acc-icon" style="background:rgba(255,215,0,.12)">📄</div>
-<div class="acc-header-text">
-<div class="acc-title" data-en="VIEW THE FREE & PREMIUM REPORTS" data-es="VER LOS REPORTES GRATIS Y PREMIUM">VIEW THE FREE & PREMIUM REPORTS</div>
-<div class="acc-subtitle" data-en="See exactly what you get before you upgrade" data-es="Mira exactamente lo que obtienes antes de mejorar">See exactly what you get before you upgrade</div>
+<div class="prompt-btn" onclick="askHooporia(currentLang==='es'?'¿Cómo empiezo? Soy nuevo en Hooporia.':'How do I get started? I am new to Hooporia.')">
+<div class="prompt-icon">🚀</div>
+<div class="prompt-text">
+<div class="prompt-title" data-en="HOW DO I GET STARTED?" data-es="¿CÓMO EMPIEZO?">HOW DO I GET STARTED?</div>
+<div class="prompt-sub" data-en="New here? Start here." data-es="¿Nuevo aquí? Empieza aquí.">New here? Start here.</div>
 </div>
-<span class="acc-arrow">▼</span>
-</div>
-<div class="acc-body"><div class="acc-body-inner">
-<span data-en="We don't hide what you're paying for. See both reports side by side before you decide.<br><br><strong class='green'>FREE REPORT</strong> — A snapshot of your BPM scores across the 3 free drills. Basic overview, shareable link. Good for tracking your own progress.<br><br><strong class='gold'>PREMIUM REPORT</strong> — The full AI scouting report. All 6 drills analyzed. Professional-grade breakdown with strengths, development areas, on-court translation, and personalized recommendations. Written for coaches and scouts. This is what you send to programs.<br><br>The difference is clear. One tracks your progress. The other <strong>opens doors</strong>." data-es="No escondemos lo que estás pagando. Mira ambos reportes lado a lado antes de decidir.<br><br><strong class='green'>REPORTE GRATIS</strong> — Una vista de tus puntajes BPM en los 3 drills gratis. Resumen básico, link compartible. Bueno para seguir tu progreso.<br><br><strong class='gold'>REPORTE PREMIUM</strong> — El reporte completo de scouting IA. Los 6 drills analizados. Desglose profesional con fortalezas, áreas de desarrollo, traducción en cancha y recomendaciones personalizadas. Escrito para coaches y scouts. Esto es lo que envías a los programas.<br><br>La diferencia es clara. Uno rastrea tu progreso. El otro <strong>abre puertas</strong>.">We don't hide what you're paying for. See both reports side by side before you decide.<br><br><strong class="green">FREE REPORT</strong> — A snapshot of your BPM scores across the 3 free drills. Basic overview, shareable link. Good for tracking your own progress.<br><br><strong class="gold">PREMIUM REPORT</strong> — The full AI scouting report. All 6 drills analyzed. Professional-grade breakdown with strengths, development areas, on-court translation, and personalized recommendations. Written for coaches and scouts. This is what you send to programs.<br><br>The difference is clear. One tracks your progress. The other <strong>opens doors</strong>.</span>
-<div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
-<a href="/preview-free.html" style="color:var(--green);font-weight:700;font-size:.75rem" data-en="→ View Free Report" data-es="→ Ver Reporte Gratis">→ View Free Report</a>
-<a href="/preview-premium.html" style="color:var(--gold);font-weight:700;font-size:.75rem" data-en="→ View Premium Report" data-es="→ Ver Reporte Premium">→ View Premium Report</a>
-</div>
-</div></div>
+<span class="prompt-arrow">→</span>
 </div>
 
 </div>
 </div></section>
 
-<div style="text-align:center;padding:32px 20px 0">
-<h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(1.6rem,5vw,2.6rem);letter-spacing:3px;color:var(--gold)" data-en="THE BUSINESS OF BASKETBALL<br>STARTS WITH A CLICK" data-es="EL NEGOCIO DEL BALONCESTO<br>EMPIEZA CON UN CLICK">THE BUSINESS OF BASKETBALL<br>STARTS WITH A CLICK</h2>
+<!-- BUSINESS LINE -->
+<div class="business-line">
+<h2 data-en="THE BUSINESS OF BASKETBALL<br>STARTS WITH A CLICK" data-es="EL NEGOCIO DEL BALONCESTO<br>EMPIEZA CON UN CLICK">THE BUSINESS OF BASKETBALL<br>STARTS WITH A CLICK</h2>
 </div>
 
+<!-- CTA -->
 <section class="cta-section">
 <h2 data-en="READY TO <span class='gold'>TRAIN?</span>" data-es="¿LISTO PARA <span class='gold'>ENTRENAR?</span>">READY TO <span class="gold">TRAIN?</span></h2>
 <p class="cta-sub" data-en="Play the drills free. Get your AI scouting report with Premium." data-es="Juega los drills gratis. Obtén tu reporte IA con Premium.">Play the drills free. Get your AI scouting report with Premium.</p>
@@ -392,28 +301,35 @@ footer{border-top:1px solid rgba(255,255,255,.04);padding:20px 0}
 <p data-en="This program focuses on athlete development, branding, and future opportunities. We do not guarantee specific outcomes or opportunities." data-es="Este programa se enfoca en el desarrollo del atleta, branding y oportunidades futuras. No garantizamos resultados u oportunidades específicas.">This program focuses on athlete development, branding, and future opportunities. We do not guarantee specific outcomes or opportunities.</p>
 </div>
 
-<footer><div class="wrap"><div class="footer-inner">
+<footer><div class="wrap" style="max-width:680px;margin:0 auto;padding:0 20px"><div class="footer-inner">
 <div class="footer-links"><a href="/privacy.html" data-en="Privacy" data-es="Privacidad">Privacy</a><a href="/terms.html" data-en="Terms" data-es="Términos">Terms</a></div>
 <div class="footer-copy">© 2026 GoStar Digital LLC. All Rights Reserved.</div>
 </div></div></footer>
 
 <script>
+// Language init
 try{var sl=localStorage.getItem('lc-lang');if(sl)setLang(sl);else setLang('en')}catch(e){setLang('en')}
-function toggleAcc(header){
-var item=header.parentElement;
-var body=item.querySelector('.acc-body');
-var inner=body.querySelector('.acc-body-inner');
-if(item.classList.contains('open')){
-body.style.maxHeight='0';
-item.classList.remove('open');
-}else{
-document.querySelectorAll('.acc-item.open').forEach(function(other){
-if(other!==item){other.classList.remove('open');other.querySelector('.acc-body').style.maxHeight='0'}
-});
-item.classList.add('open');
-body.style.maxHeight=inner.scrollHeight+20+'px';
-}}
+
+// Open chat and send a message
+function askHooporia(msg){
+var fab=document.getElementById('hc-fab');
+var panel=document.getElementById('hc-panel');
+if(!panel||!fab)return;
+if(!panel.classList.contains('open'))fab.click();
+setTimeout(function(){
+var input=document.getElementById('hc-input');
+if(!input)return;
+input.value=msg;
+input.dispatchEvent(new Event('input'));
+setTimeout(function(){
+var send=document.getElementById('hc-send');
+if(send&&!send.disabled)send.click();
+},100);
+},400);
+}
 </script>
+
+<!-- CHAT AGENT -->
 <script src="/hooporia-chat.js"></script>
 </body>
 </html>
