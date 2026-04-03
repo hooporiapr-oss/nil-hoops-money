@@ -374,7 +374,7 @@ function updateUILanguage(){$('demoBadge').textContent=t('demoBadge');$('demoSub
 function setLang(l){currentLang=l;localStorage.setItem('lc-lang',l);updateUILanguage()}
 $('langEN').onclick=function(){setLang('en')};$('langES').onclick=function(){setLang('es')};
 var savedLang=localStorage.getItem('lc-lang');if(savedLang){currentLang=savedLang}
-function showScreen(name){screenDemo.classList.remove('active');screenTrophy.classList.remove('active');screenPlay.classList.remove('active');currentScreen=name;if(name==='demo')screenDemo.classList.add('active');else if(name==='trophy')screenTrophy.classList.add('active');else if(name==='play')screenPlay.classList.add('active')}
+function showScreen(name){screenDemo.classList.remove('active');screenTrophy.classList.remove('active');screenPlay.classList.remove('active');currentScreen=name;document.querySelector('.nav-lang').style.display=name==='play'?'none':'flex';if(name==='demo')screenDemo.classList.add('active');else if(name==='trophy')screenTrophy.classList.add('active');else if(name==='play')screenPlay.classList.add('active')}
 var demoCourt=$('demoCourt'),demoLabel=$('demoLabel'),demoCells=[],demoEpoch=0,demoTimeouts=[];var DEMO_PATTERN=[6,7,8,12,17];
 function initDemoCourt(){demoCourt.innerHTML='';demoCells=[];for(var i=0;i<25;i++){var c=document.createElement('div');c.className='demo-cell';demoCourt.appendChild(c);demoCells.push(c)}}
 function setDemoTimeout(fn,delay){var id=setTimeout(function(){var idx=demoTimeouts.indexOf(id);if(idx>-1)demoTimeouts.splice(idx,1);fn()},delay);demoTimeouts.push(id);return id}
