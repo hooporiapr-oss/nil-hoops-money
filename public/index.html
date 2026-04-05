@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hooporia™ — BPM Basketball™ Training</title>
-<meta name="description" content="Train your Basketball BPM with 6 drills, earn your score, and get an AI scouting report. The smartest basketball platform. Free to start.">
-<link rel="icon" href="/hooporia.png">
+<title>BPM Basketball™ — Train Your Basketball BPM</title>
+<meta name="description" content="BPM Basketball™ — Every beat is a read. We measure yours. 6 cognitive drills, your score, and a professional AI scouting report. Free to start.">
+<link rel="icon" href="/bpm-basketball.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <script>
@@ -35,12 +35,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.92
 .nav-right{display:flex;align-items:center;gap:14px}
 .nav-link{font-size:.75rem;font-weight:600;color:var(--gray);transition:color .2s}
 .nav-link:hover{color:var(--white)}
+.nav-login{font-size:.75rem;font-weight:600;color:var(--gray-light);transition:color .2s;padding:8px 12px;border-radius:8px}
+.nav-login:hover{color:var(--white)}
 .lang-btn{padding:4px 9px;border-radius:5px;font-size:.6rem;font-weight:700;background:transparent;color:var(--gray);transition:all .2s;letter-spacing:.05em;border:none;cursor:pointer}
 .lang-btn.active{background:var(--gold);color:var(--black)}
 .nav-cta{padding:8px 16px;border-radius:8px;font-size:.72rem;font-weight:700;background:var(--gold);color:var(--black);border:none;cursor:pointer;font-family:'Outfit',sans-serif;transition:all .2s}
 .nav-cta:hover{box-shadow:0 4px 16px rgba(255,215,0,.3)}
-.nav-login{font-size:.75rem;font-weight:600;color:var(--gray-light);transition:color .2s;padding:8px 12px;border-radius:8px}
-.nav-login:hover{color:var(--white)}
 .hamburger{background:none;border:none;color:var(--white);font-size:1.3rem;cursor:pointer;padding:6px 10px;line-height:1;border-radius:8px}
 .mobile-menu{display:none;position:fixed;top:60px;left:0;right:0;background:rgba(10,10,15,.97);backdrop-filter:blur(20px);padding:16px 24px 24px;border-bottom:1px solid rgba(255,255,255,.06);z-index:99;flex-direction:column;gap:4px}
 .mobile-menu.open{display:flex}
@@ -49,7 +49,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.92
 .mm-lang{display:flex;gap:4px;padding:12px 16px}
 .mm-cta{background:var(--gold)!important;color:var(--black)!important;text-align:center;font-weight:700!important;border-radius:10px!important;margin-top:8px}
 
-/* HERO */
 .hero{min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 20px 40px;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 40% at 50% 30%,rgba(255,215,0,.06),transparent 70%);pointer-events:none}
 .hero-logo{width:180px;height:180px;margin-bottom:16px;display:block;filter:drop-shadow(0 12px 40px rgba(255,215,0,.5));animation:fadeUp .6s ease both;border-radius:32px}
@@ -66,7 +65,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.92
 .hero-stat-num{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--gold)}
 .hero-stat-label{font-size:.55rem;color:var(--gray);font-weight:600;letter-spacing:1px;text-transform:uppercase}
 
-/* PROMPTS SECTION */
 .prompts-section{padding:40px 0 50px}
 .prompts-wrap{max-width:680px;margin:0 auto;padding:0 20px}
 .prompts-intro{text-align:center;margin-bottom:28px}
@@ -84,11 +82,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.92
 .prompt-arrow{color:rgba(255,215,0,.3);font-size:.8rem;flex-shrink:0;transition:all .25s}
 .prompt-btn:hover .prompt-arrow{color:var(--gold);transform:translateX(4px)}
 
-/* BUSINESS LINE */
 .business-line{text-align:center;padding:40px 20px 0}
 .business-line h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.6rem,5vw,2.6rem);letter-spacing:3px;color:var(--gold)}
 
-/* CTA */
 .cta-section{text-align:center;padding:32px 20px 50px;position:relative}
 .cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 70% at 50% 100%,rgba(255,215,0,.04),transparent);pointer-events:none}
 .cta-section h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.8rem,6vw,3rem);letter-spacing:2px;margin-bottom:8px}
@@ -99,7 +95,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.92
 .cta-chat-hint{display:inline-flex;align-items:center;gap:6px;font-size:.7rem;color:var(--gray);padding:8px 16px;background:rgba(255,215,0,.04);border:1px solid rgba(255,215,0,.1);border-radius:20px}
 .cta-chat-hint .ball{font-size:1rem;animation:float 2s ease-in-out infinite}
 
-/* POWERED */
 .powered-strip{display:flex;align-items:center;justify-content:center;gap:8px;padding:16px 0}
 .powered-dot{width:6px;height:6px;background:var(--gold);border-radius:50%;animation:pulse 1.5s ease-in-out infinite}
 .powered-label{font-size:.55rem;color:var(--gray);letter-spacing:2px}
@@ -115,7 +110,6 @@ footer{border-top:1px solid rgba(255,255,255,.04);padding:20px 0}
 .footer-links a:hover{color:var(--white)}
 .footer-copy{font-size:.55rem;color:#444}
 
-/* MOBILE */
 @media(max-width:768px){
 .nav-link,.nav-cta,.nav-login{display:none}
 .hero{padding:74px 16px 32px;min-height:auto}
@@ -145,9 +139,8 @@ footer{border-top:1px solid rgba(255,255,255,.04);padding:20px 0}
 </head>
 <body>
 
-<!-- ==================== CONDENSED NAV ==================== -->
 <nav><div class="nav-inner">
-<a href="/" class="nav-brand"><img src="/hooporia.png" alt="Hooporia"><span>HOOPORIA</span></a>
+<a href="/" class="nav-brand"><img src="/bpm-basketball.png" alt="BPM Basketball"><span>BPM BASKETBALL</span></a>
 <div class="nav-right">
 <a href="/cognitive-hoops.html" class="nav-link" data-en="Drills" data-es="Drills">Drills</a>
 <a href="/cognitive-report.html" class="nav-link" data-en="Report" data-es="Reporte">Report</a>
@@ -158,23 +151,21 @@ footer{border-top:1px solid rgba(255,255,255,.04);padding:20px 0}
 <a href="/join.html"><button class="nav-cta" data-en="Join Free" data-es="Únete Gratis">Join Free</button></a>
 </div></div>
 
-<!-- MOBILE MENU — condensed -->
 <div class="mobile-menu" id="mobileMenu">
 <a href="/cognitive-hoops.html" data-en="Drills" data-es="Drills">Drills</a>
 <a href="/cognitive-report.html" data-en="AI Report" data-es="Reporte IA">AI Report</a>
 <a href="/discover.html" data-en="Discover" data-es="Descubrir">Discover</a>
 <a href="/leaderboard.html" data-en="Leaderboard" data-es="Clasificación">Leaderboard</a>
 <a href="/login.html" data-en="Log In" data-es="Entrar">Log In</a>
-<div class="mm-lang"><button class="lang-btn active" data-l="en" onclick="setLang('en')">EN</button><button class="lang-btn" data-l="es" onclick="setLang('es')">ES</button></div>
+<div class="mm-lang"><span style="font-size:.7rem;color:var(--gray);margin-right:6px" data-en="Language" data-es="Idioma">Language</span><button class="lang-btn active" data-l="en" onclick="setLang('en')">EN</button><button class="lang-btn" data-l="es" onclick="setLang('es')">ES</button></div>
 <a href="/join.html" class="mm-cta" data-en="Join Free" data-es="Únete Gratis">Join Free</a>
 </div></nav>
 
-<!-- HERO -->
 <section class="hero">
-<img src="/hooporia.png" alt="Hooporia" class="hero-logo">
+<img src="/bpm-basketball.png" alt="BPM Basketball" class="hero-logo">
 <h1 class="hero-title" data-en="TRAIN YOUR BASKETBALL BPM" data-es="ENTRENA TU BASKETBALL BPM">TRAIN YOUR BASKETBALL BPM</h1>
 <p class="hero-sub" data-en="BPM — Beats Per Minute. Every beat is a read. We measure yours. 6 drills. Your score. A professional AI scouting report you can send to any coach. Free to start." data-es="BPM — Beats Per Minute. Cada beat es una lectura. Medimos las tuyas. 6 drills. Tu puntaje. Un reporte profesional IA que puedes enviar a cualquier coach. Empieza gratis.">BPM — Beats Per Minute. Every beat is a read. We measure yours. 6 drills. Your score. A professional AI scouting report you can send to any coach. Free to start.</p>
-<div class="hero-tagline" data-en="POWERED BY BPM BASKETBALL™" data-es="POWERED BY BPM BASKETBALL™">POWERED BY BPM BASKETBALL™</div>
+<div class="hero-tagline">BPM BASKETBALL™</div>
 <div class="hero-btns">
 <a href="/cognitive-hoops.html" class="btn-gold" data-en="Run The Drills" data-es="Corre los Drills">Run The Drills</a>
 <a href="/join.html" class="btn-outline" data-en="Join Free" data-es="Únete Gratis">Join Free</a>
@@ -186,7 +177,6 @@ footer{border-top:1px solid rgba(255,255,255,.04);padding:20px 0}
 </div>
 </section>
 
-<!-- CONVERSATION PROMPTS -->
 <section class="prompts-section"><div class="prompts-wrap">
 <div class="prompts-intro">
 <h2 data-en="REFERENCE <span class='gold'>LIBRARY</span>" data-es="BIBLIOTECA DE <span class='gold'>REFERENCIA</span>">REFERENCE <span class="gold">LIBRARY</span></h2>
@@ -195,7 +185,7 @@ footer{border-top:1px solid rgba(255,255,255,.04);padding:20px 0}
 
 <div class="prompts-grid">
 
-<div class="prompt-btn" style="border-color:rgba(255,215,0,.15);background:rgba(255,215,0,.03)" onclick="askHooporia(currentLang==='es'?'Quiero hacer scouting. ¿Quiénes son los mejores jugadores en Hooporia?':'I want to scout. Who are the top players on Hooporia?')">
+<div class="prompt-btn" style="border-color:rgba(255,215,0,.15);background:rgba(255,215,0,.03)" onclick="askBPM(currentLang==='es'?'Quiero hacer scouting. ¿Quiénes son los mejores jugadores en BPM Basketball?':'I want to scout. Who are the top players on BPM Basketball?')">
 <div class="prompt-icon" style="background:rgba(255,215,0,.12)">🔍</div>
 <div class="prompt-text">
 <div class="prompt-title" data-en="SCOUT A PLAYER" data-es="SCOUT A UN JUGADOR">SCOUT A PLAYER</div>
@@ -204,7 +194,7 @@ footer{border-top:1px solid rgba(255,255,255,.04);padding:20px 0}
 <span class="prompt-arrow">→</span>
 </div>
 
-<div class="prompt-btn" onclick="askHooporia(currentLang==='es'?'¿Qué es BPM Basketball y cómo funciona?':'What is BPM Basketball and how does it work?')">
+<div class="prompt-btn" onclick="askBPM(currentLang==='es'?'¿Qué es BPM Basketball y cómo funciona?':'What is BPM Basketball and how does it work?')">
 <div class="prompt-icon">🏀</div>
 <div class="prompt-text">
 <div class="prompt-title" data-en="WHAT IS BPM BASKETBALL™?" data-es="¿QUÉ ES BPM BASKETBALL™?">WHAT IS BPM BASKETBALL™?</div>
@@ -213,7 +203,7 @@ footer{border-top:1px solid rgba(255,255,255,.04);padding:20px 0}
 <span class="prompt-arrow">→</span>
 </div>
 
-<div class="prompt-btn" onclick="askHooporia(currentLang==='es'?'Cuéntame sobre el reporte de scouting IA. ¿Qué incluye y cómo lo puedo usar?':'Tell me about the AI scouting report. What does it include and how can I use it?')">
+<div class="prompt-btn" onclick="askBPM(currentLang==='es'?'Cuéntame sobre el reporte de scouting IA. ¿Qué incluye y cómo lo puedo usar?':'Tell me about the AI scouting report. What does it include and how can I use it?')">
 <div class="prompt-icon">📋</div>
 <div class="prompt-text">
 <div class="prompt-title" data-en="AI SCOUTING REPORT" data-es="REPORTE IA DE SCOUTING">AI SCOUTING REPORT</div>
@@ -222,7 +212,7 @@ footer{border-top:1px solid rgba(255,255,255,.04);padding:20px 0}
 <span class="prompt-arrow">→</span>
 </div>
 
-<div class="prompt-btn" onclick="askHooporia(currentLang==='es'?'¿Cómo funciona Discover? ¿Cómo me encuentran los scouts?':'How does Discover work? How do scouts find me?')">
+<div class="prompt-btn" onclick="askBPM(currentLang==='es'?'¿Cómo funciona Discover? ¿Cómo me encuentran los scouts?':'How does Discover work? How do scouts find me?')">
 <div class="prompt-icon">🔍</div>
 <div class="prompt-text">
 <div class="prompt-title" data-en="DISCOVER — GET FOUND" data-es="DISCOVER — QUE TE ENCUENTREN">DISCOVER — GET FOUND</div>
@@ -231,7 +221,7 @@ footer{border-top:1px solid rgba(255,255,255,.04);padding:20px 0}
 <span class="prompt-arrow">→</span>
 </div>
 
-<div class="prompt-btn" onclick="askHooporia(currentLang==='es'?'¿Cuáles son los 6 drills BPM y qué entrena cada uno?':'What are the 6 BPM drills and what does each one train?')">
+<div class="prompt-btn" onclick="askBPM(currentLang==='es'?'¿Cuáles son los 6 drills BPM y qué entrena cada uno?':'What are the 6 BPM drills and what does each one train?')">
 <div class="prompt-icon">🎯</div>
 <div class="prompt-text">
 <div class="prompt-title" data-en="THE 6 BPM DRILLS" data-es="LOS 6 DRILLS BPM">THE 6 BPM DRILLS</div>
@@ -240,7 +230,7 @@ footer{border-top:1px solid rgba(255,255,255,.04);padding:20px 0}
 <span class="prompt-arrow">→</span>
 </div>
 
-<div class="prompt-btn" onclick="askHooporia(currentLang==='es'?'¿Cómo funciona el leaderboard? ¿Cómo me clasifico contra otros jugadores?':'How does the leaderboard work? How do I rank against other players?')">
+<div class="prompt-btn" onclick="askBPM(currentLang==='es'?'¿Cómo funciona el leaderboard? ¿Cómo me clasifico contra otros jugadores?':'How does the leaderboard work? How do I rank against other players?')">
 <div class="prompt-icon">🏆</div>
 <div class="prompt-text">
 <div class="prompt-title" data-en="BASKETBALL BPM LEADERBOARD" data-es="BASKETBALL BPM LEADERBOARD">BASKETBALL BPM LEADERBOARD</div>
@@ -249,7 +239,7 @@ footer{border-top:1px solid rgba(255,255,255,.04);padding:20px 0}
 <span class="prompt-arrow">→</span>
 </div>
 
-<div class="prompt-btn" onclick="askHooporia(currentLang==='es'?'¿Qué es gratis y qué es premium? ¿Cuánto cuesta?':'What is free and what is premium? How much does it cost?')">
+<div class="prompt-btn" onclick="askBPM(currentLang==='es'?'¿Qué es gratis y qué es premium? ¿Cuánto cuesta?':'What is free and what is premium? How much does it cost?')">
 <div class="prompt-icon">🆓</div>
 <div class="prompt-text">
 <div class="prompt-title" data-en="FREE VS PREMIUM" data-es="GRATIS VS PREMIUM">FREE VS PREMIUM</div>
@@ -258,7 +248,7 @@ footer{border-top:1px solid rgba(255,255,255,.04);padding:20px 0}
 <span class="prompt-arrow">→</span>
 </div>
 
-<div class="prompt-btn" onclick="askHooporia(currentLang==='es'?'Soy coach. ¿Cómo puedo usar Hooporia para mi programa AAU, escuela o liga?':'I am a coach. How can I use Hooporia for my AAU, school, or league program?')">
+<div class="prompt-btn" onclick="askBPM(currentLang==='es'?'Soy coach. ¿Cómo puedo usar BPM Basketball para mi programa AAU, escuela o liga?':'I am a coach. How can I use BPM Basketball for my AAU, school, or league program?')">
 <div class="prompt-icon">🏟️</div>
 <div class="prompt-text">
 <div class="prompt-title" data-en="FOR PROGRAMS & COACHES" data-es="PARA PROGRAMAS Y COACHES">FOR PROGRAMS & COACHES</div>
@@ -267,7 +257,7 @@ footer{border-top:1px solid rgba(255,255,255,.04);padding:20px 0}
 <span class="prompt-arrow">→</span>
 </div>
 
-<div class="prompt-btn" onclick="askHooporia(currentLang==='es'?'Muéstrame la diferencia entre el reporte gratis y el premium':'Show me the difference between the free and premium reports')">
+<div class="prompt-btn" onclick="askBPM(currentLang==='es'?'Muéstrame la diferencia entre el reporte gratis y el premium':'Show me the difference between the free and premium reports')">
 <div class="prompt-icon">📄</div>
 <div class="prompt-text">
 <div class="prompt-title" data-en="VIEW FREE & PREMIUM REPORTS" data-es="VER REPORTES GRATIS Y PREMIUM">VIEW FREE & PREMIUM REPORTS</div>
@@ -276,7 +266,7 @@ footer{border-top:1px solid rgba(255,255,255,.04);padding:20px 0}
 <span class="prompt-arrow">→</span>
 </div>
 
-<div class="prompt-btn" onclick="askHooporia(currentLang==='es'?'¿Cómo empiezo? Soy nuevo en Hooporia.':'How do I get started? I am new to Hooporia.')">
+<div class="prompt-btn" onclick="askBPM(currentLang==='es'?'¿Cómo empiezo? Soy nuevo en BPM Basketball.':'How do I get started? I am new to BPM Basketball.')">
 <div class="prompt-icon">🚀</div>
 <div class="prompt-text">
 <div class="prompt-title" data-en="HOW DO I GET STARTED?" data-es="¿CÓMO EMPIEZO?">HOW DO I GET STARTED?</div>
@@ -288,12 +278,10 @@ footer{border-top:1px solid rgba(255,255,255,.04);padding:20px 0}
 </div>
 </div></section>
 
-<!-- BUSINESS LINE -->
 <div class="business-line">
 <h2 data-en="THE BUSINESS OF BASKETBALL<br>STARTS WITH A CLICK" data-es="EL NEGOCIO DEL BALONCESTO<br>EMPIEZA CON UN CLICK">THE BUSINESS OF BASKETBALL<br>STARTS WITH A CLICK</h2>
 </div>
 
-<!-- CTA -->
 <section class="cta-section">
 <h2 data-en="READY TO <span class='gold'>TRAIN?</span>" data-es="¿LISTO PARA <span class='gold'>ENTRENAR?</span>">READY TO <span class="gold">TRAIN?</span></h2>
 <p class="cta-sub" data-en="Play the drills free. Get your AI scouting report with Premium." data-es="Juega los drills gratis. Obtén tu reporte IA con Premium.">Play the drills free. Get your AI scouting report with Premium.</p>
@@ -326,11 +314,9 @@ footer{border-top:1px solid rgba(255,255,255,.04);padding:20px 0}
 </div></div></footer>
 
 <script>
-// Language init
 try{var sl=localStorage.getItem('lc-lang');if(sl)setLang(sl);else setLang('en')}catch(e){setLang('en')}
 
-// Open chat and send a message
-function askHooporia(msg){
+function askBPM(msg){
 var fab=document.getElementById('hc-fab');
 var panel=document.getElementById('hc-panel');
 if(!panel||!fab)return;
@@ -348,7 +334,6 @@ if(send&&!send.disabled)send.click();
 }
 </script>
 
-<!-- CHAT AGENT -->
 <script src="/hooporia-chat.js"></script>
 </body>
 </html>
