@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Player Profile — Hooporia</title>
-<link rel="icon" href="/hooporia.png">
+<title>Player Profile — BPM Basketball</title>
+<link rel="icon" href="/bpm-basketball.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <script>
@@ -181,7 +181,7 @@ footer{border-top:1px solid rgba(255,255,255,.04);padding:28px 0}
 <body>
 <script>function toggleMenu(){var m=document.getElementById('mobileMenu');var b=document.getElementById('hamBtn');if(m.classList.contains('open')){m.classList.remove('open');b.textContent='☰'}else{m.classList.add('open');b.textContent='✕'}}</script>
 <nav><div class="nav-inner">
-<a href="/" class="nav-brand"><img src="/hooporia.png" alt="Hooporia"><span>HOOPORIA</span></a>
+<a href="/" class="nav-brand"><img src="/bpm-basketball.png" alt="BPM Basketball"><span>BPM BASKETBALL</span></a>
 <div class="nav-right">
 <a href="/cognitive-hoops.html" class="nav-link" data-en="Drills" data-es="Drills">Drills</a>
 <a href="/cognitive-report.html" class="nav-link" data-en="Report" data-es="Reporte">Report</a>
@@ -233,7 +233,7 @@ var{data:cd}=await sb.from('cognitive_scores').select('*').eq('player_id',p.id);
 var bt={};if(cd)cd.forEach(function(s){if(!bt[s.test_name]||s.level>bt[s.test_name].level)bt[s.test_name]=s});
 var{data:seasonData}=await sb.from('player_seasons').select('*').eq('player_id',p.id).order('season_year',{ascending:false});
 var seasons=seasonData||[];
-document.title=(p.first_name||'')+' '+(p.last_name||'')+' — Hooporia';
+document.title=(p.first_name||'')+' '+(p.last_name||'')+' — BPM Basketball';
 render(p,pm,bt,seasons);
 }catch(e){console.error(e);document.getElementById('loadState').innerHTML='<p style="color:var(--gray)">Error loading profile.</p>'}
 })();
@@ -264,7 +264,7 @@ if(pm&&p.nil_contact_email)h+='<a href="mailto:'+esc(p.nil_contact_email)+'" cla
 var hfGiven=false;
 try{var hfKey='hf_'+p.id;hfGiven=localStorage.getItem(hfKey)==='1'}catch(e){}
 var hfCount=p.high_fives||0;
-var playerUrl='https://www.hooporia.com/player/'+esc(p.slug);
+var playerUrl='https://www.bpmbasketball.com/player/'+esc(p.slug);
 var playerFullName=esc(p.first_name)+' '+esc(p.last_name);
 h+='<div class="hf-section">';
 h+='<div class="hf-wrap">';
@@ -344,7 +344,7 @@ h+='</div></div>';
 h+='</div></div>';
 }
 
-h+='<div class="card '+(pm?'pc':'')+'"><div class="card-title" data-en="🧠 Hoops Mindset" data-es="🧠 Hoops Mindset">🧠 Hoops Mindset</div><div style="font-size:.6rem;color:var(--green);margin-top:-10px;margin-bottom:12px;display:flex;align-items:center;gap:4px" data-en="✓ Verified by Hooporia" data-es="✓ Verificado por Hooporia">✓ Verified by Hooporia</div>';
+h+='<div class="card '+(pm?'pc':'')+'"><div class="card-title" data-en="🧠 Hoops Mindset" data-es="🧠 Hoops Mindset">🧠 Hoops Mindset</div><div style="font-size:.6rem;color:var(--green);margin-top:-10px;margin-bottom:12px;display:flex;align-items:center;gap:4px" data-en="✓ Verified by BPM Basketball" data-es="✓ Verificado por BPM Basketball">✓ Verified by BPM Basketball</div>';
 var tc=Object.keys(bt).length;
 if(tc>0){var av=cogAvg(bt),ac=av>=8?'var(--gold)':av>=5?'var(--green)':'var(--orange)';
 h+='<div class="cog-overall"><div class="cog-overall-lbl" data-en="OVERALL RATING" data-es="CALIFICACIÓN GENERAL">OVERALL RATING</div><div class="cog-overall-val" style="color:'+ac+'">L'+av+'</div><div class="cog-overall-rat">'+(RL[av]||'')+'</div></div>';
@@ -396,11 +396,11 @@ h+='<li data-en="Full stats & measurables" data-es="Stats y medidas completas">F
 h+='<li data-en="Direct contact button for scouts" data-es="Botón de contacto para scouts">Direct contact button for scouts</li>';
 h+='<li data-en="Player bio & custom profile" data-es="Bio del jugador y perfil personalizado">Player bio & custom profile</li>';
 h+='<li data-en="Priority in search results" data-es="Prioridad en búsquedas">Priority in search results</li></ul>';
-h+='<p style="font-size:.65rem;color:var(--gray);margin-bottom:10px" data-en="⚠️ Use the same email as your Hooporia profile" data-es="⚠️ Usa el mismo email de tu perfil Hooporia">⚠️ Use the same email as your Hooporia profile</p>';
+h+='<p style="font-size:.65rem;color:var(--gray);margin-bottom:10px" data-en="⚠️ Use the same email as your BPM Basketball profile" data-es="⚠️ Usa el mismo email de tu perfil BPM Basketball">⚠️ Use the same email as your BPM Basketball profile</p>';
 h+='<a href="https://buy.stripe.com/eVq28s8yrgwuaMEgP88Zq03" class="up-btn" style="display:inline-block;margin-bottom:8px" data-en="⭐ $49/year — Best Value" data-es="⭐ $49/año — Mejor Valor">⭐ $49/year — Best Value</a><br>';
 h+='<a href="https://buy.stripe.com/00wdRa7un2FEf2U0Qa8Zq02" class="up-btn-secondary" data-en="$7/month" data-es="$7/mes">$7/month</a></div>'}
 
-if(!pm)h+='<div class="powered"><a href="/"><img src="/hooporia.png" alt="Hooporia"> Powered by Hooporia™</a></div>';
+if(!pm)h+='<div class="powered"><a href="/"><img src="/bpm-basketball.png" alt="BPM Basketball"> Powered by BPM Basketball™</a></div>';
 
 document.getElementById('loadState').style.display='none';
 document.getElementById('profileOut').style.display='block';
@@ -453,9 +453,9 @@ try{await sb.from('players').update({high_fives:newCount}).eq('id',playerId)}cat
 };
 
 window.shareProfile=function(playerName,profileUrl,count){
-var text='🖐️ '+count+' High-Fives for '+playerName+' on Hooporia! Check out their basketball profile and cognitive scores 🏀🧠\n\n'+profileUrl;
+var text='🖐️ '+count+' High-Fives for '+playerName+' on BPM Basketball! Check out their basketball profile and cognitive scores 🏀🧠\n\n'+profileUrl;
 if(navigator.share){
-navigator.share({title:playerName+' — Hooporia',text:text,url:profileUrl}).catch(function(){})
+navigator.share({title:playerName+' — BPM Basketball',text:text,url:profileUrl}).catch(function(){})
 }else{
 navigator.clipboard.writeText(text).then(function(){
 var btn=event.target.closest('.hf-share-btn');
