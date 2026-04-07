@@ -3,141 +3,191 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BPM Basketball™ — Beats Per Minute Basketball</title>
-<meta name="description" content="BPM Basketball™ — Every beat is a read. We measure yours. 6 cognitive drills, your score, and a professional AI scouting report. Free to start.">
+<title>AI Cognitive Scouting Report — The First in Basketball | BPM Basketball™</title>
+<meta name="description" content="The first AI-generated cognitive scouting report in basketball. 6 drills measure your basketball mindset. Get a coach-ready report that no other platform can generate.">
 <link rel="icon" href="/bpm-basketball.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <script>
 var currentLang='en';
 function setLang(l){currentLang=l;document.documentElement.lang=l;
-document.querySelectorAll('[data-'+l+']').forEach(function(el){var v=el.getAttribute('data-'+l);if(v){if(v.indexOf('<')!==-1)el.innerHTML=v;else el.textContent=v}});
+document.querySelectorAll('[data-en]').forEach(function(el){var v=el.getAttribute('data-'+l);if(v){if(v.indexOf('<')!==-1)el.innerHTML=v;else el.textContent=v}});
 document.querySelectorAll('.lang-btn').forEach(function(b){b.classList.toggle('active',b.dataset.l===l)});
 try{localStorage.setItem('lc-lang',l)}catch(e){}}
-function toggleMenu(){var m=document.getElementById('mobileMenu');var b=document.getElementById('hamBtn');if(m.classList.contains('open')){m.classList.remove('open');b.textContent='☰'}else{m.classList.add('open');b.textContent='✕'}}
 </script>
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{--black:#0a0a0f;--black2:#111118;--surface:#16161e;--gold:#FFD700;--gold-dim:rgba(255,215,0,0.08);--gold-border:rgba(255,215,0,0.15);--orange:#FF6B35;--white:#fafaf9;--gray:#7a7a8a;--gray-light:#aaa;--green:#22c55e;--purple:#9B59B6;--cyan:#00CED1;--teal:#00D9A5;--lime:#9ACD32;--pink:#FF1493}
+:root{--black:#0a0a0f;--black2:#111118;--black3:#1a1a22;--surface:#16161e;--gold:#FFD700;--gold-dim:rgba(255,215,0,0.08);--gold-border:rgba(255,215,0,0.15);--orange:#FF6B35;--white:#fafaf9;--gray:#7a7a8a;--gray-light:#aaa;--green:#22c55e;--purple:#9B59B6;--blue:#3b82f6;--cyan:#00CED1;--teal:#00D9A5;--lime:#9ACD32;--pink:#FF1493;--red:#ef4444}
 html{scroll-behavior:smooth}
 body{font-family:'Outfit',sans-serif;background:var(--black);color:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{text-decoration:none;color:inherit}
-@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
 @keyframes pulse{0%,100%{opacity:.4;transform:scale(.8)}50%{opacity:1;transform:scale(1.2)}}
-@keyframes shimmer{0%{background-position:200% center}100%{background-position:-200% center}}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes glow{0%,100%{box-shadow:0 0 20px rgba(255,215,0,.15)}50%{box-shadow:0 0 40px rgba(255,215,0,.3)}}
+@keyframes typewriter{from{width:0}to{width:100%}}
+@keyframes blink{0%,100%{border-color:var(--gold)}50%{border-color:transparent}}
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s ease,transform .8s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
 
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.04);padding:0 24px}
-.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
 .nav-brand{display:flex;align-items:center;gap:10px}
-.nav-brand img{height:30px}
-.nav-brand span{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:2px}
+.nav-brand img{height:32px}
+.nav-brand span{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:2px}
 .nav-right{display:flex;align-items:center;gap:14px}
-.nav-link{font-size:.75rem;font-weight:600;color:var(--gray);transition:color .2s}
+.nav-link{font-size:.78rem;font-weight:600;color:var(--gray);transition:color .2s}
 .nav-link:hover{color:var(--white)}
-.nav-login{font-size:.75rem;font-weight:600;color:var(--gray-light);transition:color .2s;padding:8px 12px;border-radius:8px}
+.nav-login{color:var(--gray);padding:8px 12px;border-radius:8px}
 .nav-login:hover{color:var(--white)}
-.lang-btn{padding:4px 9px;border-radius:5px;font-size:.6rem;font-weight:700;background:transparent;color:var(--gray);transition:all .2s;letter-spacing:.05em;border:none;cursor:pointer}
+.lang-btn{padding:5px 10px;border-radius:5px;font-size:.65rem;font-weight:700;background:transparent;color:var(--gray);transition:all .2s;letter-spacing:.05em;border:none;cursor:pointer}
 .lang-btn.active{background:var(--gold);color:var(--black)}
-.nav-cta{padding:8px 16px;border-radius:8px;font-size:.72rem;font-weight:700;background:var(--gold);color:var(--black);border:none;cursor:pointer;font-family:'Outfit',sans-serif;transition:all .2s}
-.nav-cta:hover{box-shadow:0 4px 16px rgba(255,215,0,.3)}
-.hamburger{background:none;border:none;color:var(--white);font-size:1.3rem;cursor:pointer;padding:6px 10px;line-height:1;border-radius:8px}
-.mobile-menu{display:none;position:fixed;top:60px;left:0;right:0;background:rgba(10,10,15,.97);backdrop-filter:blur(20px);padding:16px 24px 24px;border-bottom:1px solid rgba(255,255,255,.06);z-index:99;flex-direction:column;gap:4px}
+.nav-cta{padding:8px 22px;border-radius:8px;font-size:.78rem;font-weight:700;background:var(--gold);color:var(--black);border:none;cursor:pointer;transition:all .2s;font-family:'Outfit',sans-serif}
+.nav-cta:hover{background:#ffe44d}
+.hamburger{background:none;border:none;color:var(--white);font-size:1.4rem;cursor:pointer;padding:6px 10px;line-height:1;border-radius:8px;transition:background .2s}
+.hamburger:hover{background:rgba(255,255,255,.06)}
+.mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;background:rgba(10,10,15,.97);backdrop-filter:blur(20px);padding:16px 24px 24px;border-bottom:1px solid rgba(255,255,255,.06);z-index:99;flex-direction:column;gap:4px}
 .mobile-menu.open{display:flex}
-.mobile-menu a{display:block;padding:12px 16px;font-size:.85rem;font-weight:600;color:var(--gray-light);border-radius:10px;transition:all .2s}
+.mobile-menu a{display:block;padding:12px 16px;font-size:.88rem;font-weight:600;color:var(--gray-light);border-radius:10px;transition:all .2s}
 .mobile-menu a:hover{background:rgba(255,255,255,.04);color:var(--white)}
 .mm-lang{display:flex;gap:4px;padding:12px 16px}
 .mm-cta{background:var(--gold)!important;color:var(--black)!important;text-align:center;font-weight:700!important;border-radius:10px!important;margin-top:8px}
 
-.hero{min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 20px 40px;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 40% at 50% 30%,rgba(255,215,0,.06),transparent 70%);pointer-events:none}
-.hero-logo{width:180px;height:180px;margin-bottom:16px;display:block;filter:drop-shadow(0 12px 40px rgba(255,215,0,.5));animation:fadeUp .6s ease both;border-radius:32px}
-.hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.8rem,9vw,5.5rem);line-height:.88;margin-bottom:10px;background:linear-gradient(135deg,var(--gold),var(--orange),var(--gold));background-size:300% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:fadeUp .6s ease .1s both,shimmer 4s linear infinite}
-.hero-sub{font-size:.92rem;color:var(--gray-light);max-width:480px;margin:0 auto 6px;line-height:1.7;animation:fadeUp .6s ease .2s both}
-.hero-tagline{font-size:.65rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gray);margin-bottom:24px;animation:fadeUp .6s ease .25s both}
-.hero-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;animation:fadeUp .6s ease .3s both;margin-bottom:20px}
-.btn-gold{display:inline-block;padding:14px 30px;border-radius:10px;font-size:.88rem;font-weight:700;background:linear-gradient(135deg,var(--gold),#FFA500);color:var(--black);transition:all .2s}
-.btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(255,215,0,.35)}
-.btn-outline{display:inline-block;padding:14px 30px;border-radius:10px;font-size:.88rem;font-weight:700;background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.12);transition:all .2s}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:100px 24px 60px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 30%,rgba(255,215,0,.08),transparent 70%),radial-gradient(ellipse 40% 40% at 20% 70%,rgba(155,89,182,.06),transparent),radial-gradient(ellipse 40% 40% at 80% 60%,rgba(0,206,209,.05),transparent);pointer-events:none}
+.hero-first{display:inline-block;padding:8px 20px;background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.25);border-radius:30px;font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:3px;color:#ef4444;margin-bottom:24px;animation:fadeUp .8s ease both}
+.hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,10vw,7rem);line-height:.88;margin-bottom:12px;animation:fadeUp .8s ease .1s both}
+.hero h1 .gold{color:var(--gold)}
+.hero h1 .line2{display:block;font-size:.6em;color:var(--gray-light)}
+.hero-sub{font-size:1.05rem;color:var(--gray-light);max-width:580px;margin:0 auto 36px;line-height:1.7;animation:fadeUp .8s ease .2s both}
+.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;animation:fadeUp .8s ease .3s both}
+.btn-gold{display:inline-block;padding:16px 40px;border-radius:10px;font-size:.95rem;font-weight:700;background:linear-gradient(135deg,var(--gold),#FFA500);color:var(--black);transition:all .2s;animation:glow 3s ease infinite}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(255,215,0,.35)}
+.btn-outline{display:inline-block;padding:16px 40px;border-radius:10px;font-size:.95rem;font-weight:700;background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.12);transition:all .2s}
 .btn-outline:hover{border-color:var(--gold);color:var(--gold)}
-.hero-stats{display:flex;gap:28px;justify-content:center;animation:fadeUp .6s ease .35s both}
-.hero-stat{text-align:center}
-.hero-stat-num{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--gold)}
-.hero-stat-label{font-size:.55rem;color:var(--gray);font-weight:600;letter-spacing:1px;text-transform:uppercase}
 
-.prompts-section{padding:40px 0 50px}
-.prompts-wrap{max-width:680px;margin:0 auto;padding:0 20px}
-.prompts-intro{text-align:center;margin-bottom:28px}
-.prompts-intro h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.5rem,5vw,2.2rem);letter-spacing:2px;margin-bottom:6px}
-.prompts-intro h2 .gold{color:var(--gold)}
-.prompts-intro p{font-size:.82rem;color:var(--gray-light);max-width:400px;margin:0 auto;line-height:1.6}
-.prompts-grid{display:flex;flex-direction:column;gap:8px}
-.prompt-btn{display:flex;align-items:center;gap:14px;width:100%;padding:16px 18px;background:var(--surface);border:1px solid rgba(255,255,255,.04);border-radius:14px;cursor:pointer;transition:all .25s;-webkit-tap-highlight-color:transparent;text-align:left}
-.prompt-btn:hover{border-color:rgba(255,215,0,.15);transform:translateX(4px);background:rgba(255,215,0,.03)}
-.prompt-btn:active{transform:scale(.98)}
-.prompt-icon{font-size:1.3rem;width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:10px;background:rgba(255,215,0,.06);flex-shrink:0}
-.prompt-text{flex:1}
-.prompt-title{font-family:'Bebas Neue',sans-serif;font-size:.88rem;letter-spacing:1.5px;color:var(--white);margin-bottom:1px}
-.prompt-sub{font-size:.65rem;color:var(--gray);font-weight:500}
-.prompt-arrow{color:rgba(255,215,0,.3);font-size:.8rem;flex-shrink:0;transition:all .25s}
-.prompt-btn:hover .prompt-arrow{color:var(--gold);transform:translateX(4px)}
+/* WHAT THEY SEE */
+.compare{padding:80px 0}
+.compare-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:24px;align-items:center;max-width:900px;margin:0 auto}
+.compare-card{background:var(--surface);border-radius:20px;padding:32px 24px}
+.compare-card.old{border:1px solid rgba(255,255,255,.04)}
+.compare-card.new{border:1.5px solid var(--gold-border);box-shadow:0 0 40px rgba(255,215,0,.06)}
+.compare-label{font-family:'Bebas Neue',sans-serif;font-size:.85rem;letter-spacing:2px;margin-bottom:16px;text-align:center}
+.compare-card.old .compare-label{color:var(--gray)}
+.compare-card.new .compare-label{color:var(--gold)}
+.compare-stat{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:.82rem}
+.compare-stat .label{color:var(--gray)}
+.compare-stat .val{font-weight:700}
+.compare-vs{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:var(--gray);letter-spacing:4px}
+.section-pill{display:inline-block;padding:5px 14px;border-radius:20px;font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px}
+.section-pill.gold{background:var(--gold-dim);color:var(--gold);border:1px solid var(--gold-border)}
+.section-pill.purple{background:rgba(155,89,182,.08);color:var(--purple);border:1px solid rgba(155,89,182,.15)}
+.section-pill.red{background:rgba(239,68,68,.08);color:#ef4444;border:1px solid rgba(239,68,68,.15)}
+.section-pill.green{background:rgba(34,197,94,.08);color:var(--green);border:1px solid rgba(34,197,94,.15)}
+.section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,5vw,3rem);letter-spacing:2px;margin-bottom:12px;line-height:1.05}
+.section-sub{color:var(--gray-light);font-size:.95rem;max-width:560px;margin:0 auto 44px;line-height:1.7;text-align:center}
+.text-center{text-align:center}
 
-.business-line{text-align:center;padding:40px 20px 0}
-.business-line h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.6rem,5vw,2.6rem);letter-spacing:3px;color:var(--gold)}
+/* SAMPLE REPORT */
+.report-showcase{padding:80px 0}
+.report-frame{max-width:700px;margin:0 auto;background:var(--surface);border:1.5px solid var(--gold-border);border-radius:24px;overflow:hidden;box-shadow:0 20px 80px rgba(255,215,0,.06)}
+.report-header{background:linear-gradient(135deg,rgba(255,215,0,.08),rgba(255,107,53,.05));padding:24px 28px;border-bottom:1px solid rgba(255,215,0,.1)}
+.report-header-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+.report-badge{font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:2px;color:var(--gold);display:flex;align-items:center;gap:8px}
+.report-sample-tag{padding:4px 10px;border-radius:6px;font-size:.55rem;font-weight:700;background:rgba(155,89,182,.15);color:var(--purple);letter-spacing:1px}
+.report-player{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:2px}
+.report-meta{font-size:.78rem;color:var(--gray)}
+.report-body{padding:28px;font-size:.84rem;color:var(--gray-light);line-height:1.8}
+.report-section{margin-bottom:20px}
+.report-section-title{font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:2px;margin-bottom:8px}
+.rs-exec .report-section-title{color:var(--gold)}
+.rs-strengths .report-section-title{color:var(--green)}
+.rs-dev .report-section-title{color:var(--orange)}
+.rs-court .report-section-title{color:var(--cyan)}
+.rs-coach .report-section-title{color:var(--purple)}
+.rs-path .report-section-title{color:var(--lime)}
+.report-body p{margin-bottom:10px}
+.report-body strong{color:var(--white);font-weight:700}
+.report-blur{position:relative}
+.report-blur-content{filter:blur(4px);pointer-events:none;user-select:none}
+.report-blur-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(10,10,15,.6);border-radius:0 0 22px 22px;gap:12px}
+.report-blur-overlay .lock-text{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:2px;color:var(--gold)}
 
-.cta-section{text-align:center;padding:32px 20px 50px;position:relative}
-.cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 70% at 50% 100%,rgba(255,215,0,.04),transparent);pointer-events:none}
-.cta-section h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.8rem,6vw,3rem);letter-spacing:2px;margin-bottom:8px}
-.cta-section h2 .gold{color:var(--gold)}
-.cta-sub{font-size:.85rem;color:var(--gray-light);margin-bottom:24px;max-width:400px;margin-left:auto;margin-right:auto}
-.cta-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:16px}
-.cta-or{font-size:.65rem;color:var(--gray);margin-bottom:8px}
-.cta-chat-hint{display:inline-flex;align-items:center;gap:6px;font-size:.7rem;color:var(--gray);padding:8px 16px;background:rgba(255,215,0,.04);border:1px solid rgba(255,215,0,.1);border-radius:20px}
-.cta-chat-hint .ball{font-size:1rem;animation:float 2s ease-in-out infinite}
+/* HOW IT WORKS */
+.steps{padding:80px 0}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:900px;margin:0 auto}
+.step-card{background:var(--surface);border:1px solid rgba(255,255,255,.04);border-radius:16px;padding:28px 20px;text-align:center;position:relative;transition:all .3s}
+.step-card:hover{border-color:rgba(255,215,0,.15);transform:translateY(-4px)}
+.step-num{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;background:linear-gradient(to bottom,var(--gold),rgba(255,215,0,.3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:8px}
+.step-icon{font-size:2rem;margin-bottom:12px}
+.step-card h4{font-family:'Bebas Neue',sans-serif;font-size:.95rem;letter-spacing:2px;margin-bottom:6px}
+.step-card p{font-size:.75rem;color:var(--gray);line-height:1.5}
+.step-arrow{position:absolute;right:-14px;top:50%;transform:translateY(-50%);font-size:1rem;color:rgba(255,215,0,.3);z-index:1}
 
-.powered-strip{display:flex;align-items:center;justify-content:center;gap:8px;padding:16px 0}
-.powered-dot{width:6px;height:6px;background:var(--gold);border-radius:50%;animation:pulse 1.5s ease-in-out infinite}
-.powered-label{font-size:.55rem;color:var(--gray);letter-spacing:2px}
-.powered-brand{font-family:'Bebas Neue',sans-serif;color:var(--gold);font-size:.8rem;letter-spacing:3px}
+/* WHO USES IT */
+.users-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:800px;margin:0 auto}
+.user-card{background:var(--surface);border:1px solid rgba(255,255,255,.04);border-radius:16px;padding:28px 24px;text-align:center;transition:all .3s}
+.user-card:hover{border-color:rgba(255,215,0,.15);transform:translateY(-4px)}
+.user-icon{font-size:2.5rem;margin-bottom:12px}
+.user-card h4{font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:2px;margin-bottom:8px}
+.user-card p{font-size:.78rem;color:var(--gray);line-height:1.5}
 
-.disclaimer{text-align:center;padding:12px 20px;max-width:520px;margin:0 auto}
-.disclaimer p{font-size:.55rem;color:#444;line-height:1.6}
+/* DRILLS MINI */
+.drills-mini{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;max-width:700px;margin:0 auto 40px}
+.cog-mini{text-align:center;padding:16px 8px;background:var(--surface);border:1px solid rgba(255,255,255,.04);border-radius:14px;transition:all .3s;cursor:pointer;color:var(--white)}
+.cog-mini:hover{transform:translateY(-4px);border-color:rgba(255,215,0,.15)}
+.cog-mini-emoji{font-size:1.5rem;margin-bottom:6px}
+.cog-mini-name{font-family:'Bebas Neue',sans-serif;font-size:.65rem;letter-spacing:1px}
+.cog-mini.r .cog-mini-name{color:var(--purple)}
+.cog-mini.rc .cog-mini-name{color:var(--orange)}
+.cog-mini.rf .cog-mini-name{color:var(--cyan)}
+.cog-mini.rp .cog-mini-name{color:var(--teal)}
+.cog-mini.rt .cog-mini-name{color:var(--lime)}
+.cog-mini.bt .cog-mini-name{color:var(--gold)}
 
-footer{border-top:1px solid rgba(255,255,255,.04);padding:20px 0}
-.footer-inner{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
+/* FINAL CTA */
+.final-cta{text-align:center;padding:80px 24px 100px;position:relative}
+.final-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 80% at 50% 100%,rgba(255,215,0,.05),transparent);pointer-events:none}
+.final-cta h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,7vw,4.5rem);letter-spacing:2px;margin-bottom:12px;line-height:.95}
+.final-cta h2 .gold{color:var(--gold)}
+.final-sub{font-size:1.1rem;font-weight:600;margin-bottom:8px}
+.final-desc{color:var(--gray);font-size:.9rem;margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto}
+.final-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:20px}
+.final-note{font-size:.7rem;color:var(--gray);max-width:400px;margin:0 auto}
+
+/* QUOTE */
+.quote-section{padding:60px 0;border-top:1px solid rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.04);background:var(--black2)}
+.quote{max-width:600px;margin:0 auto;text-align:center}
+.quote-text{font-size:1.3rem;font-weight:300;color:var(--white);line-height:1.6;margin-bottom:16px;font-style:italic}
+.quote-text .gold{color:var(--gold);font-weight:700;font-style:normal}
+.quote-attr{font-size:.75rem;color:var(--gray);font-weight:600}
+
+footer{border-top:1px solid rgba(255,255,255,.04);padding:28px 0}
+.footer-inner{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
 .footer-links{display:flex;gap:20px}
-.footer-links a{font-size:.72rem;color:var(--gray);transition:color .2s}
+.footer-links a{font-size:.78rem;color:var(--gray);transition:color .2s}
 .footer-links a:hover{color:var(--white)}
-.footer-copy{font-size:.55rem;color:#444}
+.footer-copy{font-size:.65rem;color:#444}
 
 @media(max-width:768px){
-.nav-link,.nav-cta,.nav-login{display:none}
-.hero{padding:74px 16px 32px;min-height:auto}
-.hero-logo{width:140px;height:140px}
-.hero-title{font-size:clamp(2.2rem,9vw,4rem)}
-.hero-sub{font-size:.84rem}
-.hero-btns{flex-direction:column;align-items:center;width:100%;max-width:260px;margin:0 auto 18px}
-.btn-gold,.btn-outline{width:100%;text-align:center;padding:13px 20px;font-size:.84rem}
-.hero-stats{gap:20px}
-.hero-stat-num{font-size:1.5rem}
-.prompts-wrap{padding:0 16px}
-.prompts-section{padding:32px 0 40px}
-.prompt-btn{padding:14px 14px}
-.prompt-icon{width:36px;height:36px;font-size:1.1rem;border-radius:8px}
-.prompt-title{font-size:.82rem}
-.prompt-sub{font-size:.6rem}
-.cta-section{padding:24px 16px 40px}
-.cta-btns{flex-direction:column;align-items:center;width:100%;max-width:260px;margin:0 auto 14px}
-}
-@media(max-width:380px){
-.hero-title{font-size:2rem}
-.hero-logo{width:120px;height:120px}
-.hero-stat-num{font-size:1.3rem}
-.prompt-title{font-size:.78rem}
+.compare-grid{grid-template-columns:1fr;gap:16px}
+.compare-vs{text-align:center}
+.steps-grid{grid-template-columns:repeat(2,1fr)}
+.step-arrow{display:none}
+.users-grid{grid-template-columns:1fr}
+.drills-mini{grid-template-columns:repeat(3,1fr)}
+.nav-link{display:none}
+.nav-cta{display:none}
+.hero h1{font-size:clamp(2.5rem,9vw,5rem)}
+.final-btns{flex-direction:column;max-width:300px;margin-left:auto;margin-right:auto}
+.btn-gold,.btn-outline{width:100%;text-align:center}
 }
 </style>
 </head>
 <body>
+<script>function toggleMenu(){var m=document.getElementById('mobileMenu');var b=document.getElementById('hamBtn');if(m.classList.contains('open')){m.classList.remove('open');b.textContent='☰'}else{m.classList.add('open');b.textContent='✕'}}</script>
 
 <nav><div class="nav-inner">
 <a href="/" class="nav-brand"><img src="/bpm-basketball.png" alt="BPM Basketball"><span>BPM BASKETBALL</span></a>
@@ -150,190 +200,223 @@ footer{border-top:1px solid rgba(255,255,255,.04);padding:20px 0}
 <button class="hamburger" id="hamBtn" onclick="toggleMenu()" aria-label="Menu">☰</button>
 <a href="/join.html"><button class="nav-cta" data-en="Join Free" data-es="Únete Gratis">Join Free</button></a>
 </div></div>
-
 <div class="mobile-menu" id="mobileMenu">
 <a href="/cognitive-hoops.html" data-en="Drills" data-es="Drills">Drills</a>
 <a href="/cognitive-report.html" data-en="AI Report" data-es="Reporte IA">AI Report</a>
 <a href="/discover.html" data-en="Discover" data-es="Descubrir">Discover</a>
 <a href="/leaderboard.html" data-en="Leaderboard" data-es="Clasificación">Leaderboard</a>
 <a href="/login.html" data-en="Log In" data-es="Entrar">Log In</a>
-<div class="mm-lang"><span style="font-size:.7rem;color:var(--gray);margin-right:6px" data-en="Language" data-es="Idioma">Language</span><button class="lang-btn active" data-l="en" onclick="setLang('en')">EN</button><button class="lang-btn" data-l="es" onclick="setLang('es')">ES</button></div>
+<div class="mm-lang"><button class="lang-btn active" data-l="en" onclick="setLang('en')">EN</button><button class="lang-btn" data-l="es" onclick="setLang('es')">ES</button></div>
 <a href="/join.html" class="mm-cta" data-en="Join Free" data-es="Únete Gratis">Join Free</a>
 </div></nav>
 
+<!-- HERO -->
 <section class="hero">
-<img src="/bpm-basketball.png" alt="BPM Basketball" class="hero-logo">
-<h1 class="hero-title" data-en="TRAIN YOUR BASKETBALL BPM" data-es="ENTRENA TU BASKETBALL BPM">TRAIN YOUR BASKETBALL BPM</h1>
-<p class="hero-sub" data-en="BPM — Beats Per Minute. Every beat is a read. We measure yours. 6 drills. Your score. A professional AI scouting report you can send to any coach. Free to start." data-es="BPM — Beats Per Minute. Cada beat es una lectura. Medimos las tuyas. 6 drills. Tu puntaje. Un reporte profesional IA que puedes enviar a cualquier coach. Empieza gratis.">BPM — Beats Per Minute. Every beat is a read. We measure yours. 6 drills. Your score. A professional AI scouting report you can send to any coach. Free to start.</p>
-<div class="hero-tagline">BPM BASKETBALL™</div>
+<div class="hero-first" data-en="🏀 FIRST IN BASKETBALL — NOWHERE ELSE ON EARTH" data-es="🏀 PRIMERO EN BALONCESTO — EN NINGÚN OTRO LUGAR">🏀 FIRST IN BASKETBALL — NOWHERE ELSE ON EARTH</div>
+<h1 data-en="THE AI COGNITIVE<br><span class='gold'>SCOUTING REPORT</span><br><span class='line2'>Stats Tell What. This Tells Why.</span>" data-es="EL REPORTE COGNITIVO<br><span class='gold'>CON INTELIGENCIA ARTIFICIAL</span><br><span class='line2'>Las Stats Dicen Qué. Esto Dice Por Qué.</span>">THE AI COGNITIVE<br><span class="gold">SCOUTING REPORT</span><br><span class="line2">Stats Tell What. This Tells Why.</span></h1>
+<p class="hero-sub" data-en="Play 6 cognitive drills. AI analyzes your basketball mindset. Get a professional scouting report written for coaches, scouts, and brands. No other platform in basketball — at any level — has this." data-es="Juega 6 drills cognitivos. La IA analiza tu mentalidad de baloncesto. Obtén un reporte profesional escrito para coaches, scouts y marcas. Ninguna otra plataforma en el baloncesto — en ningún nivel — tiene esto.">Play 6 cognitive drills. AI analyzes your basketball mindset. Get a professional scouting report written for coaches, scouts, and brands. No other platform in basketball — at any level — has this.</p>
 <div class="hero-btns">
-<a href="/cognitive-hoops.html" class="btn-gold" data-en="Run The Drills" data-es="Corre los Drills">Run The Drills</a>
-<a href="/join.html" class="btn-outline" data-en="Join Free" data-es="Únete Gratis">Join Free</a>
-</div>
-<div class="hero-stats">
-<div class="hero-stat"><div class="hero-stat-num">6</div><div class="hero-stat-label" data-en="Drills" data-es="Drills">Drills</div></div>
-<div class="hero-stat"><div class="hero-stat-num">L10</div><div class="hero-stat-label" data-en="Levels" data-es="Niveles">Levels</div></div>
-<div class="hero-stat"><div class="hero-stat-num">AI</div><div class="hero-stat-label" data-en="Reports" data-es="Reportes">Reports</div></div>
+<a href="/join.html" class="btn-gold" data-en="Get Your Report — Start Free" data-es="Obtén Tu Reporte — Empieza Gratis">Get Your Report — Start Free</a>
+<a href="#sample" class="btn-outline" data-en="See a Sample Report" data-es="Ver Reporte de Ejemplo">See a Sample Report</a>
 </div>
 </section>
 
-<section class="prompts-section"><div class="prompts-wrap">
-<div class="prompts-intro">
-<h2 data-en="REFERENCE <span class='gold'>LIBRARY</span>" data-es="BIBLIOTECA DE <span class='gold'>REFERENCIA</span>">REFERENCE <span class="gold">LIBRARY</span></h2>
-<p data-en="Tap a topic to start a conversation with our AI expert." data-es="Toca un tema para iniciar una conversación con nuestro experto IA.">Tap a topic to start a conversation with our AI expert.</p>
-</div>
+<!-- QUOTE -->
+<div class="quote-section"><div class="quote">
+<div class="quote-text" data-en="A player averaging 8 PPG with <span class='gold'>elite basketball IQ</span> is more valuable than a 20 PPG scorer who can't read a defense." data-es="Un jugador promediando 8 PPG con <span class='gold'>IQ de baloncesto elite</span> es más valioso que uno de 20 PPG que no puede leer una defensa.">"A player averaging 8 PPG with <span class="gold">elite basketball IQ</span> is more valuable than a 20 PPG scorer who can't read a defense."</div>
+<div class="quote-attr" data-en="— The insight every scout knows but no platform measured. Until now." data-es="— Lo que todo scout sabe pero ninguna plataforma medía. Hasta ahora.">— The insight every scout knows but no platform measured. Until now.</div>
+</div></div>
 
-<div class="prompts-grid">
-
-<div class="prompt-btn" style="border-color:rgba(255,215,0,.15);background:rgba(255,215,0,.03)" onclick="askBPM(currentLang==='es'?'Quiero hacer scouting. ¿Quiénes son los mejores jugadores en BPM Basketball?':'I want to scout. Who are the top players on BPM Basketball?')">
-<div class="prompt-icon" style="background:rgba(255,215,0,.12)">🔍</div>
-<div class="prompt-text">
-<div class="prompt-title" data-en="SCOUT A PLAYER" data-es="SCOUT A UN JUGADOR">SCOUT A PLAYER</div>
-<div class="prompt-sub" data-en="Ask about any player, position, or class" data-es="Pregunta sobre cualquier jugador, posición o clase">Ask about any player, position, or class</div>
+<!-- WHAT SCOUTS SEE TODAY vs WITH BPM BASKETBALL -->
+<section class="compare"><div class="wrap text-center">
+<div class="section-pill red" data-en="The Problem" data-es="El Problema">The Problem</div>
+<h2 class="section-title" data-en="What Scouts See Today vs. With bpm bASKETBALL" data-es="Lo Que Ven los Scouts Hoy vs. Con BPM Basketball">What Scouts See Today vs. With BPM Basketball</h2>
+<div class="compare-grid">
+<div class="compare-card old">
+<div class="compare-label" data-en="TRADITIONAL PROFILE" data-es="PERFIL TRADICIONAL">TRADITIONAL PROFILE</div>
+<div class="compare-stat"><span class="label">PPG</span><span class="val">18.5</span></div>
+<div class="compare-stat"><span class="label">RPG</span><span class="val">4.2</span></div>
+<div class="compare-stat"><span class="label">APG</span><span class="val">7.1</span></div>
+<div class="compare-stat"><span class="label" data-en="Highlight Reel" data-es="Highlights">Highlight Reel</span><span class="val">✓</span></div>
+<div class="compare-stat"><span class="label" data-en="Basketball IQ" data-es="IQ Baloncesto">Basketball IQ</span><span class="val" style="color:var(--red)">❌ Unknown</span></div>
+<div class="compare-stat"><span class="label" data-en="Court Vision" data-es="Visión de Cancha">Court Vision</span><span class="val" style="color:var(--red)">❌ Unknown</span></div>
+<div class="compare-stat"><span class="label" data-en="Clutch Factor" data-es="Factor Clutch">Clutch Factor</span><span class="val" style="color:var(--red)">❌ Unknown</span></div>
 </div>
-<span class="prompt-arrow">→</span>
+<div class="compare-vs">VS</div>
+<div class="compare-card new">
+<div class="compare-label" data-en="BPM BASKETBALL PROFILE + AI REPORT" data-es="PERFIL BPM BASKETBALL + REPORTE IA">BPM BASKETBALL PROFILE + AI REPORT</div>
+<div class="compare-stat"><span class="label">PPG / RPG / APG</span><span class="val">18.5 / 4.2 / 7.1</span></div>
+<div class="compare-stat"><span class="label" data-en="Reaction Time" data-es="Tiempo de Reacción">Reaction Time</span><span class="val" style="color:var(--purple)">L8 MVP</span></div>
+<div class="compare-stat"><span class="label" data-en="Court Vision" data-es="Visión de Cancha">Court Vision</span><span class="val" style="color:var(--cyan)">L9 Hall of Fame</span></div>
+<div class="compare-stat"><span class="label" data-en="Play Recall" data-es="Memoria de Jugadas">Play Recall</span><span class="val" style="color:var(--teal)">L6 Pro</span></div>
+<div class="compare-stat"><span class="label" data-en="Game Rhythm" data-es="Ritmo de Juego">Game Rhythm</span><span class="val" style="color:var(--gold)">L7 All-Star</span></div>
+<div class="compare-stat"><span class="label" data-en="AI Scouting Report" data-es="Reporte IA">AI Scouting Report</span><span class="val" style="color:var(--gold)">✓ Generated</span></div>
+<div class="compare-stat"><span class="label" data-en="Coach Recommendation" data-es="Recomendación">Coach Recommendation</span><span class="val" style="color:var(--gold)">✓ Included</span></div>
 </div>
-
-<div class="prompt-btn" onclick="askBPM(currentLang==='es'?'¿Qué es BPM Basketball y cómo funciona?':'What is BPM Basketball and how does it work?')">
-<div class="prompt-icon">🏀</div>
-<div class="prompt-text">
-<div class="prompt-title" data-en="WHAT IS BPM BASKETBALL™?" data-es="¿QUÉ ES BPM BASKETBALL™?">WHAT IS BPM BASKETBALL™?</div>
-<div class="prompt-sub" data-en="The system behind the score" data-es="El sistema detrás del puntaje">The system behind the score</div>
-</div>
-<span class="prompt-arrow">→</span>
-</div>
-
-<div class="prompt-btn" onclick="askBPM(currentLang==='es'?'Cuéntame sobre el reporte de scouting IA. ¿Qué incluye y cómo lo puedo usar?':'Tell me about the AI scouting report. What does it include and how can I use it?')">
-<div class="prompt-icon">📋</div>
-<div class="prompt-text">
-<div class="prompt-title" data-en="AI SCOUTING REPORT" data-es="REPORTE IA DE SCOUTING">AI SCOUTING REPORT</div>
-<div class="prompt-sub" data-en="A professional report you can send to any coach" data-es="Un reporte profesional para enviar a cualquier coach">A professional report you can send to any coach</div>
-</div>
-<span class="prompt-arrow">→</span>
-</div>
-
-<div class="prompt-btn" onclick="askBPM(currentLang==='es'?'¿Cómo funciona Discover? ¿Cómo me encuentran los scouts?':'How does Discover work? How do scouts find me?')">
-<div class="prompt-icon">🔍</div>
-<div class="prompt-text">
-<div class="prompt-title" data-en="DISCOVER — GET FOUND" data-es="DISCOVER — QUE TE ENCUENTREN">DISCOVER — GET FOUND</div>
-<div class="prompt-sub" data-en="How scouts and coaches find you" data-es="Cómo los scouts y coaches te encuentran">How scouts and coaches find you</div>
-</div>
-<span class="prompt-arrow">→</span>
-</div>
-
-<div class="prompt-btn" onclick="askBPM(currentLang==='es'?'¿Cuáles son los 6 drills BPM y qué entrena cada uno?':'What are the 6 BPM drills and what does each one train?')">
-<div class="prompt-icon">🎯</div>
-<div class="prompt-text">
-<div class="prompt-title" data-en="THE 6 BPM DRILLS" data-es="LOS 6 DRILLS BPM">THE 6 BPM DRILLS</div>
-<div class="prompt-sub" data-en="Reaction, memory, vision, rhythm" data-es="Reacción, memoria, visión, ritmo">Reaction, memory, vision, rhythm</div>
-</div>
-<span class="prompt-arrow">→</span>
-</div>
-
-<div class="prompt-btn" onclick="askBPM(currentLang==='es'?'¿Cómo funciona el leaderboard? ¿Cómo me clasifico contra otros jugadores?':'How does the leaderboard work? How do I rank against other players?')">
-<div class="prompt-icon">🏆</div>
-<div class="prompt-text">
-<div class="prompt-title" data-en="BASKETBALL BPM LEADERBOARD" data-es="BASKETBALL BPM LEADERBOARD">BASKETBALL BPM LEADERBOARD</div>
-<div class="prompt-sub" data-en="See where you rank" data-es="Mira dónde te clasificas">See where you rank</div>
-</div>
-<span class="prompt-arrow">→</span>
-</div>
-
-<div class="prompt-btn" onclick="askBPM(currentLang==='es'?'¿Qué es gratis y qué es premium? ¿Cuánto cuesta?':'What is free and what is premium? How much does it cost?')">
-<div class="prompt-icon">🆓</div>
-<div class="prompt-text">
-<div class="prompt-title" data-en="FREE VS PREMIUM" data-es="GRATIS VS PREMIUM">FREE VS PREMIUM</div>
-<div class="prompt-sub" data-en="Start free. Upgrade when ready." data-es="Empieza gratis. Mejora cuando quieras.">Start free. Upgrade when ready.</div>
-</div>
-<span class="prompt-arrow">→</span>
-</div>
-
-<div class="prompt-btn" onclick="askBPM(currentLang==='es'?'Soy coach. ¿Cómo puedo usar BPM Basketball para mi programa AAU, escuela o liga?':'I am a coach. How can I use BPM Basketball for my AAU, school, or league program?')">
-<div class="prompt-icon">🏟️</div>
-<div class="prompt-text">
-<div class="prompt-title" data-en="FOR PROGRAMS & COACHES" data-es="PARA PROGRAMAS Y COACHES">FOR PROGRAMS & COACHES</div>
-<div class="prompt-sub" data-en="Free for your program — $0" data-es="Gratis para tu programa — $0">Free for your program — $0</div>
-</div>
-<span class="prompt-arrow">→</span>
-</div>
-
-<div class="prompt-btn" onclick="askBPM(currentLang==='es'?'Muéstrame la diferencia entre el reporte gratis y el premium':'Show me the difference between the free and premium reports')">
-<div class="prompt-icon">📄</div>
-<div class="prompt-text">
-<div class="prompt-title" data-en="VIEW FREE & PREMIUM REPORTS" data-es="VER REPORTES GRATIS Y PREMIUM">VIEW FREE & PREMIUM REPORTS</div>
-<div class="prompt-sub" data-en="See what you get before you upgrade" data-es="Mira lo que obtienes antes de mejorar">See what you get before you upgrade</div>
-</div>
-<span class="prompt-arrow">→</span>
-</div>
-
-<div class="prompt-btn" onclick="askBPM(currentLang==='es'?'¿Cómo empiezo? Soy nuevo en BPM Basketball.':'How do I get started? I am new to BPM Basketball.')">
-<div class="prompt-icon">🚀</div>
-<div class="prompt-text">
-<div class="prompt-title" data-en="HOW DO I GET STARTED?" data-es="¿CÓMO EMPIEZO?">HOW DO I GET STARTED?</div>
-<div class="prompt-sub" data-en="New here? Start here." data-es="¿Nuevo aquí? Empieza aquí.">New here? Start here.</div>
-</div>
-<span class="prompt-arrow">→</span>
-</div>
-
 </div>
 </div></section>
 
-<div class="business-line">
-<h2 data-en="THE BUSINESS OF BASKETBALL<br>STARTS WITH A CLICK" data-es="EL NEGOCIO DEL BALONCESTO<br>EMPIEZA CON UN CLICK">THE BUSINESS OF BASKETBALL<br>STARTS WITH A CLICK</h2>
+<!-- 6 DRILLS -->
+<section style="padding:60px 0"><div class="wrap text-center">
+<div class="section-pill purple" data-en="6 Cognitive Drills" data-es="6 Drills Cognitivos">6 Cognitive Drills</div>
+<h2 class="section-title" data-en="The Data Behind Your Report" data-es="Los Datos Detrás de Tu Reporte">The Data Behind Your Report</h2>
+<p class="section-sub" data-en="Each drill measures a different cognitive function critical to basketball. Your scores feed the AI to generate your personalized report." data-es="Cada drill mide una función cognitiva diferente. Tus puntajes alimentan la IA para generar tu reporte personalizado.">Each drill measures a different cognitive function critical to basketball. Your scores feed the AI to generate your personalized report.</p>
+<div class="drills-mini">
+<a href="/the-react.html" class="cog-mini r reveal"><div class="cog-mini-emoji">🟣</div><div class="cog-mini-name">REACT</div></a>
+<a href="/the-recall.html" class="cog-mini rc reveal"><div class="cog-mini-emoji">🟠</div><div class="cog-mini-name">RECALL</div></a>
+<a href="/the-reflex.html" class="cog-mini rf reveal"><div class="cog-mini-emoji">🔵</div><div class="cog-mini-name">REFLEX</div></a>
+<a href="/the-replay.html" class="cog-mini rp reveal"><div class="cog-mini-emoji">🟢</div><div class="cog-mini-name">REPLAY</div></a>
+<a href="/the-ritmo.html" class="cog-mini rt reveal"><div class="cog-mini-emoji">🟡</div><div class="cog-mini-name">RITMO</div></a>
+<a href="/the-beat.html" class="cog-mini bt reveal"><div class="cog-mini-emoji">🏀</div><div class="cog-mini-name">BEAT</div></a>
+</div>
+<a href="/cognitive-hoops.html" class="btn-outline" style="animation:none" data-en="🧠 Play the Drills" data-es="🧠 Juega los Drills">🧠 Play the Drills</a>
+</div></section>
+
+<!-- SAMPLE REPORT -->
+<section class="report-showcase" id="sample"><div class="wrap text-center">
+<div class="section-pill gold" data-en="Sample Report" data-es="Reporte de Ejemplo">Sample Report</div>
+<h2 class="section-title" data-en="What Your Report Looks Like" data-es="Cómo Se Ve Tu Reporte">What Your Report Looks Like</h2>
+<p class="section-sub" data-en="AI-generated from real cognitive data. Personalized to your position, scores, and playing style." data-es="Generado por IA con datos cognitivos reales. Personalizado a tu posición, puntajes y estilo de juego.">AI-generated from real cognitive data. Personalized to your position, scores, and playing style.</p>
+
+<div class="report-frame">
+<div class="report-header">
+<div class="report-header-top">
+<div class="report-badge">📋 COGNITIVE SCOUTING REPORT</div>
+<div class="report-sample-tag">SAMPLE</div>
+</div>
+<div class="report-player">Marcus Cirino</div>
+<div class="report-meta">PG · 6'1" · Class of 2027 · Overall: L7 All-Star</div>
 </div>
 
-<section class="cta-section">
-<h2 data-en="READY TO <span class='gold'>TRAIN?</span>" data-es="¿LISTO PARA <span class='gold'>ENTRENAR?</span>">READY TO <span class="gold">TRAIN?</span></h2>
-<p class="cta-sub" data-en="Play the drills free. Get your AI scouting report with Premium." data-es="Juega los drills gratis. Obtén tu reporte IA con Premium.">Play the drills free. Get your AI scouting report with Premium.</p>
-<div class="cta-btns">
-<a href="/cognitive-hoops.html" class="btn-gold" data-en="Run The Drills" data-es="Corre los Drills">Run The Drills</a>
-<a href="/cognitive-report.html" class="btn-outline" data-en="📋 Get Your AI Report" data-es="📋 Obtén Tu Reporte IA">📋 Get Your AI Report</a>
+<div class="report-body">
+<div class="report-section rs-exec">
+<div class="report-section-title">📊 EXECUTIVE SUMMARY</div>
+<p data-en="Marcus Cirino is a <strong>high-IQ floor general</strong> with elite visual processing and above-average reactive timing. His cognitive profile suggests a player who sees the play develop before it happens — the kind of point guard who makes everyone around him better. His primary cognitive identity is a <strong>court vision specialist with clutch-level reaction speed</strong>." data-es="Marcus Cirino es un <strong>base con alto IQ</strong> y procesamiento visual elite con timing reactivo superior al promedio. Su perfil cognitivo sugiere un jugador que ve la jugada antes de que suceda — el tipo de base que hace mejor a todos a su alrededor.">Marcus Cirino is a <strong>high-IQ floor general</strong> with elite visual processing and above-average reactive timing. His cognitive profile suggests a player who sees the play develop before it happens — the kind of point guard who makes everyone around him better. His primary cognitive identity is a <strong>court vision specialist with clutch-level reaction speed</strong>.</p>
 </div>
-<div class="cta-or" data-en="or" data-es="o">or</div>
-<div class="cta-chat-hint"><span class="ball">🏀</span> <span data-en="Tap the ball to ask me anything" data-es="Toca el balón para preguntarme lo que sea">Tap the ball to ask me anything</span></div>
+
+<div class="report-section rs-strengths">
+<div class="report-section-title">💪 COGNITIVE STRENGTHS</div>
+<p data-en="<strong>Court Vision (L9 Reflex — Hall of Fame):</strong> In the 99th percentile for visual processing. This player captures the entire floor in a split second. In transition, expect him to find cutters and trailing shooters that most guards miss entirely. He reads 5-out spacing before the defense rotates." data-es="<strong>Visión de Cancha (L9 Reflex — Hall of Fame):</strong> En el percentil 99 de procesamiento visual. Este jugador captura toda la cancha en un instante. En transición, espera que encuentre cortadores y tiradores que la mayoría de bases no ven."><strong>Court Vision (L9 Reflex — Hall of Fame):</strong> In the 99th percentile for visual processing. This player captures the entire floor in a split second. In transition, expect him to find cutters and trailing shooters that most guards miss entirely. He reads 5-out spacing before the defense rotates.</p>
+<p data-en="<strong>Reaction Speed (L8 React — MVP):</strong> Processes tempo changes at elite speed. Can operate effectively at 120 BPM game pace. This translates to steal anticipation, fast break decision-making, and the ability to adjust mid-play when the defense shifts." data-es="<strong>Velocidad de Reacción (L8 React — MVP):</strong> Procesa cambios de tempo a velocidad elite. Opera efectivamente a ritmo de juego de 120 BPM. Esto se traduce en anticipación de robos y toma de decisiones en contraataque."><strong>Reaction Speed (L8 React — MVP):</strong> Processes tempo changes at elite speed. Can operate effectively at 120 BPM game pace. This translates to steal anticipation, fast break decision-making, and the ability to adjust mid-play when the defense shifts.</p>
+</div>
+
+<!-- BLURRED PREMIUM SECTION -->
+<div class="report-blur">
+<div class="report-blur-content">
+<div class="report-section rs-dev">
+<div class="report-section-title">⚡ AREAS FOR DEVELOPMENT</div>
+<p>Play Recall (L6 Replay — Pro): While above average, complex 12+ step sequences show slight degradation under speed pressure. Recommend drilling full offensive sets at increasing tempo. Simon-says style drills with 8+ positions will strengthen this pathway.</p>
+</div>
+<div class="report-section rs-court">
+<div class="report-section-title">🏀 ON-COURT TRANSLATION</div>
+<p>Transition: Elite. Expect this player to push tempo and find the open man before the defense sets. Half-court: Strong. Reads pick-and-roll coverage effectively. Pressure: Above average reaction time suggests clutch performance under tight clock situations.</p>
+</div>
+<div class="report-section rs-coach">
+<div class="report-section-title">🎯 COACH RECOMMENDATION</div>
+<p>Run this player as the primary ball-handler in transition. In half-court sets, position him as the decision-maker on pick-and-roll actions. Defensive assignment: put him on the opposing team's best playmaker — his reaction time and change detection will disrupt offensive flow.</p>
+</div>
+<div class="report-section rs-path">
+<div class="report-section-title">📈 DEVELOPMENT PATH</div>
+<p>To reach L8+ overall: Focus on THE REPLAY at Tempo and Elite speeds — drill complex sequences until they become automatic. Additionally, THE RITMO training will sharpen defensive rotation reads from L7 to L9 range.</p>
+</div>
+</div>
+<div class="report-blur-overlay">
+<div class="lock-text">🔒 FULL REPORT — PREMIUM</div>
+<a href="/join.html" class="btn-gold" style="animation:none;padding:12px 28px;font-size:.85rem" data-en="Get Your Full Report" data-es="Obtén Tu Reporte Completo">Get Your Full Report</a>
+<span style="font-size:.7rem;color:var(--gray)" data-en="Create profile → Play drills → Generate report" data-es="Crea perfil → Juega drills → Genera reporte">Create profile → Play drills → Generate report</span>
+<a href="/preview-premium.html" style="font-size:.7rem;color:var(--gold);margin-top:4px;display:inline-block;border-bottom:1px dashed rgba(255,215,0,.3);padding-bottom:2px" data-en="See full sample report →" data-es="Ver reporte de ejemplo completo →">See full sample report →</a>
+</div>
+</div>
+</div>
+</div>
+</div></section>
+
+<!-- HOW IT WORKS -->
+<section class="steps"><div class="wrap text-center">
+<div class="section-pill green" data-en="How It Works" data-es="Cómo Funciona">How It Works</div>
+<h2 class="section-title" data-en="From Signup to Scouting Report" data-es="De Registro a Reporte">From Signup to Scouting Report</h2>
+<div class="steps-grid">
+<div class="step-card reveal">
+<div class="step-num">01</div>
+<div class="step-icon">📝</div>
+<h4 data-en="CREATE PROFILE" data-es="CREA TU PERFIL">CREATE PROFILE</h4>
+<p data-en="Free signup. Enter your basic info. Get your personal page." data-es="Registro gratis. Ingresa tu info. Obtén tu página personal.">Free signup. Enter your basic info. Get your personal page.</p>
+<div class="step-arrow">→</div>
+</div>
+<div class="step-card reveal">
+<div class="step-num">02</div>
+<div class="step-icon">🧠</div>
+<h4 data-en="PLAY DRILLS" data-es="JUEGA DRILLS">PLAY DRILLS</h4>
+<p data-en="6 cognitive tests. Each measures a different basketball skill. 3 are free." data-es="6 pruebas cognitivas. Cada una mide una habilidad diferente. 3 son gratis.">6 cognitive tests. Each measures a different basketball skill. 3 are free.</p>
+<div class="step-arrow">→</div>
+</div>
+<div class="step-card reveal">
+<div class="step-num">03</div>
+<div class="step-icon">⭐</div>
+<h4 data-en="GO PREMIUM" data-es="IR PREMIUM">GO PREMIUM</h4>
+<p data-en="$49/year or $7/month. Unlock all 6 drills + AI report." data-es="$49/año o $7/mes. Desbloquea los 6 drills + reporte IA.">$49/year or $7/month. Unlock all 6 drills + AI report.</p>
+<div class="step-arrow">→</div>
+</div>
+<div class="step-card reveal">
+<div class="step-num">04</div>
+<div class="step-icon">📋</div>
+<h4 data-en="GET YOUR REPORT" data-es="OBTÉN TU REPORTE">GET YOUR REPORT</h4>
+<p data-en="AI generates your personalized cognitive scouting report. Share it with anyone." data-es="La IA genera tu reporte personalizado. Compártelo con cualquiera.">AI generates your personalized cognitive scouting report. Share it with anyone.</p>
+</div>
+</div>
+</div></section>
+
+<!-- WHO USES IT -->
+<section style="padding:60px 0"><div class="wrap text-center">
+<div class="section-pill gold" data-en="Who Uses It" data-es="Quién Lo Usa">Who Uses It</div>
+<h2 class="section-title" data-en="Built For Everyone In Basketball" data-es="Para Todos En El Baloncesto">Built For Everyone In Basketball</h2>
+<div class="users-grid" style="margin-top:40px">
+<div class="user-card reveal">
+<div class="user-icon">🏀</div>
+<h4 data-en="PLAYERS" data-es="JUGADORES">PLAYERS</h4>
+<p data-en="Share your report with college coaches. Stand out from every other recruit. Show them your basketball mind — not just your stats." data-es="Comparte tu reporte con coaches universitarios. Destácate de todos los demás reclutas. Muestra tu mente de baloncesto.">Share your report with college coaches. Stand out from every other recruit. Show them your basketball mind — not just your stats.</p>
+</div>
+<div class="user-card reveal">
+<div class="user-icon">🎓</div>
+<h4 data-en="COACHES & SCOUTS" data-es="COACHES Y SCOUTS">COACHES & SCOUTS</h4>
+<p data-en="See what film can't show. Cognitive data tells you who processes the game fastest, who reads defenses before anyone else, who performs under pressure." data-es="Ve lo que el video no muestra. Los datos cognitivos revelan quién procesa el juego más rápido, quién lee defensas primero, quién rinde bajo presión.">See what film can't show. Cognitive data tells you who processes the game fastest, who reads defenses before anyone else, who performs under pressure.</p>
+</div>
+<div class="user-card reveal">
+<div class="user-icon">👨‍👩‍👦</div>
+<h4 data-en="PARENTS & FAMILIES" data-es="PADRES Y FAMILIAS">PARENTS & FAMILIES</h4>
+<p data-en="Understand your child's basketball mind. The report explains strengths and development areas in plain language. Know exactly what to work on." data-es="Entiende la mente de baloncesto de tu hijo. El reporte explica fortalezas y áreas de desarrollo en lenguaje claro.">Understand your child's basketball mind. The report explains strengths and development areas in plain language. Know exactly what to work on.</p>
+</div>
+</div>
+</div></section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+<h2 data-en="YOUR MIND IS<br>YOUR <span class='gold'>GREATEST WEAPON</span>" data-es="TU MENTE ES<br>TU <span class='gold'>ARMA MÁS GRANDE</span>">YOUR MIND IS<br>YOUR <span class="gold">GREATEST WEAPON</span></h2>
+<p class="final-sub" data-en="The first AI cognitive scouting report in basketball. Only on BPM Bassketball." data-es="El primer reporte cognitivo con IA en baloncesto. Solo en BPM Basketball.">The first AI cognitive scouting report in basketball. Only on BPM Basketball.</p>
+<p class="final-desc" data-en="Create your free profile. Play the drills. Go premium. Generate your report. Share it with the world." data-es="Crea tu perfil gratis. Juega los drills. Ve premium. Genera tu reporte. Compártelo con el mundo.">Create your free profile. Play the drills. Go premium. Generate your report. Share it with the world.</p>
+<div class="final-btns">
+<a href="/join.html" class="btn-gold" style="animation:none" data-en="Start Free — Get Your Report" data-es="Empieza Gratis — Obtén Tu Reporte">Start Free — Get Your Report</a>
+<a href="/cognitive-hoops.html" class="btn-outline" data-en="🧠 Play the Drills" data-es="🧠 Juega los Drills">🧠 Play the Drills</a>
+</div>
+<p class="final-note" data-en="Premium: $49/year or $7/month. Includes all 6 cognitive drills, AI scouting report, basketball timeline, and full profile features." data-es="Premium: $49/año o $7/mes. Incluye los 6 drills cognitivos, reporte IA, historia de baloncesto y todas las funciones del perfil.">Premium: $49/year or $7/month. Includes all 6 cognitive drills, AI scouting report, basketball timeline, and full profile features.</p>
+<div style="margin-top:24px;display:flex;align-items:center;justify-content:center;gap:8px">
+<div style="width:6px;height:6px;background:var(--gold);border-radius:50%;animation:pulse 1.5s ease-in-out infinite"></div>
+<span style="font-size:.6rem;color:var(--gray);letter-spacing:2px">POWERED BY</span>
+<span style="font-family:'Bebas Neue',sans-serif;color:var(--gold);font-size:.85rem;letter-spacing:3px">BPM BASKETBALL™</span>
+</div>
 </section>
 
-<div class="powered-strip">
-<div class="powered-dot"></div>
-<span class="powered-label">POWERED BY</span>
-<span class="powered-brand">BPM BASKETBALL™</span>
-</div>
-
-<div class="disclaimer">
-<p data-en="This program focuses on athlete development, branding, and future opportunities. We do not guarantee specific outcomes or opportunities." data-es="Este programa se enfoca en el desarrollo del atleta, branding y oportunidades futuras. No garantizamos resultados u oportunidades específicas.">This program focuses on athlete development, branding, and future opportunities. We do not guarantee specific outcomes or opportunities.</p>
-</div>
-
-<footer><div class="wrap" style="max-width:680px;margin:0 auto;padding:0 20px"><div class="footer-inner">
-<div class="footer-links">
-<a href="/programs.html" data-en="Programs" data-es="Programas">Programs</a>
-<a href="/bpm-basketball.html" data-en="BPM Basketball™" data-es="BPM Basketball™">BPM Basketball™</a>
-<a href="/privacy.html" data-en="Privacy" data-es="Privacidad">Privacy</a>
-<a href="/terms.html" data-en="Terms" data-es="Términos">Terms</a>
-</div>
+<footer><div class="wrap"><div class="footer-inner">
+<div class="footer-links"><a href="/privacy.html" data-en="Privacy" data-es="Privacidad">Privacy</a><a href="/terms.html" data-en="Terms" data-es="Términos">Terms</a></div>
 <div class="footer-copy">© 2026 GoStar Digital LLC. All Rights Reserved.</div>
 </div></div></footer>
 
 <script>
 try{var sl=localStorage.getItem('lc-lang');if(sl)setLang(sl);else setLang('en')}catch(e){setLang('en')}
-
-function askBPM(msg){
-var fab=document.getElementById('hc-fab');
-var panel=document.getElementById('hc-panel');
-if(!panel||!fab)return;
-if(!panel.classList.contains('open'))fab.click();
-setTimeout(function(){
-var input=document.getElementById('hc-input');
-if(!input)return;
-input.value=msg;
-input.dispatchEvent(new Event('input'));
-setTimeout(function(){
-var send=document.getElementById('hc-send');
-if(send&&!send.disabled)send.click();
-},100);
-},400);
-}
+var reveals=document.querySelectorAll('.reveal');
+var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}})},{threshold:0.1});
+reveals.forEach(function(el,i){el.style.transitionDelay=(i%4)*0.1+'s';observer.observe(el)});
 </script>
-
-<script src="/bpm-chat.js"></script>
+<script src="/hooporia-chat.js"></script>
 </body>
 </html>
