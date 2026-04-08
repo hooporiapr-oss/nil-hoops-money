@@ -127,6 +127,7 @@ function toggleInfo(id){document.getElementById(id).classList.toggle('open')}
     <div class="step-line" id="line1"></div>
     <div class="step-dot" id="dot2">2</div>
     <div class="step-line" id="line2"></div>
+    <div class="step-dot" id="dot3">3</div>
   </div>
   <div class="error-msg" id="errorMsg"></div>
   <div class="step-panel active" id="step1">
@@ -149,6 +150,14 @@ function toggleInfo(id){document.getElementById(id).classList.toggle('open')}
     <div class="btn-row"><button class="btn-back" onclick="goStep(1)">&#8592;</button><button class="btn-primary" onclick="goStep(3)" style="flex:1"><span class="en">Next</span><span class="es">Siguiente</span></button></div>
   </div>
   <div class="step-panel" id="step3">
+    <h1 class="en">NIL Profile</h1><h1 class="es">Perfil NIL</h1>
+    <p class="subtitle en">Step 3 — Your brand</p><p class="subtitle es">Paso 3 — Tu marca</p>
+    <div class="form-group"><label class="en">NIL Contact Email</label><label class="es">Email de Contacto NIL</label><input type="email" id="nilEmail" placeholder="Optional — defaults to signup email"><span class="info-toggle" onclick="toggleInfo('nilEmailInfo')">ℹ️ <span class="en">What is this?</span><span class="es">¿Qué es esto?</span></span><div class="info-dropdown" id="nilEmailInfo"><span class="en">This is the email coaches, scouts, and brands will see on your public profile. If left blank, we'll use your signup email.</span><span class="es">Este es el correo que coaches, scouts y marcas verán en tu perfil público. Si lo dejas vacío, usaremos tu correo de registro.</span></div></div>
+    <div class="form-group"><label class="en">NIL Bio</label><label class="es">Bio NIL</label><textarea id="nilBio" rows="3" placeholder="Tell coaches, scouts, and brands about yourself..."></textarea><span class="info-toggle" onclick="toggleInfo('nilBioInfo')">ℹ️ <span class="en">Tips for a great bio</span><span class="es">Tips para una buena bio</span></span><div class="info-dropdown" id="nilBioInfo"><span class="en">Your NIL bio is a short personal statement that tells coaches, scouts, and brands who you are — on and off the court. Mention your playing style, achievements, goals, community involvement, and what makes you unique. Think of it as your elevator pitch to anyone looking to recruit or partner with you.</span><span class="es">Tu bio NIL es una breve declaración personal que le dice a coaches, scouts y marcas quién eres — dentro y fuera de la cancha. Menciona tu estilo de juego, logros, metas, participación comunitaria y lo que te hace único. Piénsalo como tu presentación rápida para cualquiera que quiera reclutarte o asociarse contigo.</span></div></div>
+    <div style="display:flex;align-items:flex-start;gap:10px;margin:20px 0 0;padding-top:16px;border-top:1px solid #eee"><input type="checkbox" id="ageConsent" style="width:20px;height:20px;margin-top:2px;accent-color:var(--orange);flex-shrink:0"><label for="ageConsent" style="font-size:.8rem;color:#555;font-weight:500;line-height:1.5"><span class="en">I am 13 years or older, or my parent/guardian is creating this profile with me. I agree to the <a href="/terms.html" style="color:var(--orange);font-weight:600">Terms of Service</a> and <a href="/privacy.html" style="color:var(--orange);font-weight:600">Privacy Policy</a>.</span><span class="es">Tengo 13 años o más, o mi padre/tutor está creando este perfil conmigo. Acepto los <a href="/terms.html" style="color:var(--orange);font-weight:600">Términos de Servicio</a> y la <a href="/privacy.html" style="color:var(--orange);font-weight:600">Política de Privacidad</a>.</span></label></div>
+    <div class="btn-row"><button class="btn-back" onclick="goStep(2)">&#8592;</button><button class="btn-primary" onclick="submitProfile()" id="submitBtn" style="flex:1"><span class="en">Create My Profile</span><span class="es">Crear Mi Perfil</span></button></div>
+  </div>
+  <div class="step-panel" id="step4">
     <div class="success-screen"><div class="check">&#11088;</div><h2 class="en">You're Live!</h2><h2 class="es">¡Estás en Vivo!</h2><p class="en">Your NIL profile is live. Share this link with coaches, scouts, and brands:</p><p class="es">Tu perfil NIL está activo. Comparte este enlace con coaches, scouts y marcas:</p><div class="link-box" id="profileLink"></div><a href="/my-profile.html" class="btn-primary" style="display:inline-block;width:100%"><span class="en">Go to My Dashboard</span><span class="es">Ir a Mi Panel</span></a></div>
   </div>
 </div>
