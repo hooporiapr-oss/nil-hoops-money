@@ -127,14 +127,14 @@ html,body{height:100%;overflow-x:hidden;overflow-y:auto;font-family:'Outfit',san
 .play-tier-dot.current{background:var(--gold);box-shadow:0 0 6px var(--gold);transform:scale(1.3)}
 .play-court-wrap{width:100%;max-width:340px;margin:0 auto}
 .play-court{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;padding:10px;background:var(--card);border:2px solid var(--border);border-radius:16px;aspect-ratio:1;position:relative;transition:border-color 0.15s,box-shadow 0.15s}
-.play-cell{aspect-ratio:1;border-radius:6px;background:rgba(255,255,255,0.08);border:2px solid rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative;z-index:1;transition:all 0.15s}
+.play-cell{aspect-ratio:1;border-radius:6px;background:rgba(255,255,255,0.06);border:2px solid rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative;z-index:1;transition:all 0.12s}
 .play-cell:active:not(.disabled){transform:scale(0.95)}
 .play-cell .cell-num{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--text);opacity:0;text-shadow:0 2px 4px rgba(0,0,0,0.5);transition:opacity 0.15s}
-.play-cell.lit{background:var(--flash-color)!important;border-color:var(--flash-color)!important;box-shadow:0 0 20px var(--flash-color);transform:scale(1.05)}
+.play-cell.lit{background:var(--flash-color)!important;border-color:var(--flash-color)!important;box-shadow:0 0 22px var(--flash-color);transform:scale(1.06)}
 .play-cell.lit .cell-num,.play-cell.show-num .cell-num{opacity:1}
-.play-cell.correct{background:var(--teal)!important;border-color:var(--teal)!important;box-shadow:0 0 15px var(--teal);animation:correctPulse 0.4s}
-.play-cell.wrong{background:var(--pink)!important;border-color:var(--pink)!important;box-shadow:0 0 15px var(--pink);animation:shake 0.4s}
-.play-cell.player-tap{background:rgba(255,255,255,0.3)!important;border-color:rgba(255,255,255,0.5)!important}
+.play-cell.correct{background:var(--teal)!important;border-color:var(--teal)!important;box-shadow:0 0 12px rgba(0,217,165,0.5);transform:scale(1.02);animation:correctPulse 0.4s}
+.play-cell.wrong{background:rgba(255,20,147,0.3)!important;border-color:var(--pink)!important;animation:shake 0.4s}
+.play-cell.player-tap{background:rgba(255,255,255,0.2)!important;border-color:rgba(255,255,255,0.4)!important}
 @keyframes correctPulse{50%{transform:scale(1.15)}}
 @keyframes shake{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
 .play-court.joy-pulse{animation:joyPulse 0.5s ease-out}
