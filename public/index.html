@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>AI Cognitive Scouting Report — The First in Basketball | BPM Basketball™</title>
-<meta name="description" content="The first AI-generated cognitive scouting report in basketball. 6 drills at 3 BPM speeds measure your basketball mindset. Get a coach-ready report no other platform can generate.">
+<title>Basketball is a braking sport. BPM measures yours. | BPM Basketball™</title>
+<meta name="description" content="BPM Basketball measures the cognitive layer of basketball braking. Six drills, three tempos, ten levels, one Brake. The first measurement platform for basketball's decisive trait.">
 <link rel="icon" href="/bpm-basketball.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -63,13 +63,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.92
 .hero-logo{margin-bottom:12px;animation:fadeUp .6s ease both}
 .hero-logo img{height:160px;filter:drop-shadow(0 0 50px rgba(255,215,0,.3));animation:logoFloat 4s ease-in-out infinite}
 
-.hero-first{display:inline-block;padding:7px 16px;background:rgba(255,107,53,.1);border:1px solid rgba(255,107,53,.25);border-radius:24px;font-size:.58rem;font-weight:800;text-transform:uppercase;letter-spacing:2.5px;color:var(--orange);margin-bottom:20px;animation:fadeUp .7s ease .1s both}
+.hero-marker{display:inline-block;padding:6px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:4px;font-size:.55rem;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:var(--gray);margin-bottom:24px;animation:fadeUp .7s ease .1s both;font-family:'Outfit',sans-serif}
 
-.hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.6rem,9vw,6.5rem);line-height:.88;margin-bottom:14px;animation:fadeUp .7s ease .15s both}
+.hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.6rem,9vw,6.5rem);line-height:.88;margin-bottom:18px;animation:fadeUp .7s ease .15s both}
 .hero h1 .gold{color:var(--gold)}
-.hero h1 .line2{display:block;font-size:.55em;color:var(--gray-light);margin-top:4px}
+.hero h1 .line2{display:block}
 
-.hero-sub{font-size:clamp(.88rem,2.5vw,1.05rem);color:var(--gray-light);max-width:520px;margin:0 auto 32px;line-height:1.7;animation:fadeUp .7s ease .25s both}
+.hero-sub{font-size:clamp(.88rem,2.5vw,1.05rem);color:var(--gray-light);max-width:560px;margin:0 auto 32px;line-height:1.7;animation:fadeUp .7s ease .25s both}
+.hero-sub strong{color:var(--white);font-weight:600}
 
 .hero-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;animation:fadeUp .7s ease .35s both;width:100%}
 .btn-gold{display:inline-block;padding:15px 36px;border-radius:10px;font-size:.9rem;font-weight:700;background:linear-gradient(135deg,var(--gold),#FFA500);color:var(--black);transition:all .2s;animation:glow 3s ease infinite}
@@ -78,52 +79,107 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.92
 .btn-outline:hover{border-color:var(--gold);color:var(--gold)}
 
 /* ══════ SECTIONS ══════ */
-.section-pill{display:inline-block;padding:5px 14px;border-radius:20px;font-size:.58rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px}
+.section{padding:80px 0}
+.section-pill{display:inline-block;padding:5px 14px;border-radius:4px;font-size:.55rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;margin-bottom:18px;font-family:'Outfit',sans-serif}
 .section-pill.gold{background:var(--gold-dim);color:var(--gold);border:1px solid var(--gold-border)}
 .section-pill.purple{background:rgba(155,89,182,.08);color:var(--purple);border:1px solid rgba(155,89,182,.15)}
-.section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.8rem,5vw,2.8rem);letter-spacing:2px;margin-bottom:10px;line-height:1.05}
-.section-sub{color:var(--gray-light);font-size:clamp(.82rem,2.2vw,.95rem);max-width:520px;margin:0 auto 36px;line-height:1.7;text-align:center}
+.section-pill.cyan{background:rgba(0,206,209,.08);color:var(--cyan);border:1px solid rgba(0,206,209,.15)}
+.section-pill.orange{background:rgba(255,107,53,.08);color:var(--orange);border:1px solid rgba(255,107,53,.15)}
+.section-pill.neutral{background:rgba(255,255,255,.04);color:var(--gray-light);border:1px solid rgba(255,255,255,.06)}
+.section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,5.5vw,3.2rem);letter-spacing:2px;margin-bottom:14px;line-height:1.05}
+.section-title .gold{color:var(--gold)}
+.section-sub{color:var(--gray-light);font-size:clamp(.88rem,2.2vw,1rem);max-width:620px;margin:0 auto 36px;line-height:1.7;text-align:center}
 .text-center{text-align:center}
 
-/* ══════ SAMPLE REPORT CTA ══════ */
-.report-showcase{padding:60px 0 40px}
+/* ══════ THE STOP ══════ */
+.stop-section{padding:80px 0;border-top:1px solid rgba(255,255,255,.04);background:var(--black2)}
+.stop-body{max-width:680px;margin:0 auto;font-size:clamp(.95rem,2.4vw,1.1rem);line-height:1.85;color:var(--gray-light)}
+.stop-body p{margin-bottom:22px}
+.stop-body p:last-child{margin-bottom:0}
+.stop-body strong{color:var(--white);font-weight:600}
+.stop-body .gold{color:var(--gold);font-weight:600}
+
+/* ══════ COGNITIVE LAYER ══════ */
+.cog-section{padding:80px 0}
+.cog-body{max-width:640px;margin:0 auto;text-align:center}
+.cog-body p{font-size:clamp(.95rem,2.4vw,1.1rem);line-height:1.85;color:var(--gray-light);margin-bottom:22px}
+.cog-body p:last-child{margin-bottom:0}
+.cog-body strong{color:var(--white);font-weight:600}
+.cog-stats{display:flex;justify-content:center;gap:40px;margin-top:40px;flex-wrap:wrap}
+.cog-stat{text-align:center}
+.cog-stat-num{font-family:'Bebas Neue',sans-serif;font-size:2.4rem;color:var(--gold);letter-spacing:1px;line-height:1}
+.cog-stat-label{font-size:.7rem;color:var(--gray);letter-spacing:2px;text-transform:uppercase;margin-top:4px}
 
 /* ══════ DRILLS ══════ */
-.drills-section{padding:50px 0 60px}
-.drills-mini{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;max-width:600px;margin:0 auto 32px}
-.cog-mini{text-align:center;padding:14px 6px;background:var(--surface);border:1px solid rgba(255,255,255,.04);border-radius:12px;transition:all .3s;cursor:pointer;color:var(--white)}
-.cog-mini:hover{transform:translateY(-3px);border-color:rgba(255,215,0,.15)}
-.cog-mini-emoji{font-size:1.3rem;margin-bottom:4px}
-.cog-mini-name{font-family:'Bebas Neue',sans-serif;font-size:.6rem;letter-spacing:1px}
-.cog-mini.r .cog-mini-name{color:var(--purple)}
-.cog-mini.rc .cog-mini-name{color:var(--orange)}
-.cog-mini.rf .cog-mini-name{color:var(--cyan)}
-.cog-mini.rp .cog-mini-name{color:var(--teal)}
-.cog-mini.rt .cog-mini-name{color:var(--lime)}
-.cog-mini.bt .cog-mini-name{color:var(--gold)}
+.drills-section{padding:80px 0;border-top:1px solid rgba(255,255,255,.04)}
+.drills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:920px;margin:0 auto 36px}
+.drill-card{text-align:left;padding:22px 18px;background:var(--surface);border:1px solid rgba(255,255,255,.04);border-radius:14px;transition:all .3s;cursor:pointer;color:var(--white);display:flex;flex-direction:column;min-height:150px}
+.drill-card:hover{transform:translateY(-3px);border-color:rgba(255,215,0,.2);background:#1a1a24}
+.drill-card-top{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.drill-emoji{font-size:1.4rem}
+.drill-name{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:2px}
+.drill-tag{margin-left:auto;font-size:.55rem;padding:3px 7px;border-radius:3px;font-weight:700;letter-spacing:1px;background:rgba(255,215,0,.1);color:var(--gold);text-transform:uppercase}
+.drill-claim{font-size:.82rem;color:var(--gray-light);line-height:1.5;font-weight:500}
+.drill-card.r .drill-name{color:var(--purple)}
+.drill-card.rc .drill-name{color:var(--orange)}
+.drill-card.rf .drill-name{color:var(--cyan)}
+.drill-card.rp .drill-name{color:var(--teal)}
+.drill-card.rt .drill-name{color:var(--lime)}
+.drill-card.bt .drill-name{color:var(--gold)}
 
-/* ══════ QUOTE ══════ */
-.quote-section{padding:50px 20px;border-top:1px solid rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.04);background:var(--black2)}
-.quote{max-width:560px;margin:0 auto;text-align:center}
-.quote-text{font-size:clamp(1rem,3vw,1.25rem);font-weight:300;color:var(--white);line-height:1.6;margin-bottom:14px;font-style:italic}
-.quote-text .gold{color:var(--gold);font-weight:700;font-style:normal}
-.quote-attr{font-size:.72rem;color:var(--gray);font-weight:600}
+/* ══════ THE BRAKE ══════ */
+.brake-section{padding:80px 0;border-top:1px solid rgba(255,255,255,.04);background:var(--black2)}
+.brake-body{max-width:640px;margin:0 auto 36px;text-align:center}
+.brake-body p{font-size:clamp(.9rem,2.3vw,1.02rem);line-height:1.8;color:var(--gray-light);margin-bottom:20px}
+.brake-body strong{color:var(--white);font-weight:600}
+
+/* ══════ LIGHTS PRODUCT ══════ */
+.lights-section{padding:80px 0;border-top:1px solid rgba(255,255,255,.04)}
+.lights-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;max-width:980px;margin:0 auto;align-items:center}
+.lights-image{background:var(--surface);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:40px;aspect-ratio:1;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.lights-image img{max-width:100%;max-height:100%;object-fit:contain}
+.lights-content{padding:20px 0}
+.lights-pill{display:inline-block;padding:5px 14px;border-radius:4px;font-size:.55rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;margin-bottom:16px;background:rgba(0,206,209,.08);color:var(--cyan);border:1px solid rgba(0,206,209,.15)}
+.lights-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.8rem,4.5vw,2.6rem);letter-spacing:2px;margin-bottom:14px;line-height:1.05}
+.lights-desc{font-size:clamp(.88rem,2.2vw,1rem);color:var(--gray-light);line-height:1.7;margin-bottom:22px}
+.lights-desc strong{color:var(--white);font-weight:600}
+.lights-product{background:var(--surface);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:24px;margin-bottom:20px}
+.lights-product-name{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:2px;margin-bottom:8px;color:var(--white)}
+.lights-product-specs{font-size:.78rem;color:var(--gray);line-height:1.6;margin-bottom:14px}
+.lights-product-price{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--gold);letter-spacing:1px;margin-bottom:14px;line-height:1}
+.lights-btn{display:inline-block;padding:13px 32px;border-radius:10px;font-size:.85rem;font-weight:700;background:linear-gradient(135deg,var(--gold),#FFA500);color:var(--black);transition:all .2s;width:100%;text-align:center;font-family:'Outfit',sans-serif;cursor:pointer;border:none}
+.lights-btn:hover{transform:translateY(-1px);box-shadow:0 6px 24px rgba(255,215,0,.25)}
+
+/* ══════ THE RULE ══════ */
+.rule-section{padding:80px 20px;border-top:1px solid rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.04);background:var(--black)}
+.rule{max-width:620px;margin:0 auto;text-align:center}
+.rule-text{font-family:'Outfit',sans-serif;font-size:clamp(1.05rem,3vw,1.35rem);font-weight:300;color:var(--white);line-height:1.7;margin-bottom:24px;font-style:italic}
+.rule-text .line{display:block;margin-bottom:10px}
+.rule-text .line:last-child{margin-bottom:0}
+.rule-text .gold{color:var(--gold);font-weight:500;font-style:normal}
+.rule-attr{font-size:.65rem;color:var(--gray);font-weight:600;letter-spacing:3px;text-transform:uppercase}
 
 /* ══════ POWERED ══════ */
-.powered{display:flex;align-items:center;justify-content:center;gap:8px;padding:20px 0 8px}
+.powered{display:flex;align-items:center;justify-content:center;gap:8px;padding:30px 0 10px}
 .powered-dot{width:5px;height:5px;background:var(--gold);border-radius:50%;animation:pulse 1.5s ease-in-out infinite}
 .powered-label{font-size:.5rem;color:var(--gray);letter-spacing:2px}
 .powered-brand{font-family:'Bebas Neue',sans-serif;color:var(--gold);font-size:.75rem;letter-spacing:3px}
 
 /* ══════ FOOTER ══════ */
 footer{border-top:1px solid rgba(255,255,255,.04);padding:24px 0;padding-bottom:calc(24px + env(safe-area-inset-bottom,0px))}
-.footer-inner{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
+.footer-inner{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
 .footer-links{display:flex;gap:20px}
 .footer-links a{font-size:.75rem;color:var(--gray);transition:color .2s}
 .footer-links a:hover{color:var(--white)}
 .footer-copy{font-size:.6rem;color:#444}
+.footer-system{font-size:.58rem;color:#555;letter-spacing:1.5px;text-transform:uppercase;max-width:480px}
 
 /* ══════ MOBILE ══════ */
+@media(max-width:720px){
+  .lights-grid{grid-template-columns:1fr;gap:24px}
+  .lights-image{aspect-ratio:4/3;padding:30px}
+  .drills-grid{grid-template-columns:repeat(2,1fr)}
+}
 @media(max-width:600px){
   .nav-link{display:none}
   .nav-cta{display:none}
@@ -131,20 +187,22 @@ footer{border-top:1px solid rgba(255,255,255,.04);padding:24px 0;padding-bottom:
   .hero-logo img{height:130px}
   .hero-btns{flex-direction:column;max-width:300px;margin-left:auto;margin-right:auto}
   .btn-gold,.btn-outline{width:100%;text-align:center;padding:14px 20px;font-size:.88rem}
-  .drills-mini{grid-template-columns:repeat(3,1fr);gap:6px;max-width:320px}
+  .section{padding:60px 0}
+  .stop-section,.cog-section,.drills-section,.brake-section,.lights-section,.rule-section{padding:60px 0}
   .wrap{padding:0 16px}
+  .drills-grid{grid-template-columns:1fr;gap:10px}
+  .drill-card{min-height:0;padding:18px 16px}
+  .cog-stats{gap:24px}
 }
 </style>
 </head>
 <body>
 
-<script>function toggleMenu(){var m=document.getElementById('mobileMenu');var b=document.getElementById('hamBtn');if(m.classList.contains('open')){m.classList.remove('open');b.textContent='☰'}else{m.classList.add('open');b.textContent='✕'}}</script>
-
 <!-- ══════ NAV ══════ -->
 <nav><div class="nav-inner">
 <a href="/" class="nav-brand"><img src="/bpm-basketball.png" alt="BPM Basketball"><span>BPM BASKETBALL</span></a>
 <div class="nav-right">
-<a href="/index.html" class="nav-link" data-en="AI Report" data-es="Reporte IA">Report</a>
+<a href="/index.html" class="nav-link" data-en="The Brake" data-es="The Brake">The Brake</a>
 <a href="/discover.html" class="nav-link" data-en="Discover" data-es="Descubrir">Discover</a>
 <a href="/leaderboard.html" class="nav-link" data-en="Leaderboard" data-es="Clasificación">Leaderboard</a>
 <a href="/faq.html" class="nav-link" data-en="FAQ" data-es="FAQ">FAQ</a>
@@ -154,7 +212,7 @@ footer{border-top:1px solid rgba(255,255,255,.04);padding:24px 0;padding-bottom:
 </div></div>
 <div class="nav-lang-row"><button class="lang-toggle-btn active" data-l="en" onclick="setLang('en')">ENglish</button><span class="lang-divider">|</span><button class="lang-toggle-btn" data-l="es" onclick="setLang('es')">ESpañol</button></div>
 <div class="mobile-menu" id="mobileMenu">
-<a href="/index.html" data-en="AI Report" data-es="Reporte IA">AI Report</a>
+<a href="/index.html" data-en="The Brake" data-es="The Brake">The Brake</a>
 <a href="/discover.html" data-en="Discover" data-es="Descubrir">Discover</a>
 <a href="/leaderboard.html" data-en="Leaderboard" data-es="Clasificación">Leaderboard</a>
 <a href="/faq.html" data-en="FAQ" data-es="FAQ">FAQ</a>
@@ -166,45 +224,116 @@ footer{border-top:1px solid rgba(255,255,255,.04);padding:24px 0;padding-bottom:
 <!-- ══════ HERO ══════ -->
 <section class="hero">
 <div class="hero-logo"><img src="/bpm-basketball-001.png" alt="BPM Basketball"></div>
-<div class="hero-first" data-en="🏀 THIS ISN'T STATS — THIS IS YOUR BASKETBALL DNA" data-es="🏀 ESTO NO SON ESTADÍSTICAS — ESTE ES TU ADN DE BALONCESTO">🏀 THIS ISN'T STATS — THIS IS YOUR BASKETBALL DNA</div>
-<h1 data-en="THE AI COGNITIVE<br><span class='gold'>SCOUTING REPORT</span><br><span class='line2'>See How You Really Think the Game.</span>" data-es="EL REPORTE COGNITIVO<br><span class='gold'>CON INTELIGENCIA ARTIFICIAL</span><br><span class='line2'>Mira cómo de verdad piensas el juego.</span>">THE AI COGNITIVE<br><span class="gold">SCOUTING REPORT</span><br><span class="line2">See How You Really Think the Game.</span></h1>
-<p class="hero-sub" data-en="6 cognitive drills. 3 BPM speeds. AI-powered breakdown. A scouting report that separates you from everyone else." data-es="6 drills cognitivos. 3 velocidades BPM. Análisis impulsado por IA. Un reporte que te separa de todos los demás.">6 cognitive drills. 3 BPM speeds. AI-powered breakdown. A scouting report that separates you from everyone else.</p>
+<div class="hero-marker" data-en="01 / Basketball Braking · Cognitive Layer" data-es="01 / Frenado en Baloncesto · Capa Cognitiva">01 / Basketball Braking · Cognitive Layer</div>
+<h1 data-en="BASKETBALL IS A<br><span class='gold'>BRAKING SPORT.</span><br><span class='line2'>BPM measures yours.</span>" data-es="EL BALONCESTO ES UN<br><span class='gold'>DEPORTE DE FRENADO.</span><br><span class='line2'>BPM mide el tuyo.</span>">BASKETBALL IS A<br><span class="gold">BRAKING SPORT.</span><br><span class="line2">BPM measures yours.</span></h1>
+<p class="hero-sub" data-en="Every stop, every cut, every closeout starts with a read. BPM trains and measures the reads — the cognitive layer of basketball braking. <strong>Six drills. Three tempos. Ten levels. Know your Brake.</strong>" data-es="Cada parada, cada corte, cada closeout empieza con una lectura. BPM entrena y mide las lecturas — la capa cognitiva del frenado en baloncesto. <strong>Seis drills. Tres tempos. Diez niveles. Conoce tu Brake.</strong>">Every stop, every cut, every closeout starts with a read. BPM trains and measures the reads — the cognitive layer of basketball braking. <strong>Six drills. Three tempos. Ten levels. Know your Brake.</strong></p>
 <div class="hero-btns">
-<a href="/join.html" class="btn-gold" data-en="Get Your Report — Start Free" data-es="Obtén Tu Reporte — Empieza Gratis">Get Your Report — Start Free</a>
-<a href="#sample" class="btn-outline" data-en="View Sample Report" data-es="Ver Reporte de Ejemplo">View Sample Report</a>
+<a href="/join.html" class="btn-gold" data-en="Start Training — Free" data-es="Empieza a Entrenar — Gratis">Start Training — Free</a>
+<a href="#the-brake" class="btn-outline" data-en="See The Brake" data-es="Ver The Brake">See The Brake</a>
 </div>
 </section>
 
-<!-- ══════ SAMPLE REPORT ══════ -->
-<section class="report-showcase" id="sample"><div class="wrap text-center">
-<div class="section-pill gold" data-en="Sample Report" data-es="Reporte de Ejemplo">Sample Report</div>
-<h2 class="section-title" data-en="What Your Report Looks Like" data-es="Cómo Se Ve Tu Reporte">What Your Report Looks Like</h2>
-<p class="section-sub" data-en="AI-generated from real cognitive data. Personalized to your position, scores, BPM speed, and playing style." data-es="Generado por IA con datos cognitivos reales. Personalizado a tu posición, puntajes, velocidad BPM y estilo de juego.">AI-generated from real cognitive data. Personalized to your position, scores, BPM speed, and playing style.</p>
-<div class="hero-btns" style="animation:none">
-<a href="/preview-premium.html" class="btn-gold" style="animation:none" data-en="🏀 View the AI Premium Report" data-es="🏀 Ver el Reporte IA Premium">🏀 View the AI Premium Report</a>
+<!-- ══════ THE STOP ══════ -->
+<section class="stop-section"><div class="wrap text-center">
+<div class="section-pill neutral" data-en="02 / The Stop" data-es="02 / La Parada">02 / The Stop</div>
+<h2 class="section-title" data-en="Basketball is decided in the <span class='gold'>stop.</span>" data-es="El baloncesto se decide en la <span class='gold'>parada.</span>">Basketball is decided in the <span class="gold">stop.</span></h2>
+<div class="stop-body">
+<p data-en="The hard closeout. The hesi pullback. The drop step. The rebound landing. The second jump." data-es="El closeout fuerte. La hesitación. El drop step. El aterrizaje del rebote. El segundo salto.">The hard closeout. The hesi pullback. The drop step. The rebound landing. The second jump.</p>
+<p data-en="Every one of those is a <strong>force-absorption event before it is a force-production event.</strong> Every one starts with a read — the beat before the brake. Read on time, the brake lands clean. Read late, the brake fails and the scoreboard follows." data-es="Cada uno de ellos es un <strong>evento de absorción de fuerza antes de ser un evento de producción de fuerza.</strong> Cada uno empieza con una lectura — el tiempo antes del freno. Leer a tiempo, el freno aterriza limpio. Leer tarde, el freno falla y el marcador sigue.">Every one of those is a <strong>force-absorption event before it is a force-production event.</strong> Every one starts with a read — the beat before the brake. Read on time, the brake lands clean. Read late, the brake fails and the scoreboard follows.</p>
+<p data-en="When the player can't brake, they fly past the closeout and give up the corner three. They miss the cut because their first move is already late. They land soft, get bumped off, and lose the rebound. <span class='gold'>The scoreboard tells the story — but the brake fails first.</span>" data-es="Cuando el jugador no puede frenar, vuela más allá del closeout y regala el triple desde la esquina. Pierde el corte porque su primer movimiento ya llegó tarde. Aterriza suave, lo empujan, y pierde el rebote. <span class='gold'>El marcador cuenta la historia — pero el freno falla primero.</span>">When the player can't brake, they fly past the closeout and give up the corner three. They miss the cut because their first move is already late. They land soft, get bumped off, and lose the rebound. <span class="gold">The scoreboard tells the story — but the brake fails first.</span></p>
 </div>
 </div></section>
 
-<!-- ══════ 6 DRILLS ══════ -->
+<!-- ══════ THE COGNITIVE LAYER ══════ -->
+<section class="cog-section"><div class="wrap text-center">
+<div class="section-pill gold" data-en="03 / BPM · The Cognitive Layer" data-es="03 / BPM · La Capa Cognitiva">03 / BPM · The Cognitive Layer</div>
+<h2 class="section-title" data-en="Every brake lands on a <span class='gold'>beat.</span>" data-es="Cada freno aterriza en un <span class='gold'>beat.</span>">Every brake lands on a <span class="gold">beat.</span></h2>
+<div class="cog-body">
+<p data-en="The beat is the cognitive moment the player commits to decelerate — reading the defender's weight shift, the shooter's catch, the ball-handler's hip, the shot arc. <strong>The beat precedes the brake.</strong> The beat is cognitive. The brake is physical." data-es="El beat es el momento cognitivo en que el jugador se compromete a desacelerar — leyendo el cambio de peso del defensor, la recepción del tirador, la cadera del base, el arco del tiro. <strong>El beat precede al freno.</strong> El beat es cognitivo. El freno es físico.">The beat is the cognitive moment the player commits to decelerate — reading the defender's weight shift, the shooter's catch, the ball-handler's hip, the shot arc. <strong>The beat precedes the brake.</strong> The beat is cognitive. The brake is physical.</p>
+<p data-en="BPM measures beats. Beats per minute — how many correct-beat brake reads the player produces at game tempo. <strong>Fast beats, sharp brakes. Slow beats, late brakes. Missed beats, no brake.</strong>" data-es="BPM mide beats. Beats por minuto — cuántas lecturas de freno en el beat correcto produce el jugador a tempo de juego. <strong>Beats rápidos, frenos filosos. Beats lentos, frenos tarde. Beats perdidos, sin freno.</strong>">BPM measures beats. Beats per minute — how many correct-beat brake reads the player produces at game tempo. <strong>Fast beats, sharp brakes. Slow beats, late brakes. Missed beats, no brake.</strong></p>
+<div class="cog-stats">
+<div class="cog-stat"><div class="cog-stat-num">6</div><div class="cog-stat-label" data-en="Drills" data-es="Drills">Drills</div></div>
+<div class="cog-stat"><div class="cog-stat-num">3</div><div class="cog-stat-label" data-en="Tempos" data-es="Tempos">Tempos</div></div>
+<div class="cog-stat"><div class="cog-stat-num">10</div><div class="cog-stat-label" data-en="Levels" data-es="Niveles">Levels</div></div>
+<div class="cog-stat"><div class="cog-stat-num">1</div><div class="cog-stat-label" data-en="Brake" data-es="Brake">Brake</div></div>
+</div>
+</div>
+</div></section>
+
+<!-- ══════ THE SIX DRILLS ══════ -->
 <section class="drills-section"><div class="wrap text-center">
-<div class="section-pill purple" data-en="6 Cognitive Drills · 3 BPM Speeds" data-es="6 Drills Cognitivos · 3 Velocidades BPM">6 Cognitive Drills · 3 BPM Speeds</div>
-<h2 class="section-title" data-en="The Data Behind Your Report" data-es="Los Datos Detrás de Tu Reporte">The Data Behind Your Report</h2>
-<p class="section-sub" data-en="Each drill measures a different cognitive function at 60, 90, or 120 BPM. Your level AND your BPM speed feed the AI to generate your personalized report. Create your free profile. Play the drills. Go premium. Generate your report. Share it with the world." data-es="Cada drill mide una función cognitiva diferente a 60, 90 o 120 BPM. Tu nivel Y tu velocidad BPM alimentan la IA para generar tu reporte personalizado. Crea tu perfil gratis. Juega los drills. Hazte Premium. Genera tu reporte. Compártelo con el mundo.">Each drill measures a different cognitive function at 60, 90, or 120 BPM. Your level AND your BPM speed feed the AI to generate your personalized report. Create your free profile. Play the drills. Go premium. Generate your report. Share it with the world.</p>
-<div class="drills-mini">
-<a href="/the-react.html" class="cog-mini r reveal"><div class="cog-mini-emoji">🟣</div><div class="cog-mini-name">REACT</div></a>
-<a href="/the-recall.html" class="cog-mini rc reveal"><div class="cog-mini-emoji">🟠</div><div class="cog-mini-name">RECALL</div></a>
-<a href="/the-reflex.html" class="cog-mini rf reveal"><div class="cog-mini-emoji">🔵</div><div class="cog-mini-name">REFLEX</div></a>
-<a href="/the-replay.html" class="cog-mini rp reveal"><div class="cog-mini-emoji">🟢</div><div class="cog-mini-name">REPLAY</div></a>
-<a href="/the-ritmo.html" class="cog-mini rt reveal"><div class="cog-mini-emoji">🟡</div><div class="cog-mini-name">RITMO</div></a>
-<a href="/the-beat.html" class="cog-mini bt reveal"><div class="cog-mini-emoji">🏀</div><div class="cog-mini-name">BEAT</div></a>
+<div class="section-pill purple" data-en="04 / Six Drills · Three Tempos" data-es="04 / Seis Drills · Tres Tempos">04 / Six Drills · Three Tempos</div>
+<h2 class="section-title" data-en="The cognitive brake, <span class='gold'>measured.</span>" data-es="El freno cognitivo, <span class='gold'>medido.</span>">The cognitive brake, <span class="gold">measured.</span></h2>
+<p class="section-sub" data-en="Each drill measures a specific cognitive input to basketball braking. 60, 90, or 120 BPM. Level feeds The Brake — your cognitive braking profile." data-es="Cada drill mide un input cognitivo específico del frenado en baloncesto. 60, 90 o 120 BPM. El nivel alimenta The Brake — tu perfil cognitivo de frenado.">Each drill measures a specific cognitive input to basketball braking. 60, 90, or 120 BPM. Level feeds The Brake — your cognitive braking profile.</p>
+<div class="drills-grid">
+<a href="/the-react.html" class="drill-card r reveal">
+<div class="drill-card-top"><span class="drill-emoji">🟣</span><span class="drill-name">REACT</span></div>
+<div class="drill-claim" data-en="The single-beat brake read." data-es="La lectura del freno en un solo beat.">The single-beat brake read.</div>
+</a>
+<a href="/the-recall.html" class="drill-card rc reveal">
+<div class="drill-card-top"><span class="drill-emoji">🟠</span><span class="drill-name">RECALL</span></div>
+<div class="drill-claim" data-en="The possession-long brake memory." data-es="La memoria de freno de toda la posesión.">The possession-long brake memory.</div>
+</a>
+<a href="/the-reflex.html" class="drill-card rf reveal">
+<div class="drill-card-top"><span class="drill-emoji">🔵</span><span class="drill-name">REFLEX</span></div>
+<div class="drill-claim" data-en="The multi-element brake read." data-es="La lectura multi-elemento del freno.">The multi-element brake read.</div>
+</a>
+<a href="/the-replay.html" class="drill-card rp reveal">
+<div class="drill-card-top"><span class="drill-emoji">🟢</span><span class="drill-name">REPLAY</span><span class="drill-tag">Premium</span></div>
+<div class="drill-claim" data-en="Sequential brake execution." data-es="Ejecución secuencial del freno.">Sequential brake execution.</div>
+</a>
+<a href="/the-ritmo.html" class="drill-card rt reveal">
+<div class="drill-card-top"><span class="drill-emoji">🟡</span><span class="drill-name">RITMO</span><span class="drill-tag">Premium</span></div>
+<div class="drill-claim" data-en="Mid-brake change detection." data-es="Detección de cambio en medio del freno.">Mid-brake change detection.</div>
+</a>
+<a href="/the-beat.html" class="drill-card bt reveal">
+<div class="drill-card-top"><span class="drill-emoji">🏀</span><span class="drill-name">BEAT</span><span class="drill-tag">Premium</span></div>
+<div class="drill-claim" data-en="Braking on rhythm." data-es="Frenado en ritmo.">Braking on rhythm.</div>
+</a>
 </div>
-<a href="/cognitive-hoops.html" class="btn-gold" style="animation:none" data-en="Start Training — Create Your Profile" data-es="Empieza a Entrenar — Crea Tu Perfil">Start Training — Create Your Profile</a>
+<a href="/join.html" class="btn-gold" style="animation:none" data-en="Start Training — Free" data-es="Empieza a Entrenar — Gratis">Start Training — Free</a>
 </div></section>
 
-<!-- ══════ QUOTE ══════ -->
-<div class="quote-section"><div class="quote">
-<div class="quote-text" data-en="&quot;A player averaging 8 PPG with <span class='gold'>Elite Basketball WMI: Winning Mindset Index</span> is more valuable than a 20 PPG scorer who can't read a defense.&quot;" data-es="&quot;Un jugador promediando 8 PPG con <span class='gold'>WMI Elite: Índice de Mentalidad Ganadora</span> es más valioso que uno de 20 PPG que no puede leer una defensa.&quot;">"A player averaging 8 PPG with <span class="gold">Elite Basketball WMI: Winning Mindset Index</span> is more valuable than a 20 PPG scorer who can't read a defense."</div>
-<div class="quote-attr" data-en="— The insight every scout knows but no platform measured. Until now." data-es="— Lo que todo scout sabe pero ninguna plataforma medía. Hasta ahora.">— The insight every scout knows but no platform measured. Until now.</div>
+<!-- ══════ THE BRAKE ══════ -->
+<section class="brake-section" id="the-brake"><div class="wrap text-center">
+<div class="section-pill gold" data-en="05 / The Brake" data-es="05 / The Brake">05 / The Brake</div>
+<h2 class="section-title" data-en="What BPM <span class='gold'>produces.</span>" data-es="Lo que BPM <span class='gold'>produce.</span>">What BPM <span class="gold">produces.</span></h2>
+<div class="brake-body">
+<p data-en="<strong>The Brake</strong> is the cognitive braking profile BPM generates from your six drill scores across the three tempos. AI-generated. Personalized to your position, scores, and tempo." data-es="<strong>The Brake</strong> es el perfil cognitivo de frenado que BPM genera desde tus seis puntajes de drills a través de los tres tempos. Generado por IA. Personalizado a tu posición, puntajes y tempo.">The Brake is the cognitive braking profile BPM generates from your six drill scores across the three tempos. AI-generated. Personalized to your position, scores, and tempo.</p>
+<p data-en="Composite level. Six components. On-court applications. Development priorities. <strong>Not a scouting grade. A measurement.</strong> Shareable with any coach, trainer, or program." data-es="Nivel compuesto. Seis componentes. Aplicaciones en cancha. Prioridades de desarrollo. <strong>No es una calificación de scouting. Es una medición.</strong> Compartible con cualquier coach, entrenador o programa.">Composite level. Six components. On-court applications. Development priorities. <strong>Not a scouting grade. A measurement.</strong> Shareable with any coach, trainer, or program.</p>
+</div>
+<div class="hero-btns" style="animation:none">
+<a href="/preview-premium.html" class="btn-gold" style="animation:none" data-en="See a Sample Brake" data-es="Ver The Brake de Ejemplo">See a Sample Brake</a>
+<a href="/join.html" class="btn-outline" data-en="Generate Your Brake" data-es="Genera Tu Brake">Generate Your Brake</a>
+</div>
+</div></section>
+
+<!-- ══════ REACTION LIGHTS — ON-COURT COGNITIVE BRAKE ══════ -->
+<section class="lights-section"><div class="wrap">
+<div class="text-center" style="margin-bottom:50px">
+<div class="section-pill cyan" data-en="06 / On-Court Cognitive Brake" data-es="06 / Freno Cognitivo en Cancha">06 / On-Court Cognitive Brake</div>
+<h2 class="section-title" data-en="Same training. <span class='gold'>Different environment.</span>" data-es="Mismo entrenamiento. <span class='gold'>Diferente entorno.</span>">Same training. <span class="gold">Different environment.</span></h2>
+</div>
+<div class="lights-grid">
+<div class="lights-image">
+<img src="/reaction-lights.png" alt="Wheeler Reaction Lights" onerror="this.src='https://www.wheelersportstech.com/wp-content/uploads/2021/11/Wheeler-Lights-4.png'">
+</div>
+<div class="lights-content">
+<p class="lights-desc" data-en="BPM trains the cognitive brake <strong>at home, on any phone.</strong> Reaction Lights train the same cognitive layer <strong>on the court</strong> — lit cues, physical movement, reactive reads. The light arrives, the player reads it, brakes toward it, redirects. Same cognitive brake. Different environment." data-es="BPM entrena el freno cognitivo <strong>en casa, en cualquier teléfono.</strong> Las Reaction Lights entrenan la misma capa cognitiva <strong>en la cancha</strong> — señales luminosas, movimiento físico, lecturas reactivas. La luz llega, el jugador la lee, frena hacia ella, redirige. Mismo freno cognitivo. Diferente entorno.">BPM trains the cognitive brake <strong>at home, on any phone.</strong> Reaction Lights train the same cognitive layer <strong>on the court</strong> — lit cues, physical movement, reactive reads. The light arrives, the player reads it, brakes toward it, redirects. Same cognitive brake. Different environment.</p>
+<div class="lights-product">
+<div class="lights-product-name">Wheeler Reaction Lights</div>
+<div class="lights-product-specs" data-en="Six wireless LED units · Bluetooth app (iOS &amp; Android) · 115-foot range · Magnetic mounting · Ergonomic carrying case" data-es="Seis unidades LED inalámbricas · App Bluetooth (iOS y Android) · Rango de 115 pies · Montaje magnético · Estuche ergonómico">Six wireless LED units · Bluetooth app (iOS & Android) · 115-foot range · Magnetic mounting · Ergonomic carrying case</div>
+<div class="lights-product-price">$580</div>
+<a href="#order-reaction-lights" class="lights-btn" data-en="Order Now" data-es="Ordenar Ahora">Order Now</a>
+</div>
+</div>
+</div>
+</div></section>
+
+<!-- ══════ THE RULE ══════ -->
+<div class="rule-section"><div class="rule">
+<div class="rule-text" data-en="<span class='line'>Every brake lands on a <span class='gold'>beat.</span></span><span class='line'>Every beat is a <span class='gold'>read.</span></span><span class='line'>Never train output without respecting <span class='gold'>control.</span></span>" data-es="<span class='line'>Cada freno aterriza en un <span class='gold'>beat.</span></span><span class='line'>Cada beat es una <span class='gold'>lectura.</span></span><span class='line'>Nunca entrenes output sin respetar el <span class='gold'>control.</span></span>"><span class="line">Every brake lands on a <span class="gold">beat.</span></span><span class="line">Every beat is a <span class="gold">read.</span></span><span class="line">Never train output without respecting <span class="gold">control.</span></span></div>
+<div class="rule-attr" data-en="— Operating Doctrine · BPM Basketball" data-es="— Doctrina Operativa · BPM Basketball">— Operating Doctrine · BPM Basketball</div>
 </div></div>
 
 <!-- ══════ POWERED ══════ -->
