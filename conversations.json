@@ -1,0 +1,858 @@
+{
+  "_meta": {
+    "version": "1.0.0",
+    "platform": "BPM Basketball",
+    "owner": "GoStar Digital LLC",
+    "last_updated": "2026-04-19",
+    "languages": ["en", "es"],
+    "total_topics": 29,
+    "total_categories": 6,
+    "note_to_developers": "This is the single source of truth for The Braking Conversations. Consumable by the chat widget (bpm-chat.js) and the Conversations page (conversation.html). Keep welcome and voice consistent across all topics. When editing, preserve the coach voice: declarative, basketball-native, no hedging, ends with momentum toward a CTA."
+  },
+
+  "welcome": {
+    "en": {
+      "hero_line": "Basketball is a braking sport.",
+      "body": "Every closeout beaten, every corner three given up, every rebound lost on the second jump — the brake failed first. Not the legs. Not the effort. The cognitive layer that controls *when* the brake commits. That's what BPM measures. Beats per minute — how many brake reads you land on time at game tempo. Nobody else is measuring this. We built the first platform that does. Below are 29 conversations. The six drills. The Brake report. The three-layer system. The physical brake nobody talks about. Tap any topic and I'll take you through it.",
+      "invitation": "Ask me anything."
+    },
+    "es": {
+      "hero_line": "El baloncesto es un deporte de frenado.",
+      "body": "Cada closeout superado, cada triple desde la esquina regalado, cada rebote perdido en el segundo salto — el freno falló primero. No las piernas. No el esfuerzo. La capa cognitiva que controla *cuándo* se compromete el freno. Eso es lo que BPM mide. Beats por minuto — cuántas lecturas de freno aterrizas a tiempo a tempo de juego. Nadie más está midiendo esto. Nosotros construimos la primera plataforma que lo hace. Abajo hay 29 conversaciones. Los seis drills. El reporte Brake. El sistema de tres capas. El freno físico del que nadie habla. Toca cualquier tema y te llevo a través de él.",
+      "invitation": "Pregúntame lo que sea."
+    }
+  },
+
+  "categories": [
+    {
+      "id": "basics",
+      "order": 1,
+      "title_en": "BASICS",
+      "title_es": "BÁSICOS",
+      "description_en": "What BPM is, what it means, who it's for.",
+      "description_es": "Qué es BPM, qué significa, para quién es.",
+      "topic_ids": ["what-is-bpm", "what-does-bpm-stand-for", "why-braking-sport", "who-is-bpm-for"]
+    },
+    {
+      "id": "thesis",
+      "order": 2,
+      "title_en": "THE THESIS",
+      "title_es": "LA TESIS",
+      "description_en": "Why the brake is the decisive trait — and why nobody has been measuring it.",
+      "description_es": "Por qué el freno es el rasgo decisivo — y por qué nadie lo ha estado midiendo.",
+      "topic_ids": ["why-players-brake-late", "reaction-vs-brake-read", "what-is-a-beat", "why-three-tempos"]
+    },
+    {
+      "id": "drills",
+      "order": 3,
+      "title_en": "THE SIX DRILLS",
+      "title_es": "LOS SEIS DRILLS",
+      "description_en": "Each drill, what it measures, and how it maps to on-court braking.",
+      "description_es": "Cada drill, qué mide, y cómo se traduce al frenado en cancha.",
+      "topic_ids": ["the-six-drills", "the-react", "the-recall", "the-reflex", "replay-ritmo-beat", "the-ten-levels"]
+    },
+    {
+      "id": "the-brake",
+      "order": 4,
+      "title_en": "THE BRAKE",
+      "title_es": "THE BRAKE",
+      "description_en": "The report. What it measures, what it doesn't, and how to use it.",
+      "description_es": "El reporte. Qué mide, qué no mide, y cómo usarlo.",
+      "topic_ids": ["what-is-the-brake", "what-brake-measures-and-doesnt", "brake-varsity-recruiting", "share-brake-with-coach", "regenerate-brake"]
+    },
+    {
+      "id": "reaction-lights",
+      "order": 5,
+      "title_en": "REACTION LIGHTS",
+      "title_es": "REACTION LIGHTS",
+      "description_en": "The on-court cognitive brake. What the lights are, when you need them.",
+      "description_es": "El freno cognitivo en cancha. Qué son las luces, cuándo las necesitas.",
+      "topic_ids": ["what-are-reaction-lights", "do-i-need-reaction-lights", "bpm-vs-reaction-lights"]
+    },
+    {
+      "id": "programs-coaches",
+      "order": 6,
+      "title_en": "PROGRAMS, COACHES & THE PHYSICAL BRAKE",
+      "title_es": "PROGRAMAS, COACHES Y EL FRENO FÍSICO",
+      "description_en": "Coach deployment, Programs pricing, and the physical brake layer (YoYo, isoinertial).",
+      "description_es": "Despliegue para coaches, precios de Programas, y la capa del freno físico (YoYo, isoinercial).",
+      "topic_ids": ["coach-deploy-bpm", "individual-vs-programs-pricing", "physical-brake-layer", "who-is-the-expert", "bpm-with-existing-strength-program", "free-vs-premium", "premium-pricing"]
+    }
+  ],
+
+  "topics": {
+
+    "what-is-bpm": {
+      "category": "basics",
+      "order": 1,
+      "card": {
+        "title_en": "What is BPM Basketball?",
+        "title_es": "¿Qué es BPM Basketball?",
+        "teaser_en": "The measurement platform for the sport's decisive trait",
+        "teaser_es": "La plataforma de medición del rasgo decisivo del deporte"
+      },
+      "headline_en": "What is BPM Basketball?",
+      "headline_es": "¿Qué es BPM Basketball?",
+      "body_en": "BPM Basketball is the first platform built to measure the cognitive layer of basketball braking. That's the short version. Now let me unpack it.\n\nEvery play in basketball ends in a brake. The defender reads the pass and closes out — that's a brake. The ball-handler reads the drop and pulls up — that's a brake. The cutter reads the pass and stops into the catch — that's a brake. Every possession is a chain of brakes, and every brake lands on a beat — the cognitive moment the player commits to decelerate.\n\nWhat BPM does is measure how many of those brake reads a player lands on time, at three tempos — 60 BPM for training, 90 BPM for game speed, 120 BPM for elite speed. Six drills measure six different components of the cognitive brake. The output is a profile we call The Brake — composite level, six components, on-court applications, development priorities.\n\nThat's the product. But here's why it matters. Nobody has been measuring this. Physical training measures jumps and sprints. Skill training measures shooting and handling. Basketball IQ assessments measure play recognition. None of them measure the moment-to-moment cognitive brake that decides whether a defender arrives on time or half a beat late. That half-beat is the whole game. BPM is the first thing that puts a number on it.",
+      "body_es": "BPM Basketball es la primera plataforma construida para medir la capa cognitiva del frenado en baloncesto. Esa es la versión corta. Ahora déjame desglosarla.\n\nCada jugada en baloncesto termina en un freno. El defensor lee el pase y hace closeout — eso es un freno. El base lee el drop y hace pullup — eso es un freno. El cutter lee el pase y para en la recepción — eso es un freno. Cada posesión es una cadena de frenos, y cada freno aterriza en un beat — el momento cognitivo en que el jugador se compromete a desacelerar.\n\nLo que BPM hace es medir cuántas de esas lecturas de freno aterriza un jugador a tiempo, en tres tempos — 60 BPM para entrenamiento, 90 BPM para velocidad de juego, 120 BPM para velocidad elite. Seis drills miden seis componentes diferentes del freno cognitivo. El output es un perfil que llamamos The Brake — nivel compuesto, seis componentes, aplicaciones en cancha, prioridades de desarrollo.\n\nEse es el producto. Pero aquí está por qué importa. Nadie ha estado midiendo esto. El entrenamiento físico mide saltos y sprints. El entrenamiento de habilidad mide tiro y manejo. Las evaluaciones de IQ de baloncesto miden reconocimiento de jugadas. Ninguno mide el freno cognitivo momento-a-momento que decide si un defensor llega a tiempo o medio beat tarde. Ese medio beat es el juego completo. BPM es lo primero que le pone un número.",
+      "cta_primary": {
+        "label_en": "Run your first drill — free",
+        "label_es": "Corre tu primer drill — gratis",
+        "url": "/join.html"
+      },
+      "cta_secondary": {
+        "label_en": "See a sample Brake",
+        "label_es": "Ver un Brake de ejemplo",
+        "url": "/preview-premium.html"
+      },
+      "related": ["why-braking-sport", "what-does-bpm-stand-for", "who-is-bpm-for"]
+    },
+
+    "what-does-bpm-stand-for": {
+      "category": "basics",
+      "order": 2,
+      "card": {
+        "title_en": "What does \"BPM\" stand for?",
+        "title_es": "¿Qué significa \"BPM\"?",
+        "teaser_en": "Beats Per Minute — and what a beat actually is",
+        "teaser_es": "Beats Per Minute — y qué es realmente un beat"
+      },
+      "headline_en": "What does BPM stand for?",
+      "headline_es": "¿Qué significa BPM?",
+      "body_en": "BPM stands for Beats Per Minute. In music, the beat is the timing structure the song is built on. In basketball braking, the beat is the cognitive moment the player commits to decelerate.\n\nThink about it on the court. The defender is in a drop on a pick-and-roll. The ball-handler comes off the screen. There's a specific instant — before any muscle fires, before any weight shifts — when the defender's brain decides: brake now, stay in front of the ball-handler, read the pullup. That instant is the beat. Everything that happens physically after it is a consequence of where that beat landed.\n\nFast beat, sharp brake. The defender decides early, the body follows on time, the brake lands clean. Slow beat, late brake. The body catches up but the possession is already past. Missed beat, no brake. The defender didn't commit at all, and the shooter is open.\n\nSo BPM measures how many correct-beat brake reads a player produces per minute, at game tempo. That's the unit. The name of the platform is the thing it measures. We're not a cognitive training app with a catchy music name. We're literally counting beats. Beats per minute.",
+      "body_es": "BPM significa Beats Per Minute. En música, el beat es la estructura de tiempo sobre la que está construida la canción. En el frenado del baloncesto, el beat es el momento cognitivo en que el jugador se compromete a desacelerar.\n\nPiénsalo en la cancha. El defensor está en drop en un pick-and-roll. El base sale del bloqueo. Hay un instante específico — antes de que cualquier músculo dispare, antes de que cualquier peso cambie — cuando el cerebro del defensor decide: frena ahora, quédate frente al base, lee el pullup. Ese instante es el beat. Todo lo que pasa físicamente después es consecuencia de dónde aterrizó ese beat.\n\nBeat rápido, freno filoso. El defensor decide temprano, el cuerpo sigue a tiempo, el freno aterriza limpio. Beat lento, freno tarde. El cuerpo alcanza pero la posesión ya pasó. Beat perdido, sin freno. El defensor no se comprometió para nada, y el tirador está abierto.\n\nEntonces BPM mide cuántas lecturas de freno en el beat correcto produce un jugador por minuto, a tempo de juego. Esa es la unidad. El nombre de la plataforma es la cosa que mide. No somos una app de entrenamiento cognitivo con un nombre musical pegajoso. Literalmente estamos contando beats. Beats por minuto.",
+      "cta_primary": {
+        "label_en": "Feel the beat — try The React free",
+        "label_es": "Siente el beat — prueba The React gratis",
+        "url": "/the-react.html"
+      },
+      "cta_secondary": {
+        "label_en": "Join BPM free",
+        "label_es": "Únete a BPM gratis",
+        "url": "/join.html"
+      },
+      "related": ["what-is-a-beat", "why-braking-sport", "why-three-tempos"]
+    },
+
+    "why-braking-sport": {
+      "category": "basics",
+      "order": 3,
+      "card": {
+        "title_en": "Why does BPM say basketball is a braking sport?",
+        "title_es": "¿Por qué BPM dice que el baloncesto es un deporte de frenado?",
+        "teaser_en": "The stop — not the sprint — is where the game is decided",
+        "teaser_es": "La parada — no el sprint — es donde se decide el juego"
+      },
+      "headline_en": "Why basketball is a braking sport.",
+      "headline_es": "Por qué el baloncesto es un deporte de frenado.",
+      "body_en": "Here's the test. Pull up film from any game. Find five possessions where the defense gave up an open shot. Watch each one.\n\nIn all five, the problem is the same. Somebody couldn't stop. The defender sprinted to the closeout and flew past. The wing tracked the ball-handler and couldn't redirect. The big dropped on the pick-and-roll and got caught flat-footed on the pop. Five different plays, five different players, one identical failure — they arrived at the spot with too much momentum to stop clean.\n\nThat's the game. The hard closeout, the hesi pullback, the drop step, the rebound landing, the second jump — every one of them is a force-absorption event before it's a force-production event. The sprint gets you there. The brake wins the possession. If you can't brake, it doesn't matter how fast you got to the spot.\n\nBasketball coaches have always known this. Watch a good coach on the sideline. They don't yell 'run faster.' They yell 'stay down,' 'stop,' 'don't fly by.' They're coaching the brake. They've just never had a word for the thing they're coaching.\n\nThe brake is the word. Braking is cognitive, reactive, and physical — three layers. BPM measures the cognitive layer. Reaction Lights train the reactive layer. Isoinertial flywheel protocols train the physical layer. Three layers, one brake. That's the whole system. And it starts from the same diagnosis: the stop is where the game is decided.",
+      "body_es": "Aquí está la prueba. Saca film de cualquier juego. Encuentra cinco posesiones donde la defensa regaló un tiro abierto. Mira cada una.\n\nEn las cinco, el problema es el mismo. Alguien no pudo parar. El defensor corrió al closeout y voló. El wing siguió al base y no pudo redirigir. El big hizo drop en el pick-and-roll y quedó plantado en el pop. Cinco jugadas diferentes, cinco jugadores diferentes, una falla idéntica — llegaron al lugar con demasiado momentum para parar limpio.\n\nEse es el juego. El closeout fuerte, la hesitación, el drop step, el aterrizaje del rebote, el segundo salto — cada uno de ellos es un evento de absorción de fuerza antes de ser un evento de producción de fuerza. El sprint te lleva ahí. El freno gana la posesión. Si no puedes frenar, no importa qué tan rápido llegaste al lugar.\n\nLos coaches de baloncesto siempre lo han sabido. Mira a un buen coach en la banda. No grita 'corre más rápido.' Grita 'manténte abajo,' 'para,' 'no vueles.' Están coacheando el freno. Solo nunca tuvieron una palabra para la cosa que están coacheando.\n\nEl freno es la palabra. El frenado es cognitivo, reactivo, y físico — tres capas. BPM mide la capa cognitiva. Las Reaction Lights entrenan la capa reactiva. Los protocolos isoinerciales de volante entrenan la capa física. Tres capas, un freno. Ese es el sistema completo. Y empieza desde el mismo diagnóstico: la parada es donde se decide el juego.",
+      "cta_primary": {
+        "label_en": "See the three-layer system",
+        "label_es": "Ve el sistema de tres capas",
+        "url": "/programs.html"
+      },
+      "cta_secondary": {
+        "label_en": "Join free — start measuring yours",
+        "label_es": "Únete gratis — empieza a medir el tuyo",
+        "url": "/join.html"
+      },
+      "related": ["why-players-brake-late", "what-is-bpm", "physical-brake-layer"]
+    },
+
+    "who-is-bpm-for": {
+      "category": "basics",
+      "order": 4,
+      "card": {
+        "title_en": "Who is BPM Basketball for?",
+        "title_es": "¿Para quién es BPM Basketball?",
+        "teaser_en": "Players, coaches, programs — and what we're not",
+        "teaser_es": "Jugadores, coaches, programas — y lo que no somos"
+      },
+      "headline_en": "Who is BPM Basketball for?",
+      "headline_es": "¿Para quién es BPM Basketball?",
+      "body_en": "Three audiences, in this order.\n\nPlayers first. If you play basketball at any level — youth, high school, college, adult rec, pro — and you want to measure and improve how your brain reads the game at game tempo, BPM is for you. Free tier gets you three drills. Premium gets you all six plus The Brake report. Works on any phone with a browser. No equipment, no appointment, no coach required.\n\nCoaches second. If you coach a team and you've watched your players give up open shots because they couldn't brake on time — which is every coach — BPM gives you a measurement layer that your players can train on at home and you can read as a roster profile. Programs access unlocks coach-level views of every player on your roster. The Brake becomes a coaching input, not just a player output.\n\nPrograms third. High school programs, college programs, AAU organizations, training facilities, strength-and-conditioning staffs. Programs that want the full three-layer brake system — cognitive (BPM), reactive (Reaction Lights), physical (isoinertial protocols) — work with us through Programs. The measurement is the anchor; the products deploy from there.\n\nHere's who we're not for. BPM is not a replacement for basketball skill training. It doesn't teach shooting, handling, or defensive technique. It's not a scouting service — we don't grade players as athletes or predict recruiting outcomes. It's not a general 'brain training' app — we measure one specific thing, cognitive braking, because that's the thing nobody else measures. If you want to be a better shooter, BPM isn't for you. If you want to brake on time, it is.",
+      "body_es": "Tres audiencias, en este orden.\n\nJugadores primero. Si juegas baloncesto a cualquier nivel — juvenil, escuela secundaria, universidad, recreacional adulto, profesional — y quieres medir y mejorar cómo tu cerebro lee el juego a tempo de juego, BPM es para ti. El nivel gratis te da tres drills. Premium te da los seis más el reporte The Brake. Funciona en cualquier teléfono con navegador. Sin equipo, sin cita, sin coach requerido.\n\nCoaches segundo. Si coacheas un equipo y has visto a tus jugadores regalar tiros abiertos porque no pudieron frenar a tiempo — que es cada coach — BPM te da una capa de medición sobre la que tus jugadores pueden entrenar en casa y tú puedes leer como un perfil de roster. El acceso de Programas desbloquea vistas a nivel de coach de cada jugador en tu roster. The Brake se convierte en un input de coaching, no solo en un output del jugador.\n\nProgramas tercero. Programas de escuela secundaria, programas universitarios, organizaciones AAU, instalaciones de entrenamiento, staffs de fuerza y acondicionamiento. Los programas que quieren el sistema completo de freno de tres capas — cognitivo (BPM), reactivo (Reaction Lights), físico (protocolos isoinerciales) — trabajan con nosotros a través de Programas. La medición es el ancla; los productos se despliegan desde ahí.\n\nAquí está para quién no somos. BPM no es un reemplazo del entrenamiento de habilidad de baloncesto. No enseña tiro, manejo, o técnica defensiva. No es un servicio de scouting — no calificamos a jugadores como atletas ni predecimos resultados de reclutamiento. No es una app general de 'entrenamiento cerebral' — medimos una cosa específica, el frenado cognitivo, porque es la cosa que nadie más mide. Si quieres ser mejor tirador, BPM no es para ti. Si quieres frenar a tiempo, sí.",
+      "cta_primary": {
+        "label_en": "Start free as a player",
+        "label_es": "Empieza gratis como jugador",
+        "url": "/join.html"
+      },
+      "cta_secondary": {
+        "label_en": "I coach a team — show me Programs",
+        "label_es": "Coacheo un equipo — muéstrame Programas",
+        "url": "/programs.html"
+      },
+      "related": ["what-is-bpm", "coach-deploy-bpm", "brake-varsity-recruiting"]
+    },
+
+    "why-players-brake-late": {
+      "category": "thesis",
+      "order": 1,
+      "card": {
+        "title_en": "Why do most players brake late?",
+        "title_es": "¿Por qué la mayoría de jugadores frenan tarde?",
+        "teaser_en": "The defender flies past the closeout. Same problem, every time.",
+        "teaser_es": "El defensor vuela más allá del closeout. Mismo problema, cada vez."
+      },
+      "headline_en": "Why do most players brake late?",
+      "headline_es": "¿Por qué la mayoría de jugadores frenan tarde?",
+      "body_en": "Pull up film from any game this weekend. High school, college, NBA — doesn't matter. Find a possession where the defense gave up an open shot. Not a broken play. A clean possession where someone got open.\n\nWatch the defender on the play. Nine times out of ten, you'll see the same thing. They read the play. They moved. They got to the right general area. And they arrived half a beat too late.\n\nThat's late braking. And it's everywhere.\n\nCloseout on a kickout — defender reads the pass, sprints to the shooter, can't stop in time, flies past. Open corner three. Pick-and-roll — defender reads the screen coming, drops back to protect the rim, doesn't decelerate clean on the pop, open mid-range. Weakside cut — defender tracks the ball, reads the cutter a tick late, can't brake into a passing lane, backdoor layup.\n\nThree different plays. Three different positions. Same failure. The brake landed late.\n\nHere's what people get wrong about this. They watch the failure and say 'he was out of position' or 'he wasn't paying attention.' Sometimes true. Most of the time, the defender was in position and was paying attention. Their brain made the right read. Their body got moving in the right direction. But the cognitive moment of commitment — the beat before the brake — was a fraction too late, and in basketball a fraction is the whole possession.\n\nThat's the gap. The read arrives on time. The body moves on time. The brake doesn't land on time. Every player you've ever coached who 'can't stay in front of the ball' or 'gets hunted on defense' or 'leaves shooters open' — they're not unfit and they're not lazy. They're braking late.\n\nWhich is a cognitive problem. Not a physical one. You can't fix late braking with more sprints. You fix it by training the cognitive layer that controls when the brake commits.\n\nThat's what BPM measures. And it's measurable at three tempos, because the real test is whether you still brake on time when the game speeds up.",
+      "body_es": "Saca film de cualquier juego este fin de semana. Escuela secundaria, universidad, NBA — no importa. Encuentra una posesión donde la defensa regaló un tiro abierto. No una jugada rota. Una posesión limpia donde alguien se abrió.\n\nMira al defensor en la jugada. Nueve de diez veces, verás lo mismo. Leyó la jugada. Se movió. Llegó al área correcta en general. Y llegó medio beat tarde.\n\nEso es frenar tarde. Y está en todos lados.\n\nCloseout en un pase al perímetro — defensor lee el pase, corre al tirador, no puede parar a tiempo, vuela. Triple abierto desde la esquina. Pick-and-roll — defensor lee el bloqueo que viene, hace drop para proteger el aro, no desacelera limpio en el pop, tiro de media distancia abierto. Corte del lado débil — defensor sigue la bola, lee al cutter un tick tarde, no puede frenar al carril de pase, bandeja por detrás.\n\nTres jugadas diferentes. Tres posiciones diferentes. Misma falla. El freno aterrizó tarde.\n\nAquí está lo que la gente se equivoca sobre esto. Miran la falla y dicen 'estaba fuera de posición' o 'no estaba prestando atención.' A veces cierto. La mayoría del tiempo, el defensor estaba en posición y estaba prestando atención. Su cerebro hizo la lectura correcta. Su cuerpo se movió en la dirección correcta. Pero el momento cognitivo del compromiso — el beat antes del freno — fue una fracción tarde, y en baloncesto una fracción es la posesión completa.\n\nEsa es la brecha. La lectura llega a tiempo. El cuerpo se mueve a tiempo. El freno no aterriza a tiempo. Cada jugador que has coacheado que 'no puede quedarse frente a la bola' o 'es cazado en defensa' o 'deja tiradores abiertos' — no están fuera de forma y no son flojos. Están frenando tarde.\n\nLo cual es un problema cognitivo. No físico. No puedes arreglar el frenar tarde con más sprints. Lo arreglas entrenando la capa cognitiva que controla cuándo se compromete el freno.\n\nEso es lo que BPM mide. Y es medible en tres tempos, porque la prueba real es si todavía frenas a tiempo cuando el juego se acelera.",
+      "cta_primary": {
+        "label_en": "Measure your brake timing — run The React free",
+        "label_es": "Mide tu tiempo de frenado — corre The React gratis",
+        "url": "/the-react.html"
+      },
+      "cta_secondary": {
+        "label_en": "See a sample Brake report",
+        "label_es": "Ve un reporte Brake de ejemplo",
+        "url": "/preview-premium.html"
+      },
+      "related": ["why-braking-sport", "reaction-vs-brake-read", "what-is-a-beat"]
+    },
+
+    "reaction-vs-brake-read": {
+      "category": "thesis",
+      "order": 2,
+      "card": {
+        "title_en": "What's the difference between reaction time and a brake read?",
+        "title_es": "¿Cuál es la diferencia entre tiempo de reacción y una lectura de freno?",
+        "teaser_en": "Reaction is stimulus-response. A brake read is cue-decision-deceleration.",
+        "teaser_es": "La reacción es estímulo-respuesta. Una lectura de freno es señal-decisión-desaceleración."
+      },
+      "headline_en": "Reaction time isn't a brake read.",
+      "headline_es": "El tiempo de reacción no es una lectura de freno.",
+      "body_en": "This is the distinction that separates BPM from every 'reaction training' product on the market.\n\nReaction time is stimulus-response. The classic test: a light flashes, you press a button. Measured in milliseconds. Improves with practice. Tests motor response speed.\n\nA brake read is something different. A brake read is cue-decision-deceleration. The player sees a cue — the shooter's hands position on the catch, the ball-handler's hip angle, the screener's foot placement — interprets what that cue means for the play, decides whether and when to brake, and then executes the deceleration. Four steps, not two. And the measurable thing in basketball isn't how fast you press a button. It's whether your brake commitment lands on the correct beat of the play.\n\nHere's the practical difference. A player with great reaction time and no brake read is a player who can close out fast but still flies past the shooter. The body moves quickly. The decision to stop lands late. Speed without a read is just running the wrong direction faster.\n\nA player with average reaction time and a strong brake read is a player who reads the play early, commits to the brake before the body reaches full speed, and arrives at the spot already decelerated. Slower on paper. Faster in practice. The decision did the work, not the legs.\n\nReaction-time training makes fast bodies. Brake-read training makes basketball players. They're not the same thing. Most 'cognitive training' products measure reaction time because it's easy to measure. BPM measures brake reads because that's what the game runs on.",
+      "body_es": "Esta es la distinción que separa a BPM de cada producto de 'entrenamiento de reacción' en el mercado.\n\nEl tiempo de reacción es estímulo-respuesta. La prueba clásica: una luz destella, presionas un botón. Medido en milisegundos. Mejora con la práctica. Prueba la velocidad de respuesta motora.\n\nUna lectura de freno es algo diferente. Una lectura de freno es señal-decisión-desaceleración. El jugador ve una señal — la posición de las manos del tirador en la recepción, el ángulo de cadera del base, la colocación del pie del screener — interpreta qué significa esa señal para la jugada, decide si y cuándo frenar, y luego ejecuta la desaceleración. Cuatro pasos, no dos. Y la cosa medible en baloncesto no es qué tan rápido presionas un botón. Es si tu compromiso de freno aterriza en el beat correcto de la jugada.\n\nAquí está la diferencia práctica. Un jugador con gran tiempo de reacción y sin lectura de freno es un jugador que puede hacer closeout rápido pero todavía vuela más allá del tirador. El cuerpo se mueve rápido. La decisión de parar aterriza tarde. Velocidad sin una lectura es solo correr en la dirección equivocada más rápido.\n\nUn jugador con tiempo de reacción promedio y una lectura de freno fuerte es un jugador que lee la jugada temprano, se compromete al freno antes de que el cuerpo alcance velocidad completa, y llega al lugar ya desacelerado. Más lento en papel. Más rápido en la práctica. La decisión hizo el trabajo, no las piernas.\n\nEl entrenamiento de tiempo de reacción hace cuerpos rápidos. El entrenamiento de lectura de freno hace jugadores de baloncesto. No son la misma cosa. La mayoría de los productos de 'entrenamiento cognitivo' miden tiempo de reacción porque es fácil de medir. BPM mide lecturas de freno porque eso es sobre lo que corre el juego.",
+      "cta_primary": {
+        "label_en": "Test your brake reads — The React free",
+        "label_es": "Prueba tus lecturas de freno — The React gratis",
+        "url": "/the-react.html"
+      },
+      "cta_secondary": {
+        "label_en": "See all six drills",
+        "label_es": "Ve los seis drills",
+        "url": "/join.html"
+      },
+      "related": ["what-is-a-beat", "the-react", "why-players-brake-late"]
+    },
+
+    "what-is-a-beat": {
+      "category": "thesis",
+      "order": 3,
+      "card": {
+        "title_en": "What does \"beat\" actually mean?",
+        "title_es": "¿Qué significa realmente \"beat\"?",
+        "teaser_en": "The cognitive moment the player commits to decelerate",
+        "teaser_es": "El momento cognitivo en que el jugador se compromete a desacelerar"
+      },
+      "headline_en": "What does \"beat\" actually mean?",
+      "headline_es": "¿Qué significa realmente \"beat\"?",
+      "body_en": "The whole platform is named Beats Per Minute. So this word has to mean something specific. Let me nail it down.\n\nA beat is the cognitive moment the player commits to decelerate. Not the deceleration itself. Not the read that preceded it. The instant of commitment.\n\nHere's how to see it. Watch a defender in a stance. The ball-handler comes off a screen. For a fraction of a second, the defender is doing several things at once — tracking the handler's hip, watching the screener's roll, peripheral on the corner shooter, maintaining his own stance. None of those is a beat yet. The beat is the moment one of those cues resolves into 'I am going to brake now, on this line, to this spot.' That resolution is the beat. Everything before it is reading. Everything after it is executing.\n\nThe beat matters because it's measurable. You can watch film and identify exactly when a defender committed — it's visible in the weight shift, the change of hip angle, the first deceleration step. You can compare that moment to when they should have committed. The gap between those two is braking late.\n\nAnd because the beat is a discrete cognitive moment, you can train it. You can put a player in a drill where a cue arrives on a clock, and measure how close to the correct beat they land their commitment. Do that across three tempos — 60 BPM for training, 90 BPM for game speed, 120 BPM for elite — and you learn something specific about how this player's brain commits to brakes at different speeds.\n\nBeats per minute is literally that. How many correct-beat commitments can this player produce in a minute, at game tempo.",
+      "body_es": "La plataforma entera se llama Beats Per Minute. Entonces esta palabra tiene que significar algo específico. Déjame fijarla.\n\nUn beat es el momento cognitivo en que el jugador se compromete a desacelerar. No la desaceleración en sí. No la lectura que la precedió. El instante del compromiso.\n\nAquí está cómo verlo. Mira a un defensor en postura. El base sale de un bloqueo. Por una fracción de segundo, el defensor está haciendo varias cosas a la vez — rastreando la cadera del base, mirando el roll del screener, periférico en el tirador de la esquina, manteniendo su propia postura. Ninguna de esas es un beat todavía. El beat es el momento en que una de esas señales se resuelve en 'voy a frenar ahora, en esta línea, a este punto.' Esa resolución es el beat. Todo antes de eso es leer. Todo después es ejecutar.\n\nEl beat importa porque es medible. Puedes ver film e identificar exactamente cuándo un defensor se comprometió — es visible en el cambio de peso, el cambio de ángulo de cadera, el primer paso de desaceleración. Puedes comparar ese momento con cuándo debió haberse comprometido. La brecha entre esos dos es frenar tarde.\n\nY porque el beat es un momento cognitivo discreto, puedes entrenarlo. Puedes poner a un jugador en un drill donde una señal llega en un reloj, y medir qué tan cerca del beat correcto aterriza su compromiso. Haz eso en tres tempos — 60 BPM para entrenamiento, 90 BPM para velocidad de juego, 120 BPM para elite — y aprendes algo específico sobre cómo el cerebro de este jugador se compromete a frenos a diferentes velocidades.\n\nBeats por minuto es literalmente eso. Cuántos compromisos en el beat correcto puede producir este jugador en un minuto, a tempo de juego.",
+      "cta_primary": {
+        "label_en": "Train your beat — The Beat drill",
+        "label_es": "Entrena tu beat — el drill The Beat",
+        "url": "/the-beat.html"
+      },
+      "cta_secondary": {
+        "label_en": "Join BPM free",
+        "label_es": "Únete a BPM gratis",
+        "url": "/join.html"
+      },
+      "related": ["what-does-bpm-stand-for", "why-three-tempos", "the-react"]
+    },
+
+    "why-three-tempos": {
+      "category": "thesis",
+      "order": 4,
+      "card": {
+        "title_en": "Why does BPM use three tempos — 60, 90, 120 BPM?",
+        "title_es": "¿Por qué BPM usa tres tempos — 60, 90, 120 BPM?",
+        "teaser_en": "Cognitive braking degrades with tempo. Testing at three speeds reveals different capabilities.",
+        "teaser_es": "El frenado cognitivo se degrada con el tempo. Probar a tres velocidades revela capacidades diferentes."
+      },
+      "headline_en": "Why three tempos?",
+      "headline_es": "¿Por qué tres tempos?",
+      "body_en": "Because cognitive braking doesn't degrade evenly with speed. It breaks at a specific point for each player, and that breakpoint is diagnostic.\n\nEvery player can brake on time when the game is slow. Put a high-schooler in a walkthrough, their brake reads look fine. Put the same player in live 5-on-5 at game tempo, some of those reads disappear. Put them in a full-court transition scramble, more of them disappear. What you're watching isn't the player getting worse at basketball — you're watching their cognitive braking capacity hit the ceiling, and above that ceiling the reads start arriving late.\n\nThat ceiling is the thing we want to measure. And the way to measure it is to test at multiple tempos and see where the player's performance drops.\n\n60 BPM is training pace. One beat per second. This is slow enough that almost every player can land every read on time. Scores at 60 BPM tell us what the player is capable of when cognitive load is low. It's the baseline.\n\n90 BPM is game tempo. Roughly 1.5 beats per second. This is the tempo most real basketball decisions happen at — a possession in half-court offense, a closeout rotation, a defensive slide. Scores at 90 BPM tell us how the player performs at the speed their actual games are played.\n\n120 BPM is elite tempo. Two beats per second. This is transition basketball, late-clock scrambles, the speed the NBA plays at. Scores at 120 BPM tell us whether the player has the cognitive braking capacity to handle the highest-speed situations the game produces.\n\nA player who scores L7 at 60, L6 at 90, and L3 at 120 has a very different profile than a player who scores L5 across all three. Both have similar composites. The first player cracks at elite tempo — they're going to struggle in transition and late-clock. The second player is tempo-resilient — they'll handle everything consistently. Same composite, different problems, different training priorities. You can't see any of that from a single-tempo test.",
+      "body_es": "Porque el frenado cognitivo no se degrada parejo con la velocidad. Se rompe en un punto específico para cada jugador, y ese punto de quiebre es diagnóstico.\n\nCada jugador puede frenar a tiempo cuando el juego está lento. Pon a un estudiante de secundaria en un walkthrough, sus lecturas de freno se ven bien. Pon al mismo jugador en 5-on-5 vivo a tempo de juego, algunas de esas lecturas desaparecen. Ponlo en un desorden de transición a cancha completa, más de ellas desaparecen. Lo que estás viendo no es al jugador ponerse peor en baloncesto — estás viendo su capacidad de frenado cognitivo llegar al techo, y por encima de ese techo las lecturas empiezan a llegar tarde.\n\nEse techo es la cosa que queremos medir. Y la manera de medirlo es probar en múltiples tempos y ver dónde cae el rendimiento del jugador.\n\n60 BPM es ritmo de entrenamiento. Un beat por segundo. Esto es lento suficiente que casi cada jugador puede aterrizar cada lectura a tiempo. Los puntajes a 60 BPM nos dicen de qué es capaz el jugador cuando la carga cognitiva es baja. Es la línea base.\n\n90 BPM es tempo de juego. Aproximadamente 1.5 beats por segundo. Este es el tempo al que pasan la mayoría de las decisiones reales de baloncesto — una posesión en ofensiva de media cancha, una rotación de closeout, un deslizamiento defensivo. Los puntajes a 90 BPM nos dicen cómo se desempeña el jugador a la velocidad a la que se juegan sus juegos reales.\n\n120 BPM es tempo elite. Dos beats por segundo. Esto es baloncesto de transición, desórdenes de reloj bajo, la velocidad a la que juega la NBA. Los puntajes a 120 BPM nos dicen si el jugador tiene la capacidad de frenado cognitivo para manejar las situaciones de más alta velocidad que el juego produce.\n\nUn jugador que saca L7 a 60, L6 a 90, y L3 a 120 tiene un perfil muy diferente a un jugador que saca L5 en los tres. Ambos tienen compuestos similares. El primer jugador se quiebra a tempo elite — va a batallar en transición y reloj bajo. El segundo jugador es resiliente al tempo — manejará todo consistentemente. Mismo compuesto, problemas diferentes, prioridades de entrenamiento diferentes. No puedes ver nada de eso desde una prueba de un solo tempo.",
+      "cta_primary": {
+        "label_en": "Test at three tempos — Premium",
+        "label_es": "Prueba en tres tempos — Premium",
+        "url": "/join.html"
+      },
+      "cta_secondary": {
+        "label_en": "See a sample Brake",
+        "label_es": "Ve un Brake de ejemplo",
+        "url": "/preview-premium.html"
+      },
+      "related": ["what-is-a-beat", "the-ten-levels", "what-is-the-brake"]
+    },
+
+    "the-six-drills": {
+      "category": "drills",
+      "order": 1,
+      "card": {
+        "title_en": "What are the six drills?",
+        "title_es": "¿Cuáles son los seis drills?",
+        "teaser_en": "Six cognitive inputs to basketball braking — one drill each",
+        "teaser_es": "Seis inputs cognitivos al frenado en baloncesto — un drill cada uno"
+      },
+      "headline_en": "The six drills.",
+      "headline_es": "Los seis drills.",
+      "body_en": "Cognitive braking isn't one thing. It's six things stacked on top of each other, and every possession demands a different mix depending on what's happening. BPM measures each one with its own drill.\n\nThe React — the single-beat brake read. One cue arrives, the player commits to a brake, the drill measures whether the commitment landed on the correct beat. This is the layer behind closeouts, catch-and-brake contests, first-read defensive recognitions.\n\nThe Recall — the possession-long brake memory. A sequence of brake-relevant cells lights up, the player holds the sequence in memory and taps them back in order. This is the layer behind running schemes, holding coverage across rotations, remembering the secondary and tertiary actions of a set play.\n\nThe Reflex — the multi-element brake read. Multiple cues flash simultaneously, the player processes all of them before committing to the brake. This is the layer behind reading pick-and-roll, tracking off-ball action, recognizing ghost screens.\n\nThe Replay — sequential brake execution. A sequence is shown, the player executes the same sequence in order. This is the layer behind running sets, executing multi-rotation schemes, landing late-clock actions without skipping a step. Premium.\n\nThe Ritmo — mid-brake change detection. A pattern shows, then an echo appears with one element changed — the player has to catch the change mid-sequence. This is the layer behind catching swing passes, skip passes, and rejected screens without a late-brake penalty. Premium.\n\nThe Beat — braking on rhythm. The player watches a beat structure and has to land brakes on the rhythm. This is the layer behind hesitation moves, pullup timing, pick-and-pop rhythm, any brake that has to land on a specific musical beat of the play. Premium.\n\nFree tier: React, Recall, Reflex. Enough to get a composite baseline. Premium unlocks Replay, Ritmo, Beat — plus the full Brake report that synthesizes all six.",
+      "body_es": "El frenado cognitivo no es una cosa. Es seis cosas apiladas una sobre la otra, y cada posesión demanda una mezcla diferente dependiendo de qué está pasando. BPM mide cada una con su propio drill.\n\nThe React — la lectura del freno en un solo beat. Una señal llega, el jugador se compromete a un freno, el drill mide si el compromiso aterrizó en el beat correcto. Esta es la capa detrás de los closeouts, las contestas de catch-and-brake, los primeros reconocimientos defensivos.\n\nThe Recall — la memoria de freno de toda la posesión. Una secuencia de celdas relevantes al freno se ilumina, el jugador sostiene la secuencia en memoria y la toca de vuelta en orden. Esta es la capa detrás de correr esquemas, sostener cobertura a través de rotaciones, recordar las acciones secundarias y terciarias de una jugada.\n\nThe Reflex — la lectura multi-elemento del freno. Múltiples señales destellan simultáneamente, el jugador procesa todas antes de comprometerse al freno. Esta es la capa detrás de leer pick-and-roll, rastrear acción fuera del balón, reconocer ghost screens.\n\nThe Replay — ejecución secuencial del freno. Se muestra una secuencia, el jugador ejecuta la misma secuencia en orden. Esta es la capa detrás de correr jugadas, ejecutar esquemas de múltiples rotaciones, aterrizar acciones de reloj bajo sin saltarse un paso. Premium.\n\nThe Ritmo — detección de cambio en medio del freno. Un patrón se muestra, luego aparece un eco con un elemento cambiado — el jugador tiene que atrapar el cambio en medio de la secuencia. Esta es la capa detrás de atrapar swing passes, skip passes, y bloqueos rechazados sin la penalidad de frenar tarde. Premium.\n\nThe Beat — frenado en ritmo. El jugador ve una estructura de beat y tiene que aterrizar frenos en el ritmo. Esta es la capa detrás de movimientos de hesitación, tiempo de pullup, ritmo de pick-and-pop, cualquier freno que tenga que aterrizar en un beat musical específico de la jugada. Premium.\n\nNivel gratis: React, Recall, Reflex. Suficiente para sacar un compuesto base. Premium desbloquea Replay, Ritmo, Beat — más el reporte Brake completo que sintetiza los seis.",
+      "cta_primary": {
+        "label_en": "Start the three free drills",
+        "label_es": "Empieza los tres drills gratis",
+        "url": "/join.html"
+      },
+      "cta_secondary": {
+        "label_en": "Unlock all six — Premium",
+        "label_es": "Desbloquea los seis — Premium",
+        "url": "/join.html"
+      },
+      "related": ["the-react", "the-recall", "the-reflex", "replay-ritmo-beat"]
+    },
+
+    "the-react": {
+      "category": "drills",
+      "order": 2,
+      "card": {
+        "title_en": "What does The React measure?",
+        "title_es": "¿Qué mide The React?",
+        "teaser_en": "The single-beat brake read — the fastest cognitive commitment",
+        "teaser_es": "La lectura del freno en un solo beat — el compromiso cognitivo más rápido"
+      },
+      "headline_en": "The React — the single-beat brake read.",
+      "headline_es": "The React — la lectura del freno en un solo beat.",
+      "body_en": "A cell lights up on the grid. You tap it. Another one lights up. You tap it. Repeat at 60, 90, or 120 BPM.\n\nThat's the drill. It looks simple. It's measuring the most fundamental thing basketball braking requires — how fast does your brain commit to a single brake decision once a cue arrives.\n\nThink of the closeout. The shooter catches the kickout. In the instant before they gather to shoot, the defender has to commit to the brake line — drive close out or stay conservative, this spot or two feet shorter, full sprint or closeout-and-breakdown. That cognitive commitment has to happen in under a second. The React drill measures exactly that window.\n\nHere's what a high React score means on the court. Your closeouts arrive on time and breakdown at the right distance. You catch the ball-handler mid-move because your first read landed fast. You contest catch-and-shoot threes without flying past. Single-beat brake reads are the foundation layer — if this one is weak, every other brake layer is harder to execute because you're always playing catch-up.\n\nHere's what a low React score means. You're half a beat late to most defensive rotations. You close out and fly by. You read screens coming but commit to the coverage too slow and get hunted. You get blamed for 'not being athletic enough' when your actual problem is a cognitive commitment that's too slow.\n\nThe React is the free drill for a reason. It's the gateway. Everyone should test it first. If your React is at game tempo, the other drills reveal specific layered capabilities. If your React isn't at game tempo, that's your first development priority no matter what else is happening.",
+      "body_es": "Una celda se ilumina en la cuadrícula. La tocas. Otra se ilumina. La tocas. Repite a 60, 90, o 120 BPM.\n\nEse es el drill. Se ve simple. Está midiendo la cosa más fundamental que el frenado en baloncesto requiere — qué tan rápido se compromete tu cerebro a una sola decisión de freno una vez que una señal llega.\n\nPiensa en el closeout. El tirador recibe el pase al perímetro. En el instante antes de que se prepare para tirar, el defensor tiene que comprometerse a la línea del freno — closeout duro o quedarse conservador, este punto o dos pies más corto, sprint completo o closeout-y-breakdown. Ese compromiso cognitivo tiene que pasar en menos de un segundo. El drill The React mide exactamente esa ventana.\n\nAquí está lo que un puntaje alto de React significa en la cancha. Tus closeouts llegan a tiempo y haces breakdown a la distancia correcta. Atrapas al base a medio movimiento porque tu primera lectura aterrizó rápido. Contestas tiros de catch-and-shoot sin volar. Las lecturas de freno en un solo beat son la capa base — si esta es débil, cada otra capa de freno es más difícil de ejecutar porque siempre estás tratando de alcanzar.\n\nAquí está lo que un puntaje bajo de React significa. Estás medio beat tarde en la mayoría de las rotaciones defensivas. Haces closeout y vuelas. Lees bloqueos viniendo pero te comprometes a la cobertura muy lento y te cazan. Te culpan de 'no ser lo suficientemente atlético' cuando tu problema real es un compromiso cognitivo muy lento.\n\nThe React es el drill gratis por una razón. Es la puerta de entrada. Todos deberían probarlo primero. Si tu React está a tempo de juego, los otros drills revelan capacidades específicas por capas. Si tu React no está a tempo de juego, esa es tu primera prioridad de desarrollo sin importar qué más esté pasando.",
+      "cta_primary": {
+        "label_en": "Run The React — free",
+        "label_es": "Corre The React — gratis",
+        "url": "/the-react.html"
+      },
+      "cta_secondary": {
+        "label_en": "See all six drills",
+        "label_es": "Ve los seis drills",
+        "url": "/join.html"
+      },
+      "related": ["the-six-drills", "reaction-vs-brake-read", "what-is-a-beat"]
+    },
+
+    "the-recall": {
+      "category": "drills",
+      "order": 3,
+      "card": {
+        "title_en": "What does The Recall measure?",
+        "title_es": "¿Qué mide The Recall?",
+        "teaser_en": "The possession-long brake memory — holding a sequence of reads in order",
+        "teaser_es": "La memoria de freno de toda la posesión — sostener una secuencia de lecturas en orden"
+      },
+      "headline_en": "The Recall — the possession-long brake memory.",
+      "headline_es": "The Recall — la memoria de freno de toda la posesión.",
+      "body_en": "Numbered cells light up in sequence. You watch. Then you tap them back in order — 1, 2, 3, 4, 5. More cells per level, more BPM per tempo.\n\nThe drill is measuring how many brake-relevant elements your brain can hold in memory across a possession. Basketball possessions aren't one decision. They're chains of them. A defensive possession asks you to execute the initial coverage, the rotation, the help, the rotation back, the closeout to the shooter — five or six discrete brake decisions in order, at game tempo, across ten to twenty seconds.\n\nPoint guards with high Recall are the ones who make everyone else look organized. They run the offense through multiple actions without losing the thread. First option dies, they reset to the second option. Second option dies, they reset to the third. The whole team operates off the point guard's memory of where the possession is supposed to go next.\n\nCenters with high Recall are the ones who execute every pick-and-roll coverage correctly without needing constant reminders. They remember the scouting report on that specific ball-handler, they remember the coverage call for that specific action, they remember where the second rotation is supposed to come from if they commit to the roll.\n\nHigh Recall, low Recall — here's the game-speed tell. Low-Recall players need constant verbal cues from teammates and coaches. 'Switch!' 'Rotate!' 'Shooter!' They can execute any single brake read fine. They drop possession chains because the chain itself doesn't stick in memory. High-Recall players play quiet because the chain is already in their head. They don't need to be told what's next.\n\nRecall is free. Everyone should run it at 60 BPM first to get a baseline, then push to 90 and 120 to see where their memory breaks.",
+      "body_es": "Celdas numeradas se iluminan en secuencia. Miras. Luego las tocas de vuelta en orden — 1, 2, 3, 4, 5. Más celdas por nivel, más BPM por tempo.\n\nEl drill está midiendo cuántos elementos relevantes al freno puede sostener tu cerebro en memoria a lo largo de una posesión. Las posesiones de baloncesto no son una decisión. Son cadenas de ellas. Una posesión defensiva te pide ejecutar la cobertura inicial, la rotación, la ayuda, la rotación de vuelta, el closeout al tirador — cinco o seis decisiones de freno discretas en orden, a tempo de juego, a través de diez a veinte segundos.\n\nLos bases con Recall alto son los que hacen que todos los demás se vean organizados. Corren el ataque a través de múltiples acciones sin perder el hilo. La primera opción muere, resetean a la segunda opción. La segunda opción muere, resetean a la tercera. El equipo completo opera desde la memoria del base de a dónde se supone que la posesión va después.\n\nLos centros con Recall alto son los que ejecutan cada cobertura de pick-and-roll correctamente sin necesitar recordatorios constantes. Recuerdan el reporte de scouting sobre ese base específico, recuerdan la llamada de cobertura para esa acción específica, recuerdan de dónde se supone que venga la segunda rotación si se comprometen al roll.\n\nRecall alto, Recall bajo — aquí está la señal a velocidad de juego. Los jugadores de Recall bajo necesitan señales verbales constantes de los compañeros y coaches. '¡Cambio!' '¡Rota!' '¡Tirador!' Pueden ejecutar cualquier lectura de freno individual bien. Dejan caer cadenas de posesión porque la cadena misma no se pega en la memoria. Los jugadores de Recall alto juegan en silencio porque la cadena ya está en su cabeza. No necesitan que les digan qué viene.\n\nRecall es gratis. Todos deberían correrlo a 60 BPM primero para sacar una línea base, luego empujar a 90 y 120 para ver dónde se rompe su memoria.",
+      "cta_primary": {
+        "label_en": "Run The Recall — free",
+        "label_es": "Corre The Recall — gratis",
+        "url": "/the-recall.html"
+      },
+      "cta_secondary": {
+        "label_en": "See all six drills",
+        "label_es": "Ve los seis drills",
+        "url": "/join.html"
+      },
+      "related": ["the-six-drills", "the-react", "what-is-the-brake"]
+    },
+
+    "the-reflex": {
+      "category": "drills",
+      "order": 4,
+      "card": {
+        "title_en": "What does The Reflex measure?",
+        "title_es": "¿Qué mide The Reflex?",
+        "teaser_en": "The multi-element brake read — processing many cues before committing",
+        "teaser_es": "La lectura multi-elemento del freno — procesar muchas señales antes de comprometerse"
+      },
+      "headline_en": "The Reflex — the multi-element brake read.",
+      "headline_es": "The Reflex — la lectura multi-elemento del freno.",
+      "body_en": "Five cells flash at once. They all disappear. You have to find them all by tapping. At 60 BPM the flash is long, at 120 BPM it's gone in under a second.\n\nThe drill is measuring how many cues your brain can process simultaneously before committing to a brake. Real basketball plays don't send one cue at a time. A pick-and-roll sends four cues at minimum — the screener's angle, the roll man's release, the ball-handler's hip, the weak-side shooter relocating. A defender who can only process one cue at a time will react to whichever cue is loudest and get beat by the ones they didn't see.\n\nThis is the drill that separates playing fast from playing right. Low-Reflex players look fast because they commit to the first cue they notice. They fly around. They also get beat consistently by actions that involve simultaneous reads — ghost screens, hesi-into-pick, stagger screens, off-ball flare actions. Anything where multiple cues arrive at the same instant.\n\nHigh-Reflex players look calmer. They seem to slow down in critical moments, actually processing all the cues, and then commit to a brake that accounts for all of them. Coaches call this 'seeing the whole floor' or 'good anticipation.' What it actually is, mechanically, is the cognitive capacity to hold multiple simultaneous cues in working memory long enough to weight them against each other before committing.\n\nOn the Brake report, Reflex scores that drop between 60 BPM and 90 BPM are the tell. A player who's solid at training pace and weak at game tempo is hitting the ceiling of their multi-element processing — they can see all the cues, but only at a speed slower than the game. That's the most common multi-element gap and also the most trainable one.",
+      "body_es": "Cinco celdas destellan a la vez. Todas desaparecen. Tienes que encontrarlas todas tocándolas. A 60 BPM el destello es largo, a 120 BPM se fue en menos de un segundo.\n\nEl drill está midiendo cuántas señales puede procesar tu cerebro simultáneamente antes de comprometerse a un freno. Las jugadas reales de baloncesto no mandan una señal a la vez. Un pick-and-roll manda cuatro señales como mínimo — el ángulo del screener, la salida del roll man, la cadera del base, el tirador del lado débil reubicándose. Un defensor que solo puede procesar una señal a la vez reaccionará a la señal más ruidosa y será vencido por las que no vio.\n\nEste es el drill que separa jugar rápido de jugar bien. Los jugadores de Reflex bajo se ven rápidos porque se comprometen a la primera señal que notan. Vuelan alrededor. También son vencidos consistentemente por acciones que involucran lecturas simultáneas — ghost screens, hesi-pick, bloqueos escalonados, acciones de flare fuera del balón. Cualquier cosa donde múltiples señales llegan en el mismo instante.\n\nLos jugadores de Reflex alto se ven más calmados. Parecen desacelerar en momentos críticos, de hecho procesando todas las señales, y luego comprometerse a un freno que las considera todas. Los coaches llaman esto 'ver toda la cancha' o 'buena anticipación.' Lo que realmente es, mecánicamente, es la capacidad cognitiva para sostener múltiples señales simultáneas en memoria de trabajo suficiente para pesarlas unas contra otras antes de comprometerse.\n\nEn el reporte Brake, los puntajes de Reflex que caen entre 60 BPM y 90 BPM son la señal. Un jugador que está sólido a ritmo de entrenamiento y débil a tempo de juego está llegando al techo de su procesamiento multi-elemento — puede ver todas las señales, pero solo a una velocidad más lenta que el juego. Esa es la brecha multi-elemento más común y también la más entrenable.",
+      "cta_primary": {
+        "label_en": "Run The Reflex — free",
+        "label_es": "Corre The Reflex — gratis",
+        "url": "/the-reflex.html"
+      },
+      "cta_secondary": {
+        "label_en": "See all six drills",
+        "label_es": "Ve los seis drills",
+        "url": "/join.html"
+      },
+      "related": ["the-six-drills", "the-react", "why-three-tempos"]
+    },
+
+    "replay-ritmo-beat": {
+      "category": "drills",
+      "order": 5,
+      "card": {
+        "title_en": "What do The Replay, Ritmo, and Beat measure?",
+        "title_es": "¿Qué miden The Replay, Ritmo y Beat?",
+        "teaser_en": "The three Premium drills — sequence execution, change detection, rhythm timing",
+        "teaser_es": "Los tres drills Premium — ejecución de secuencia, detección de cambio, ritmo"
+      },
+      "headline_en": "Replay, Ritmo, Beat — the three Premium drills.",
+      "headline_es": "Replay, Ritmo, Beat — los tres drills Premium.",
+      "body_en": "These three drills measure the advanced layers of cognitive braking. They're Premium because they build on the foundations that the free three drills measure — if React, Recall, and Reflex are weak, these three won't teach you much. But once the foundation is laid, these are where the sophisticated basketball reads live.\n\nThe Replay. A sequence of cells light up one at a time, you watch, then you execute the exact same sequence by tapping. It's measuring sequential brake execution — your ability to run a chain of brake decisions in precise order. This is running set plays. It's executing multi-rotation defensive schemes. It's the late-clock set that has to hit action one, then action two, then action three without skipping. Players with strong Recall (can remember sequences) but weak Replay (can't execute them in order) run offenses that look right up until the third action, which breaks down. The gap between remembering and executing is the Replay layer.\n\nThe Ritmo. A pattern flashes, then an echo appears with one element changed in a new position. You have to catch the change. This is mid-brake change detection — the cognitive layer that catches swing passes, skip passes, and rejected screens before the late-brake penalty arrives. Basketball at the highest level is built on changes. The play is going one direction, the defense commits to that direction, then the ball moves — swing, skip, reject, reset. The defender who can catch that change mid-sequence can redirect their brake without losing the possession. The defender who can't catch it late and gives up open shots on the move.\n\nThe Beat. The flagship. A pattern lights up on rhythm, you have to tap on the beat. This is braking on rhythm — the layer behind hesitation moves, pullup timing, pick-and-pop timing, anything where the brake has to land on a specific rhythmic beat of the play. Basketball is a musical sport. Great players have rhythm. The Beat drill measures whether the rhythm is trained or absent.",
+      "body_es": "Estos tres drills miden las capas avanzadas del frenado cognitivo. Son Premium porque se construyen sobre las bases que miden los tres drills gratis — si React, Recall, y Reflex están débiles, estos tres no te enseñarán mucho. Pero una vez que la base está puesta, aquí es donde viven las lecturas sofisticadas de baloncesto.\n\nThe Replay. Una secuencia de celdas se ilumina una a la vez, miras, luego ejecutas la misma secuencia exactamente tocándolas. Está midiendo la ejecución secuencial del freno — tu habilidad para correr una cadena de decisiones de freno en orden preciso. Esto es correr jugadas. Es ejecutar esquemas defensivos de múltiples rotaciones. Es la jugada de reloj bajo que tiene que dar en acción uno, luego acción dos, luego acción tres sin saltarse. Los jugadores con Recall fuerte (pueden recordar secuencias) pero Replay débil (no pueden ejecutarlas en orden) corren ataques que se ven bien hasta la tercera acción, que se rompe. La brecha entre recordar y ejecutar es la capa Replay.\n\nThe Ritmo. Un patrón destella, luego aparece un eco con un elemento cambiado en una posición nueva. Tienes que atrapar el cambio. Esto es detección de cambio en medio del freno — la capa cognitiva que atrapa swing passes, skip passes, y bloqueos rechazados antes de que llegue la penalidad de frenar tarde. El baloncesto al nivel más alto está construido sobre cambios. La jugada va en una dirección, la defensa se compromete a esa dirección, luego la bola se mueve — swing, skip, reject, reset. El defensor que puede atrapar ese cambio en medio de la secuencia puede redirigir su freno sin perder la posesión. El defensor que no puede llega tarde y regala tiros abiertos en movimiento.\n\nThe Beat. El producto estrella. Un patrón se ilumina en ritmo, tienes que tocar en el beat. Esto es frenado en ritmo — la capa detrás de movimientos de hesitación, tiempo de pullup, tiempo de pick-and-pop, cualquier cosa donde el freno tenga que aterrizar en un beat rítmico específico de la jugada. El baloncesto es un deporte musical. Los grandes jugadores tienen ritmo. El drill The Beat mide si el ritmo está entrenado o ausente.",
+      "cta_primary": {
+        "label_en": "Unlock all six drills — Premium",
+        "label_es": "Desbloquea los seis drills — Premium",
+        "url": "/join.html"
+      },
+      "cta_secondary": {
+        "label_en": "See a sample Brake with all six",
+        "label_es": "Ve un Brake de ejemplo con los seis",
+        "url": "/preview-premium.html"
+      },
+      "related": ["the-six-drills", "the-ten-levels", "what-is-the-brake"]
+    },
+
+    "the-ten-levels": {
+      "category": "drills",
+      "order": 6,
+      "card": {
+        "title_en": "What are the ten levels?",
+        "title_es": "¿Cuáles son los diez niveles?",
+        "teaser_en": "L1 Rookie Brake through L10 GOAT Brake — what each level means",
+        "teaser_es": "L1 Rookie Brake hasta L10 GOAT Brake — qué significa cada nivel"
+      },
+      "headline_en": "The ten levels — L1 Rookie Brake to L10 GOAT Brake.",
+      "headline_es": "Los diez niveles — L1 Rookie Brake a L10 GOAT Brake.",
+      "body_en": "Every BPM score lands on a level from 1 to 10. The levels are cumulative — you unlock the next level by consistently executing the current one across enough rounds. Here's what each one describes.\n\nL1 Rookie Brake. You're just starting. Your brake is reactive, not proactive. Focus on making the cognitive commitment at 60 BPM consistently. Don't push to 90 yet — rookies who push tempo before locking the base build compensations, not a real brake.\n\nL2 Developing. You can land reads at 60 BPM. Start testing 90 BPM. Expect a big drop — that drop is where the development happens.\n\nL3 Solid. 60 BPM is reliable. 90 BPM is emerging. Your reads are recognizable but not yet game-tempo sharp. Most serious high schoolers sit here when they first test.\n\nL4 Advanced. 90 BPM reads are landing more often than not. 60 is automatic. This is the level where the difference between 'training well' and 'playing well' starts showing up in film.\n\nL5 Elite Brake. Solid across 60 and 90. You can execute at game tempo reliably. 120 BPM is still inconsistent. This is a good high school varsity composite. Many college role players test here.\n\nL6 Pro. Consistent at 90 BPM. 120 BPM is landing. You brake on time in 80%+ of game tempo situations. Meaningful college players and many serious adult competitive players sit here.\n\nL7 All-Star. Consistent across all three tempos. You're in the top tier of what college basketball produces cognitively. High-level college starters and good pros live here.\n\nL8 MVP. Elite at 120 BPM. You handle transition basketball and late-clock scrambles without losing the brake. Very few players test here. Most NBA rotation players are here or below.\n\nL9 Hall of Fame. Rare. Your brake is sharper than the speed of the game demands. You're producing reads on beats before the play resolves. This is a ceiling very few cognitive brakes reach.\n\nL10 GOAT Brake. Reserved for the ceiling. A player at L10 doesn't just brake on time — they see the play unfolding two beats ahead of everyone else and commit to the brake before the cue fully arrives. This is a profile, not a common test result.\n\nImportant to repeat — these describe the cognitive brake. They don't describe shooting, handling, defense, or basketball ability broadly. Level 10 GOAT Brake and a player who can't make a varsity team are mathematically compatible. The levels are measurements, not rankings.",
+      "body_es": "Cada puntaje BPM aterriza en un nivel del 1 al 10. Los niveles son acumulativos — desbloqueas el próximo nivel ejecutando el actual consistentemente a lo largo de suficientes rondas. Aquí está lo que describe cada uno.\n\nL1 Rookie Brake. Apenas empezando. Tu freno es reactivo, no proactivo. Enfócate en hacer el compromiso cognitivo a 60 BPM consistentemente. No empujes a 90 todavía — los rookies que empujan tempo antes de fijar la base construyen compensaciones, no un freno real.\n\nL2 Developing. Puedes aterrizar lecturas a 60 BPM. Empieza a probar 90 BPM. Espera una caída grande — esa caída es donde pasa el desarrollo.\n\nL3 Solid. 60 BPM es confiable. 90 BPM está emergiendo. Tus lecturas son reconocibles pero aún no afiladas a tempo de juego. La mayoría de estudiantes de secundaria serios se sientan aquí cuando prueban por primera vez.\n\nL4 Advanced. Las lecturas a 90 BPM están aterrizando más a menudo que no. 60 es automático. Este es el nivel donde la diferencia entre 'entrenar bien' y 'jugar bien' empieza a aparecer en film.\n\nL5 Elite Brake. Sólido en 60 y 90. Puedes ejecutar a tempo de juego confiablemente. 120 BPM todavía es inconsistente. Este es un buen compuesto de varsity de secundaria. Muchos jugadores de rol universitario prueban aquí.\n\nL6 Pro. Consistente a 90 BPM. 120 BPM está aterrizando. Frenas a tiempo en más del 80% de las situaciones a tempo de juego. Jugadores universitarios significativos y muchos jugadores adultos competitivos serios se sientan aquí.\n\nL7 All-Star. Consistente en los tres tempos. Estás en el nivel superior de lo que produce el baloncesto universitario cognitivamente. Titulares universitarios de alto nivel y buenos profesionales viven aquí.\n\nL8 MVP. Elite a 120 BPM. Manejas baloncesto de transición y desórdenes de reloj bajo sin perder el freno. Muy pocos jugadores prueban aquí. La mayoría de jugadores de rotación de la NBA están aquí o por debajo.\n\nL9 Hall of Fame. Raro. Tu freno es más afilado de lo que la velocidad del juego demanda. Estás produciendo lecturas en beats antes de que la jugada se resuelva. Este es un techo que muy pocos frenos cognitivos alcanzan.\n\nL10 GOAT Brake. Reservado para el techo. Un jugador en L10 no solo frena a tiempo — ve la jugada desarrollándose dos beats adelante de todos los demás y se compromete al freno antes de que la señal llegue completamente. Este es un perfil, no un resultado común de prueba.\n\nImportante repetir — estos describen el freno cognitivo. No describen tiro, manejo, defensa, o habilidad de baloncesto ampliamente. L10 GOAT Brake y un jugador que no puede hacer un equipo varsity son matemáticamente compatibles. Los niveles son mediciones, no clasificaciones.",
+      "cta_primary": {
+        "label_en": "Test your level — free",
+        "label_es": "Prueba tu nivel — gratis",
+        "url": "/join.html"
+      },
+      "cta_secondary": {
+        "label_en": "See a sample Brake",
+        "label_es": "Ve un Brake de ejemplo",
+        "url": "/preview-premium.html"
+      },
+      "related": ["what-is-the-brake", "why-three-tempos", "brake-varsity-recruiting"]
+    }
+  "what-is-the-brake": {
+    "category": "the-brake",
+    "order": 1,
+    "card": {
+      "title_en": "What is The Brake?",
+      "title_es": "¿Qué es The Brake?",
+      "teaser_en": "The cognitive braking profile BPM generates from your six drill scores",
+      "teaser_es": "El perfil cognitivo de frenado que BPM genera desde tus seis puntajes"
+    },
+    "headline_en": "What is The Brake?",
+    "headline_es": "¿Qué es The Brake?",
+    "body_en": "The Brake is the report BPM generates from your six drill scores across the three tempos. Think of it as your cognitive braking profile — synthesized, contextualized, and written in basketball language you can actually use.\n\nSeven sections. Here's what each one is.\n\nThe headline. One line that captures who you are as a cognitive braker. Not generic. Specific to your score pattern. A player with high Recall and low Beat gets a different headline than a player with high Reflex and low Replay, because they're different players making different brake decisions.\n\nThe composite level. Your overall Brake level, 1 through 10, with the label — Rookie, Developing, Solid, Advanced, Elite, Pro, All-Star, MVP, Hall of Fame, GOAT. This is the single-number summary.\n\nThe six components. Your level on each drill, color-coded for strengths and weaknesses, with the braking-specific one-liner for what each component means and which tempo you performed best at. This is where your specific profile shows up.\n\nOn-court applications. Three to five specific basketball scenarios that your score pattern predicts. Not 'you're a good defender.' Actual scenarios like 'closeouts will arrive on time but the shot-fake-drive will hurt you' or 'you'll run the first two actions of a set play clean and lose the third.' Grounded in your actual scores.\n\nDevelopment priorities. Ranked training focus. What to work on first to move your composite level up, with specific target levels and suggested tempo progressions.\n\nWhat this measures. Fixed scoping paragraph that lives in every Brake report. States explicitly what BPM measures (the cognitive brake) and what it doesn't (physical braking, applied skill, recruiting outcomes). This is the credibility anchor.\n\nPhysical brake layer pointer. Directs the reader to the complementary physical brake training — the isoinertial layer that lives outside BPM's measurement scope but is essential to the complete brake.\n\nThe Brake is generated the moment you complete all six drills at all three tempos. It updates automatically when you re-run drills. It's shareable with any coach, trainer, or program — they open the link and see the same report you see.",
+    "body_es": "The Brake es el reporte que BPM genera desde tus seis puntajes de drills a través de los tres tempos. Piénsalo como tu perfil cognitivo de frenado — sintetizado, contextualizado, y escrito en lenguaje de baloncesto que puedes usar de verdad.\n\nSiete secciones. Aquí está cada una.\n\nEl titular. Una línea que captura quién eres como frenador cognitivo. No genérico. Específico a tu patrón de puntajes. Un jugador con Recall alto y Beat bajo saca un titular diferente a un jugador con Reflex alto y Replay bajo, porque son jugadores diferentes tomando decisiones de freno diferentes.\n\nEl nivel compuesto. Tu nivel general Brake, 1 a 10, con la etiqueta — Rookie, Developing, Solid, Advanced, Elite, Pro, All-Star, MVP, Hall of Fame, GOAT. Este es el resumen de un solo número.\n\nLos seis componentes. Tu nivel en cada drill, codificado por colores para fortalezas y debilidades, con el one-liner específico de frenado de lo que significa cada componente y en qué tempo te desempeñaste mejor. Aquí es donde aparece tu perfil específico.\n\nAplicaciones en cancha. Tres a cinco escenarios específicos de baloncesto que tu patrón de puntajes predice. No 'eres un buen defensor.' Escenarios reales como 'los closeouts llegarán a tiempo pero el amague de tiro con ataque te lastimará' o 'correrás las primeras dos acciones de una jugada limpias y perderás la tercera.' Fundamentado en tus puntajes reales.\n\nPrioridades de desarrollo. Enfoque de entrenamiento clasificado. En qué trabajar primero para subir tu nivel compuesto, con niveles objetivo específicos y progresiones de tempo sugeridas.\n\nLo que esto mide. Párrafo de alcance fijo que vive en cada reporte Brake. Declara explícitamente qué mide BPM (el freno cognitivo) y qué no (frenado físico, habilidad aplicada, resultados de reclutamiento). Este es el ancla de credibilidad.\n\nPuntero a la capa del freno físico. Dirige al lector al entrenamiento complementario del freno físico — la capa isoinercial que vive fuera del alcance de medición de BPM pero es esencial al freno completo.\n\nThe Brake se genera el momento en que completas los seis drills en los tres tempos. Se actualiza automáticamente cuando vuelves a correr drills. Es compartible con cualquier coach, entrenador, o programa — abren el enlace y ven el mismo reporte que ves tú.",
+    "cta_primary": {
+      "label_en": "See a sample Brake",
+      "label_es": "Ve un Brake de ejemplo",
+      "url": "/preview-premium.html"
+    },
+    "cta_secondary": {
+      "label_en": "Generate yours — Premium",
+      "label_es": "Genera el tuyo — Premium",
+      "url": "/join.html"
+    },
+    "related": ["what-brake-measures-and-doesnt", "share-brake-with-coach", "the-ten-levels"]
+  },
+
+  "what-brake-measures-and-doesnt": {
+    "category": "the-brake",
+    "order": 2,
+    "card": {
+      "title_en": "What does The Brake measure — and what does it NOT measure?",
+      "title_es": "¿Qué mide The Brake — y qué NO mide?",
+      "teaser_en": "Credibility boundary. The cognitive layer only.",
+      "teaser_es": "Límite de credibilidad. Solo la capa cognitiva."
+    },
+    "headline_en": "What The Brake measures — and what it does not.",
+    "headline_es": "Lo que The Brake mide — y lo que no.",
+    "body_en": "This is the most important answer in the entire Conversations. If we get this wrong, nothing else we do matters. So let me be precise.\n\nThe Brake measures the cognitive layer of basketball braking. That means how you read the play, how you process cues, how you hold sequences in memory, how you detect changes, and when you commit to brake decisions at three tempos. Those are specific, measurable cognitive inputs to on-court deceleration. They're real, they're measurable, and they're the thing BPM puts a number on.\n\nThe Brake does not measure physical braking capacity. That's a separate layer — eccentric strength, landing mechanics, deceleration force absorption, injury tolerance. Those are trained through isoinertial flywheel protocols and live outside BPM's measurement scope. You can have an elite cognitive Brake and weak physical braking, which produces a player who reads the play but can't absorb the force when the brake lands. That player gets hurt. Measuring one layer without the other is dangerous.\n\nThe Brake also does not measure applied basketball skill. It does not measure shooting mechanics, ball-handling, defensive technique, passing, or basketball IQ as traditionally assessed. These are skill-acquisition disciplines trained through thousands of repetitions and coaching — not cognitive braking.\n\nAnd critically — The Brake is a measurement, not a scouting grade. A high composite Brake level does not predict that a player will make varsity, earn a scholarship, or succeed at the next level. A low composite Brake level does not preclude any of those outcomes. The Brake identifies cognitive braking strengths and gaps. It tells you what to train, not who to recruit.\n\nHere's the practical way to hold this. If you meet a player with L10 Brake scores and ask 'can this player play at the next level?' — the answer is 'I don't know, that depends on physical training, skill development, body size, coaching, opportunity, and twenty other things.' The Brake is one of those things. An important one. Not all of them.\n\nWe hold this line because the moment BPM starts claiming more than it measures, everything we've built stops being credible. Coaches lose trust. Players lose trust. And correctly — because anyone selling a single cognitive measurement as a prediction of basketball success is lying. We measure what we measure. We don't measure what we don't measure. That's the whole game.",
+    "body_es": "Esta es la respuesta más importante en todas las Conversaciones. Si nos equivocamos en esto, nada más de lo que hacemos importa. Entonces déjame ser preciso.\n\nThe Brake mide la capa cognitiva del frenado en baloncesto. Eso significa cómo lees la jugada, cómo procesas señales, cómo sostienes secuencias en memoria, cómo detectas cambios, y cuándo te comprometes a decisiones de freno en tres tempos. Esos son inputs cognitivos específicos y medibles para la desaceleración en cancha. Son reales, son medibles, y son la cosa a la que BPM le pone un número.\n\nThe Brake no mide la capacidad física de frenado. Esa es una capa separada — fuerza excéntrica, mecánica de aterrizaje, absorción de fuerza de desaceleración, tolerancia a lesiones. Esas se entrenan a través de protocolos isoinerciales de volante y viven fuera del alcance de medición de BPM. Puedes tener un Brake cognitivo elite y un frenado físico débil, lo que produce un jugador que lee la jugada pero no puede absorber la fuerza cuando el freno aterriza. Ese jugador se lesiona. Medir una capa sin la otra es peligroso.\n\nThe Brake tampoco mide la habilidad aplicada de baloncesto. No mide la mecánica de tiro, manejo del balón, técnica defensiva, pases, o IQ de baloncesto como se evalúa tradicionalmente. Estas son disciplinas de adquisición de habilidad entrenadas a través de miles de repeticiones y coaching — no frenado cognitivo.\n\nY críticamente — The Brake es una medición, no una calificación de scouting. Un alto nivel compuesto Brake no predice que un jugador hará varsity, ganará una beca, o tendrá éxito en el próximo nivel. Un nivel compuesto bajo no impide ninguno de esos resultados. The Brake identifica fortalezas y brechas cognitivas de frenado. Te dice qué entrenar, no a quién reclutar.\n\nAquí está la manera práctica de sostener esto. Si conoces a un jugador con puntajes Brake L10 y preguntas '¿puede este jugador jugar al próximo nivel?' — la respuesta es 'No sé, eso depende del entrenamiento físico, desarrollo de habilidad, tamaño corporal, coaching, oportunidad, y veinte otras cosas.' The Brake es una de esas cosas. Una importante. No todas.\n\nSostenemos esta línea porque el momento en que BPM empiece a reclamar más de lo que mide, todo lo que hemos construido deja de ser creíble. Los coaches pierden confianza. Los jugadores pierden confianza. Y correctamente — porque cualquiera que venda una sola medición cognitiva como predicción de éxito en baloncesto está mintiendo. Medimos lo que medimos. No medimos lo que no medimos. Ese es el juego completo.",
+    "cta_primary": {
+      "label_en": "See the three-layer system",
+      "label_es": "Ve el sistema de tres capas",
+      "url": "/programs.html"
+    },
+    "cta_secondary": {
+      "label_en": "See a sample Brake",
+      "label_es": "Ve un Brake de ejemplo",
+      "url": "/preview-premium.html"
+    },
+    "related": ["what-is-the-brake", "brake-varsity-recruiting", "physical-brake-layer"]
+  },
+
+  "brake-varsity-recruiting": {
+    "category": "the-brake",
+    "order": 3,
+    "card": {
+      "title_en": "Will a high Brake level help me make varsity or get recruited?",
+      "title_es": "¿Un nivel Brake alto me ayudará a hacer varsity o ser reclutado?",
+      "teaser_en": "Honest answer. The Brake is one input, not a guarantee.",
+      "teaser_es": "Respuesta honesta. The Brake es un input, no una garantía."
+    },
+    "headline_en": "Will a high Brake level help me make varsity or get recruited?",
+    "headline_es": "¿Un nivel Brake alto me ayudará a hacer varsity o ser reclutado?",
+    "body_en": "Honest answer, because you deserve one.\n\nA high Brake level helps. It doesn't guarantee.\n\nWhat The Brake gives you is a measurable, shareable profile of your cognitive braking. If a coach reads your Brake report, they see that you process the game at game tempo, that you hold sequences in memory, that you commit to brake reads on time. Those are real, coachable attributes, and they correlate with the kinds of basketball players coaches want — players who don't get caught out of position, don't blow assignments, don't give up easy shots. So yes, having a strong Brake matters.\n\nBut making varsity, earning a scholarship, playing at the next level — those outcomes depend on a lot of things The Brake doesn't measure. Your size. Your skill level. Your shooting. Your defensive technique. Your physical brake (the layer we don't measure). Your body development. Your coach's opinion of you. Your competition. Your opportunities. The politics of the program you're trying to join.\n\nThe Brake is one input. It's a useful input. A coach who sees your L7 Brake report will think differently about you than a coach who doesn't. But the coach still has to decide whether your jumper works, whether you fit the scheme, whether you compete, whether you'll put in the work. The Brake helps you get the conversation. It doesn't win the conversation for you.\n\nThe most honest thing I can tell you is this. If your Brake level is high and your skill work is weak, a coach will notice the mismatch and tell you to get in the gym. If your skill work is strong and your Brake level is low, a coach will notice you're always a beat late and tell you to get faster. If both are strong, now you have a case. The Brake gives you one half of that case, measured and shareable. The other half is on you.\n\nAnyone who tells you differently is selling you something we don't sell.",
+    "body_es": "Respuesta honesta, porque la mereces.\n\nUn nivel Brake alto ayuda. No garantiza.\n\nLo que The Brake te da es un perfil medible y compartible de tu frenado cognitivo. Si un coach lee tu reporte Brake, ve que procesas el juego a tempo de juego, que sostienes secuencias en memoria, que te comprometes a lecturas de freno a tiempo. Esos son atributos reales y entrenables, y correlacionan con los tipos de jugadores de baloncesto que los coaches quieren — jugadores que no son atrapados fuera de posición, no fallan asignaciones, no regalan tiros fáciles. Entonces sí, tener un Brake fuerte importa.\n\nPero hacer varsity, ganar una beca, jugar al próximo nivel — esos resultados dependen de muchas cosas que The Brake no mide. Tu tamaño. Tu nivel de habilidad. Tu tiro. Tu técnica defensiva. Tu freno físico (la capa que no medimos). Tu desarrollo corporal. La opinión de tu coach sobre ti. Tu competencia. Tus oportunidades. La política del programa al que intentas entrar.\n\nThe Brake es un input. Es un input útil. Un coach que ve tu reporte Brake L7 pensará diferente sobre ti que un coach que no. Pero el coach todavía tiene que decidir si tu tiro funciona, si encajas en el esquema, si compites, si pondrás el trabajo. The Brake te ayuda a conseguir la conversación. No gana la conversación por ti.\n\nLa cosa más honesta que puedo decirte es esto. Si tu nivel Brake es alto y tu trabajo de habilidad es débil, un coach notará el desajuste y te dirá que vayas al gimnasio. Si tu trabajo de habilidad es fuerte y tu nivel Brake es bajo, un coach notará que siempre estás un beat tarde y te dirá que te pongas más rápido. Si ambos son fuertes, ahora tienes un caso. The Brake te da una mitad de ese caso, medida y compartible. La otra mitad es sobre ti.\n\nCualquiera que te diga diferente te está vendiendo algo que nosotros no vendemos.",
+    "cta_primary": {
+      "label_en": "Generate your Brake — Premium",
+      "label_es": "Genera tu Brake — Premium",
+      "url": "/join.html"
+    },
+    "cta_secondary": {
+      "label_en": "See what The Brake looks like",
+      "label_es": "Ve cómo se ve The Brake",
+      "url": "/preview-premium.html"
+    },
+    "related": ["what-brake-measures-and-doesnt", "share-brake-with-coach", "what-is-the-brake"]
+  },
+
+  "share-brake-with-coach": {
+    "category": "the-brake",
+    "order": 4,
+    "card": {
+      "title_en": "Can I share The Brake with my coach?",
+      "title_es": "¿Puedo compartir The Brake con mi coach?",
+      "teaser_en": "Yes — and here's what a good coach will do with it",
+      "teaser_es": "Sí — y aquí está lo que un buen coach hará con él"
+    },
+    "headline_en": "Can I share The Brake with my coach?",
+    "headline_es": "¿Puedo compartir The Brake con mi coach?",
+    "body_en": "Yes. That's what it's built for.\n\nEvery Brake report is shareable. One link, sent by text or email, opens the same report for anyone who clicks it. No login required on their end. No password. Nothing to install. The coach opens the link, sees your report, reads it in under two minutes.\n\nHere's what a good coach will do with it.\n\nFirst, they'll read the headline and the composite. That tells them who you are as a cognitive braker in one line and one number. Thirty seconds in, they have a baseline.\n\nThen they'll scan the six components. They're looking for asymmetry — strong where, weak where. A coach who runs a complex offense cares about your Recall and Replay. A coach who runs a switching defensive scheme cares about your Reflex. A coach who plays fast transition basketball cares about your Beat. Your component pattern tells them whether you fit what they ask their players to do.\n\nThen they'll read the on-court applications. This is where the report earns the coach's respect. If the applications describe scenarios the coach has actually seen you in — 'closeouts arrive on time but the shot-fake-drive will hurt you' — the coach thinks 'this is accurate.' That's the moment The Brake stops being a marketing document and starts being a coaching input.\n\nFinally, they'll look at the development priorities. Good coaches appreciate knowing exactly what you're working on. It tells them you understand your own game. Even more — it tells them you have a plan.\n\nWhat a coach won't do, if they're smart, is treat The Brake as a verdict. They've watched you play. They have their own eyes. The Brake is information, not authority. It fits next to what they already know about you, not in place of it.\n\nOne last thing. Share it early in the process, not late. If you're trying to make a team, share your Brake before tryouts start so the coach has context going in. If you're trying to get recruited, share it in the first outreach so the college staff has something to anchor you to. The Brake is most valuable when it's the opening, not the closing.",
+    "body_es": "Sí. Para eso está construido.\n\nCada reporte Brake es compartible. Un enlace, mandado por texto o correo, abre el mismo reporte para cualquiera que hace click. Sin login requerido del lado de ellos. Sin contraseña. Nada que instalar. El coach abre el enlace, ve tu reporte, lo lee en menos de dos minutos.\n\nAquí está lo que un buen coach hará con él.\n\nPrimero, leerá el titular y el compuesto. Eso les dice quién eres como frenador cognitivo en una línea y un número. Treinta segundos dentro, tienen una línea base.\n\nLuego escanearán los seis componentes. Están buscando asimetría — fuerte dónde, débil dónde. Un coach que corre un ataque complejo se preocupa por tu Recall y Replay. Un coach que corre un esquema defensivo de cambios se preocupa por tu Reflex. Un coach que juega baloncesto rápido de transición se preocupa por tu Beat. Tu patrón de componentes les dice si encajas en lo que le piden a sus jugadores hacer.\n\nLuego leerán las aplicaciones en cancha. Aquí es donde el reporte gana el respeto del coach. Si las aplicaciones describen escenarios que el coach ha visto realmente en ti — 'los closeouts llegan a tiempo pero el amague de tiro con ataque te lastimará' — el coach piensa 'esto es preciso.' Ese es el momento en que The Brake deja de ser un documento de marketing y empieza a ser un input de coaching.\n\nFinalmente, mirarán las prioridades de desarrollo. Los buenos coaches aprecian saber exactamente en qué estás trabajando. Les dice que entiendes tu propio juego. Aún más — les dice que tienes un plan.\n\nLo que un coach no hará, si es inteligente, es tratar The Brake como un veredicto. Te han visto jugar. Tienen sus propios ojos. The Brake es información, no autoridad. Encaja al lado de lo que ya saben sobre ti, no en lugar de.\n\nUna última cosa. Compártelo temprano en el proceso, no tarde. Si estás tratando de hacer un equipo, comparte tu Brake antes de que empiecen las pruebas para que el coach tenga contexto yendo en. Si estás tratando de ser reclutado, compártelo en el primer contacto para que el staff universitario tenga algo que anclarte. The Brake es más valioso cuando es la apertura, no el cierre.",
+    "cta_primary": {
+      "label_en": "Generate your Brake — Premium",
+      "label_es": "Genera tu Brake — Premium",
+      "url": "/join.html"
+    },
+    "cta_secondary": {
+      "label_en": "See a sample Brake",
+      "label_es": "Ve un Brake de ejemplo",
+      "url": "/preview-premium.html"
+    },
+    "related": ["what-is-the-brake", "brake-varsity-recruiting", "coach-deploy-bpm"]
+  },
+
+  "regenerate-brake": {
+    "category": "the-brake",
+    "order": 5,
+    "card": {
+      "title_en": "How often should I regenerate The Brake?",
+      "title_es": "¿Con qué frecuencia debería regenerar The Brake?",
+      "teaser_en": "Every six to eight weeks for serious development. Here's why.",
+      "teaser_es": "Cada seis a ocho semanas para desarrollo serio. Aquí está por qué."
+    },
+    "headline_en": "How often should I regenerate The Brake?",
+    "headline_es": "¿Con qué frecuencia debería regenerar The Brake?",
+    "body_en": "Short answer: every six to eight weeks if you're training seriously. Here's why that window matters.\n\nCognitive braking develops in cycles. You train a specific component consistently — say you're working on your Beat score because your rhythm-timed braking is weak — and for the first two to three weeks you see rapid improvement because you're building the neural pathway. Then you plateau for a few weeks while the pathway consolidates. Then you see another jump as the consolidation settles in. Then another plateau. The full cycle for meaningful level change is six to eight weeks of consistent work on a specific component.\n\nIf you regenerate The Brake every week, you're just watching noise. Your scores fluctuate with sleep, focus, and how recently you played pickup. A single week's data doesn't tell you whether your training is working.\n\nIf you regenerate every six to eight weeks, the signal is clear. You'll see whether your composite moved. You'll see which components responded to the training and which didn't. You'll see whether your 90 BPM scores caught up to your 60 BPM scores or stayed behind. This is real developmental information.\n\nHere's the practical cadence I'd recommend for most serious players.\n\nWeek 1: Run all six drills at all three tempos. Generate your first Brake. Read it. Identify your top two development priorities.\n\nWeeks 2 to 7: Train the priorities. Run the priority drills three or four times a week. Ignore the rest.\n\nWeek 8: Re-run all six drills at all three tempos. Regenerate The Brake. Compare to week 1. See what moved.\n\nThen repeat. Sixty to eighty-day cycles. Over a full season, that's four or five Brake generations. Over two years, ten or more. What you end up with is a measured trajectory of your cognitive braking development — something no player in basketball has ever had before.\n\nOne exception. If something major changes — you start a new S&C program, you move to a new team, you come back from injury, you hit a growth spurt — regenerate sooner. Those events reshuffle cognitive braking in ways worth measuring.",
+    "body_es": "Respuesta corta: cada seis a ocho semanas si estás entrenando seriamente. Aquí está por qué esa ventana importa.\n\nEl frenado cognitivo se desarrolla en ciclos. Entrenas un componente específico consistentemente — digamos que estás trabajando en tu puntaje de Beat porque tu frenado temporizado en ritmo es débil — y por las primeras dos a tres semanas ves mejora rápida porque estás construyendo el camino neural. Luego te estancas por unas semanas mientras el camino se consolida. Luego ves otro salto mientras la consolidación se asienta. Luego otro estancamiento. El ciclo completo para cambio significativo de nivel es seis a ocho semanas de trabajo consistente en un componente específico.\n\nSi regeneras The Brake cada semana, solo estás viendo ruido. Tus puntajes fluctúan con sueño, enfoque, y qué tan recientemente jugaste pickup. Los datos de una sola semana no te dicen si tu entrenamiento está funcionando.\n\nSi regeneras cada seis a ocho semanas, la señal es clara. Verás si tu compuesto se movió. Verás qué componentes respondieron al entrenamiento y cuáles no. Verás si tus puntajes a 90 BPM alcanzaron a tus puntajes a 60 BPM o se quedaron atrás. Esta es información real de desarrollo.\n\nAquí está la cadencia práctica que recomendaría para la mayoría de jugadores serios.\n\nSemana 1: Corre los seis drills en los tres tempos. Genera tu primer Brake. Léelo. Identifica tus dos prioridades principales de desarrollo.\n\nSemanas 2 a 7: Entrena las prioridades. Corre los drills prioritarios tres o cuatro veces a la semana. Ignora el resto.\n\nSemana 8: Vuelve a correr los seis drills en los tres tempos. Regenera The Brake. Compara con semana 1. Ve qué se movió.\n\nLuego repite. Ciclos de sesenta a ochenta días. A lo largo de una temporada completa, eso son cuatro o cinco generaciones de Brake. En dos años, diez o más. Lo que acabas teniendo es una trayectoria medida de tu desarrollo cognitivo de frenado — algo que ningún jugador en baloncesto ha tenido antes.\n\nUna excepción. Si algo mayor cambia — empiezas un nuevo programa de S&C, te mudas a un nuevo equipo, vuelves de una lesión, pegas un estirón — regenera más temprano. Esos eventos rebarajan el frenado cognitivo en maneras que vale la pena medir.",
+    "cta_primary": {
+      "label_en": "Generate your Brake — Premium",
+      "label_es": "Genera tu Brake — Premium",
+      "url": "/join.html"
+    },
+    "cta_secondary": {
+      "label_en": "See a sample Brake",
+      "label_es": "Ve un Brake de ejemplo",
+      "url": "/preview-premium.html"
+    },
+    "related": ["what-is-the-brake", "premium-pricing", "the-ten-levels"]
+  },
+
+  "what-are-reaction-lights": {
+    "category": "reaction-lights",
+    "order": 1,
+    "card": {
+      "title_en": "What are Wheeler Reaction Lights?",
+      "title_es": "¿Qué son las Wheeler Reaction Lights?",
+      "teaser_en": "The on-court cognitive brake — six wireless LED units, $580",
+      "teaser_es": "El freno cognitivo en cancha — seis unidades LED inalámbricas, $580"
+    },
+    "headline_en": "What are Wheeler Reaction Lights?",
+    "headline_es": "¿Qué son las Wheeler Reaction Lights?",
+    "body_en": "Reaction Lights are six wireless LED units built by Wheeler Sports Tech that train the same cognitive brake BPM's drills measure — except on the court, in physical movement, instead of on a phone.\n\nHere's how they work. Six hexagonal LED units, each about the size of a fist. You can magnetically mount them to walls, place them on the floor, attach them to cones, or distribute them across a court up to 115 feet apart. A Bluetooth app controls the lights — which ones light up, in what color, for how long, in what sequence.\n\nThe drills run like this. A light turns on. The player sees it, reads it, brakes toward it, redirects to the next one. Another light turns on, in a different position, maybe a different color. Read, brake, redirect. Over and over, at progressively faster tempos.\n\nWhat the player is training is the cognitive brake under physical movement. The read arrives — here's a cue, move toward it. The brake commits — decelerate at the light, touch it, change direction. All happening while the body is in full motion, with real inertia, real footwork, real physical consequences for late braking.\n\nThis is the reactive layer of the three-layer brake system. It lives between BPM's phone-based cognitive measurement and isoinertial physical brake training. BPM measures what your brain can do sitting still. Reaction Lights train what your brain can do while your body is moving. The physical brake training (isoinertial) builds the body's capacity to actually absorb the deceleration forces. Three layers, one brake.\n\nBPM sells Reaction Lights through our own Stripe at $580 for a set of six wireless units, the Bluetooth app, magnetic mounting hardware, and an ergonomic carrying case. Shipping handled by us. Direct from Wheeler product line, deployed through BPM's basketball framing. Every coach, trainer, and serious individual player who wants on-court reactive training should have a set.",
+    "body_es": "Las Reaction Lights son seis unidades LED inalámbricas construidas por Wheeler Sports Tech que entrenan el mismo freno cognitivo que miden los drills de BPM — excepto en la cancha, en movimiento físico, en lugar de en un teléfono.\n\nAquí está cómo funcionan. Seis unidades LED hexagonales, cada una del tamaño de un puño. Las puedes montar magnéticamente en paredes, ponerlas en el piso, pegarlas a conos, o distribuirlas a través de una cancha hasta 115 pies aparte. Una app Bluetooth controla las luces — cuáles se encienden, en qué color, por cuánto tiempo, en qué secuencia.\n\nLos drills corren así. Una luz se enciende. El jugador la ve, la lee, frena hacia ella, redirige a la próxima. Otra luz se enciende, en una posición diferente, tal vez un color diferente. Lee, frena, redirige. Una y otra vez, a tempos progresivamente más rápidos.\n\nLo que el jugador está entrenando es el freno cognitivo bajo movimiento físico. La lectura llega — aquí hay una señal, muévete hacia ella. El freno se compromete — desacelera en la luz, tócala, cambia dirección. Todo pasando mientras el cuerpo está en movimiento completo, con inercia real, juego de pies real, consecuencias físicas reales por frenar tarde.\n\nEsta es la capa reactiva del sistema de freno de tres capas. Vive entre la medición cognitiva basada en teléfono de BPM y el entrenamiento físico isoinercial del freno. BPM mide lo que tu cerebro puede hacer sentado quieto. Las Reaction Lights entrenan lo que tu cerebro puede hacer mientras tu cuerpo se mueve. El entrenamiento físico del freno (isoinercial) construye la capacidad del cuerpo para absorber realmente las fuerzas de desaceleración. Tres capas, un freno.\n\nBPM vende las Reaction Lights a través de nuestro propio Stripe a $580 por un set de seis unidades inalámbricas, la app Bluetooth, hardware de montaje magnético, y un estuche ergonómico. Envío manejado por nosotros. Directo de la línea de productos Wheeler, desplegado a través del marco de baloncesto de BPM. Cada coach, entrenador, y jugador individual serio que quiera entrenamiento reactivo en cancha debería tener un set.",
+    "cta_primary": {
+      "label_en": "Order Reaction Lights — $580",
+      "label_es": "Ordena Reaction Lights — $580",
+      "url": "/index.html#order-reaction-lights"
+    },
+    "cta_secondary": {
+      "label_en": "See the three-layer system",
+      "label_es": "Ve el sistema de tres capas",
+      "url": "/programs.html"
+    },
+    "related": ["do-i-need-reaction-lights", "bpm-vs-reaction-lights", "physical-brake-layer"]
+  },
+
+  "do-i-need-reaction-lights": {
+    "category": "reaction-lights",
+    "order": 2,
+    "card": {
+      "title_en": "Do I need Reaction Lights to use BPM?",
+      "title_es": "¿Necesito Reaction Lights para usar BPM?",
+      "teaser_en": "No. BPM works fully on any phone. The lights add something specific.",
+      "teaser_es": "No. BPM funciona completo en cualquier teléfono. Las luces añaden algo específico."
+    },
+    "headline_en": "Do I need Reaction Lights to use BPM?",
+    "headline_es": "¿Necesito Reaction Lights para usar BPM?",
+    "body_en": "No. Let me be clear on that first. BPM works fully on any phone. You sign up, run the six drills, generate The Brake, and get everything the platform offers without ever owning a Reaction Light.\n\nBut here's what the lights actually add.\n\nBPM's drills measure the cognitive brake while you're sitting still. Finger-on-screen taps at game tempo. That's a legitimate measurement — what your brain does when the cognitive load is isolated from physical load. It's pure cognitive braking, which is useful because you can see exactly what your brain is capable of without the body's fatigue and mechanics getting in the way.\n\nReaction Lights train the same cognitive brake while your body is in motion. Full-speed defensive slides, closeouts, transition defense simulations. The cognitive commitment is the same cognitive commitment BPM measures — read a cue, commit to a brake, execute the deceleration — but now it's happening while your legs are firing, your lungs are working, and your footwork has to stay clean.\n\nThere's always a gap between what your brain can do sitting still and what your brain can do while your body is moving. That gap is real, it's measurable, and the way you close it is by training the reactive layer specifically. Reaction Lights are the tool for that.\n\nSo here's the honest framing. If you're a serious individual player trying to improve your cognitive brake, BPM alone gives you measurement, training, and development tracking. That's a complete product. Reaction Lights become valuable when you want to close the gap between phone-tap cognitive braking and moving-body cognitive braking — which is where the actual game is played.\n\nIf you're a coach or a program, Reaction Lights are more essential because you need to train roster-level reactive skills and BPM alone is a home-training tool. Programs deploying the three-layer system use both.\n\nIf you're an individual player with a budget, start with BPM free. Upgrade to Premium. Once you've been training for a few months and you're hitting ceilings on the phone-based drills, that's when the reactive layer becomes worth the $580. Don't buy them first. Buy them when you've earned the need.",
+    "body_es": "No. Déjame ser claro en eso primero. BPM funciona completo en cualquier teléfono. Te inscribes, corres los seis drills, generas The Brake, y obtienes todo lo que la plataforma ofrece sin nunca tener una Reaction Light.\n\nPero aquí está lo que realmente añaden las luces.\n\nLos drills de BPM miden el freno cognitivo mientras estás sentado quieto. Toques de dedo-en-pantalla a tempo de juego. Esa es una medición legítima — lo que tu cerebro hace cuando la carga cognitiva está aislada de la carga física. Es frenado cognitivo puro, lo cual es útil porque puedes ver exactamente de qué es capaz tu cerebro sin que la fatiga del cuerpo y la mecánica se metan en el medio.\n\nLas Reaction Lights entrenan el mismo freno cognitivo mientras tu cuerpo está en movimiento. Deslizamientos defensivos a toda velocidad, closeouts, simulaciones de defensa en transición. El compromiso cognitivo es el mismo compromiso cognitivo que mide BPM — lee una señal, comprométete a un freno, ejecuta la desaceleración — pero ahora está pasando mientras tus piernas disparan, tus pulmones trabajan, y tu juego de pies tiene que mantenerse limpio.\n\nSiempre hay una brecha entre lo que tu cerebro puede hacer sentado quieto y lo que tu cerebro puede hacer mientras tu cuerpo se mueve. Esa brecha es real, es medible, y la manera de cerrarla es entrenando la capa reactiva específicamente. Las Reaction Lights son la herramienta para eso.\n\nEntonces aquí está el marco honesto. Si eres un jugador individual serio tratando de mejorar tu freno cognitivo, BPM solo te da medición, entrenamiento, y seguimiento de desarrollo. Ese es un producto completo. Las Reaction Lights se vuelven valiosas cuando quieres cerrar la brecha entre frenado cognitivo de toque-de-teléfono y frenado cognitivo con cuerpo-en-movimiento — que es donde se juega el juego real.\n\nSi eres coach o programa, las Reaction Lights son más esenciales porque necesitas entrenar habilidades reactivas a nivel de roster y BPM solo es una herramienta de entrenamiento en casa. Los programas desplegando el sistema de tres capas usan ambos.\n\nSi eres un jugador individual con presupuesto, empieza con BPM gratis. Sube a Premium. Una vez que hayas estado entrenando por unos meses y estés pegando techos en los drills basados en teléfono, ese es cuando la capa reactiva vale los $580. No las compres primero. Cómpralas cuando hayas ganado la necesidad.",
+    "cta_primary": {
+      "label_en": "Start with BPM free",
+      "label_es": "Empieza con BPM gratis",
+      "url": "/join.html"
+    },
+    "cta_secondary": {
+      "label_en": "Learn more about Reaction Lights",
+      "label_es": "Aprende más sobre Reaction Lights",
+      "url": "/index.html#order-reaction-lights"
+    },
+    "related": ["what-are-reaction-lights", "bpm-vs-reaction-lights", "coach-deploy-bpm"]
+  },
+
+  "bpm-vs-reaction-lights": {
+    "category": "reaction-lights",
+    "order": 3,
+    "card": {
+      "title_en": "What's the difference between BPM drills and Reaction Lights?",
+      "title_es": "¿Cuál es la diferencia entre los drills BPM y Reaction Lights?",
+      "teaser_en": "Same cognitive brake. Different environment.",
+      "teaser_es": "Mismo freno cognitivo. Diferente entorno."
+    },
+    "headline_en": "BPM drills vs. Reaction Lights.",
+    "headline_es": "Drills BPM vs. Reaction Lights.",
+    "body_en": "Same cognitive brake. Different environment. That's the short answer. Here's the longer one because the distinction matters.\n\nBPM drills run on a phone. You sit down, open the app, tap cells at game tempo. The drill isolates the cognitive layer from everything else. Your body isn't moving. Your legs aren't fatigued. Your lungs aren't working. All that's being measured is what your brain does when a cue arrives and a brake commitment is required. This is measurement. It's accurate. It tells you exactly what your cognitive braking capacity is under clean conditions.\n\nReaction Lights run on the court. You're in a defensive stance, or transition mode, or closeout progression. Lights are placed around you. A light arrives, you read it, brake toward it, redirect. The cognitive commitment is the same — read, commit, execute — but the context is full-body movement, real inertia, real footwork, real consequences for late braking. This is training under conditions that match the game.\n\nThe value of measuring on a phone is precision. You see your true cognitive ceiling. You see it change over weeks of training. You see it broken down across six components and three tempos. That's what BPM is for.\n\nThe value of training with lights is transfer. Phone-based cognitive gains don't automatically transfer to on-court performance — there's always friction between what your brain can do sitting still and what it can do while your body is flying. Lights close that gap. They let you train the exact same cognitive capability but under game conditions.\n\nThe way programs actually use both. BPM runs on Mondays and Thursdays during the season — short sessions, phone-based, everyone on the roster does them before practice. Reaction Lights run on Tuesdays and Fridays during practice — integrated into the actual practice plan, defensive slides with light reads, closeout progressions with light targets, transition with light redirects. Measurement from BPM shows what cognitive braking capability each player has. Training with lights builds the on-court version of that capability.\n\nA player training only with BPM gets sharper cognitively but still has the gap between phone and floor. A player training only with Reaction Lights gets better at the specific light drills but has no measurement to know whether the cognitive brake is actually improving or whether they're just memorizing the drills. Both together is the system.",
+    "body_es": "Mismo freno cognitivo. Diferente entorno. Esa es la respuesta corta. Aquí está la más larga porque la distinción importa.\n\nLos drills BPM corren en un teléfono. Te sientas, abres la app, tocas celdas a tempo de juego. El drill aísla la capa cognitiva de todo lo demás. Tu cuerpo no se mueve. Tus piernas no están fatigadas. Tus pulmones no están trabajando. Todo lo que se está midiendo es lo que tu cerebro hace cuando una señal llega y un compromiso de freno es requerido. Esto es medición. Es precisa. Te dice exactamente cuál es tu capacidad cognitiva de frenado bajo condiciones limpias.\n\nLas Reaction Lights corren en la cancha. Estás en postura defensiva, o modo de transición, o progresión de closeout. Las luces están colocadas alrededor tuyo. Una luz llega, la lees, frenas hacia ella, rediriges. El compromiso cognitivo es el mismo — lee, comprométete, ejecuta — pero el contexto es movimiento de cuerpo completo, inercia real, juego de pies real, consecuencias reales por frenar tarde. Esto es entrenamiento bajo condiciones que coinciden con el juego.\n\nEl valor de medir en un teléfono es precisión. Ves tu verdadero techo cognitivo. Lo ves cambiar a lo largo de semanas de entrenamiento. Lo ves desglosado en seis componentes y tres tempos. Para eso es BPM.\n\nEl valor de entrenar con luces es la transferencia. Las ganancias cognitivas basadas en teléfono no se transfieren automáticamente al rendimiento en cancha — siempre hay fricción entre lo que tu cerebro puede hacer sentado quieto y lo que puede hacer mientras tu cuerpo vuela. Las luces cierran esa brecha. Te dejan entrenar la misma capacidad cognitiva exacta pero bajo condiciones de juego.\n\nLa manera en que los programas usan ambos. BPM corre los lunes y jueves durante la temporada — sesiones cortas, basadas en teléfono, todos en el roster las hacen antes de la práctica. Las Reaction Lights corren los martes y viernes durante la práctica — integradas en el plan real de práctica, deslizamientos defensivos con lecturas de luz, progresiones de closeout con objetivos de luz, transición con redirecciones de luz. La medición de BPM muestra qué capacidad cognitiva de frenado tiene cada jugador. El entrenamiento con luces construye la versión en cancha de esa capacidad.\n\nUn jugador entrenando solo con BPM se afila cognitivamente pero todavía tiene la brecha entre teléfono y piso. Un jugador entrenando solo con Reaction Lights se pone mejor en los drills específicos de luz pero no tiene medición para saber si el freno cognitivo está mejorando realmente o si solo está memorizando los drills. Ambos juntos es el sistema.",
+    "cta_primary": {
+      "label_en": "Get both — see Programs",
+      "label_es": "Obtén ambos — ve Programas",
+      "url": "/programs.html"
+    },
+    "cta_secondary": {
+      "label_en": "Start with BPM free",
+      "label_es": "Empieza con BPM gratis",
+      "url": "/join.html"
+    },
+    "related": ["what-are-reaction-lights", "do-i-need-reaction-lights", "physical-brake-layer"]
+  },
+
+  "coach-deploy-bpm": {
+    "category": "programs-coaches",
+    "order": 1,
+    "card": {
+      "title_en": "I coach a team. How do I deploy BPM to my roster?",
+      "title_es": "Coacheo un equipo. ¿Cómo despliego BPM a mi roster?",
+      "teaser_en": "Roster onboarding, baseline Brakes, coach-level dashboard, season-long tracking",
+      "teaser_es": "Incorporación del roster, Brakes base, panel a nivel de coach, seguimiento de toda la temporada"
+    },
+    "headline_en": "How coaches deploy BPM to a roster.",
+    "headline_es": "Cómo los coaches despliegan BPM a un roster.",
+    "body_en": "Five steps. Season-long. Here's the deployment.\n\nStep one. Roster onboarding. Every player on your roster gets a BPM account at the program tier. One invitation link, bulk signup, player profiles linked to the program. No friction, no per-player billing, no app store. Works on any phone with a browser. Players join in a pre-season team meeting or on their own in the first week.\n\nStep two. Baseline brake measurement. During the first two weeks of program access, every player runs all six drills at all three tempos. The Brake report generates for each player — composite level, six components, on-court applications, development priorities. You see the full roster's cognitive brake profile before the season opens. This is the baseline. You reference it all season.\n\nStep three. Coach-level roster dashboard. Program access unlocks a view of every player's Brake data — sortable by composite level, by individual component, by position, by tempo performance. You can see at a glance which of your guards have the weakest Ritmo scores, which of your bigs have the strongest Replay, where your rotation gaps are cognitively. This is information you've never had before.\n\nStep four. Integrate with practice. BPM becomes a short pre-practice session twice a week. Players run their priority drills for fifteen minutes before the main practice begins. This isn't optional for the team — it's part of the program. Priority drills are chosen based on each player's Brake report, so it's individualized. Everybody on the roster is working on their own cognitive development during the same fifteen minutes.\n\nStep five. Mid-season reassessment. At week 8 or 10, everyone re-runs the full six drills. Regenerate The Brake. Compare to baseline. See which players moved, which components responded, where the development is working. The second half of the season runs on updated priorities. At the end of the season, regenerate one more time. Now you have a full-season cognitive braking trajectory for every player on your roster.\n\nThe whole deployment costs time, not money until you decide to scale it. Individual Premium tier is $49/year per player. Programs tier has custom pricing for rosters — contact Programs for the real number. Many programs use the free tier for the three base drills only and upgrade to Programs tier once they see the value.",
+    "body_es": "Cinco pasos. Toda la temporada. Aquí está el despliegue.\n\nPaso uno. Incorporación del roster. Cada jugador en tu roster obtiene una cuenta BPM en el nivel del programa. Un enlace de invitación, inscripción masiva, perfiles de jugadores vinculados al programa. Sin fricción, sin facturación por jugador, sin app store. Funciona en cualquier teléfono con navegador. Los jugadores se unen en una reunión de equipo de pretemporada o por su cuenta en la primera semana.\n\nPaso dos. Medición base del freno. Durante las primeras dos semanas de acceso al programa, cada jugador corre los seis drills en los tres tempos. El reporte Brake se genera para cada jugador — nivel compuesto, seis componentes, aplicaciones en cancha, prioridades de desarrollo. Ves el perfil cognitivo completo del roster antes de que abra la temporada. Esta es la línea base. La referencias toda la temporada.\n\nPaso tres. Panel del roster a nivel de coach. El acceso al programa desbloquea una vista de los datos Brake de cada jugador — ordenable por nivel compuesto, por componente individual, por posición, por rendimiento de tempo. Puedes ver de un vistazo cuáles de tus bases tienen los puntajes de Ritmo más débiles, cuáles de tus bigs tienen el Replay más fuerte, dónde están tus brechas de rotación cognitivamente. Esta es información que nunca has tenido antes.\n\nPaso cuatro. Integra con la práctica. BPM se convierte en una sesión corta antes de la práctica dos veces por semana. Los jugadores corren sus drills prioritarios por quince minutos antes de que empiece la práctica principal. Esto no es opcional para el equipo — es parte del programa. Los drills prioritarios se eligen basados en el reporte Brake de cada jugador, entonces es individualizado. Todos en el roster están trabajando en su propio desarrollo cognitivo durante los mismos quince minutos.\n\nPaso cinco. Reevaluación a mitad de temporada. A la semana 8 o 10, todos vuelven a correr los seis drills completos. Regenera The Brake. Compara con la línea base. Ve qué jugadores se movieron, qué componentes respondieron, dónde está funcionando el desarrollo. La segunda mitad de la temporada corre en prioridades actualizadas. Al final de la temporada, regenera una vez más. Ahora tienes una trayectoria cognitiva completa de toda la temporada para cada jugador en tu roster.\n\nEl despliegue completo cuesta tiempo, no dinero hasta que decidas escalarlo. El nivel Premium individual es $49/año por jugador. El nivel Programas tiene precio personalizado para rosters — contacta Programas para el número real. Muchos programas usan el nivel gratis para los tres drills base solamente y suben al nivel Programas una vez que ven el valor.",
+    "cta_primary": {
+      "label_en": "Talk to Programs",
+      "label_es": "Habla con Programas",
+      "url": "/programs.html"
+    },
+    "cta_secondary": {
+      "label_en": "See individual pricing",
+      "label_es": "Ve precios individuales",
+      "url": "/join.html"
+    },
+    "related": ["individual-vs-programs-pricing", "bpm-with-existing-strength-program", "who-is-bpm-for"]
+  },
+
+  "individual-vs-programs-pricing": {
+    "category": "programs-coaches",
+    "order": 2,
+    "card": {
+      "title_en": "What's the difference between individual and Programs pricing?",
+      "title_es": "¿Cuál es la diferencia entre el precio individual y de Programas?",
+      "teaser_en": "Individual is $49/year. Programs is custom — and unlocks the roster dashboard.",
+      "teaser_es": "Individual es $49/año. Programas es personalizado — y desbloquea el panel del roster."
+    },
+    "headline_en": "Individual pricing vs. Programs pricing.",
+    "headline_es": "Precio individual vs. precio de Programas.",
+    "body_en": "Individual pricing is simple. $49 per year, or $7 per month. Unlocks all six drills, the full Brake report, and individual profile features. One player, one account. This is what the free player upgrades to when they want the complete product.\n\nPrograms pricing is different because the product is different. Programs tier isn't just 'the individual tier times your roster size.' It includes the individual tier features for every player on the roster, plus a coach-level dashboard that shows the entire roster's Brake data sortable and comparable across players. It includes bulk onboarding — one invitation link, your whole team on BPM in twenty minutes. It includes roster-level reporting — exportable Brake summaries for administrators, boosters, parents, or anyone else who needs to see the program's cognitive braking trajectory. And it includes eligibility for the full three-layer system — Reaction Lights and the isoinertial physical brake methodology deploy through the Programs tier, not through individual accounts.\n\nPricing for Programs is custom. Depends on roster size, program tier (youth, high school, college, AAU, facility), whether you're taking the full three-layer system or just the cognitive layer, whether you want consultation with our isoinertial training director, whether it's a one-season commitment or a multi-year deployment. We don't list a sticker price because the actual number depends on what you're actually deploying. The inquiry form on the Programs page is the starting point.\n\nHere's what I can tell you about the range. For a typical high school program of 15 players taking the cognitive tier only, Programs pricing comes in below what 15 individual Premium subscriptions would cost — because Programs bundles the coach dashboard and roster features that individuals don't need. For a program taking the full three-layer system, pricing is higher because you're also paying for Reaction Lights hardware and methodology consultation. For a large college program or a multi-location facility, pricing scales with the deployment complexity.\n\nBottom line. If you're one coach with one team and a modest budget, start by running the free drills with your players. Upgrade individual accounts to Premium selectively for the players who want the full Brake report. When the value becomes obvious and you want to deploy roster-wide with a coach dashboard, talk to Programs.",
+    "body_es": "El precio individual es simple. $49 por año, o $7 por mes. Desbloquea los seis drills, el reporte Brake completo, y las funciones del perfil individual. Un jugador, una cuenta. Esto es a lo que sube el jugador gratis cuando quiere el producto completo.\n\nEl precio de Programas es diferente porque el producto es diferente. El nivel Programas no es solo 'el nivel individual multiplicado por el tamaño de tu roster.' Incluye las funciones del nivel individual para cada jugador en el roster, más un panel a nivel de coach que muestra los datos Brake de todo el roster ordenables y comparables entre jugadores. Incluye incorporación masiva — un enlace de invitación, todo tu equipo en BPM en veinte minutos. Incluye reportes a nivel de roster — resúmenes Brake exportables para administradores, patrocinadores, padres, o cualquiera que necesite ver la trayectoria cognitiva de frenado del programa. E incluye elegibilidad para el sistema completo de tres capas — las Reaction Lights y la metodología isoinercial del freno físico se despliegan a través del nivel Programas, no a través de cuentas individuales.\n\nEl precio para Programas es personalizado. Depende del tamaño del roster, nivel del programa (juvenil, secundaria, universitario, AAU, instalación), si estás tomando el sistema completo de tres capas o solo la capa cognitiva, si quieres consultoría con nuestro director de entrenamiento isoinercial, si es un compromiso de una temporada o un despliegue de múltiples años. No listamos un precio de etiqueta porque el número real depende de lo que realmente estás desplegando. El formulario de consulta en la página Programas es el punto de partida.\n\nAquí está lo que te puedo decir sobre el rango. Para un programa típico de secundaria de 15 jugadores tomando solo el nivel cognitivo, el precio de Programas sale por debajo de lo que 15 suscripciones Premium individuales costarían — porque Programas empaqueta el panel del coach y las funciones del roster que los individuos no necesitan. Para un programa tomando el sistema completo de tres capas, el precio es más alto porque también estás pagando por hardware de Reaction Lights y consultoría de metodología. Para un programa universitario grande o una instalación de múltiples locaciones, el precio escala con la complejidad del despliegue.\n\nLínea final. Si eres un coach con un equipo y un presupuesto modesto, empieza corriendo los drills gratis con tus jugadores. Sube cuentas individuales a Premium selectivamente para los jugadores que quieran el reporte Brake completo. Cuando el valor se vuelva obvio y quieras desplegar a nivel de roster con un panel de coach, habla con Programas.",
+    "cta_primary": {
+      "label_en": "Contact Programs",
+      "label_es": "Contacta Programas",
+      "url": "/programs.html#inquiry"
+    },
+    "cta_secondary": {
+      "label_en": "Start individual free",
+      "label_es": "Empieza individual gratis",
+      "url": "/join.html"
+    },
+    "related": ["coach-deploy-bpm", "free-vs-premium", "premium-pricing"]
+  },
+
+  "physical-brake-layer": {
+    "category": "programs-coaches",
+    "order": 3,
+    "card": {
+      "title_en": "What is the physical brake layer?",
+      "title_es": "¿Qué es la capa del freno físico?",
+      "teaser_en": "The body's capacity to absorb deceleration force — trained through isoinertial flywheel protocols",
+      "teaser_es": "La capacidad del cuerpo para absorber fuerza de desaceleración — entrenada a través de protocolos isoinerciales de volante"
+    },
+    "headline_en": "The physical brake layer.",
+    "headline_es": "La capa del freno físico.",
+    "body_en": "BPM measures the cognitive brake. That's the read, the decision, the commitment. But a cognitive brake commitment is just a signal — the body still has to execute it. And executing a brake at basketball speeds is a physical problem that most strength programs don't solve.\n\nHere's the physics. When a player decelerates — from a sprint, off a jump, into a closeout — the body has to absorb kinetic energy. That absorption is eccentric work. The muscles lengthen under load to control the deceleration. Bigger body, higher speed, more energy to absorb. If the muscles can't absorb it, something else does — joints, ligaments, tendons. This is how ACLs tear. This is how ankles roll. This is how 'soft landings' become injuries.\n\nMost strength programs train the opposite direction. They train concentric force production — how much force the muscle can generate. Squats, cleans, jumps. All concentric. Important work. Not the same work as training the body to absorb force.\n\nThe physical brake layer trains the absorption. The primary tool is the isoinertial flywheel — a training device that generates resistance from the inertia of a spinning flywheel instead of from gravity. The distinctive feature is that every concentric effort you put in gets returned as an eccentric effort you have to control. Push the flywheel, and it pulls back with equal force. That pull-back is the eccentric phase, and it's stronger than what gravity-based training can produce. You're training the muscle to absorb force at levels higher than it usually produces force.\n\nThe applications on the basketball court are specific. Landing mechanics after rebounds. Second-jump capacity. Deceleration from transition into half-court. Contact absorption on hard closeouts. Stability under contact on defensive slides. Injury prevention for ACLs and ankles. All of them are eccentric-dominant, all of them are trainable through isoinertial protocols.\n\nThis is the layer BPM does not measure. We don't pretend to measure it. What we do is point toward it — every Brake report ends with a pointer to the physical brake layer, directing players and coaches to the isoinertial training that makes the full three-layer brake system complete. For programs, we deploy the methodology directly through our isoinertial training director as part of the Programs tier.",
+    "body_es": "BPM mide el freno cognitivo. Esa es la lectura, la decisión, el compromiso. Pero un compromiso cognitivo de freno es solo una señal — el cuerpo todavía tiene que ejecutarlo. Y ejecutar un freno a velocidades de baloncesto es un problema físico que la mayoría de los programas de fuerza no resuelve.\n\nAquí está la física. Cuando un jugador desacelera — de un sprint, de un salto, en un closeout — el cuerpo tiene que absorber energía cinética. Esa absorción es trabajo excéntrico. Los músculos se alargan bajo carga para controlar la desaceleración. Cuerpo más grande, velocidad más alta, más energía para absorber. Si los músculos no pueden absorberla, algo más lo hace — articulaciones, ligamentos, tendones. Así se rompen los ACL. Así se tuercen los tobillos. Así los 'aterrizajes suaves' se vuelven lesiones.\n\nLa mayoría de los programas de fuerza entrenan la dirección opuesta. Entrenan producción de fuerza concéntrica — cuánta fuerza puede generar el músculo. Sentadillas, cargadas, saltos. Todo concéntrico. Trabajo importante. No el mismo trabajo que entrenar al cuerpo para absorber fuerza.\n\nLa capa del freno físico entrena la absorción. La herramienta primaria es el volante isoinercial — un dispositivo de entrenamiento que genera resistencia desde la inercia de un volante giratorio en lugar de desde la gravedad. La característica distintiva es que cada esfuerzo concéntrico que pones se regresa como un esfuerzo excéntrico que tienes que controlar. Empuja el volante, y tira de vuelta con igual fuerza. Ese tirón de regreso es la fase excéntrica, y es más fuerte de lo que puede producir el entrenamiento basado en gravedad. Estás entrenando al músculo para absorber fuerza a niveles más altos de los que usualmente produce fuerza.\n\nLas aplicaciones en la cancha de baloncesto son específicas. Mecánica de aterrizaje después de rebotes. Capacidad de segundo salto. Desaceleración de transición a media cancha. Absorción de contacto en closeouts duros. Estabilidad bajo contacto en deslizamientos defensivos. Prevención de lesiones para ACLs y tobillos. Todas son dominantes excéntricas, todas son entrenables a través de protocolos isoinerciales.\n\nEsta es la capa que BPM no mide. No pretendemos medirla. Lo que hacemos es apuntar hacia ella — cada reporte Brake termina con un puntero a la capa del freno físico, dirigiendo a jugadores y coaches al entrenamiento isoinercial que hace completo al sistema completo de freno de tres capas. Para programas, desplegamos la metodología directamente a través de nuestro director de entrenamiento isoinercial como parte del nivel Programas.",
+    "cta_primary": {
+      "label_en": "Learn about the physical brake at hooporia.com",
+      "label_es": "Aprende sobre el freno físico en hooporia.com",
+      "url": "https://hooporia.com"
+    },
+    "cta_secondary": {
+      "label_en": "See the three-layer system",
+      "label_es": "Ve el sistema de tres capas",
+      "url": "/programs.html"
+    },
+    "related": ["who-is-the-expert", "why-braking-sport", "bpm-with-existing-strength-program"]
+  },
+
+  "who-is-the-expert": {
+    "category": "programs-coaches",
+    "order": 4,
+    "card": {
+      "title_en": "Who is the expert behind the physical brake methodology?",
+      "title_es": "¿Quién es el experto detrás de la metodología del freno físico?",
+      "teaser_en": "Our isoinertial training director — where the methodology comes from",
+      "teaser_es": "Nuestro director de entrenamiento isoinercial — de dónde viene la metodología"
+    },
+    "headline_en": "The expert behind the physical brake methodology.",
+    "headline_es": "El experto detrás de la metodología del freno físico.",
+    "body_en": "The physical brake methodology that BPM Programs deploys — the isoinertial flywheel protocols, the deployment framework for basketball-specific eccentric training, the integration with strength-and-conditioning programs — is built by our isoinertial training director.\n\nThis is the person who translated generic isoinertial training principles into basketball-specific protocols. Landing mechanics progressions. Second-jump absorption loading. Deceleration tolerance for guards versus bigs. Position-specific eccentric profiles. Injury prevention thresholds for ACL and ankle load. All of that is built methodology — not folklore, not Instagram trainer content, not adapted-from-another-sport work. Real basketball isoinertial work, built from scratch, deployed through BPM Programs.\n\nThe reason this matters. The YoYo isoinertial flywheel has been around for years. Plenty of programs have tried to deploy it. Most of them fail at deployment — they don't know how to load it, they don't know how to progress it, they don't know how to integrate it with their existing strength work, and they don't know how to read when it's working versus when it's overloading. The equipment without the methodology is just a flywheel.\n\nWhat BPM Programs deploys is the methodology, not the equipment alone. The equipment is available through Hooporia at any time. What Programs provides is how to actually use it in a basketball context, from the person who built the use case.\n\nOn the public-facing side of this answer — the expert's name and specific background live in the Programs contract. I'm holding their public identity back from the Conversations intentionally, because the expert works with multiple programs and the public framing is 'our isoinertial training director' rather than a personal brand. If you're a coach or program director and you want to engage the methodology directly, the Programs inquiry form routes to the conversation where all of this becomes specific. For everyone else — players, parents, casual visitors — what you need to know is that the methodology behind the physical brake layer is real, built by a dedicated expert, and deployable only through the Programs tier.",
+    "body_es": "La metodología del freno físico que despliega BPM Programs — los protocolos isoinerciales de volante, el marco de despliegue para entrenamiento excéntrico específico de baloncesto, la integración con programas de fuerza y acondicionamiento — está construida por nuestro director de entrenamiento isoinercial.\n\nEsta es la persona que tradujo los principios genéricos de entrenamiento isoinercial en protocolos específicos de baloncesto. Progresiones de mecánica de aterrizaje. Carga de absorción del segundo salto. Tolerancia de desaceleración para bases versus bigs. Perfiles excéntricos específicos por posición. Umbrales de prevención de lesiones para carga de ACL y tobillo. Todo eso es metodología construida — no folklore, no contenido de entrenadores de Instagram, no trabajo adaptado de otro deporte. Trabajo isoinercial real de baloncesto, construido desde cero, desplegado a través de BPM Programs.\n\nLa razón por la que esto importa. El volante isoinercial YoYo ha existido por años. Muchos programas han tratado de desplegarlo. La mayoría falla en el despliegue — no saben cómo cargarlo, no saben cómo progresarlo, no saben cómo integrarlo con su trabajo de fuerza existente, y no saben cómo leer cuándo está funcionando versus cuándo está sobrecargando. El equipo sin la metodología es solo un volante.\n\nLo que BPM Programs despliega es la metodología, no el equipo solo. El equipo está disponible a través de Hooporia en cualquier momento. Lo que Programas provee es cómo usarlo realmente en un contexto de baloncesto, desde la persona que construyó el caso de uso.\n\nEn el lado público de esta respuesta — el nombre del experto y el trasfondo específico viven en el contrato de Programas. Estoy sosteniendo su identidad pública fuera de las Conversaciones intencionalmente, porque el experto trabaja con múltiples programas y el marco público es 'nuestro director de entrenamiento isoinercial' en lugar de una marca personal. Si eres un coach o director de programa y quieres contratar la metodología directamente, el formulario de consulta de Programas te ruta a la conversación donde todo esto se vuelve específico. Para todos los demás — jugadores, padres, visitantes casuales — lo que necesitas saber es que la metodología detrás de la capa del freno físico es real, construida por un experto dedicado, y desplegable solo a través del nivel Programas.",
+    "cta_primary": {
+      "label_en": "Talk to Programs about the methodology",
+      "label_es": "Habla con Programas sobre la metodología",
+      "url": "/programs.html#inquiry"
+    },
+    "cta_secondary": {
+      "label_en": "Learn about the physical brake",
+      "label_es": "Aprende sobre el freno físico",
+      "url": "https://hooporia.com"
+    },
+    "related": ["physical-brake-layer", "coach-deploy-bpm", "bpm-with-existing-strength-program"]
+  },
+
+  "bpm-with-existing-strength-program": {
+    "category": "programs-coaches",
+    "order": 5,
+    "card": {
+      "title_en": "Does BPM work with our existing strength program?",
+      "title_es": "¿BPM funciona con nuestro programa de fuerza existente?",
+      "teaser_en": "Yes. It's complementary, not replacement.",
+      "teaser_es": "Sí. Es complementario, no reemplazo."
+    },
+    "headline_en": "Does BPM work with our existing strength program?",
+    "headline_es": "¿BPM funciona con nuestro programa de fuerza existente?",
+    "body_en": "Yes. And this is a question I want to answer carefully because the wrong answer would cost your S&C staff's trust, which would cost the whole deployment.\n\nHere's the honest read. BPM's cognitive layer is purely additive to any strength program. Your S&C staff doesn't have to change anything they're doing. Players run BPM drills on their phones, before practice or at home, separate from the weight room. Your squats, your cleans, your plyometrics, your conditioning — all of that continues unchanged. BPM adds a measurement and training layer that didn't exist before, and it happens outside the S&C domain entirely. There's no conflict to resolve.\n\nReaction Lights are also additive — but they touch the practice plan, not the weight room. Lights deploy during on-court sessions, typically in warm-up, defensive segments, or conditioning finishers. Your coach integrates them. Your S&C staff isn't involved in the light sessions.\n\nThe physical brake layer — isoinertial flywheel protocols — is where a real integration conversation happens. That layer lives in the weight room. It's absolutely complementary to concentric-dominant strength work, but it has to be integrated, not appended. Simply adding a YoYo flywheel session on top of an already-maxed-out S&C schedule is a bad idea — it overloads players and produces injuries you're trying to prevent.\n\nWhat actually works, when programs deploy the full three-layer system, is that our isoinertial training director consults directly with the existing S&C staff on integration. Where does isoinertial work fit in the weekly cycle? Which existing exercises does it replace versus supplement? How does it interact with game-day loading and recovery? How is volume managed across a season? Those are real questions and they get answered in conversation between our methodology and your S&C staff.\n\nThe answer we never give is 'tear up your strength program and start over.' Your S&C staff built what they built for reasons. Good isoinertial integration respects that and works within it. Programs that deploy the full system see the isoinertial work as the missing eccentric piece that completes what the existing concentric program was building toward — not a replacement for what was already there.\n\nIf you're a head coach reading this and you're wondering whether your S&C director will push back — bring them into the Programs inquiry conversation directly. The integration question is best answered S&C-to-methodology rather than head-coach-to-methodology. If your S&C staff is good, they'll recognize the eccentric gap in their own program before we point it out.",
+    "body_es": "Sí. Y esta es una pregunta que quiero responder con cuidado porque la respuesta equivocada costaría la confianza de tu staff de S&C, lo cual costaría todo el despliegue.\n\nAquí está la lectura honesta. La capa cognitiva de BPM es puramente aditiva a cualquier programa de fuerza. Tu staff de S&C no tiene que cambiar nada de lo que están haciendo. Los jugadores corren los drills BPM en sus teléfonos, antes de la práctica o en casa, separado del cuarto de pesas. Tus sentadillas, tus cargadas, tus pliométricos, tu acondicionamiento — todo eso continúa sin cambios. BPM añade una capa de medición y entrenamiento que no existía antes, y pasa fuera del dominio de S&C por completo. No hay conflicto que resolver.\n\nLas Reaction Lights también son aditivas — pero tocan el plan de práctica, no el cuarto de pesas. Las luces se despliegan durante sesiones en cancha, típicamente en calentamiento, segmentos defensivos, o finalizadores de acondicionamiento. Tu coach las integra. Tu staff de S&C no está involucrado en las sesiones de luces.\n\nLa capa del freno físico — protocolos isoinerciales de volante — es donde una conversación real de integración pasa. Esa capa vive en el cuarto de pesas. Es absolutamente complementaria al trabajo de fuerza dominante concéntrico, pero tiene que ser integrada, no añadida. Simplemente agregar una sesión de volante YoYo encima de un horario de S&C ya al tope es una mala idea — sobrecarga a los jugadores y produce lesiones que estás tratando de prevenir.\n\nLo que realmente funciona, cuando los programas despliegan el sistema completo de tres capas, es que nuestro director de entrenamiento isoinercial consulta directamente con el staff de S&C existente sobre integración. ¿Dónde encaja el trabajo isoinercial en el ciclo semanal? ¿Qué ejercicios existentes reemplaza versus complementa? ¿Cómo interactúa con la carga y recuperación del día de juego? ¿Cómo se maneja el volumen a lo largo de una temporada? Esas son preguntas reales y se responden en conversación entre nuestra metodología y tu staff de S&C.\n\nLa respuesta que nunca damos es 'rompe tu programa de fuerza y empieza de nuevo.' Tu staff de S&C construyó lo que construyó por razones. La buena integración isoinercial respeta eso y trabaja dentro de eso. Los programas que despliegan el sistema completo ven el trabajo isoinercial como la pieza excéntrica faltante que completa hacia lo que el programa concéntrico existente estaba construyendo — no un reemplazo de lo que ya estaba ahí.\n\nSi eres un head coach leyendo esto y te preguntas si tu director de S&C se va a resistir — tráelos a la conversación de consulta de Programas directamente. La pregunta de integración se responde mejor S&C-a-metodología que head-coach-a-metodología. Si tu staff de S&C es bueno, reconocerán la brecha excéntrica en su propio programa antes de que nosotros la señalemos.",
+    "cta_primary": {
+      "label_en": "Talk to Programs",
+      "label_es": "Habla con Programas",
+      "url": "/programs.html#inquiry"
+    },
+    "cta_secondary": {
+      "label_en": "Learn about the physical brake",
+      "label_es": "Aprende sobre el freno físico",
+      "url": "https://hooporia.com"
+    },
+    "related": ["physical-brake-layer", "who-is-the-expert", "coach-deploy-bpm"]
+  },
+
+  "free-vs-premium": {
+    "category": "programs-coaches",
+    "order": 6,
+    "card": {
+      "title_en": "What's free and what's Premium?",
+      "title_es": "¿Qué es gratis y qué es Premium?",
+      "teaser_en": "Three drills free. Six drills Premium. The Brake is Premium.",
+      "teaser_es": "Tres drills gratis. Seis drills Premium. The Brake es Premium."
+    },
+    "headline_en": "Free vs. Premium.",
+    "headline_es": "Gratis vs. Premium.",
+    "body_en": "Clean breakdown.\n\nFree tier includes The React, The Recall, and The Reflex — the three drills that measure the foundation of cognitive braking. Single-beat read, possession-long memory, multi-element read. You can run these at all three tempos (60, 90, 120 BPM) and all ten levels. Your scores save, your progress tracks, you see your level on each drill, and you can move up levels indefinitely. Full free tier access, no time limit, no ads, no feature gates inside the drills themselves.\n\nFree tier does not include The Replay, The Ritmo, or The Beat — the three Premium drills. Free tier does not include The Brake report — the synthesized profile with the composite level, on-court applications, and development priorities. Free tier does not include the full bilingual Brake generation, position-specific analysis, or shareable report links. Free gets you the measurement infrastructure for the foundation. Premium gets you the complete product.\n\nPremium tier is $49 per year or $7 per month. It unlocks everything. All six drills. The full Brake report. Progression tracking with re-run comparisons. Shareable report links for coaches. Position-specific application analysis. Priority-ranked development paths. Bilingual generation in English and Spanish. All of it lives behind a single upgrade.\n\nHere's the practical path I'd recommend for a serious individual player. Start free. Run the three foundation drills for two to three weeks. Get to L3 or L4 on each at game tempo (90 BPM). If you're still engaged and you want to see the complete Brake profile, upgrade to Premium. At that point you've earned the upgrade — you're not paying to try the product, you're paying because you know the product is working for you.\n\nFor coaches and programs, the free tier works as a discovery tool — let your whole roster run the three free drills, see what engagement looks like, decide whether to upgrade to Programs tier. Programs tier is custom-priced and includes everything in Premium plus the roster-level features coaches need. See the Programs inquiry question separately.",
+    "body_es": "Desglose limpio.\n\nEl nivel gratis incluye The React, The Recall, y The Reflex — los tres drills que miden la base del frenado cognitivo. Lectura de un solo beat, memoria de posesión larga, lectura multi-elemento. Puedes correrlos en los tres tempos (60, 90, 120 BPM) y los diez niveles. Tus puntajes se guardan, tu progreso se rastrea, ves tu nivel en cada drill, y puedes subir niveles indefinidamente. Acceso completo al nivel gratis, sin límite de tiempo, sin anuncios, sin compuertas de función dentro de los drills mismos.\n\nEl nivel gratis no incluye The Replay, The Ritmo, o The Beat — los tres drills Premium. El nivel gratis no incluye el reporte Brake — el perfil sintetizado con el nivel compuesto, aplicaciones en cancha, y prioridades de desarrollo. El nivel gratis no incluye la generación bilingüe completa del Brake, análisis específico por posición, o enlaces de reporte compartibles. Gratis te da la infraestructura de medición para la base. Premium te da el producto completo.\n\nEl nivel Premium es $49 por año o $7 por mes. Desbloquea todo. Los seis drills. El reporte Brake completo. Seguimiento de progresión con comparaciones de reejecución. Enlaces de reporte compartibles para coaches. Análisis de aplicación específico por posición. Caminos de desarrollo clasificados por prioridad. Generación bilingüe en inglés y español. Todo vive detrás de una sola mejora.\n\nAquí está el camino práctico que recomendaría para un jugador individual serio. Empieza gratis. Corre los tres drills de la base por dos a tres semanas. Llega a L3 o L4 en cada uno a tempo de juego (90 BPM). Si todavía estás comprometido y quieres ver el perfil Brake completo, sube a Premium. En ese punto te has ganado la mejora — no estás pagando por probar el producto, estás pagando porque sabes que el producto está funcionando para ti.\n\nPara coaches y programas, el nivel gratis funciona como una herramienta de descubrimiento — deja que tu roster completo corra los tres drills gratis, mira cómo se ve el compromiso, decide si subir al nivel Programas. El nivel Programas es de precio personalizado e incluye todo en Premium más las funciones a nivel de roster que los coaches necesitan. Ve la pregunta de consulta de Programas por separado.",
+    "cta_primary": {
+      "label_en": "Start free",
+      "label_es": "Empieza gratis",
+      "url": "/join.html"
+    },
+    "cta_secondary": {
+      "label_en": "Upgrade to Premium",
+      "label_es": "Sube a Premium",
+      "url": "/join.html"
+    },
+    "related": ["premium-pricing", "individual-vs-programs-pricing", "what-is-the-brake"]
+  },
+
+  "premium-pricing": {
+    "category": "programs-coaches",
+    "order": 7,
+    "card": {
+      "title_en": "How much does Premium cost?",
+      "title_es": "¿Cuánto cuesta Premium?",
+      "teaser_en": "$49/year or $7/month. Here's what justifies it.",
+      "teaser_es": "$49/año o $7/mes. Aquí está lo que lo justifica."
+    },
+    "headline_en": "How much does Premium cost — and is it worth it?",
+    "headline_es": "¿Cuánto cuesta Premium — y vale la pena?",
+    "body_en": "$49 per year. Or $7 per month if you prefer monthly.\n\nAnnual is the better deal — five months free compared to monthly — but month-to-month exists for players who want to test Premium for a short period. Both use Stripe. Both can be canceled anytime. Pro-rated refunds available if you cancel mid-period.\n\nIs it worth it? Depends on whether you're using the product.\n\nIf you run your BPM drills regularly — twice a week or more, measurable weeks of training, you're making progress on your free-tier drills — then Premium is a straightforward upgrade because you're already in the habit. Premium unlocks the three advanced drills you haven't been running, and the Brake report that turns your scattered scores into a coaching document. Under $50 a year for a trained, measured, shareable cognitive braking profile is underpriced for what it actually is.\n\nIf you signed up, ran one drill, and haven't been back — Premium isn't worth it yet. Not because the product isn't worth $49. Because the product is worth $49 for players who will actually use it, and a player who doesn't use it gets $0 of value regardless of price. Don't buy Premium to motivate yourself. Buy Premium when you've already proven to yourself that you'll train.\n\nFor comparison. Skill trainers cost $40 to $150 per hour. College-prep basketball services cost $500 to $5,000 per year. AAU fees run $500 to $3,000 per season. Premium BPM at $49 a year is a small fraction of what serious basketball players spend on their development, and it covers something none of the other spending covers — the cognitive braking layer that nobody else is measuring.\n\nOne thing worth flagging. Use the same email address for your BPM account and your Stripe payment. We've had a small number of players sign up with one email, pay with another email, and get stuck because the systems don't connect the accounts. Same email. Saves a support ticket.",
+    "body_es": "$49 por año. O $7 por mes si prefieres mensual.\n\nAnual es el mejor trato — cinco meses gratis comparado con mensual — pero mes a mes existe para jugadores que quieren probar Premium por un período corto. Ambos usan Stripe. Ambos pueden cancelarse en cualquier momento. Reembolsos prorrateados disponibles si cancelas a mitad de período.\n\n¿Vale la pena? Depende de si estás usando el producto.\n\nSi corres tus drills BPM regularmente — dos veces por semana o más, semanas medibles de entrenamiento, estás haciendo progreso en tus drills de nivel gratis — entonces Premium es una mejora directa porque ya estás en el hábito. Premium desbloquea los tres drills avanzados que no has estado corriendo, y el reporte Brake que convierte tus puntajes dispersos en un documento de coaching. Debajo de $50 al año por un perfil cognitivo de frenado entrenado, medido, y compartible está subvalorado por lo que realmente es.\n\nSi te inscribiste, corriste un drill, y no has vuelto — Premium no vale la pena todavía. No porque el producto no valga $49. Porque el producto vale $49 para jugadores que realmente lo usarán, y un jugador que no lo usa obtiene $0 de valor sin importar el precio. No compres Premium para motivarte. Compra Premium cuando te hayas probado a ti mismo que entrenarás.\n\nPara comparación. Los entrenadores de habilidad cuestan $40 a $150 por hora. Los servicios de preparación de baloncesto universitario cuestan $500 a $5,000 por año. Las cuotas de AAU corren $500 a $3,000 por temporada. BPM Premium a $49 al año es una fracción pequeña de lo que los jugadores serios de baloncesto gastan en su desarrollo, y cubre algo que ninguno de los otros gastos cubre — la capa cognitiva de frenado que nadie más está midiendo.\n\nUna cosa que vale la pena señalar. Usa la misma dirección de correo para tu cuenta BPM y tu pago Stripe. Hemos tenido un pequeño número de jugadores que se inscriben con un correo, pagan con otro correo, y se quedan atascados porque los sistemas no conectan las cuentas. Mismo correo. Ahorra un ticket de soporte.",
+    "cta_primary": {
+      "label_en": "Upgrade to Premium",
+      "label_es": "Sube a Premium",
+      "url": "/join.html"
+    },
+    "cta_secondary": {
+      "label_en": "Start free first",
+      "label_es": "Empieza gratis primero",
+      "url": "/join.html"
+    },
+    "related": ["free-vs-premium", "individual-vs-programs-pricing", "what-is-the-brake"]
+  },
+
+  "_operational_notes": {
+    "is_bpm_in_spanish": {
+      "question_en": "Is BPM available in Spanish?",
+      "question_es": "¿Está BPM disponible en español?",
+      "answer_en": "Yes. Every page, drill, report, and conversation on BPM Basketball is fully bilingual English / Spanish. Toggle at the top of any page. Your language preference saves across the site.",
+      "answer_es": "Sí. Cada página, drill, reporte y conversación en BPM Basketball es completamente bilingüe inglés / español. Usa el toggle arriba en cualquier página. Tu preferencia de idioma se guarda a través del sitio."
+    },
+    "do_i_need_an_app": {
+      "question_en": "Do I need to download an app?",
+      "question_es": "¿Necesito descargar una app?",
+      "answer_en": "No. BPM runs entirely in your phone's browser. No app store, no download, no install. Open bpmbasketball.com, sign in, run drills. Add to home screen if you want it to feel like an app — it will open full-screen and launch directly from your home screen.",
+      "answer_es": "No. BPM corre completamente en el navegador de tu teléfono. Sin app store, sin descarga, sin instalación. Abre bpmbasketball.com, entra, corre drills. Añade a pantalla de inicio si quieres que se sienta como una app — se abrirá a pantalla completa y se lanzará directamente desde tu pantalla de inicio."
+    },
+    "how_do_i_cancel": {
+      "question_en": "How do I cancel or get a refund?",
+      "question_es": "¿Cómo cancelo o obtengo un reembolso?",
+      "answer_en": "Cancel anytime through your account settings. Stripe handles the billing, so you can also manage the subscription directly through Stripe. Refunds are pro-rated for the unused portion of your billing period. No lock-in, no retention gauntlet. If BPM isn't working for you, cancel clean and we'll part friends.",
+      "answer_es": "Cancela en cualquier momento a través de la configuración de tu cuenta. Stripe maneja la facturación, entonces también puedes manejar la suscripción directamente a través de Stripe. Los reembolsos se prorratean por la porción no usada de tu período de facturación. Sin ataduras, sin gauntlet de retención. Si BPM no está funcionando para ti, cancela limpio y nos despedimos como amigos."
+    }
+  }
+}
